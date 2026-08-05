@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { ALL_STOCKS } from "./data/stocks";
 
 /* ============================================================
    AMANAH — Basis-Prototyp
@@ -124,127 +126,181 @@ function RatioBar({ label, value, max }) {
   );
 }
 
-function PriceChart({ points, up }) {
-  const w = 640, h = 160, pad = 8;
-  const min = Math.min(...points);
-  const max = Math.max(...points);
-  const xStep = (w - pad * 2) / (points.length - 1);
-  const norm = (v) => h - pad - ((v - min) / (max - min || 1)) * (h - pad * 2);
-  const path = points.map((p, i) => `${i === 0 ? "M" : "L"}${pad + i * xStep},${norm(p)}`).join(" ");
-  const areaPath = `${path} L${pad + (points.length - 1) * xStep},${h - pad} L${pad},${h - pad} Z`;
+/* ---------- Kurs-Chart mit Zeitfiltern ----------
+   generateMockSeries() erzeugt Demo-Kursreihen. fetchPriceHistory() ist die
+   Stelle, an der eine echte Marktdaten-API angebunden wird — siehe Hinweise
+   am Ende der Datei / im Chat für konkrete Anbieter und Anbindung. */
+
+const CHART_RANGES = [
+  { key: "1W", label: "1W", days: 7 },
+  { key: "1M", label: "1M", days: 30 },
+  { key: "3M", label: "3M", days: 90 },
+  { key: "6M", label: "6M", days: 180 },
+  { key: "1Y", label: "1J", days: 365 },
+  { key: "YTD", label: "YTD", days: null },
+];
+
+function daysSinceYearStart() {
+  const now = new Date();
+  const jan1 = new Date(now.getFullYear(), 0, 1);
+  return Math.max(1, Math.round((now - jan1) / 86400000));
+}
+
+function parseEuro(str) {
+  return parseFloat(str.replace(/\./g, "").replace(",", ".").replace("$", "").replace("€", "").trim());
+}
+function parsePercent(str) {
+  return parseFloat(str.replace("%", "").replace(",", "."));
+}
+
+// Deterministischer Pseudo-Zufallswert (gleiches Ticker+Range ergibt immer dieselbe Kurve)
+function seededRandom(seed) {
+  let s = seed;
+  return () => {
+    s = (s * 9301 + 49297) % 233280;
+    return s / 233280;
+  };
+}
+
+function generateMockSeries(ticker, days, currentPrice) {
+  const seedBase = ticker.split("").reduce((a, c) => a + c.charCodeAt(0), 0) + days;
+  const rand = seededRandom(seedBase);
+  const points = [];
+  let price = currentPrice * (0.92 + rand() * 0.06);
+  const today = new Date();
+  for (let i = days; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    price = Math.max(price + (rand() - 0.485) * currentPrice * 0.012, currentPrice * 0.5);
+    points.push({ date: d.toISOString().slice(0, 10), price: Number(price.toFixed(2)) });
+  }
+  points[points.length - 1].price = currentPrice; // heutiger Kurs bleibt exakt
+  return points;
+}
+
+// Versucht die echte API-Route; fällt bei Fehler (z.B. Function noch nicht
+// eingerichtet, kein API-Key, ISIN fehlt) automatisch auf Demo-Daten zurück,
+// damit die App auch ohne Backend-Setup lauffähig bleibt.
+async function fetchPriceHistory(ticker, rangeKey, currentPrice) {
+  const range = CHART_RANGES.find((r) => r.key === rangeKey);
+  const days = range.days ?? daysSinceYearStart();
+
+  try {
+    const res = await fetch(`/api/price-history?symbol=${ticker}&range=${rangeKey}`);
+    if (!res.ok) throw new Error("API nicht erreichbar");
+    const data = await res.json();
+    if (!Array.isArray(data) || data.length === 0) throw new Error("Keine Daten");
+    return data;
+  } catch (err) {
+    // Fallback: Demo-Daten (z.B. während der lokalen Entwicklung ohne Vercel-Function)
+    await new Promise((r) => setTimeout(r, 150));
+    return generateMockSeries(ticker, days, currentPrice);
+  }
+}
+
+function StockChart({ stock }) {
+  const [range, setRange] = useState("3M");
+  const [series, setSeries] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const currentPrice = parseEuro(stock.price);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    fetchPriceHistory(stock.ticker, range, currentPrice).then((data) => {
+      if (!cancelled) {
+        setSeries(data);
+        setLoading(false);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stock.ticker, range]);
+
+  const first = series[0]?.price;
+  const last = series[series.length - 1]?.price;
+  const changeAbs = first != null ? last - first : 0;
+  const changePct = first ? (changeAbs / first) * 100 : 0;
+  const up = changeAbs >= 0;
   const color = up ? "var(--emerald-soft)" : "var(--red-soft)";
+
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className="w-full">
-      <defs>
-        <linearGradient id="chartFade" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={color} stopOpacity="0.22" />
-          <stop offset="100%" stopColor={color} stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <path d={areaPath} fill="url(#chartFade)" stroke="none" />
-      <path d={path} fill="none" stroke={color} strokeWidth="2" />
-    </svg>
+    <div className="mt-8 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          {loading ? (
+            <span className="text-sm text-[var(--faint)]">Lade Kursdaten…</span>
+          ) : (
+            <>
+              <span className={"font-[IBM_Plex_Mono] text-lg " + (up ? "text-[var(--emerald-soft)]" : "text-[var(--red-soft)]")}>
+                {up ? "+" : ""}{changePct.toFixed(2)}%
+              </span>
+              <span className="ml-2 text-xs text-[var(--muted)]">
+                ({up ? "+" : ""}{changeAbs.toFixed(2)} $) im gewählten Zeitraum
+              </span>
+            </>
+          )}
+        </div>
+        <div className="flex gap-1 rounded-full border border-[var(--border)] p-1">
+          {CHART_RANGES.map((r) => (
+            <button
+              key={r.key}
+              onClick={() => setRange(r.key)}
+              className={
+                "rounded-full px-3 py-1 text-xs font-[IBM_Plex_Mono] " +
+                (range === r.key ? "bg-[var(--gold)] text-[var(--bg)]" : "text-[var(--muted)] hover:text-[var(--text)]")
+              }
+            >
+              {r.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {loading ? (
+        <div className="flex h-56 items-center justify-center text-xs text-[var(--faint)]">Lade Kursdaten…</div>
+      ) : (
+        <ResponsiveContainer width="100%" height={220}>
+          <AreaChart data={series} margin={{ top: 5, right: 5, left: 0, bottom: 0 }}>
+            <defs>
+              <linearGradient id="chartFade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor={color} stopOpacity={0.25} />
+                <stop offset="100%" stopColor={color} stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <XAxis dataKey="date" hide />
+            <YAxis domain={["dataMin", "dataMax"]} hide />
+            <Tooltip
+              contentStyle={{ background: "var(--bg-deep)", border: "1px solid var(--border)", borderRadius: 8, fontSize: 12 }}
+              labelStyle={{ color: "var(--muted)" }}
+              formatter={(v) => [`${v.toFixed(2)} $`, "Kurs"]}
+            />
+            <Area type="monotone" dataKey="price" stroke={color} fill="url(#chartFade)" strokeWidth={2} />
+          </AreaChart>
+        </ResponsiveContainer>
+      )}
+
+      <div className="mt-3 flex items-center justify-between text-[11px] text-[var(--faint)]">
+        <span>Quelle: Demo-Daten (Platzhalter — siehe fetchPriceHistory für echte API-Anbindung)</span>
+      </div>
+    </div>
   );
 }
 
 /* ---------- Daten ---------- */
 
-const sampleStocks = [
-  {
-    ticker: "MSFT", name: "Microsoft Corp.", sector: "KI-Infrastruktur",
-    price: "412,30 €", change: "+1,8%", up: true, debt: "9%", score: 96, status: "Halal",
-    purification: 1.2,
-    business: [
-      { label: "Kerngeschäft ist Sharia-konform (Software/Cloud)", pass: true },
-      { label: "Kein wesentlicher Umsatz aus Zins, Glücksspiel, Alkohol", pass: true },
-      { label: "Nebeneinnahmen aus Zins < 5% des Umsatzes", pass: true },
-    ],
-    financials: [
-      { label: "Verschuldung / Marktkapitalisierung", value: 9, max: 33 },
-      { label: "Zinstragende Erträge / Umsatz", value: 2, max: 5 },
-      { label: "Cash + Zinspapiere / Marktkap.", value: 11, max: 33 },
-    ],
-    insight: "Microsoft bleibt breit diversifiziert über Cloud, Software und KI-Infrastruktur. Die Verschuldung liegt deutlich unter dem AAOIFI-Grenzwert, Nebeneinnahmen aus Zins sind minimal — einer der stabileren Werte im Screening für eine Kern-Position.",
-  },
-  {
-    ticker: "ICLN", name: "Clean Energy ETF", sector: "Clean Energy",
-    price: "18,44 €", change: "+0,6%", up: true, debt: "14%", score: 91, status: "Halal",
-    purification: 0.8,
-    business: [
-      { label: "Fondsbasis: erneuerbare Energien & Infrastruktur", pass: true },
-      { label: "Keine Beteiligung an konventionellen Banken", pass: true },
-      { label: "Alle Einzelwerte einzeln gescreent", pass: true },
-    ],
-    financials: [
-      { label: "Verschuldung / Marktkapitalisierung", value: 14, max: 33 },
-      { label: "Zinstragende Erträge / Umsatz", value: 1, max: 5 },
-      { label: "Cash + Zinspapiere / Marktkap.", value: 9, max: 33 },
-    ],
-    insight: "Als ETF streut Clean Energy das Risiko über mehrere Einzelwerte im Sektor erneuerbare Energien. Alle Positionen sind einzeln gescreent — die Verschuldung liegt im moderaten Bereich, profitiert aber stärker von Zinsentwicklungen als Einzelaktien.",
-  },
-  {
-    ticker: "NVDA", name: "NVIDIA Corp.", sector: "KI-Infrastruktur",
-    price: "138,72 €", change: "-0,4%", up: false, debt: "18%", score: 88, status: "Halal",
-    purification: 2.4,
-    business: [
-      { label: "Kerngeschäft ist Sharia-konform (Halbleiter/Rechenzentren)", pass: true },
-      { label: "Kein wesentlicher Umsatz aus unzulässigen Quellen", pass: true },
-      { label: "Nebeneinnahmen aus Zins < 5% des Umsatzes", pass: true },
-    ],
-    financials: [
-      { label: "Verschuldung / Marktkapitalisierung", value: 18, max: 33 },
-      { label: "Zinstragende Erträge / Umsatz", value: 3, max: 5 },
-      { label: "Cash + Zinspapiere / Marktkap.", value: 16, max: 33 },
-    ],
-    insight: "NVIDIA bleibt einer der zentralen Werte im KI-Infrastruktur-Sektor. Die Verschuldungsquote liegt komfortabel unter dem AAOIFI-Grenzwert, und der Anteil unzulässiger Nebeneinnahmen ist gering. Kurzfristige Kursschwankungen hängen stark an Halbleiter-Nachfragezyklen — eher als Satellit statt als Fundament geeignet.",
-  },
-  {
-    ticker: "JPM", name: "JPMorgan Chase", sector: "Banken",
-    price: "231,10 €", change: "+0,2%", up: true, debt: "—", score: 12, status: "Nicht Halal",
-    purification: null,
-    business: [
-      { label: "Kerngeschäft: konventionelles Bank- & Kreditwesen", pass: false },
-      { label: "Wesentlicher Umsatz aus Zinsgeschäft", pass: false },
-      { label: "Nebeneinnahmen aus Zins < 5% des Umsatzes", pass: false },
-    ],
-    financials: [
-      { label: "Verschuldung / Marktkapitalisierung", value: 61, max: 33 },
-      { label: "Zinstragende Erträge / Umsatz", value: 58, max: 5 },
-      { label: "Cash + Zinspapiere / Marktkap.", value: 71, max: 33 },
-    ],
-    insight: "JPMorgan ist als konventionelle Bank strukturell vom Screening ausgeschlossen — das Kerngeschäft basiert auf Zinserträgen. Keine Kombination von Kennzahlen kann das ausgleichen; hier greift kein Reinheits-Rechner, sondern eine klare Nicht-Halal-Einstufung.",
-  },
-  {
-    ticker: "SBUX", name: "Starbucks Corp.", sector: "Konsumgüter",
-    price: "84,50 €", change: "-0,1%", up: false, debt: "31%", score: 58, status: "Grenzwertig",
-    purification: null,
-    business: [
-      { label: "Kerngeschäft ist Sharia-konform (Gastronomie/Einzelhandel)", pass: true },
-      { label: "Kein wesentlicher Umsatz aus unzulässigen Quellen", pass: true },
-      { label: "Nebeneinnahmen aus Zins < 5% des Umsatzes", pass: true },
-    ],
-    financials: [
-      { label: "Verschuldung / Marktkapitalisierung", value: 31, max: 33 },
-      { label: "Zinstragende Erträge / Umsatz", value: 4, max: 5 },
-      { label: "Cash + Zinspapiere / Marktkap.", value: 22, max: 33 },
-    ],
-    note: "Verschuldungsquote liegt seit 2 Quartalen knapp unter dem 33%-Grenzwert — regelmäßig neu prüfen.",
-    insight: "Starbucks besteht den Geschäftsmodell-Screen klar, liegt bei der Verschuldung aber nur knapp unter dem Grenzwert. Solange sich das nicht verbessert, lohnt sich eine engmaschigere Beobachtung als bei klar konformen Werten.",
-  },
-];
+// Echte Screening-Ergebnisse aus eurer CSV (503 Unternehmen) statt Fantasie-Daten.
+const sampleStocks = ALL_STOCKS;
 
-const holdings = [
-  { ticker: "MSFT", weight: 34, status: "Halal" },
-  { ticker: "ICLN", weight: 22, status: "Halal" },
-  { ticker: "NVDA", weight: 29, status: "Halal" },
-  { ticker: "JPM", weight: 15, status: "Nicht Halal" },
-];
-
-const similarStocks = [
-  { ticker: "AMD", name: "Advanced Micro Devices", score: 90, status: "Halal" },
-  { ticker: "ASML", name: "ASML Holding", score: 93, status: "Halal" },
-  { ticker: "TSM", name: "Taiwan Semiconductor", score: 85, status: "Halal" },
-];
+// Portfolio-Beispiel: 4 real vorhandene Titel mit angenommenen Gewichtungen
+// (die Gewichtung selbst ist weiterhin frei erfunden — echte Portfolios kommen
+// erst mit Nutzerkonten/Depot-Anbindung).
+const holdings = ["MSFT", "NVDA", "GOOGL", "JPM"]
+  .map((t) => sampleStocks.find((s) => s.ticker === t))
+  .filter(Boolean)
+  .map((s, i) => ({ ticker: s.ticker, weight: [38, 27, 20, 15][i], status: s.status }));
 
 /* ---------- Startseite ---------- */
 
@@ -306,7 +362,7 @@ function StockCard({ s, expanded, onToggle }) {
   );
 }
 
-const SECTORS = ["KI-Infrastruktur", "Clean Energy", "Banken", "Konsumgüter"];
+const SECTORS = [...new Set(sampleStocks.map((s) => s.sector))].sort();
 const STATUSES = ["Halal", "Grenzwertig", "Nicht Halal"];
 
 function FilterChip({ active, onClick, children }) {
@@ -368,9 +424,17 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
     .sort((a, b) => {
       if (sortBy === "score") return b.score - a.score;
       if (sortBy === "az") return a.name.localeCompare(b.name);
-      if (sortBy === "price") return parseFloat(b.price) - parseFloat(a.price);
+      if (sortBy === "price") return parseEuro(b.price) - parseEuro(a.price);
+      if (sortBy === "debt") return parseFloat(a.debt) - parseFloat(b.debt);
       return 0;
     });
+
+  // Pagination: bei über 500 Titeln nicht alles auf einmal rendern
+  const [visibleCount, setVisibleCount] = useState(30);
+  useEffect(() => {
+    setVisibleCount(30);
+  }, [screenerQuery, activeStatuses, activeSectors, maxDebt, sortBy]);
+  const visibleStocks = filteredStocks.slice(0, visibleCount);
 
   const activeFilterChips = [
     ...activeStatuses.map((s) => ({ type: "status", value: s })),
@@ -456,13 +520,14 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
       <section className="mx-auto max-w-[1440px] px-6 pb-4 pt-10">
         <div className="grid gap-4 sm:grid-cols-3">
           {[
-            { title: "Top nach Score", desc: "Höchste Sharia-Scores zuerst", sort: "score" },
-            { title: "Neu als Halal eingestuft", desc: "Kürzlich aufgenommene Titel", sort: "score" },
-            { title: "Niedrigste Verschuldung", desc: "Solideste Bilanzen zuerst", sort: "score" },
+            { title: "Top nach Score", desc: "Höchste Sharia-Scores zuerst", action: () => { setActiveStatuses(["Halal"]); setSortBy("score"); } },
+            { title: "Grenzwertige Titel", desc: "Kennzahlen knapp über dem Limit — regelmäßig neu prüfen", action: () => { setActiveStatuses(["Grenzwertig"]); setSortBy("score"); } },
+            { title: "Niedrigste Verschuldung", desc: "Solideste Bilanzen zuerst", action: () => { setActiveStatuses(["Halal"]); setSortBy("debt"); } },
           ].map((tile) => (
             <a
               key={tile.title}
               href="#screener"
+              onClick={tile.action}
               className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-6 py-5 transition-colors hover:border-[var(--emerald)]/60"
             >
               <p className="text-[15px] text-[var(--text)]">{tile.title}</p>
@@ -478,6 +543,9 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-[var(--muted)]">Screener</p>
             <h2 className="font-display mt-2 text-2xl text-[var(--text)]">Aktien durchsuchen</h2>
+            <p className="mt-1 text-xs text-[var(--faint)]">
+              Branche & Finanzkennzahlen aus eigenem Screening-Lauf · Kurse sind Demo-Werte, Score ist eine vereinfachte Kennzahl aus Verschuldung/Cash-Quote
+            </p>
           </div>
         </div>
 
@@ -572,6 +640,7 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
                 >
                   <option value="score">Nach Score</option>
                   <option value="price">Nach Kurs</option>
+                  <option value="debt">Nach Verschuldung (aufsteigend)</option>
                   <option value="az">Alphabetisch</option>
                 </select>
               </div>
@@ -601,13 +670,19 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
         )}
 
         {/* Ergebnisliste */}
-        <div className="mt-6 grid gap-3">
+        <div className="mt-6 mb-3 flex items-center justify-between">
+          <p className="text-xs text-[var(--faint)]">
+            {filteredStocks.length} {filteredStocks.length === 1 ? "Titel" : "Titel"} gefunden
+            {filteredStocks.length > visibleStocks.length && ` · ${visibleStocks.length} angezeigt`}
+          </p>
+        </div>
+        <div className="grid gap-3">
           {filteredStocks.length === 0 && (
             <p className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-8 text-center text-sm text-[var(--muted)]">
               Keine Aktien passen zu den aktuellen Filtern.
             </p>
           )}
-          {filteredStocks.map((s) => (
+          {visibleStocks.map((s) => (
             <div key={s.ticker}>
               <StockCard
                 s={s}
@@ -637,6 +712,16 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
             </div>
           ))}
         </div>
+        {filteredStocks.length > visibleStocks.length && (
+          <div className="mt-5 flex justify-center">
+            <button
+              onClick={() => setVisibleCount((c) => c + 30)}
+              className="rounded-full border border-[var(--border)] px-5 py-2 text-sm text-[var(--muted)] hover:border-[var(--gold)]/50 hover:text-[var(--gold-soft)]"
+            >
+              Weitere {Math.min(30, filteredStocks.length - visibleStocks.length)} von {filteredStocks.length - visibleStocks.length} laden
+            </button>
+          </div>
+        )}
       </section>
 
       {/* PORTFOLIO */}
@@ -731,9 +816,9 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
             </div>
             <div className="flex flex-col justify-center gap-4 border-t border-[var(--border)] pt-6 md:border-l md:border-t-0 md:pl-10 md:pt-0">
               {[
-                { label: "Geprüfte Werte", value: "1.240" },
-                { label: "Ø Sharia-Score", value: "84 / 100" },
-                { label: "Neu diese Woche", value: "17" },
+                { label: "Geprüfte Werte", value: sampleStocks.length.toLocaleString("de-DE") },
+                { label: "Ø Sharia-Score", value: `${Math.round(sampleStocks.reduce((sum, s) => sum + s.score, 0) / sampleStocks.length)} / 100` },
+                { label: "Davon Halal", value: `${sampleStocks.filter((s) => s.status === "Halal").length}` },
               ].map((stat) => (
                 <div key={stat.label} className="flex items-baseline justify-between">
                   <span className="text-sm text-[var(--muted)]">{stat.label}</span>
@@ -754,12 +839,19 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
 
 /* ---------- Aktien-Detailseite ---------- */
 
-function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist }) {
+function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist, onOpenStock }) {
   const [showSignup, setShowSignup] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(null);
 
-  const stock = sampleStocks.find((s) => s.ticker === ticker) || sampleStocks[2];
-  const chartPoints = [128, 131, 126, 134, 140, 137, 142, 139, 135, 138.7];
+  const stock = sampleStocks.find((s) => s.ticker === ticker) || sampleStocks[0];
   const saved = watchlist.includes(stock.ticker);
+  const priceNum = parseEuro(stock.price);
+  const dayPct = parsePercent(stock.change);
+  const dayAbs = (priceNum * dayPct) / (100 + dayPct);
+
+  useEffect(() => {
+    setLastUpdated(new Date());
+  }, [ticker]);
 
   function handleSave() {
     if (!saved) setShowSignup(true);
@@ -770,6 +862,11 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist }) {
     onToggleWatchlist(stock.ticker);
     setShowSignup(false);
   }
+
+  const similarStocks = sampleStocks
+    .filter((s) => s.sector === stock.sector && s.status === "Halal" && s.ticker !== stock.ticker)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
 
   return (
     <div className="font-body">
@@ -794,20 +891,17 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist }) {
             <div className="mt-4 flex items-baseline gap-3">
               <span className="font-[IBM_Plex_Mono] text-2xl text-[var(--text)]">{stock.price}</span>
               <span className={"font-[IBM_Plex_Mono] text-sm " + (stock.up ? "text-[var(--emerald-soft)]" : "text-[var(--red-soft)]")}>
-                {stock.change} heute
+                {stock.up ? "+" : ""}{dayPct.toFixed(2)}% ({stock.up ? "+" : ""}{dayAbs.toFixed(2)} $) heute
               </span>
             </div>
+            <p className="mt-1.5 text-[11px] text-[var(--faint)]">
+              Zuletzt aktualisiert: {lastUpdated ? lastUpdated.toLocaleString("de-DE", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" }) : "—"} · Demo-Kurs
+            </p>
           </div>
           <ComplianceStar score={stock.score} size={88} label="Sharia-Score" />
         </div>
 
-        <div className="mt-8 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
-          <div className="mb-2 flex items-center justify-between text-xs text-[var(--muted)]">
-            <span>Kursverlauf · 3 Monate</span>
-            <span className="text-[var(--faint)]">Platzhalterdaten</span>
-          </div>
-          <PriceChart points={chartPoints} up={stock.up} />
-        </div>
+        <StockChart stock={stock} />
 
         <div className="mt-6 flex flex-wrap gap-3">
           <button onClick={handleSave} className="rounded-full bg-[var(--gold)] px-5 py-2.5 text-sm font-medium text-[var(--bg)] hover:opacity-90">
@@ -853,20 +947,26 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist }) {
           <p className="text-[15px] leading-relaxed text-[var(--text-soft)]">{stock.insight}</p>
         </div>
 
-        <div className="mt-10">
-          <p className="mb-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Ähnliche, konforme Alternativen</p>
-          <div className="grid gap-3 sm:grid-cols-3">
-            {similarStocks.map((s) => (
-              <div key={s.ticker} className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3">
-                <ComplianceStar score={s.score} size={36} label="" />
-                <div>
-                  <p className="font-[IBM_Plex_Mono] text-sm text-[var(--text)]">{s.ticker}</p>
-                  <p className="text-xs text-[var(--muted)]">{s.name}</p>
-                </div>
-              </div>
-            ))}
+        {similarStocks.length > 0 && (
+          <div className="mt-10">
+            <p className="mb-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Ähnliche, konforme Alternativen</p>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {similarStocks.map((s) => (
+                <button
+                  key={s.ticker}
+                  onClick={() => onOpenStock && onOpenStock(s.ticker)}
+                  className="flex items-center gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-left hover:border-[var(--emerald)]/60"
+                >
+                  <ComplianceStar score={s.score} size={36} label="" />
+                  <div>
+                    <p className="font-[IBM_Plex_Mono] text-sm text-[var(--text)]">{s.ticker}</p>
+                    <p className="text-xs text-[var(--muted)]">{s.name}</p>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </main>
 
       {showSignup && (
@@ -1007,22 +1107,47 @@ const glossarItems = [
   { q: "Was sind unzulässige Nebeneinnahmen?", a: "Einnahmen aus z. B. Zinsgeschäften, die bei sonst konformen Firmen in kleinem Umfang (meist unter 5% des Umsatzes) toleriert werden." },
   { q: "Warum gibt es einen Spendenanteil bei Dividenden?", a: "Auch bei konformen Aktien steckt oft ein kleiner Anteil unzulässiger Erträge in der Dividende — dieser Anteil wird traditionell gespendet, um das Einkommen zu bereinigen." },
   { q: "Was bedeutet 'Grenzwertig'?", a: "Eine Aktie liegt knapp an einem Grenzwert (z. B. Verschuldung bei 30-33%). Sie ist nicht klar konform oder nicht-konform und sollte regelmäßig neu geprüft werden." },
+  { q: "Was ist ein ETF?", a: "Ein Fonds, der einen Index oder Korb von Wertpapieren nachbildet und wie eine Aktie an der Börse gehandelt wird. Bei Amanah wird jede enthaltene Position einzeln gescreent." },
+  { q: "Was ist ein Sparplan?", a: "Regelmäßige, meist monatliche Investition eines festen Betrags — unabhängig vom aktuellen Kurs. Reduziert das Risiko, zum ungünstigsten Zeitpunkt zu kaufen." },
+  { q: "Was sind Teilaktien (Fractional Shares)?", a: "Bruchteile einer Aktie, die es erlauben, auch mit kleinem Budget in teure Einzeltitel zu investieren, statt eine ganze Aktie kaufen zu müssen." },
+  { q: "Was ist Zakat?", a: "Die jährliche Pflichtabgabe auf bestimmtes Vermögen im Islam. Sie ist unabhängig von der Dividenden-Reinigung (Purification) und wird meist einmal jährlich auf das Gesamtvermögen berechnet." },
+  { q: "Was bedeutet Marktkapitalisierung?", a: "Der Gesamtwert aller ausstehenden Aktien eines Unternehmens (Aktienkurs × Anzahl Aktien). Dient als Bezugsgröße für die Verschuldungs- und Zinsquoten im Screening." },
 ];
 
 const einstiegsSteps = [
-  { title: "1. Grundbegriffe verstehen", text: "Aktie, ETF, Dividende, Sparplan — bevor es um Halal-Kriterien geht, hilft ein Blick ins Glossar weiter unten." },
-  { title: "2. Broker auswählen", text: "Ein Depot ist Voraussetzung fürs Investieren. Amanah empfiehlt keinen bestimmten Anbieter — der Vergleich unten zeigt nur Kriterien, keine Wertung." },
-  { title: "3. Screening verstehen", text: "Bevor du eine Aktie kaufst, prüf ihren Status im Screener und lies die 'Warum'-Begründung auf der Detailseite." },
-  { title: "4. Klein anfangen", text: "Ein Sparplan mit kleinen, regelmäßigen Beträgen ist oft sinnvoller als eine einzelne große Investition." },
+  { title: "1. Grundbegriffe verstehen", text: "Aktie, ETF, Dividende, Sparplan — bevor es um Halal-Kriterien geht, hilft ein Blick ins Glossar weiter unten. Niemand muss alles auf einmal verstehen." },
+  { title: "2. Broker auswählen", text: "Ein Depot ist Voraussetzung fürs Investieren. Amanah empfiehlt keinen bestimmten Anbieter — der Vergleich unten zeigt nur Kriterien, keine Wertung. Achte besonders auf schariakonforme Kontoführung, falls dir das wichtig ist." },
+  { title: "3. Screening verstehen", text: "Bevor du eine Aktie kaufst, prüf ihren Status im Screener und lies die 'Warum'-Begründung auf der Detailseite. Bei 'Grenzwertig' lohnt sich ein zweiter Blick vor dem Kauf." },
+  { title: "4. Klein anfangen", text: "Ein Sparplan mit kleinen, regelmäßigen Beträgen ist oft sinnvoller als eine einzelne große Investition — gerade am Anfang, wenn Marktschwankungen noch ungewohnt sind." },
+  { title: "5. Portfolio im Blick behalten", text: "Nutze die Watchlist, um Statusänderungen (z. B. Halal → Grenzwertig) nicht zu verpassen, und prüfe die Portfolio-Reinheit regelmäßig — Unternehmen können sich verändern." },
+  { title: "6. Dividenden bereinigen", text: "Sobald du Dividenden erhältst, hilf dir der Reinheits-Rechner dabei, den Spendenanteil zu schätzen — ein fester Bestandteil vieler Muslim-Investment-Routinen." },
 ];
 
 const brokerCompare = [
-  { name: "Broker A", sparplan: true, teilaktien: true, kosten: "niedrig" },
-  { name: "Broker B", sparplan: true, teilaktien: false, kosten: "mittel" },
-  { name: "Broker C", sparplan: false, teilaktien: true, kosten: "niedrig" },
+  { name: "Broker A", sparplan: true, teilaktien: true, shariaKonto: false, kosten: "niedrig" },
+  { name: "Broker B", sparplan: true, teilaktien: false, shariaKonto: true, kosten: "mittel" },
+  { name: "Broker C", sparplan: false, teilaktien: true, shariaKonto: false, kosten: "niedrig" },
 ];
 
-const AKADEMIE_TABS = ["Einstieg", "Broker-Vergleich", "Glossar", "Methodik"];
+const literaturItems = [
+  { title: "The Art of Islamic Banking and Finance", author: "Yahia Abdul-Rahman", note: "Praxisnaher Einstieg in die Prinzipien hinter zinsfreiem Wirtschaften." },
+  { title: "Islamic Finance: Principles and Practice", author: "Hans Visser", note: "Akademischer, aber verständlicher Überblick über Instrumente und Regelwerke wie AAOIFI." },
+  { title: "Understanding Islamic Finance", author: "Muhammad Ayub", note: "Umfangreiches Nachschlagewerk, eher für alle, die tiefer einsteigen wollen." },
+];
+
+const vertiefenItems = [
+  {
+    title: "Islamischer Kontext",
+    text: "Riba (Zins) gilt als ausbeuterisch, weil er einen garantierten Gewinn ohne unternehmerisches Risiko verspricht. Gharar (übermäßige Unsicherheit) betrifft Geschäfte mit unklaren Bedingungen — beides zusammen erklärt, warum klassische Banken, Versicherer und stark verschuldete Firmen ausgeschlossen werden, nicht nur einzelne Kennzahl-Grenzwerte.",
+  },
+  {
+    title: "Risiken & Chancen",
+    text: "Halal-konforme Aktien sind nicht automatisch risikoärmer — die Ausschlusskriterien führen oft zu einer Konzentration auf bestimmte Sektoren (z. B. Technologie, Gesundheit), was Klumpenrisiken erzeugen kann. Gleichzeitig bringt der niedrigere Verschuldungsgrad vieler konformer Unternehmen tendenziell mehr finanzielle Stabilität in Krisenzeiten mit sich — beides gehört zur ehrlichen Einordnung.",
+  },
+];
+
+const AKADEMIE_TABS = ["Einstieg", "Broker-Vergleich", "Glossar", "Methodik", "Vertiefen"];
+
 
 function AkademiePage({ onBack }) {
   const [tab, setTab] = useState("Einstieg");
@@ -1057,7 +1182,7 @@ function AkademiePage({ onBack }) {
         </div>
 
         {tab === "Einstieg" && (
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-3">
             {einstiegsSteps.map((s) => (
               <div key={s.title} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
                 <p className="text-sm text-[var(--text)]">{s.title}</p>
@@ -1075,6 +1200,7 @@ function AkademiePage({ onBack }) {
                   <th className="px-5 py-3">Broker</th>
                   <th className="px-5 py-3">Sparplanfähig</th>
                   <th className="px-5 py-3">Teilaktien</th>
+                  <th className="px-5 py-3">Schariakonforme Kontoführung</th>
                   <th className="px-5 py-3">Kosten</th>
                 </tr>
               </thead>
@@ -1084,13 +1210,14 @@ function AkademiePage({ onBack }) {
                     <td className="px-5 py-3 text-[var(--text)]">{b.name}</td>
                     <td className="px-5 py-3 text-[var(--muted)]">{b.sparplan ? "Ja" : "Nein"}</td>
                     <td className="px-5 py-3 text-[var(--muted)]">{b.teilaktien ? "Ja" : "Nein"}</td>
+                    <td className="px-5 py-3 text-[var(--muted)]">{b.shariaKonto ? "Ja (swap-free)" : "Nicht bekannt"}</td>
                     <td className="px-5 py-3 text-[var(--muted)]">{b.kosten}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
             <p className="border-t border-[var(--border)] px-5 py-3 text-xs text-[var(--faint)]">
-              Neutraler Vergleich — Amanah erhält keine Provision und empfiehlt keinen Anbieter.
+              Neutraler Vergleich — Amanah erhält keine Provision und empfiehlt keinen Anbieter. „Swap-free" bedeutet: keine Zinsgutschrift/-belastung bei über Nacht gehaltenen Positionen.
             </p>
           </div>
         )}
@@ -1125,12 +1252,71 @@ function AkademiePage({ onBack }) {
             <p className="mt-3 text-xs text-[var(--faint)]">Automatisch berechnet · Keine Anlageberatung</p>
           </div>
         )}
+
+        {tab === "Vertiefen" && (
+          <div className="mt-6 space-y-6">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {vertiefenItems.map((v) => (
+                <div key={v.title} className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
+                  <p className="text-sm text-[var(--text)]">{v.title}</p>
+                  <p className="mt-1.5 text-xs leading-relaxed text-[var(--muted)]">{v.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <div>
+              <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Literaturempfehlungen</p>
+              <div className="divide-y divide-[var(--border)] rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+                {literaturItems.map((b) => (
+                  <div key={b.title} className="px-5 py-4">
+                    <p className="text-sm text-[var(--text)]">{b.title}</p>
+                    <p className="text-xs text-[var(--muted)]">{b.author}</p>
+                    <p className="mt-1 text-xs text-[var(--faint)]">{b.note}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-2 text-[11px] text-[var(--faint)]">
+                Auswahl ohne Kooperation oder Provision — dient nur der Orientierung.
+              </p>
+            </div>
+          </div>
+        )}
+
+        <AskQuestionBox />
       </main>
     </div>
   );
 }
 
-/* ---------- Sektor-Explorer ---------- */
+// Bewusst klein und unauffällig gehalten — keine "KI-Chat"-Sprache, keine
+// echte Antwortlogik dahinter, nur ein UI-Baustein für später.
+function AskQuestionBox() {
+  const [question, setQuestion] = useState("");
+  const [sent, setSent] = useState(false);
+  return (
+    <div className="mt-10 border-t border-[var(--border)] pt-6">
+      <p className="text-xs text-[var(--faint)]">Frage nicht gefunden?</p>
+      {sent ? (
+        <p className="mt-2 text-sm text-[var(--muted)]">Danke — deine Frage wurde vermerkt.</p>
+      ) : (
+        <div className="mt-2 flex max-w-md items-center gap-2">
+          <input
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            placeholder="Frag nach…"
+            className="w-full rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--text)] placeholder:text-[var(--faint)] focus:outline-none"
+          />
+          <button
+            onClick={() => question.trim() && setSent(true)}
+            className="flex-shrink-0 rounded-full border border-[var(--border)] px-4 py-2 text-sm text-[var(--muted)] hover:border-[var(--gold)]/50 hover:text-[var(--gold-soft)]"
+          >
+            Senden
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
 
 function SectorsPage({ onBack }) {
   const bySector = SECTORS.map((sector) => {
@@ -1576,6 +1762,7 @@ export default function AmanahPrototype() {
             onBack={() => goTo("home")}
             watchlist={watchlist}
             onToggleWatchlist={toggleWatchlist}
+            onOpenStock={openStock}
           />
         )}
         {page === "watchlist" && (
