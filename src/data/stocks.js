@@ -3,12 +3,6 @@
 // Demo-Kurse (price/change) sind NICHT aus der CSV, sondern deterministisch erzeugte
 // Platzhalter, da die CSV keine Kursdaten enthält — siehe price-history.js für die
 // echte Kursanbindung. Währung: USD ($), da alle Titel US-notiert sind (NYSE/NASDAQ).
-// 'profile' ist ein automatisch generierter, rein faktischer Ein-Satz-Platzhalter
-// (Branche/Sektor) — KEINE echte Unternehmensbeschreibung.
-// 'events' (HV/Earnings/Dividende) sind ebenfalls DEMO-TERMINE, deterministisch aus
-// dem Ticker erzeugt — KEINE echten Termine. Für ein fertiges Produkt: eine echte
-// Earnings-Kalender-API anbinden (z.B. Financial Modeling Prep, Nasdaq Earnings
-// Calendar, oder Twelve Data 'earnings' Endpoint).
 
 export const ALL_STOCKS = [
   {
@@ -42,43 +36,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Agilent Technologies, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (9.1%) und Cash-Quote (4.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "39.1 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Diagnostics & Research",
-      "peRatio": "27.8",
-      "evEbitda": "20.3",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "931 Mio. $"
-    },
-    "profile": "Agilent Technologies, Inc. ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Agilent Technologies, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (9.1%) und Cash-Quote (4.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "AAPL",
@@ -111,43 +69,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Apple Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Consumer Electronics) ist zulässig, Verschuldung (1.9%) und Cash-Quote (1.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "4.54 Bio. $",
-      "sector": "Technologie",
-      "industry": "Consumer Electronics",
-      "peRatio": "35.5",
-      "evEbitda": "27.0",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "107.7 Mrd. $"
-    },
-    "profile": "Apple Inc. ist im Bereich Consumer Electronics innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Apple Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Consumer Electronics) ist zulässig, Verschuldung (1.9%) und Cash-Quote (1.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ABBV",
@@ -180,43 +102,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "AbbVie Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (16.4%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "443.4 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Drug Manufacturers - General",
-      "peRatio": "70.9",
-      "evEbitda": "16.5",
-      "epsGrowth": "2.9%",
-      "freeCashFlow": "–"
-    },
-    "profile": "AbbVie Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "AbbVie Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (16.4%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ABNB",
@@ -249,43 +135,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Airbnb, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Travel Services) ist zulässig, Verschuldung (2.8%) und Cash-Quote (13.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "89.9 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Travel Services",
-      "peRatio": "37.4",
-      "evEbitda": "30.7",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "3.2 Mrd. $"
-    },
-    "profile": "Airbnb, Inc. ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Airbnb, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Travel Services) ist zulässig, Verschuldung (2.8%) und Cash-Quote (13.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ABT",
@@ -318,43 +168,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Abbott Laboratories erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (17.8%) und Cash-Quote (3.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "184.1 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Devices",
-      "peRatio": "34.2",
-      "evEbitda": "18.0",
-      "epsGrowth": "-0.5%",
-      "freeCashFlow": "7.2 Mrd. $"
-    },
-    "profile": "Abbott Laboratories ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Abbott Laboratories erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (17.8%) und Cash-Quote (3.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ACGL",
@@ -387,43 +201,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Arch Capital Group Ltd. zählt zur ausgeschlossenen Branche Insurance - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "34.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Diversified",
-      "peRatio": "7.9",
-      "evEbitda": "6.3",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "5.3 Mrd. $"
-    },
-    "profile": "Arch Capital Group Ltd. ist im Bereich Insurance - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Arch Capital Group Ltd. zählt zur ausgeschlossenen Branche Insurance - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "ACN",
@@ -456,43 +234,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Accenture plc erfüllt aktuell alle geprüften Kriterien: Die Branche (Information Technology Services) ist zulässig, Verschuldung (8.3%) und Cash-Quote (10.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "101.5 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Information Technology Services",
-      "peRatio": "13.2",
-      "evEbitda": "7.8",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "12.1 Mrd. $"
-    },
-    "profile": "Accenture plc ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Accenture plc erfüllt aktuell alle geprüften Kriterien: Die Branche (Information Technology Services) ist zulässig, Verschuldung (8.3%) und Cash-Quote (10.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ADBE",
@@ -525,43 +267,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Adobe Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (7.1%) und Cash-Quote (5.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "99.5 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "14.3",
-      "evEbitda": "10.4",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "9.2 Mrd. $"
-    },
-    "profile": "Adobe Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Adobe Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (7.1%) und Cash-Quote (5.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ADI",
@@ -594,43 +300,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Analog Devices, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (4.9%) und Cash-Quote (1.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "179.0 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "54.7",
-      "evEbitda": "30.0",
-      "epsGrowth": "1.1%",
-      "freeCashFlow": "3.9 Mrd. $"
-    },
-    "profile": "Analog Devices, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Analog Devices, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (4.9%) und Cash-Quote (1.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ADM",
@@ -663,43 +333,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Archer-Daniels-Midland Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Farm Products) ist zulässig, Verschuldung (27.9%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "38.2 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Farm Products",
-      "peRatio": "35.4",
-      "evEbitda": "19.1",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "1.6 Mrd. $"
-    },
-    "profile": "Archer-Daniels-Midland Company ist im Bereich Farm Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Archer-Daniels-Midland Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Farm Products) ist zulässig, Verschuldung (27.9%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ADP",
@@ -732,43 +366,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Automatic Data Processing, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (5.1%) und Cash-Quote (4.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "106.0 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "24.3",
-      "evEbitda": "16.8",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "5.3 Mrd. $"
-    },
-    "profile": "Automatic Data Processing, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-10"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-10",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Automatic Data Processing, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (5.1%) und Cash-Quote (4.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ADSK",
@@ -801,43 +399,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Autodesk, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (5.5%) und Cash-Quote (5.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "49.5 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "34.2",
-      "evEbitda": "23.0",
-      "epsGrowth": "2.3%",
-      "freeCashFlow": "3.1 Mrd. $"
-    },
-    "profile": "Autodesk, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-07"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Autodesk, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (5.5%) und Cash-Quote (5.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "AEE",
@@ -870,43 +432,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 71.9% (Limit 30%)",
-    "insight": "Ameren Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 71.9% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "30.3 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "19.3",
-      "evEbitda": "13.3",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "-1.8 Mrd. $"
-    },
-    "profile": "Ameren Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Ameren Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 71.9% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "AEP",
@@ -939,43 +465,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 76.9% (Limit 30%)",
-    "insight": "American Electric Power Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 76.9% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "69.6 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "22.2",
-      "evEbitda": "13.7",
-      "epsGrowth": "-0.4%",
-      "freeCashFlow": "-6.0 Mrd. $"
-    },
-    "profile": "American Electric Power Company ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "American Electric Power Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 76.9% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "AES",
@@ -1008,43 +498,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 303.8% (Limit 30%)",
-    "insight": "The AES Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 303.8% (Limit 30%)). Die Branche (Utilities - Diversified) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "10.5 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Diversified",
-      "peRatio": "7.6",
-      "evEbitda": "12.9",
-      "epsGrowth": "9.5%",
-      "freeCashFlow": "-3.0 Mrd. $"
-    },
-    "profile": "The AES Corporation ist im Bereich Utilities - Diversified innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "The AES Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 303.8% (Limit 30%)). Die Branche (Utilities - Diversified) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "AFL",
@@ -1077,43 +531,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "AFLAC Incorporated zählt zur ausgeschlossenen Branche Insurance - Life und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "64.9 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Life",
-      "peRatio": "14.6",
-      "evEbitda": "12.1",
-      "epsGrowth": "38.6%",
-      "freeCashFlow": "4.9 Mrd. $"
-    },
-    "profile": "AFLAC Incorporated ist im Bereich Insurance - Life innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-21"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "AFLAC Incorporated zählt zur ausgeschlossenen Branche Insurance - Life und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "AIG",
@@ -1146,43 +564,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "American International Group, I zählt zur ausgeschlossenen Branche Insurance - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "41.7 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Diversified",
-      "peRatio": "13.8",
-      "evEbitda": "5.0",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "9.5 Mrd. $"
-    },
-    "profile": "American International Group, I ist im Bereich Insurance - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "American International Group, I zählt zur ausgeschlossenen Branche Insurance - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "AIZ",
@@ -1215,43 +597,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Assurant, Inc. zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "13.8 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Property & Casualty",
-      "peRatio": "14.3",
-      "evEbitda": "8.6",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "2.0 Mrd. $"
-    },
-    "profile": "Assurant, Inc. ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-07",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Assurant, Inc. zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "AJG",
@@ -1284,43 +630,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Arthur J. Gallagher & Co. zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "64.1 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance Brokers",
-      "peRatio": "41.3",
-      "evEbitda": "17.8",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Arthur J. Gallagher & Co. ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Arthur J. Gallagher & Co. zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "AKAM",
@@ -1353,43 +663,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 35.0% (Limit 30%)",
-    "insight": "Akamai Technologies, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 35.0% (Limit 30%)). Die Branche (Software - Infrastructure) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "16.7 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "38.9",
-      "evEbitda": "18.9",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "701 Mio. $"
-    },
-    "profile": "Akamai Technologies, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Akamai Technologies, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 35.0% (Limit 30%)). Die Branche (Software - Infrastructure) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ALB",
@@ -1422,43 +696,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Albemarle Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (14.5%) und Cash-Quote (7.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "13.9 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Specialty Chemicals",
-      "peRatio": "–",
-      "evEbitda": "16.2",
-      "epsGrowth": "–",
-      "freeCashFlow": "717 Mio. $"
-    },
-    "profile": "Albemarle Corporation ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Albemarle Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (14.5%) und Cash-Quote (7.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ALGN",
@@ -1491,43 +729,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Align Technology, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Instruments & Supplies) ist zulässig, Verschuldung (0.7%) und Cash-Quote (9.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "12.1 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Instruments & Supplies",
-      "peRatio": "29.3",
-      "evEbitda": "12.0",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "646 Mio. $"
-    },
-    "profile": "Align Technology, Inc. ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Align Technology, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Instruments & Supplies) ist zulässig, Verschuldung (0.7%) und Cash-Quote (9.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ALL",
@@ -1560,43 +762,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Allstate Corporation (The) zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "68.0 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Property & Casualty",
-      "peRatio": "5.8",
-      "evEbitda": "4.9",
-      "epsGrowth": "3.4%",
-      "freeCashFlow": "12.4 Mrd. $"
-    },
-    "profile": "Allstate Corporation (The) ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Allstate Corporation (The) zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "ALLE",
@@ -1629,43 +795,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Allegion plc erfüllt aktuell alle geprüften Kriterien: Die Branche (Security & Protection Services) ist zulässig, Verschuldung (16.6%) und Cash-Quote (2.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "13.4 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Security & Protection Services",
-      "peRatio": "20.7",
-      "evEbitda": "14.6",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "484 Mio. $"
-    },
-    "profile": "Allegion plc ist im Bereich Security & Protection Services innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Allegion plc erfüllt aktuell alle geprüften Kriterien: Die Branche (Security & Protection Services) ist zulässig, Verschuldung (16.6%) und Cash-Quote (2.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "AMAT",
@@ -1698,43 +828,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Applied Materials, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductor Equipment & Materials) ist zulässig, Verschuldung (1.8%) und Cash-Quote (2.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "403.1 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductor Equipment & Materials",
-      "peRatio": "47.8",
-      "evEbitda": "43.4",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "3.0 Mrd. $"
-    },
-    "profile": "Applied Materials, Inc. ist im Bereich Semiconductor Equipment & Materials innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Applied Materials, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductor Equipment & Materials) ist zulässig, Verschuldung (1.8%) und Cash-Quote (2.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "AMCR",
@@ -1767,43 +861,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 80.8% (Limit 30%)",
-    "insight": "Amcor plc überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 80.8% (Limit 30%)). Die Branche (Packaging & Containers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "20.8 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Packaging & Containers",
-      "peRatio": "36.2",
-      "evEbitda": "11.2",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "150 Mio. $"
-    },
-    "profile": "Amcor plc ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-03"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-03",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Amcor plc überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 80.8% (Limit 30%)). Die Branche (Packaging & Containers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "AMD",
@@ -1836,43 +894,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Advanced Micro Devices, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (0.5%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "776.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "158.7",
-      "evEbitda": "103.4",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "7.2 Mrd. $"
-    },
-    "profile": "Advanced Micro Devices, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-07"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-07",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Advanced Micro Devices, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (0.5%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "AME",
@@ -1905,43 +927,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "AMETEK, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (4.4%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "55.4 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "36.5",
-      "evEbitda": "23.7",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "AMETEK, Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-03"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-03",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "AMETEK, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (4.4%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "AMGN",
@@ -1974,43 +960,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Amgen Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (27.6%) und Cash-Quote (5.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "207.9 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Drug Manufacturers - General",
-      "peRatio": "26.8",
-      "evEbitda": "15.0",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "7.4 Mrd. $"
-    },
-    "profile": "Amgen Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Amgen Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (27.6%) und Cash-Quote (5.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "AMP",
@@ -2043,43 +993,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Ameriprise Financial, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "48.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "13.6",
-      "evEbitda": "–",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Ameriprise Financial, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Ameriprise Financial, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "AMT",
@@ -2112,43 +1026,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 55.7% (Limit 30%)",
-    "insight": "American Tower Corporation (REI überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 55.7% (Limit 30%)). Die Branche (REIT - Specialty) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "80.8 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Specialty",
-      "peRatio": "27.9",
-      "evEbitda": "18.5",
-      "epsGrowth": "1.4%",
-      "freeCashFlow": "2.9 Mrd. $"
-    },
-    "profile": "American Tower Corporation (REI ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-04",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "American Tower Corporation (REI überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 55.7% (Limit 30%)). Die Branche (REIT - Specialty) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "AMZN",
@@ -2181,43 +1059,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Amazon.com, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Retail) ist zulässig, Verschuldung (7.6%) und Cash-Quote (4.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "2.92 Bio. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Internet Retail",
-      "peRatio": "21.8",
-      "evEbitda": "17.9",
-      "epsGrowth": "2.4%",
-      "freeCashFlow": "22.7 Mrd. $"
-    },
-    "profile": "Amazon.com, Inc. ist im Bereich Internet Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-10"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-10",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Amazon.com, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Retail) ist zulässig, Verschuldung (7.6%) und Cash-Quote (4.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ANET",
@@ -2250,43 +1092,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Arista Networks, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Computer Hardware) ist zulässig, Verschuldung (0.0%) und Cash-Quote (5.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "227.1 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Computer Hardware",
-      "peRatio": "62.2",
-      "evEbitda": "50.7",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "4.4 Mrd. $"
-    },
-    "profile": "Arista Networks, Inc. ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-02",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-02",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Arista Networks, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Computer Hardware) ist zulässig, Verschuldung (0.0%) und Cash-Quote (5.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "AON",
@@ -2319,43 +1125,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Aon plc zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "76.5 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance Brokers",
-      "peRatio": "19.9",
-      "evEbitda": "15.5",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "3.2 Mrd. $"
-    },
-    "profile": "Aon plc ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-17",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Aon plc zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "AOS",
@@ -2388,43 +1158,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "A.O. Smith Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (8.3%) und Cash-Quote (2.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "8.2 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "16.7",
-      "evEbitda": "11.1",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "485 Mio. $"
-    },
-    "profile": "A.O. Smith Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "A.O. Smith Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (8.3%) und Cash-Quote (2.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "APA",
@@ -2457,43 +1191,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 34.4% (Limit 30%)",
-    "insight": "APA Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.4% (Limit 30%)). Die Branche (Oil & Gas E&P) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "13.2 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas E&P",
-      "peRatio": "8.7",
-      "evEbitda": "3.5",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "1.7 Mrd. $"
-    },
-    "profile": "APA Corporation ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "APA Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.4% (Limit 30%)). Die Branche (Oil & Gas E&P) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "APD",
@@ -2526,43 +1224,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Air Products and Chemicals, Inc erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (27.8%) und Cash-Quote (1.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "65.7 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Specialty Chemicals",
-      "peRatio": "–",
-      "evEbitda": "83.2",
-      "epsGrowth": "–",
-      "freeCashFlow": "-3.8 Mrd. $"
-    },
-    "profile": "Air Products and Chemicals, Inc ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Air Products and Chemicals, Inc erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (27.8%) und Cash-Quote (1.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "APH",
@@ -2595,43 +1257,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Amphenol Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Components) ist zulässig, Verschuldung (9.5%) und Cash-Quote (2.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "197.7 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Electronic Components",
-      "peRatio": "40.2",
-      "evEbitda": "22.3",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "3.8 Mrd. $"
-    },
-    "profile": "Amphenol Corporation ist im Bereich Electronic Components innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-10"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-10",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Amphenol Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Components) ist zulässig, Verschuldung (9.5%) und Cash-Quote (2.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "APO",
@@ -2664,43 +1290,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Apollo Global Management, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "72.4 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "79.0",
-      "evEbitda": "–",
-      "epsGrowth": "–",
-      "freeCashFlow": "–"
-    },
-    "profile": "Apollo Global Management, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Apollo Global Management, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "APP",
@@ -2733,43 +1323,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Applovin Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Advertising Agencies) ist zulässig, Verschuldung (2.9%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "133.0 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Advertising Agencies",
-      "peRatio": "34.5",
-      "evEbitda": "27.5",
-      "epsGrowth": "1.1%",
-      "freeCashFlow": "3.2 Mrd. $"
-    },
-    "profile": "Applovin Corporation ist im Bereich Advertising Agencies innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Applovin Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Advertising Agencies) ist zulässig, Verschuldung (2.9%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "APTV",
@@ -2802,43 +1356,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 82.7% (Limit 30%)",
-    "insight": "Aptiv PLC überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 82.7% (Limit 30%)). Die Branche (Auto Parts) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "12.0 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Auto Parts",
-      "peRatio": "33.6",
-      "evEbitda": "6.0",
-      "epsGrowth": "–",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Aptiv PLC ist im Bereich Auto Parts innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Aptiv PLC überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 82.7% (Limit 30%)). Die Branche (Auto Parts) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ARE",
@@ -2871,43 +1389,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 143.6% (Limit 30%)",
-    "insight": "Alexandria Real Estate Equities überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 143.6% (Limit 30%)). Die Branche (REIT - Office) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "9.0 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Office",
-      "peRatio": "–",
-      "evEbitda": "13.5",
-      "epsGrowth": "–",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Alexandria Real Estate Equities ist im Bereich REIT - Office innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Alexandria Real Estate Equities überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 143.6% (Limit 30%)). Die Branche (REIT - Office) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ARES",
@@ -2940,43 +1422,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Ares Management Corporation zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "42.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "59.3",
-      "evEbitda": "33.7",
-      "epsGrowth": "7.7%",
-      "freeCashFlow": "1.8 Mrd. $"
-    },
-    "profile": "Ares Management Corporation ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-30"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-30",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Ares Management Corporation zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "ATO",
@@ -3009,43 +1455,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 33.4% (Limit 30%)",
-    "insight": "Atmos Energy Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.4% (Limit 30%)). Die Branche (Utilities - Regulated Gas) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "28.8 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Gas",
-      "peRatio": "21.3",
-      "evEbitda": "15.1",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "-2.2 Mrd. $"
-    },
-    "profile": "Atmos Energy Corporation ist im Bereich Utilities - Regulated Gas innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Atmos Energy Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.4% (Limit 30%)). Die Branche (Utilities - Regulated Gas) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "AVB",
@@ -3078,43 +1488,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 34.0% (Limit 30%)",
-    "insight": "AvalonBay Communities, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.0% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "26.5 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Residential",
-      "peRatio": "25.5",
-      "evEbitda": "19.0",
-      "epsGrowth": "-0.4%",
-      "freeCashFlow": "–"
-    },
-    "profile": "AvalonBay Communities, Inc. ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "AvalonBay Communities, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.0% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "AVGO",
@@ -3147,43 +1521,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Broadcom Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (3.5%) und Cash-Quote (1.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "1.85 Bio. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "65.0",
-      "evEbitda": "45.1",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "27.2 Mrd. $"
-    },
-    "profile": "Broadcom Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-17",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Broadcom Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (3.5%) und Cash-Quote (1.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "AVY",
@@ -3216,43 +1554,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Avery Dennison Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Packaging & Containers) ist zulässig, Verschuldung (28.3%) und Cash-Quote (1.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "13.0 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Packaging & Containers",
-      "peRatio": "18.5",
-      "evEbitda": "11.0",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "957 Mio. $"
-    },
-    "profile": "Avery Dennison Corporation ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-02",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-02",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Avery Dennison Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Packaging & Containers) ist zulässig, Verschuldung (28.3%) und Cash-Quote (1.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "AWK",
@@ -3285,43 +1587,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 60.3% (Limit 30%)",
-    "insight": "American Water Works Company, I überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 60.3% (Limit 30%)). Die Branche (Utilities - Regulated Water) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "26.7 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Water",
-      "peRatio": "23.3",
-      "evEbitda": "14.6",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "-1.8 Mrd. $"
-    },
-    "profile": "American Water Works Company, I ist im Bereich Utilities - Regulated Water innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "American Water Works Company, I überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 60.3% (Limit 30%)). Die Branche (Utilities - Regulated Water) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "AXON",
@@ -3354,43 +1620,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Axon Enterprise, Inc. zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "42.5 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "212.8",
-      "evEbitda": "424.3",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "63 Mio. $"
-    },
-    "profile": "Axon Enterprise, Inc. ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Axon Enterprise, Inc. zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "AXP",
@@ -3423,43 +1653,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "American Express Company zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "227.1 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Credit Services",
-      "peRatio": "20.4",
-      "evEbitda": "–",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "American Express Company ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "American Express Company zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "AZO",
@@ -3492,43 +1686,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "AutoZone, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Auto Parts) ist zulässig, Verschuldung (26.6%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "49.2 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Auto Parts",
-      "peRatio": "20.7",
-      "evEbitda": "14.6",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "904 Mio. $"
-    },
-    "profile": "AutoZone, Inc. ist im Bereich Auto Parts innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-10"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-10",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "AutoZone, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Auto Parts) ist zulässig, Verschuldung (26.6%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "BA",
@@ -3561,43 +1719,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Boeing Company (The) zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "170.7 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "77.5",
-      "evEbitda": "-68.9",
-      "epsGrowth": "–",
-      "freeCashFlow": "5.6 Mrd. $"
-    },
-    "profile": "Boeing Company (The) ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Boeing Company (The) zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "BAC",
@@ -3630,43 +1752,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Bank of America Corporation zählt zur ausgeschlossenen Branche Banks - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "434.8 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Diversified",
-      "peRatio": "14.3",
-      "evEbitda": "–",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Bank of America Corporation ist im Bereich Banks - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-04",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-04",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Bank of America Corporation zählt zur ausgeschlossenen Branche Banks - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "BALL",
@@ -3699,43 +1785,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 47.3% (Limit 30%)",
-    "insight": "Ball Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 47.3% (Limit 30%)). Die Branche (Packaging & Containers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "17.3 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Packaging & Containers",
-      "peRatio": "18.9",
-      "evEbitda": "12.1",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "404 Mio. $"
-    },
-    "profile": "Ball Corporation ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-31"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-31",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Ball Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 47.3% (Limit 30%)). Die Branche (Packaging & Containers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "BAX",
@@ -3768,43 +1818,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 71.5% (Limit 30%)",
-    "insight": "Baxter International Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 71.5% (Limit 30%)). Die Branche (Medical Instruments & Supplies) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "13.5 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Instruments & Supplies",
-      "peRatio": "–",
-      "evEbitda": "11.2",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "1.0 Mrd. $"
-    },
-    "profile": "Baxter International Inc. ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Baxter International Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 71.5% (Limit 30%)). Die Branche (Medical Instruments & Supplies) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "BBY",
@@ -3837,43 +1851,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Best Buy Co., Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Retail) ist zulässig, Verschuldung (22.7%) und Cash-Quote (10.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "18.2 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Specialty Retail",
-      "peRatio": "16.0",
-      "evEbitda": "7.8",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Best Buy Co., Inc. ist im Bereich Specialty Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Best Buy Co., Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Retail) ist zulässig, Verschuldung (22.7%) und Cash-Quote (10.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "BDX",
@@ -3906,43 +1884,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 37.9% (Limit 30%)",
-    "insight": "Becton, Dickinson and Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 37.9% (Limit 30%)). Die Branche (Medical Instruments & Supplies) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "45.6 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Instruments & Supplies",
-      "peRatio": "28.9",
-      "evEbitda": "10.1",
-      "epsGrowth": "–",
-      "freeCashFlow": "4.5 Mrd. $"
-    },
-    "profile": "Becton, Dickinson and Company ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Becton, Dickinson and Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 37.9% (Limit 30%)). Die Branche (Medical Instruments & Supplies) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "BEN",
@@ -3975,43 +1917,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Franklin Resources, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "17.6 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "23.0",
-      "evEbitda": "13.0",
-      "epsGrowth": "1.1%",
-      "freeCashFlow": "-3.2 Mrd. $"
-    },
-    "profile": "Franklin Resources, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Franklin Resources, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "BF-B",
@@ -4044,43 +1950,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Brown Forman Inc zählt zur ausgeschlossenen Branche Beverages - Wineries & Distilleries und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "13.2 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Beverages - Wineries & Distilleries",
-      "peRatio": "18.8",
-      "evEbitda": "13.1",
-      "epsGrowth": "-0.6%",
-      "freeCashFlow": "740 Mio. $"
-    },
-    "profile": "Brown Forman Inc ist im Bereich Beverages - Wineries & Distilleries innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-07",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-07"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-07",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-07",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Brown Forman Inc zählt zur ausgeschlossenen Branche Beverages - Wineries & Distilleries und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "BG",
@@ -4113,43 +1983,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 83.6% (Limit 30%)",
-    "insight": "Bunge Limited überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 83.6% (Limit 30%)). Die Branche (Farm Products) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "20.4 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Farm Products",
-      "peRatio": "22.9",
-      "evEbitda": "12.2",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "-6.5 Mrd. $"
-    },
-    "profile": "Bunge Limited ist im Bereich Farm Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Bunge Limited überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 83.6% (Limit 30%)). Die Branche (Farm Products) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "BIIB",
@@ -4182,43 +2016,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Biogen Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (27.9%) und Cash-Quote (4.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "30.0 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Drug Manufacturers - General",
-      "peRatio": "36.1",
-      "evEbitda": "11.0",
-      "epsGrowth": "-0.8%",
-      "freeCashFlow": "1.3 Mrd. $"
-    },
-    "profile": "Biogen Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Biogen Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (27.9%) und Cash-Quote (4.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "BKNG",
@@ -4251,43 +2049,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Booking Holdings Inc. Common St erfüllt aktuell alle geprüften Kriterien: Die Branche (Travel Services) ist zulässig, Verschuldung (12.8%) und Cash-Quote (10.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "149.5 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Travel Services",
-      "peRatio": "25.4",
-      "evEbitda": "14.7",
-      "epsGrowth": "2.4%",
-      "freeCashFlow": "7.1 Mrd. $"
-    },
-    "profile": "Booking Holdings Inc. Common St ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Booking Holdings Inc. Common St erfüllt aktuell alle geprüften Kriterien: Die Branche (Travel Services) ist zulässig, Verschuldung (12.8%) und Cash-Quote (10.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "BKR",
@@ -4320,43 +2082,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Baker Hughes Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas Equipment & Services) ist zulässig, Verschuldung (27.1%) und Cash-Quote (28.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "60.0 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Equipment & Services",
-      "peRatio": "19.5",
-      "evEbitda": "12.3",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "4.4 Mrd. $"
-    },
-    "profile": "Baker Hughes Company ist im Bereich Oil & Gas Equipment & Services innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Baker Hughes Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas Equipment & Services) ist zulässig, Verschuldung (27.1%) und Cash-Quote (28.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "BLDR",
@@ -4389,43 +2115,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 73.3% (Limit 30%)",
-    "insight": "Builders FirstSource, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 73.3% (Limit 30%)). Die Branche (Building Products & Equipment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "7.1 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Building Products & Equipment",
-      "peRatio": "72.2",
-      "evEbitda": "12.1",
-      "epsGrowth": "–",
-      "freeCashFlow": "465 Mio. $"
-    },
-    "profile": "Builders FirstSource, Inc. ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Builders FirstSource, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 73.3% (Limit 30%)). Die Branche (Building Products & Equipment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "BLK",
@@ -4458,43 +2148,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "BlackRock, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "177.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "26.1",
-      "evEbitda": "16.0",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "–"
-    },
-    "profile": "BlackRock, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "BlackRock, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "BMY",
@@ -4527,43 +2181,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 33.8% (Limit 30%)",
-    "insight": "Bristol-Myers Squibb Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.8% (Limit 30%)). Die Branche (Drug Manufacturers - General) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "133.4 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Drug Manufacturers - General",
-      "peRatio": "14.4",
-      "evEbitda": "8.8",
-      "epsGrowth": "1.5%",
-      "freeCashFlow": "8.1 Mrd. $"
-    },
-    "profile": "Bristol-Myers Squibb Company ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Bristol-Myers Squibb Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.8% (Limit 30%)). Die Branche (Drug Manufacturers - General) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "BNY",
@@ -4596,43 +2214,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "The Bank of New York Mellon Cor zählt zur ausgeschlossenen Branche Banks - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "106.1 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Diversified",
-      "peRatio": "18.2",
-      "evEbitda": "–",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "–"
-    },
-    "profile": "The Bank of New York Mellon Cor ist im Bereich Banks - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "The Bank of New York Mellon Cor zählt zur ausgeschlossenen Branche Banks - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "BR",
@@ -4665,43 +2247,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Broadridge Financial Solutions, erfüllt aktuell alle geprüften Kriterien: Die Branche (Information Technology Services) ist zulässig, Verschuldung (19.1%) und Cash-Quote (1.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "17.8 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Information Technology Services",
-      "peRatio": "16.5",
-      "evEbitda": "11.9",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "Broadridge Financial Solutions, ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Broadridge Financial Solutions, erfüllt aktuell alle geprüften Kriterien: Die Branche (Information Technology Services) ist zulässig, Verschuldung (19.1%) und Cash-Quote (1.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "BRK-B",
@@ -4734,43 +2280,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Berkshire Hathaway Inc. New zählt zur ausgeschlossenen Branche Insurance - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "1.10 Bio. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Diversified",
-      "peRatio": "15.2",
-      "evEbitda": "-2.2",
-      "epsGrowth": "1.2%",
-      "freeCashFlow": "61.2 Mrd. $"
-    },
-    "profile": "Berkshire Hathaway Inc. New ist im Bereich Insurance - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Berkshire Hathaway Inc. New zählt zur ausgeschlossenen Branche Insurance - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "BRO",
@@ -4803,43 +2313,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Brown & Brown, Inc. zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "23.6 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance Brokers",
-      "peRatio": "22.5",
-      "evEbitda": "10.6",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.6 Mrd. $"
-    },
-    "profile": "Brown & Brown, Inc. ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-31"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-31",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Brown & Brown, Inc. zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "BSX",
@@ -4872,43 +2346,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Boston Scientific Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (15.9%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "69.5 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Devices",
-      "peRatio": "18.9",
-      "evEbitda": "13.8",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Boston Scientific Corporation ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-31"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-31",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Boston Scientific Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (15.9%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "BX",
@@ -4941,43 +2379,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Blackstone Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "159.0 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "28.6",
-      "evEbitda": "–",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Blackstone Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Blackstone Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "BXP",
@@ -5010,43 +2412,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 130.8% (Limit 30%)",
-    "insight": "BXP, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 130.8% (Limit 30%)). Die Branche (REIT - Office) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "12.5 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Office",
-      "peRatio": "37.7",
-      "evEbitda": "18.0",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "–"
-    },
-    "profile": "BXP, Inc. ist im Bereich REIT - Office innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "BXP, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 130.8% (Limit 30%)). Die Branche (REIT - Office) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "C",
@@ -5079,43 +2445,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Citigroup, Inc. zählt zur ausgeschlossenen Branche Banks - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "222.2 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Diversified",
-      "peRatio": "14.3",
-      "evEbitda": "–",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Citigroup, Inc. ist im Bereich Banks - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-07"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-07",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Citigroup, Inc. zählt zur ausgeschlossenen Branche Banks - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "CAH",
@@ -5148,43 +2478,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Cardinal Health, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Distribution) ist zulässig, Verschuldung (16.5%) und Cash-Quote (7.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "53.9 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Distribution",
-      "peRatio": "35.1",
-      "evEbitda": "14.8",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "4.8 Mrd. $"
-    },
-    "profile": "Cardinal Health, Inc. ist im Bereich Medical Distribution innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Cardinal Health, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Distribution) ist zulässig, Verschuldung (16.5%) und Cash-Quote (7.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CARR",
@@ -5217,43 +2511,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Carrier Global Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Products & Equipment) ist zulässig, Verschuldung (24.1%) und Cash-Quote (2.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "51.3 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Building Products & Equipment",
-      "peRatio": "44.1",
-      "evEbitda": "20.2",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "862 Mio. $"
-    },
-    "profile": "Carrier Global Corporation ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-15",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Carrier Global Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Products & Equipment) ist zulässig, Verschuldung (24.1%) und Cash-Quote (2.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CASY",
@@ -5286,43 +2544,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Caseys General Stores, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Retail) ist zulässig, Verschuldung (9.0%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "32.2 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Specialty Retail",
-      "peRatio": "45.5",
-      "evEbitda": "23.2",
-      "epsGrowth": "0.7%",
-      "freeCashFlow": "551 Mio. $"
-    },
-    "profile": "Caseys General Stores, Inc. ist im Bereich Specialty Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Caseys General Stores, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Retail) ist zulässig, Verschuldung (9.0%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CAT",
@@ -5355,43 +2577,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Caterpillar, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Farm & Heavy Construction Machinery) ist zulässig, Verschuldung (11.5%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "375.3 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Farm & Heavy Construction Machinery",
-      "peRatio": "40.7",
-      "evEbitda": "28.5",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "3.8 Mrd. $"
-    },
-    "profile": "Caterpillar, Inc. ist im Bereich Farm & Heavy Construction Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Caterpillar, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Farm & Heavy Construction Machinery) ist zulässig, Verschuldung (11.5%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CB",
@@ -5424,43 +2610,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Chubb Limited zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "135.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Property & Casualty",
-      "peRatio": "12.4",
-      "evEbitda": "10.6",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "10.5 Mrd. $"
-    },
-    "profile": "Chubb Limited ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Chubb Limited zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "CBOE",
@@ -5493,43 +2643,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Cboe Global Markets, Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "32.5 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Financial Data & Stock Exchanges",
-      "peRatio": "24.2",
-      "evEbitda": "17.1",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "1.0 Mrd. $"
-    },
-    "profile": "Cboe Global Markets, Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Cboe Global Markets, Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "CBRE",
@@ -5562,43 +2676,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "CBRE Group Inc erfüllt aktuell alle geprüften Kriterien: Die Branche (Real Estate Services) ist zulässig, Verschuldung (25.4%) und Cash-Quote (3.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "42.5 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "Real Estate Services",
-      "peRatio": "33.6",
-      "evEbitda": "23.8",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "1.6 Mrd. $"
-    },
-    "profile": "CBRE Group Inc ist im Bereich Real Estate Services innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "CBRE Group Inc erfüllt aktuell alle geprüften Kriterien: Die Branche (Real Estate Services) ist zulässig, Verschuldung (25.4%) und Cash-Quote (3.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CCI",
@@ -5631,43 +2709,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 70.2% (Limit 30%)",
-    "insight": "Crown Castle Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 70.2% (Limit 30%)). Die Branche (REIT - Specialty) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "33.3 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Specialty",
-      "peRatio": "31.1",
-      "evEbitda": "20.4",
-      "epsGrowth": "-0.7%",
-      "freeCashFlow": "1.0 Mrd. $"
-    },
-    "profile": "Crown Castle Inc. ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Crown Castle Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 70.2% (Limit 30%)). Die Branche (REIT - Specialty) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CCL",
@@ -5700,43 +2742,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 68.7% (Limit 30%)",
-    "insight": "Carnival Corporation Ltd. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 68.7% (Limit 30%)). Die Branche (Travel Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "38.1 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Travel Services",
-      "peRatio": "12.5",
-      "evEbitda": "8.5",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "1.9 Mrd. $"
-    },
-    "profile": "Carnival Corporation Ltd. ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Carnival Corporation Ltd. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 68.7% (Limit 30%)). Die Branche (Travel Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CDNS",
@@ -5769,43 +2775,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Cadence Design Systems, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (2.8%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "93.8 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "67.6",
-      "evEbitda": "44.0",
-      "epsGrowth": "1.3%",
-      "freeCashFlow": "1.6 Mrd. $"
-    },
-    "profile": "Cadence Design Systems, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-08-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Cadence Design Systems, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (2.8%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CDW",
@@ -5838,43 +2808,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 32.5% (Limit 30%)",
-    "insight": "CDW Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.5% (Limit 30%)). Die Branche (Information Technology Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "18.9 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Information Technology Services",
-      "peRatio": "18.0",
-      "evEbitda": "12.3",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "884 Mio. $"
-    },
-    "profile": "CDW Corporation ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-09"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "CDW Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.5% (Limit 30%)). Die Branche (Information Technology Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CEG",
@@ -5907,43 +2841,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Constellation Energy Corporatio erfüllt aktuell alle geprüften Kriterien: Die Branche (Utilities - Independent Power Producers) ist zulässig, Verschuldung (23.9%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "93.8 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Independent Power Producers",
-      "peRatio": "22.8",
-      "evEbitda": "14.7",
-      "epsGrowth": "10.9%",
-      "freeCashFlow": "-4.5 Mrd. $"
-    },
-    "profile": "Constellation Energy Corporatio ist im Bereich Utilities - Independent Power Producers innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-07"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-16",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Constellation Energy Corporatio erfüllt aktuell alle geprüften Kriterien: Die Branche (Utilities - Independent Power Producers) ist zulässig, Verschuldung (23.9%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CF",
@@ -5976,43 +2874,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "CF Industries Holdings, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Agricultural Inputs) ist zulässig, Verschuldung (18.8%) und Cash-Quote (10.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "19.2 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Agricultural Inputs",
-      "peRatio": "11.3",
-      "evEbitda": "6.9",
-      "epsGrowth": "1.2%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "CF Industries Holdings, Inc. ist im Bereich Agricultural Inputs innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "CF Industries Holdings, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Agricultural Inputs) ist zulässig, Verschuldung (18.8%) und Cash-Quote (10.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CFG",
@@ -6045,43 +2907,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Citizens Financial Group, Inc. zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "30.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Regional",
-      "peRatio": "15.6",
-      "evEbitda": "–",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Citizens Financial Group, Inc. ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-15",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Citizens Financial Group, Inc. zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "CHD",
@@ -6114,43 +2940,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Church & Dwight Company, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Household & Personal Products) ist zulässig, Verschuldung (10.4%) und Cash-Quote (1.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "23.4 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Household & Personal Products",
-      "peRatio": "31.7",
-      "evEbitda": "18.9",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "939 Mio. $"
-    },
-    "profile": "Church & Dwight Company, Inc. ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Church & Dwight Company, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Household & Personal Products) ist zulässig, Verschuldung (10.4%) und Cash-Quote (1.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CHRW",
@@ -6183,43 +2973,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "C.H. Robinson Worldwide, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Integrated Freight & Logistics) ist zulässig, Verschuldung (11.3%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "17.4 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Integrated Freight & Logistics",
-      "peRatio": "28.2",
-      "evEbitda": "20.8",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "485 Mio. $"
-    },
-    "profile": "C.H. Robinson Worldwide, Inc. ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "C.H. Robinson Worldwide, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Integrated Freight & Logistics) ist zulässig, Verschuldung (11.3%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CHTR",
@@ -6252,43 +3006,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 494.9% (Limit 30%)",
-    "insight": "Charter Communications, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 494.9% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "19.5 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Telecom Services",
-      "peRatio": "3.8",
-      "evEbitda": "5.4",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "2.2 Mrd. $"
-    },
-    "profile": "Charter Communications, Inc. ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-03"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-03",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Charter Communications, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 494.9% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CI",
@@ -6321,43 +3039,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 43.2% (Limit 30%)",
-    "insight": "The Cigna Group überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 43.2% (Limit 30%)). Die Branche (Healthcare Plans) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "73.7 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Healthcare Plans",
-      "peRatio": "11.5",
-      "evEbitda": "7.7",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "8.0 Mrd. $"
-    },
-    "profile": "The Cigna Group ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "The Cigna Group überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 43.2% (Limit 30%)). Die Branche (Healthcare Plans) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CIEN",
@@ -6390,43 +3072,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Ciena Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Communication Equipment) ist zulässig, Verschuldung (3.0%) und Cash-Quote (2.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "53.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Communication Equipment",
-      "peRatio": "124.9",
-      "evEbitda": "68.4",
-      "epsGrowth": "23.8%",
-      "freeCashFlow": "701 Mio. $"
-    },
-    "profile": "Ciena Corporation ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Ciena Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Communication Equipment) ist zulässig, Verschuldung (3.0%) und Cash-Quote (2.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CINF",
@@ -6459,43 +3105,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Cincinnati Financial Corporatio zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "27.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Property & Casualty",
-      "peRatio": "8.4",
-      "evEbitda": "6.0",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "3.0 Mrd. $"
-    },
-    "profile": "Cincinnati Financial Corporatio ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Cincinnati Financial Corporatio zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "CL",
@@ -6528,43 +3138,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Colgate-Palmolive Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Household & Personal Products) ist zulässig, Verschuldung (10.9%) und Cash-Quote (1.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "73.1 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Household & Personal Products",
-      "peRatio": "35.9",
-      "evEbitda": "16.3",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "3.3 Mrd. $"
-    },
-    "profile": "Colgate-Palmolive Company ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-03"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-03",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Colgate-Palmolive Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Household & Personal Products) ist zulässig, Verschuldung (10.9%) und Cash-Quote (1.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CLX",
@@ -6597,43 +3171,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 38.8% (Limit 30%)",
-    "insight": "Clorox Company (The) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 38.8% (Limit 30%)). Die Branche (Household & Personal Products) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "11.6 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Household & Personal Products",
-      "peRatio": "15.5",
-      "evEbitda": "11.8",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "63 Mio. $"
-    },
-    "profile": "Clorox Company (The) ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Clorox Company (The) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 38.8% (Limit 30%)). Die Branche (Household & Personal Products) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CMCSA",
@@ -6666,43 +3204,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 106.3% (Limit 30%)",
-    "insight": "Comcast Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 106.3% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "85.0 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Telecom Services",
-      "peRatio": "7.7",
-      "evEbitda": "4.9",
-      "epsGrowth": "-0.7%",
-      "freeCashFlow": "12.7 Mrd. $"
-    },
-    "profile": "Comcast Corporation ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-31"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-08-23",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Comcast Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 106.3% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CME",
@@ -6735,43 +3237,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "CME Group Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "96.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Financial Data & Stock Exchanges",
-      "peRatio": "22.7",
-      "evEbitda": "20.5",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "2.9 Mrd. $"
-    },
-    "profile": "CME Group Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-16",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "CME Group Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "CMG",
@@ -6804,43 +3270,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Chipotle Mexican Grill, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Restaurants) ist zulässig, Verschuldung (11.5%) und Cash-Quote (1.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "47.2 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Restaurants",
-      "peRatio": "34.5",
-      "evEbitda": "22.8",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Chipotle Mexican Grill, Inc. ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-15",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Chipotle Mexican Grill, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Restaurants) ist zulässig, Verschuldung (11.5%) und Cash-Quote (1.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CMI",
@@ -6873,43 +3303,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Cummins Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (9.4%) und Cash-Quote (3.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "87.5 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "32.9",
-      "evEbitda": "18.7",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "1.7 Mrd. $"
-    },
-    "profile": "Cummins Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-02",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-30"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-30",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Cummins Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (9.4%) und Cash-Quote (3.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CMS",
@@ -6942,43 +3336,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 86.8% (Limit 30%)",
-    "insight": "CMS Energy Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 86.8% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "22.2 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "21.6",
-      "evEbitda": "14.1",
-      "epsGrowth": "-0.4%",
-      "freeCashFlow": "-2.2 Mrd. $"
-    },
-    "profile": "CMS Energy Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "CMS Energy Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 86.8% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CNC",
@@ -7011,43 +3369,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 52.4% (Limit 30%); Cash-Quote zu hoch: 88.0% (Limit 30%)",
-    "insight": "Centene Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 52.4% (Limit 30%); Cash-Quote zu hoch: 88.0% (Limit 30%)). Die Branche (Healthcare Plans) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "30.7 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Healthcare Plans",
-      "peRatio": "–",
-      "evEbitda": "4.3",
-      "epsGrowth": "–",
-      "freeCashFlow": "9.6 Mrd. $"
-    },
-    "profile": "Centene Corporation ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Centene Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 52.4% (Limit 30%); Cash-Quote zu hoch: 88.0% (Limit 30%)). Die Branche (Healthcare Plans) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CNP",
@@ -7080,43 +3402,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 89.0% (Limit 30%)",
-    "insight": "CenterPoint Energy, Inc (Holdin überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 89.0% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "27.7 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "25.0",
-      "evEbitda": "13.5",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "-5.2 Mrd. $"
-    },
-    "profile": "CenterPoint Energy, Inc (Holdin ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-30"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-30",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "CenterPoint Energy, Inc (Holdin überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 89.0% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "COF",
@@ -7149,43 +3435,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Capital One Financial Corporati zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "128.2 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Credit Services",
-      "peRatio": "11.5",
-      "evEbitda": "–",
-      "epsGrowth": "–",
-      "freeCashFlow": "–"
-    },
-    "profile": "Capital One Financial Corporati ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-17",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Capital One Financial Corporati zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "COHR",
@@ -7218,43 +3468,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Coherent Corp. erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (6.7%) und Cash-Quote (4.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "51.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Scientific & Technical Instruments",
-      "peRatio": "125.2",
-      "evEbitda": "40.2",
-      "epsGrowth": "–",
-      "freeCashFlow": "-198 Mio. $"
-    },
-    "profile": "Coherent Corp. ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-02",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-02",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Coherent Corp. erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (6.7%) und Cash-Quote (4.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "COIN",
@@ -7287,43 +3501,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Coinbase Global, Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "38.6 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Financial Data & Stock Exchanges",
-      "peRatio": "–",
-      "evEbitda": "52.1",
-      "epsGrowth": "–",
-      "freeCashFlow": "2.7 Mrd. $"
-    },
-    "profile": "Coinbase Global, Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Coinbase Global, Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "COO",
@@ -7356,43 +3534,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "The Cooper Companies, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Instruments & Supplies) ist zulässig, Verschuldung (19.3%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "14.1 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Instruments & Supplies",
-      "peRatio": "61.3",
-      "evEbitda": "18.8",
-      "epsGrowth": "–",
-      "freeCashFlow": "424 Mio. $"
-    },
-    "profile": "The Cooper Companies, Inc. ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "The Cooper Companies, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Instruments & Supplies) ist zulässig, Verschuldung (19.3%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "COP",
@@ -7425,43 +3567,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "ConocoPhillips erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (15.9%) und Cash-Quote (4.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "146.8 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas E&P",
-      "peRatio": "20.4",
-      "evEbitda": "7.0",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "5.3 Mrd. $"
-    },
-    "profile": "ConocoPhillips ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "ConocoPhillips erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (15.9%) und Cash-Quote (4.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "COR",
@@ -7494,43 +3600,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Cencora, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Distribution) ist zulässig, Verschuldung (24.9%) und Cash-Quote (3.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "60.6 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Distribution",
-      "peRatio": "23.9",
-      "evEbitda": "13.9",
-      "epsGrowth": "1.3%",
-      "freeCashFlow": "-318 Mio. $"
-    },
-    "profile": "Cencora, Inc. ist im Bereich Medical Distribution innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Cencora, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Distribution) ist zulässig, Verschuldung (24.9%) und Cash-Quote (3.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "COST",
@@ -7563,43 +3633,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Costco Wholesale Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Discount Stores) ist zulässig, Verschuldung (2.4%) und Cash-Quote (2.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "422.1 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Discount Stores",
-      "peRatio": "47.9",
-      "evEbitda": "30.5",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "7.0 Mrd. $"
-    },
-    "profile": "Costco Wholesale Corporation ist im Bereich Discount Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Costco Wholesale Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Discount Stores) ist zulässig, Verschuldung (2.4%) und Cash-Quote (2.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CPAY",
@@ -7632,43 +3666,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 42.0% (Limit 30%)",
-    "insight": "Corpay, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 42.0% (Limit 30%)). Die Branche (Software - Infrastructure) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "25.0 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "22.9",
-      "evEbitda": "13.0",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "2.1 Mrd. $"
-    },
-    "profile": "Corpay, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Corpay, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 42.0% (Limit 30%)). Die Branche (Software - Infrastructure) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CPRT",
@@ -7701,43 +3699,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Copart, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Business Services) ist zulässig, Verschuldung (0.3%) und Cash-Quote (15.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "28.1 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Business Services",
-      "peRatio": "18.1",
-      "evEbitda": "11.7",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "1000 Mio. $"
-    },
-    "profile": "Copart, Inc. ist im Bereich Specialty Business Services innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Copart, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Business Services) ist zulässig, Verschuldung (0.3%) und Cash-Quote (15.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CPT",
@@ -7770,43 +3732,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 44.4% (Limit 30%)",
-    "insight": "Camden Property Trust überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 44.4% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "11.0 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Residential",
-      "peRatio": "36.6",
-      "evEbitda": "18.2",
-      "epsGrowth": "-0.8%",
-      "freeCashFlow": "140 Mio. $"
-    },
-    "profile": "Camden Property Trust ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Camden Property Trust überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 44.4% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CRH",
@@ -7839,43 +3765,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 31.3% (Limit 30%)",
-    "insight": "CRH PLC überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.3% (Limit 30%)). Die Branche (Building Materials) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "63.2 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Building Materials",
-      "peRatio": "16.8",
-      "evEbitda": "10.5",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "2.0 Mrd. $"
-    },
-    "profile": "CRH PLC ist im Bereich Building Materials innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "CRH PLC überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.3% (Limit 30%)). Die Branche (Building Materials) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CRL",
@@ -7908,43 +3798,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Charles River Laboratories Inte erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (27.4%) und Cash-Quote (1.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "11.2 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Diagnostics & Research",
-      "peRatio": "–",
-      "evEbitda": "15.9",
-      "epsGrowth": "–",
-      "freeCashFlow": "510 Mio. $"
-    },
-    "profile": "Charles River Laboratories Inte ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Charles River Laboratories Inte erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (27.4%) und Cash-Quote (1.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CRM",
@@ -7977,43 +3831,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Salesforce, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (28.2%) und Cash-Quote (7.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "150.7 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "21.3",
-      "evEbitda": "14.1",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "16.6 Mrd. $"
-    },
-    "profile": "Salesforce, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Salesforce, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (28.2%) und Cash-Quote (7.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CRWD",
@@ -8046,43 +3864,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "CrowdStrike Holdings, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (0.4%) und Cash-Quote (2.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "194.3 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "–",
-      "evEbitda": "3214.1",
-      "epsGrowth": "–",
-      "freeCashFlow": "1.9 Mrd. $"
-    },
-    "profile": "CrowdStrike Holdings, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "CrowdStrike Holdings, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (0.4%) und Cash-Quote (2.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CSCO",
@@ -8115,43 +3897,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Cisco Systems, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Communication Equipment) ist zulässig, Verschuldung (7.2%) und Cash-Quote (3.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "457.2 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Communication Equipment",
-      "peRatio": "38.7",
-      "evEbitda": "27.8",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "9.3 Mrd. $"
-    },
-    "profile": "Cisco Systems, Inc. ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-10"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-10",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Cisco Systems, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Communication Equipment) ist zulässig, Verschuldung (7.2%) und Cash-Quote (3.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CSGP",
@@ -8184,43 +3930,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "CoStar Group, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Real Estate Services) ist zulässig, Verschuldung (9.9%) und Cash-Quote (10.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "11.7 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "Real Estate Services",
-      "peRatio": "159.8",
-      "evEbitda": "29.3",
-      "epsGrowth": "12.6%",
-      "freeCashFlow": "413 Mio. $"
-    },
-    "profile": "CoStar Group, Inc. ist im Bereich Real Estate Services innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "CoStar Group, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Real Estate Services) ist zulässig, Verschuldung (9.9%) und Cash-Quote (10.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CSX",
@@ -8253,43 +3963,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "CSX Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Railroads) ist zulässig, Verschuldung (20.8%) und Cash-Quote (1.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "93.4 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Railroads",
-      "peRatio": "29.3",
-      "evEbitda": "16.3",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "2.0 Mrd. $"
-    },
-    "profile": "CSX Corporation ist im Bereich Railroads innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "CSX Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Railroads) ist zulässig, Verschuldung (20.8%) und Cash-Quote (1.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CTAS",
@@ -8322,43 +3996,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Cintas Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Business Services) ist zulässig, Verschuldung (3.3%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "81.9 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Business Services",
-      "peRatio": "41.7",
-      "evEbitda": "28.1",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.5 Mrd. $"
-    },
-    "profile": "Cintas Corporation ist im Bereich Specialty Business Services innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-17",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Cintas Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Business Services) ist zulässig, Verschuldung (3.3%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CTSH",
@@ -8391,43 +4029,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Cognizant Technology Solutions erfüllt aktuell alle geprüften Kriterien: Die Branche (Information Technology Services) ist zulässig, Verschuldung (8.0%) und Cash-Quote (4.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "26.2 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Information Technology Services",
-      "peRatio": "11.9",
-      "evEbitda": "6.4",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "2.2 Mrd. $"
-    },
-    "profile": "Cognizant Technology Solutions ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Cognizant Technology Solutions erfüllt aktuell alle geprüften Kriterien: Die Branche (Information Technology Services) ist zulässig, Verschuldung (8.0%) und Cash-Quote (4.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CTVA",
@@ -8460,43 +4062,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Corteva, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Agricultural Inputs) ist zulässig, Verschuldung (9.3%) und Cash-Quote (4.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "52.6 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Agricultural Inputs",
-      "peRatio": "47.7",
-      "evEbitda": "13.0",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "2.4 Mrd. $"
-    },
-    "profile": "Corteva, Inc. ist im Bereich Agricultural Inputs innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Corteva, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Agricultural Inputs) ist zulässig, Verschuldung (9.3%) und Cash-Quote (4.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CVNA",
@@ -8529,43 +4095,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Carvana Co. erfüllt aktuell alle geprüften Kriterien: Die Branche (Auto & Truck Dealerships) ist zulässig, Verschuldung (6.1%) und Cash-Quote (3.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "92.8 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Auto & Truck Dealerships",
-      "peRatio": "33.0",
-      "evEbitda": "19.4",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "424 Mio. $"
-    },
-    "profile": "Carvana Co. ist im Bereich Auto & Truck Dealerships innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Carvana Co. erfüllt aktuell alle geprüften Kriterien: Die Branche (Auto & Truck Dealerships) ist zulässig, Verschuldung (6.1%) und Cash-Quote (3.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "CVS",
@@ -8598,43 +4128,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 58.8% (Limit 30%)",
-    "insight": "CVS Health Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 58.8% (Limit 30%)). Die Branche (Healthcare Plans) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "133.2 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Healthcare Plans",
-      "peRatio": "45.8",
-      "evEbitda": "13.0",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "5.2 Mrd. $"
-    },
-    "profile": "CVS Health Corporation ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-02"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-02",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "CVS Health Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 58.8% (Limit 30%)). Die Branche (Healthcare Plans) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "CVX",
@@ -8667,43 +4161,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Chevron Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas Integrated) ist zulässig, Verschuldung (0.0%) und Cash-Quote (0.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "392.0 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Integrated",
-      "peRatio": "18.9",
-      "evEbitda": "–",
-      "epsGrowth": "3.2%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Chevron Corporation ist im Bereich Oil & Gas Integrated innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-31"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-31",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Chevron Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas Integrated) ist zulässig, Verschuldung (0.0%) und Cash-Quote (0.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "D",
@@ -8736,43 +4194,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 87.8% (Limit 30%)",
-    "insight": "Dominion Energy, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 87.8% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "60.8 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "23.9",
-      "evEbitda": "15.8",
-      "epsGrowth": "-0.6%",
-      "freeCashFlow": "-9.6 Mrd. $"
-    },
-    "profile": "Dominion Energy, Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-16",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Dominion Energy, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 87.8% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DAL",
@@ -8805,43 +4227,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 36.7% (Limit 30%)",
-    "insight": "Delta Air Lines, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 36.7% (Limit 30%)). Die Branche (Airlines) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "57.5 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Airlines",
-      "peRatio": "14.5",
-      "evEbitda": "9.8",
-      "epsGrowth": "-0.3%",
-      "freeCashFlow": "2.8 Mrd. $"
-    },
-    "profile": "Delta Air Lines, Inc. ist im Bereich Airlines innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-07",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-07",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Delta Air Lines, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 36.7% (Limit 30%)). Die Branche (Airlines) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DASH",
@@ -8874,43 +4260,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "DoorDash, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Retail) ist zulässig, Verschuldung (3.8%) und Cash-Quote (6.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "85.5 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Internet Retail",
-      "peRatio": "92.5",
-      "evEbitda": "61.7",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "2.3 Mrd. $"
-    },
-    "profile": "DoorDash, Inc. ist im Bereich Internet Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "DoorDash, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Retail) ist zulässig, Verschuldung (3.8%) und Cash-Quote (6.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DD",
@@ -8943,43 +4293,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "DuPont de Nemours, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (17.4%) und Cash-Quote (3.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "18.5 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Specialty Chemicals",
-      "peRatio": "120.2",
-      "evEbitda": "13.8",
-      "epsGrowth": "–",
-      "freeCashFlow": "-125 Mio. $"
-    },
-    "profile": "DuPont de Nemours, Inc. ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "DuPont de Nemours, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (17.4%) und Cash-Quote (3.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DDOG",
@@ -9012,43 +4326,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Datadog, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (1.3%) und Cash-Quote (5.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "95.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "669.9",
-      "evEbitda": "2653.5",
-      "epsGrowth": "1.0%",
-      "freeCashFlow": "937 Mio. $"
-    },
-    "profile": "Datadog, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Datadog, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (1.3%) und Cash-Quote (5.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DE",
@@ -9081,43 +4359,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 30.3% (Limit 30%)",
-    "insight": "Deere & Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 30.3% (Limit 30%)). Die Branche (Farm & Heavy Construction Machinery) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "160.1 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Farm & Heavy Construction Machinery",
-      "peRatio": "33.6",
-      "evEbitda": "23.2",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Deere & Company ist im Bereich Farm & Heavy Construction Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Deere & Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 30.3% (Limit 30%)). Die Branche (Farm & Heavy Construction Machinery) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DECK",
@@ -9150,43 +4392,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Deckers Outdoor Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Footwear & Accessories) ist zulässig, Verschuldung (3.6%) und Cash-Quote (12.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "13.2 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Footwear & Accessories",
-      "peRatio": "13.8",
-      "evEbitda": "9.1",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "871 Mio. $"
-    },
-    "profile": "Deckers Outdoor Corporation ist im Bereich Footwear & Accessories innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-04",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-04",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Deckers Outdoor Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Footwear & Accessories) ist zulässig, Verschuldung (3.6%) und Cash-Quote (12.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DELL",
@@ -9219,43 +4425,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Dell Technologies Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Computer Hardware) ist zulässig, Verschuldung (12.2%) und Cash-Quote (4.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "261.9 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Computer Hardware",
-      "peRatio": "32.2",
-      "evEbitda": "20.1",
-      "epsGrowth": "2.8%",
-      "freeCashFlow": "5.4 Mrd. $"
-    },
-    "profile": "Dell Technologies Inc. ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Dell Technologies Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Computer Hardware) ist zulässig, Verschuldung (12.2%) und Cash-Quote (4.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DG",
@@ -9288,43 +4458,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 56.4% (Limit 30%)",
-    "insight": "Dollar General Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 56.4% (Limit 30%)). Die Branche (Discount Stores) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "28.0 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Discount Stores",
-      "peRatio": "18.0",
-      "evEbitda": "12.5",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.9 Mrd. $"
-    },
-    "profile": "Dollar General Corporation ist im Bereich Discount Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Dollar General Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 56.4% (Limit 30%)). Die Branche (Discount Stores) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DGX",
@@ -9357,43 +4491,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Quest Diagnostics Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (24.9%) und Cash-Quote (2.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "25.7 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Diagnostics & Research",
-      "peRatio": "24.8",
-      "evEbitda": "14.1",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "910 Mio. $"
-    },
-    "profile": "Quest Diagnostics Incorporated ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-10"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-10",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Quest Diagnostics Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (24.9%) und Cash-Quote (2.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DHI",
@@ -9426,43 +4524,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "D.R. Horton, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Residential Construction) ist zulässig, Verschuldung (18.0%) und Cash-Quote (5.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "40.0 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Residential Construction",
-      "peRatio": "13.6",
-      "evEbitda": "11.1",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "2.4 Mrd. $"
-    },
-    "profile": "D.R. Horton, Inc. ist im Bereich Residential Construction innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-20",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "D.R. Horton, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Residential Construction) ist zulässig, Verschuldung (18.0%) und Cash-Quote (5.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DHR",
@@ -9495,43 +4557,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Danaher Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (20.3%) und Cash-Quote (3.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "137.1 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Diagnostics & Research",
-      "peRatio": "34.7",
-      "evEbitda": "20.0",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "4.3 Mrd. $"
-    },
-    "profile": "Danaher Corporation ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-02",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-02",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Danaher Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (20.3%) und Cash-Quote (3.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DIS",
@@ -9564,43 +4590,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Walt Disney Company (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (28.4%) und Cash-Quote (3.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "167.0 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Entertainment",
-      "peRatio": "15.4",
-      "evEbitda": "10.9",
-      "epsGrowth": "-0.3%",
-      "freeCashFlow": "3.8 Mrd. $"
-    },
-    "profile": "Walt Disney Company (The) ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Walt Disney Company (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (28.4%) und Cash-Quote (3.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DLR",
@@ -9633,43 +4623,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Digital Realty Trust, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Specialty) ist zulässig, Verschuldung (28.0%) und Cash-Quote (2.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "70.9 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Specialty",
-      "peRatio": "238.6",
-      "evEbitda": "28.0",
-      "epsGrowth": "-0.6%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Digital Realty Trust, Inc. ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Digital Realty Trust, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Specialty) ist zulässig, Verschuldung (28.0%) und Cash-Quote (2.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DLTR",
@@ -9702,43 +4656,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 31.1% (Limit 30%)",
-    "insight": "Dollar Tree, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.1% (Limit 30%)). Die Branche (Discount Stores) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "24.4 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Discount Stores",
-      "peRatio": "20.4",
-      "evEbitda": "12.9",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Dollar Tree, Inc. ist im Bereich Discount Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Dollar Tree, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.1% (Limit 30%)). Die Branche (Discount Stores) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DOC",
@@ -9771,43 +4689,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 71.2% (Limit 30%)",
-    "insight": "Healthpeak Properties, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 71.2% (Limit 30%)). Die Branche (REIT - Healthcare Facilities) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "15.1 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Healthcare Facilities",
-      "peRatio": "68.2",
-      "evEbitda": "16.7",
-      "epsGrowth": "3.6%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Healthpeak Properties, Inc. ist im Bereich REIT - Healthcare Facilities innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Healthpeak Properties, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 71.2% (Limit 30%)). Die Branche (REIT - Healthcare Facilities) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DOV",
@@ -9840,43 +4722,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Dover Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (11.8%) und Cash-Quote (6.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "27.6 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "24.7",
-      "evEbitda": "15.2",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "906 Mio. $"
-    },
-    "profile": "Dover Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-17",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Dover Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (11.8%) und Cash-Quote (6.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DOW",
@@ -9909,43 +4755,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 88.8% (Limit 30%)",
-    "insight": "Dow Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 88.8% (Limit 30%)). Die Branche (Chemicals) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "21.9 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Chemicals",
-      "peRatio": "–",
-      "evEbitda": "9.7",
-      "epsGrowth": "–",
-      "freeCashFlow": "238 Mio. $"
-    },
-    "profile": "Dow Inc. ist im Bereich Chemicals innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Dow Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 88.8% (Limit 30%)). Die Branche (Chemicals) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DPZ",
@@ -9978,43 +4788,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 44.6% (Limit 30%)",
-    "insight": "Domino's Pizza Inc überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 44.6% (Limit 30%)). Die Branche (Restaurants) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "11.5 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Restaurants",
-      "peRatio": "19.7",
-      "evEbitda": "16.1",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "531 Mio. $"
-    },
-    "profile": "Domino's Pizza Inc ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Domino's Pizza Inc überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 44.6% (Limit 30%)). Die Branche (Restaurants) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DRI",
@@ -10047,43 +4821,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 34.5% (Limit 30%)",
-    "insight": "Darden Restaurants, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.5% (Limit 30%)). Die Branche (Restaurants) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "23.3 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Restaurants",
-      "peRatio": "19.5",
-      "evEbitda": "14.7",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "791 Mio. $"
-    },
-    "profile": "Darden Restaurants, Inc. ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Darden Restaurants, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.5% (Limit 30%)). Die Branche (Restaurants) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DTE",
@@ -10116,43 +4854,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 94.3% (Limit 30%)",
-    "insight": "DTE Energy Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 94.3% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "29.5 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "22.5",
-      "evEbitda": "15.8",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "-2.6 Mrd. $"
-    },
-    "profile": "DTE Energy Company ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "DTE Energy Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 94.3% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DUK",
@@ -10185,43 +4887,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 93.3% (Limit 30%)",
-    "insight": "Duke Energy Corporation (Holdin überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 93.3% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "97.8 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "19.3",
-      "evEbitda": "11.5",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "-2.2 Mrd. $"
-    },
-    "profile": "Duke Energy Corporation (Holdin ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Duke Energy Corporation (Holdin überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 93.3% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DVA",
@@ -10254,43 +4920,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 85.8% (Limit 30%)",
-    "insight": "DaVita Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 85.8% (Limit 30%)). Die Branche (Medical Care Facilities) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "15.4 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Care Facilities",
-      "peRatio": "23.2",
-      "evEbitda": "10.7",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "1000 Mio. $"
-    },
-    "profile": "DaVita Inc. ist im Bereich Medical Care Facilities innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "DaVita Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 85.8% (Limit 30%)). Die Branche (Medical Care Facilities) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "DVN",
@@ -10323,43 +4953,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Devon Energy Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (16.7%) und Cash-Quote (3.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "52.1 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas E&P",
-      "peRatio": "12.6",
-      "evEbitda": "5.2",
-      "epsGrowth": "-0.8%",
-      "freeCashFlow": "1.6 Mrd. $"
-    },
-    "profile": "Devon Energy Corporation ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Devon Energy Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (16.7%) und Cash-Quote (3.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "DXCM",
@@ -10392,43 +4986,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "DexCom, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (4.4%) und Cash-Quote (6.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "31.5 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Devices",
-      "peRatio": "33.0",
-      "evEbitda": "22.1",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "1.0 Mrd. $"
-    },
-    "profile": "DexCom, Inc. ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "DexCom, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (4.4%) und Cash-Quote (6.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "EA",
@@ -10461,43 +5019,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Electronic Arts Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Gaming & Multimedia) ist zulässig, Verschuldung (3.5%) und Cash-Quote (5.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "52.6 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Electronic Gaming & Multimedia",
-      "peRatio": "60.0",
-      "evEbitda": "34.7",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "2.2 Mrd. $"
-    },
-    "profile": "Electronic Arts Inc. ist im Bereich Electronic Gaming & Multimedia innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Electronic Arts Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Gaming & Multimedia) ist zulässig, Verschuldung (3.5%) und Cash-Quote (5.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "EBAY",
@@ -10530,43 +5052,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "eBay Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Retail) ist zulässig, Verschuldung (14.2%) und Cash-Quote (7.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "50.6 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Internet Retail",
-      "peRatio": "26.3",
-      "evEbitda": "18.1",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "eBay Inc. ist im Bereich Internet Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-21"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-21",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "eBay Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Retail) ist zulässig, Verschuldung (14.2%) und Cash-Quote (7.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ECHO",
@@ -10599,43 +5085,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 120.0% (Limit 30%)",
-    "insight": "EchoStar Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 120.0% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "24.4 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Telecom Services",
-      "peRatio": "–",
-      "evEbitda": "32.8",
-      "epsGrowth": "–",
-      "freeCashFlow": "-458 Mio. $"
-    },
-    "profile": "EchoStar Corporation ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-23",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "EchoStar Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 120.0% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ECL",
@@ -10668,43 +5118,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Ecolab Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (17.6%) und Cash-Quote (6.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "78.1 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Specialty Chemicals",
-      "peRatio": "37.3",
-      "evEbitda": "20.9",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Ecolab Inc. ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Ecolab Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (17.6%) und Cash-Quote (6.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ED",
@@ -10737,43 +5151,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 67.7% (Limit 30%)",
-    "insight": "Consolidated Edison, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 67.7% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "40.1 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "18.4",
-      "evEbitda": "11.2",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "-833 Mio. $"
-    },
-    "profile": "Consolidated Edison, Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Consolidated Edison, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 67.7% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "EFX",
@@ -10806,43 +5184,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Equifax, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Consulting Services) ist zulässig, Verschuldung (27.0%) und Cash-Quote (0.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "20.3 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Consulting Services",
-      "peRatio": "30.3",
-      "evEbitda": "13.4",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "948 Mio. $"
-    },
-    "profile": "Equifax, Inc. ist im Bereich Consulting Services innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Equifax, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Consulting Services) ist zulässig, Verschuldung (27.0%) und Cash-Quote (0.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "EG",
@@ -10875,43 +5217,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Everest Group, Ltd. zählt zur ausgeschlossenen Branche Insurance - Reinsurance und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "14.5 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Reinsurance",
-      "peRatio": "7.9",
-      "evEbitda": "–",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "2.1 Mrd. $"
-    },
-    "profile": "Everest Group, Ltd. ist im Bereich Insurance - Reinsurance innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Everest Group, Ltd. zählt zur ausgeschlossenen Branche Insurance - Reinsurance und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "EIX",
@@ -10944,43 +5250,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 154.2% (Limit 30%)",
-    "insight": "Edison International überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 154.2% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "28.2 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "7.6",
-      "evEbitda": "8.2",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "82 Mio. $"
-    },
-    "profile": "Edison International ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Edison International überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 154.2% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "EL",
@@ -11013,43 +5283,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 30.6% (Limit 30%)",
-    "insight": "Estee Lauder Companies, Inc. (T überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 30.6% (Limit 30%)). Die Branche (Household & Personal Products) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "30.4 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Household & Personal Products",
-      "peRatio": "–",
-      "evEbitda": "15.5",
-      "epsGrowth": "-0.5%",
-      "freeCashFlow": "1.8 Mrd. $"
-    },
-    "profile": "Estee Lauder Companies, Inc. (T ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Estee Lauder Companies, Inc. (T überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 30.6% (Limit 30%)). Die Branche (Household & Personal Products) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ELV",
@@ -11082,43 +5316,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 38.1% (Limit 30%); Cash-Quote zu hoch: 46.0% (Limit 30%)",
-    "insight": "Elevance Health, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 38.1% (Limit 30%); Cash-Quote zu hoch: 46.0% (Limit 30%)). Die Branche (Healthcare Plans) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "81.5 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Healthcare Plans",
-      "peRatio": "16.6",
-      "evEbitda": "9.0",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "4.3 Mrd. $"
-    },
-    "profile": "Elevance Health, Inc. ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-08-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Elevance Health, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 38.1% (Limit 30%); Cash-Quote zu hoch: 46.0% (Limit 30%)). Die Branche (Healthcare Plans) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "EME",
@@ -11151,43 +5349,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "EMCOR Group, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Engineering & Construction) ist zulässig, Verschuldung (1.6%) und Cash-Quote (2.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "35.2 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Engineering & Construction",
-      "peRatio": "24.8",
-      "evEbitda": "17.5",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "978 Mio. $"
-    },
-    "profile": "EMCOR Group, Inc. ist im Bereich Engineering & Construction innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "EMCOR Group, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Engineering & Construction) ist zulässig, Verschuldung (1.6%) und Cash-Quote (2.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "EMR",
@@ -11220,43 +5382,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Emerson Electric Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (16.8%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "83.9 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "34.8",
-      "evEbitda": "16.4",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "3.3 Mrd. $"
-    },
-    "profile": "Emerson Electric Company ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Emerson Electric Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (16.8%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "EOG",
@@ -11289,43 +5415,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "EOG Resources, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (10.5%) und Cash-Quote (4.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "79.2 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas E&P",
-      "peRatio": "14.6",
-      "evEbitda": "6.6",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "2.9 Mrd. $"
-    },
-    "profile": "EOG Resources, Inc. ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "EOG Resources, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (10.5%) und Cash-Quote (4.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "EQIX",
@@ -11358,43 +5448,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Equinix, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Specialty) ist zulässig, Verschuldung (23.2%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "100.6 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Specialty",
-      "peRatio": "65.8",
-      "evEbitda": "27.1",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "3.8 Mrd. $"
-    },
-    "profile": "Equinix, Inc. ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Equinix, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Specialty) ist zulässig, Verschuldung (23.2%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "EQR",
@@ -11427,43 +5481,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 33.4% (Limit 30%)",
-    "insight": "Equity Residential überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.4% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "25.7 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Residential",
-      "peRatio": "28.9",
-      "evEbitda": "17.9",
-      "epsGrowth": "-0.4%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Equity Residential ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-02"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Equity Residential überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.4% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "EQT",
@@ -11496,43 +5514,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "EQT Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (17.0%) und Cash-Quote (0.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "33.3 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas E&P",
-      "peRatio": "12.4",
-      "evEbitda": "6.1",
-      "epsGrowth": "-0.7%",
-      "freeCashFlow": "2.5 Mrd. $"
-    },
-    "profile": "EQT Corporation ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-30"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-30",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "EQT Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (17.0%) und Cash-Quote (0.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ERIE",
@@ -11565,43 +5547,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Erie Indemnity Company zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "12.7 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance Brokers",
-      "peRatio": "22.0",
-      "evEbitda": "14.9",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "481 Mio. $"
-    },
-    "profile": "Erie Indemnity Company ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Erie Indemnity Company zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "ES",
@@ -11634,43 +5580,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 112.7% (Limit 30%)",
-    "insight": "Eversource Energy (D/B/A) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 112.7% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "26.9 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "15.3",
-      "evEbitda": "11.6",
-      "epsGrowth": "-0.9%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Eversource Energy (D/B/A) ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Eversource Energy (D/B/A) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 112.7% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ESS",
@@ -11703,43 +5613,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 34.5% (Limit 30%)",
-    "insight": "Essex Property Trust, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.5% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "19.6 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Residential",
-      "peRatio": "44.3",
-      "evEbitda": "20.4",
-      "epsGrowth": "-0.7%",
-      "freeCashFlow": "1.0 Mrd. $"
-    },
-    "profile": "Essex Property Trust, Inc. ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Essex Property Trust, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.5% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ETN",
@@ -11772,43 +5646,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Eaton Corporation, PLC erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (13.2%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "161.2 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "40.7",
-      "evEbitda": "27.4",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "3.1 Mrd. $"
-    },
-    "profile": "Eaton Corporation, PLC ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Eaton Corporation, PLC erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (13.2%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ETR",
@@ -11841,43 +5679,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 69.0% (Limit 30%)",
-    "insight": "Entergy Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 69.0% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "50.2 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "27.5",
-      "evEbitda": "14.7",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "-4.4 Mrd. $"
-    },
-    "profile": "Entergy Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Entergy Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 69.0% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "EVRG",
@@ -11910,43 +5712,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 83.0% (Limit 30%)",
-    "insight": "Evergy, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 83.0% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "19.1 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "22.1",
-      "evEbitda": "12.6",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "-1.1 Mrd. $"
-    },
-    "profile": "Evergy, Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Evergy, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 83.0% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "EW",
@@ -11979,43 +5745,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Edwards Lifesciences Corporatio erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (1.4%) und Cash-Quote (7.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "49.6 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Devices",
-      "peRatio": "51.2",
-      "evEbitda": "23.4",
-      "epsGrowth": "-0.3%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Edwards Lifesciences Corporatio ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Edwards Lifesciences Corporatio erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (1.4%) und Cash-Quote (7.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "EXC",
@@ -12048,43 +5778,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 111.6% (Limit 30%)",
-    "insight": "Exelon Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 111.6% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "47.2 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "16.8",
-      "evEbitda": "11.7",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "-2.7 Mrd. $"
-    },
-    "profile": "Exelon Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Exelon Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 111.6% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "EXE",
@@ -12117,43 +5811,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Expand Energy Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (16.6%) und Cash-Quote (2.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "22.5 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas E&P",
-      "peRatio": "8.1",
-      "evEbitda": "3.7",
-      "epsGrowth": "-0.5%",
-      "freeCashFlow": "1.5 Mrd. $"
-    },
-    "profile": "Expand Energy Corporation ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Expand Energy Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (16.6%) und Cash-Quote (2.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "EXPD",
@@ -12186,43 +5844,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Expeditors International of Was erfüllt aktuell alle geprüften Kriterien: Die Branche (Integrated Freight & Logistics) ist zulässig, Verschuldung (2.6%) und Cash-Quote (6.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "22.0 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Integrated Freight & Logistics",
-      "peRatio": "27.1",
-      "evEbitda": "18.6",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "783 Mio. $"
-    },
-    "profile": "Expeditors International of Was ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Expeditors International of Was erfüllt aktuell alle geprüften Kriterien: Die Branche (Integrated Freight & Logistics) ist zulässig, Verschuldung (2.6%) und Cash-Quote (6.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "EXPE",
@@ -12255,43 +5877,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Expedia Group, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Travel Services) ist zulässig, Verschuldung (13.3%) und Cash-Quote (16.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "35.4 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Travel Services",
-      "peRatio": "26.0",
-      "evEbitda": "13.7",
-      "epsGrowth": "–",
-      "freeCashFlow": "3.5 Mrd. $"
-    },
-    "profile": "Expedia Group, Inc. ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Expedia Group, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Travel Services) ist zulässig, Verschuldung (13.3%) und Cash-Quote (16.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "EXR",
@@ -12324,43 +5910,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 44.1% (Limit 30%)",
-    "insight": "Extra Space Storage Inc überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 44.1% (Limit 30%)). Die Branche (REIT - Industrial) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "32.7 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Industrial",
-      "peRatio": "32.7",
-      "evEbitda": "19.9",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Extra Space Storage Inc ist im Bereich REIT - Industrial innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Extra Space Storage Inc überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 44.1% (Limit 30%)). Die Branche (REIT - Industrial) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "F",
@@ -12393,43 +5943,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 279.0% (Limit 30%); Cash-Quote zu hoch: 37.8% (Limit 30%)",
-    "insight": "Ford Motor Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 279.0% (Limit 30%); Cash-Quote zu hoch: 37.8% (Limit 30%)). Die Branche (Auto Manufacturers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "58.5 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Auto Manufacturers",
-      "peRatio": "–",
-      "evEbitda": "26.1",
-      "epsGrowth": "–",
-      "freeCashFlow": "-7.9 Mrd. $"
-    },
-    "profile": "Ford Motor Company ist im Bereich Auto Manufacturers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Ford Motor Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 279.0% (Limit 30%); Cash-Quote zu hoch: 37.8% (Limit 30%)). Die Branche (Auto Manufacturers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "FANG",
@@ -12462,43 +5976,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Diamondback Energy, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (24.3%) und Cash-Quote (0.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "57.1 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas E&P",
-      "peRatio": "209.2",
-      "evEbitda": "7.6",
-      "epsGrowth": "-1.0%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Diamondback Energy, Inc. ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Diamondback Energy, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (24.3%) und Cash-Quote (0.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "FAST",
@@ -12531,43 +6009,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Fastenal Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Industrial Distribution) ist zulässig, Verschuldung (0.8%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "54.7 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Industrial Distribution",
-      "peRatio": "40.8",
-      "evEbitda": "28.1",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "916 Mio. $"
-    },
-    "profile": "Fastenal Company ist im Bereich Industrial Distribution innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Fastenal Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Industrial Distribution) ist zulässig, Verschuldung (0.8%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "FCX",
@@ -12600,43 +6042,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Freeport-McMoRan, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Copper) ist zulässig, Verschuldung (11.5%) und Cash-Quote (4.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "90.0 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Copper",
-      "peRatio": "30.7",
-      "evEbitda": "11.1",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "2.2 Mrd. $"
-    },
-    "profile": "Freeport-McMoRan, Inc. ist im Bereich Copper innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-09"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-09",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Freeport-McMoRan, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Copper) ist zulässig, Verschuldung (11.5%) und Cash-Quote (4.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "FDS",
@@ -12669,43 +6075,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "FactSet Research Systems Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "9.4 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Financial Data & Stock Exchanges",
-      "peRatio": "17.3",
-      "evEbitda": "11.4",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "621 Mio. $"
-    },
-    "profile": "FactSet Research Systems Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "FactSet Research Systems Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "FDX",
@@ -12738,43 +6108,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 59.0% (Limit 30%)",
-    "insight": "FedEx Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 59.0% (Limit 30%)). Die Branche (Integrated Freight & Logistics) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "72.7 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Integrated Freight & Logistics",
-      "peRatio": "16.6",
-      "evEbitda": "8.6",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "5.7 Mrd. $"
-    },
-    "profile": "FedEx Corporation ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-21"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-21",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "FedEx Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 59.0% (Limit 30%)). Die Branche (Integrated Freight & Logistics) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "FDXF",
@@ -12807,43 +6141,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "FedEx Freight Holding Company, erfüllt aktuell alle geprüften Kriterien: Die Branche (Integrated Freight & Logistics) ist zulässig, Verschuldung (25.6%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "20.9 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Integrated Freight & Logistics",
-      "peRatio": "30.9",
-      "evEbitda": "3.4",
-      "epsGrowth": "–",
-      "freeCashFlow": "–"
-    },
-    "profile": "FedEx Freight Holding Company, ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-02"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "FedEx Freight Holding Company, erfüllt aktuell alle geprüften Kriterien: Die Branche (Integrated Freight & Logistics) ist zulässig, Verschuldung (25.6%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "FE",
@@ -12876,43 +6174,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 103.7% (Limit 30%)",
-    "insight": "FirstEnergy Corp. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 103.7% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "27.9 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "25.8",
-      "evEbitda": "10.8",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "-2.0 Mrd. $"
-    },
-    "profile": "FirstEnergy Corp. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-16",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "FirstEnergy Corp. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 103.7% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "FFIV",
@@ -12945,43 +6207,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "F5, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (1.0%) und Cash-Quote (7.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "22.9 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "32.1",
-      "evEbitda": "23.2",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "752 Mio. $"
-    },
-    "profile": "F5, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-07",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-07",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "F5, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (1.0%) und Cash-Quote (7.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "FICO",
@@ -13014,43 +6240,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Fair Isaac Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (23.1%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "24.3 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "32.5",
-      "evEbitda": "23.4",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "774 Mio. $"
-    },
-    "profile": "Fair Isaac Corporation ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Fair Isaac Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (23.1%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "FIS",
@@ -13083,43 +6273,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 91.4% (Limit 30%)",
-    "insight": "Fidelity National Information S überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 91.4% (Limit 30%)). Die Branche (Information Technology Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "23.1 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Information Technology Services",
-      "peRatio": "8.7",
-      "evEbitda": "13.2",
-      "epsGrowth": "30.4%",
-      "freeCashFlow": "2.4 Mrd. $"
-    },
-    "profile": "Fidelity National Information S ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Fidelity National Information S überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 91.4% (Limit 30%)). Die Branche (Information Technology Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "FISV",
@@ -13152,43 +6306,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Fiserv, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Sonstige) ist zulässig, Verschuldung (0.0%) und Cash-Quote (0.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "28.8 Mrd. $",
-      "sector": "Sonstige",
-      "industry": "",
-      "peRatio": "9.1",
-      "evEbitda": "–",
-      "epsGrowth": "–",
-      "freeCashFlow": "–"
-    },
-    "profile": "Fiserv, Inc. ist im Bereich  innerhalb des Sektors Sonstige tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Fiserv, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Sonstige) ist zulässig, Verschuldung (0.0%) und Cash-Quote (0.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "FITB",
@@ -13221,43 +6339,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Fifth Third Bancorp zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "51.2 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Regional",
-      "peRatio": "19.0",
-      "evEbitda": "–",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Fifth Third Bancorp ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Fifth Third Bancorp zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "FIX",
@@ -13290,43 +6372,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Comfort Systems USA, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Engineering & Construction) ist zulässig, Verschuldung (0.5%) und Cash-Quote (0.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "60.9 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Engineering & Construction",
-      "peRatio": "42.6",
-      "evEbitda": "31.5",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "1.8 Mrd. $"
-    },
-    "profile": "Comfort Systems USA, Inc. ist im Bereich Engineering & Construction innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Comfort Systems USA, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Engineering & Construction) ist zulässig, Verschuldung (0.5%) und Cash-Quote (0.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "FLEX",
@@ -13359,43 +6405,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Flex Ltd. erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Components) ist zulässig, Verschuldung (14.2%) und Cash-Quote (6.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "41.7 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Electronic Components",
-      "peRatio": "43.9",
-      "evEbitda": "21.5",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "621 Mio. $"
-    },
-    "profile": "Flex Ltd. ist im Bereich Electronic Components innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Flex Ltd. erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Components) ist zulässig, Verschuldung (14.2%) und Cash-Quote (6.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "FOX",
@@ -13428,43 +6438,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 34.7% (Limit 30%)",
-    "insight": "Fox Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.7% (Limit 30%)). Die Branche (Entertainment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "21.8 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Entertainment",
-      "peRatio": "13.7",
-      "evEbitda": "7.3",
-      "epsGrowth": "-0.5%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Fox Corporation ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Fox Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.7% (Limit 30%)). Die Branche (Entertainment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "FOXA",
@@ -13497,43 +6471,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 31.0% (Limit 30%)",
-    "insight": "Fox Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.0% (Limit 30%)). Die Branche (Entertainment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "24.5 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Entertainment",
-      "peRatio": "15.3",
-      "evEbitda": "8.1",
-      "epsGrowth": "-0.5%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Fox Corporation ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Fox Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.0% (Limit 30%)). Die Branche (Entertainment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "FRT",
@@ -13566,43 +6504,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 45.0% (Limit 30%)",
-    "insight": "Federal Realty Investment Trust überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 45.0% (Limit 30%)). Die Branche (REIT - Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "10.8 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Retail",
-      "peRatio": "25.1",
-      "evEbitda": "19.0",
-      "epsGrowth": "-0.5%",
-      "freeCashFlow": "456 Mio. $"
-    },
-    "profile": "Federal Realty Investment Trust ist im Bereich REIT - Retail innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Federal Realty Investment Trust überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 45.0% (Limit 30%)). Die Branche (REIT - Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "FSLR",
@@ -13635,43 +6537,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "First Solar, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Solar) ist zulässig, Verschuldung (0.9%) und Cash-Quote (7.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "22.7 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Solar",
-      "peRatio": "21.6",
-      "evEbitda": "8.9",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.6 Mrd. $"
-    },
-    "profile": "First Solar, Inc. ist im Bereich Solar innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "First Solar, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Solar) ist zulässig, Verschuldung (0.9%) und Cash-Quote (7.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "FTNT",
@@ -13704,43 +6570,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Fortinet, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (0.5%) und Cash-Quote (3.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "118.8 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "57.2",
-      "evEbitda": "44.4",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "2.3 Mrd. $"
-    },
-    "profile": "Fortinet, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Fortinet, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (0.5%) und Cash-Quote (3.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "FTV",
@@ -13773,43 +6603,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Fortive Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (19.9%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "18.1 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Scientific & Technical Instruments",
-      "peRatio": "31.3",
-      "evEbitda": "17.1",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "939 Mio. $"
-    },
-    "profile": "Fortive Corporation ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Fortive Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (19.9%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "GD",
@@ -13842,43 +6636,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "General Dynamics Corporation zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "103.7 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "23.4",
-      "evEbitda": "16.4",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "4.4 Mrd. $"
-    },
-    "profile": "General Dynamics Corporation ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "General Dynamics Corporation zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "GDDY",
@@ -13911,43 +6669,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 35.1% (Limit 30%)",
-    "insight": "GoDaddy Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 35.1% (Limit 30%)). Die Branche (Software - Infrastructure) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "11.0 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "12.3",
-      "evEbitda": "9.6",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "GoDaddy Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-02",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-02",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "GoDaddy Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 35.1% (Limit 30%)). Die Branche (Software - Infrastructure) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "GE",
@@ -13980,43 +6702,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "GE Aerospace zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "373.6 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "42.4",
-      "evEbitda": "33.5",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "6.6 Mrd. $"
-    },
-    "profile": "GE Aerospace ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "GE Aerospace zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "GEHC",
@@ -14049,43 +6735,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 34.1% (Limit 30%)",
-    "insight": "GE HealthCare Technologies Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.1% (Limit 30%)). Die Branche (Medical Devices) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "30.9 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Devices",
-      "peRatio": "15.7",
-      "evEbitda": "11.0",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.6 Mrd. $"
-    },
-    "profile": "GE HealthCare Technologies Inc. ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "GE HealthCare Technologies Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.1% (Limit 30%)). Die Branche (Medical Devices) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "GEN",
@@ -14118,43 +6768,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 50.3% (Limit 30%)",
-    "insight": "Gen Digital Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 50.3% (Limit 30%)). Die Branche (Software - Infrastructure) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "16.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "17.5",
-      "evEbitda": "10.2",
-      "epsGrowth": "2.7%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Gen Digital Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-02",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-09"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-09",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-02",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Gen Digital Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 50.3% (Limit 30%)). Die Branche (Software - Infrastructure) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "GEV",
@@ -14187,43 +6801,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "GE Vernova Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (1.4%) und Cash-Quote (4.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "263.7 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "28.4",
-      "evEbitda": "65.2",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "15.7 Mrd. $"
-    },
-    "profile": "GE Vernova Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "GE Vernova Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (1.4%) und Cash-Quote (4.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "GILD",
@@ -14256,43 +6834,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Gilead Sciences, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (13.7%) und Cash-Quote (6.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "161.7 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Drug Manufacturers - General",
-      "peRatio": "17.7",
-      "evEbitda": "11.8",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "7.9 Mrd. $"
-    },
-    "profile": "Gilead Sciences, Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Gilead Sciences, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (13.7%) und Cash-Quote (6.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "GIS",
@@ -14325,43 +6867,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "General Mills, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Packaged Foods) ist zulässig, Verschuldung (0.0%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "19.1 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Packaged Foods",
-      "peRatio": "–",
-      "evEbitda": "6.4",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "2.3 Mrd. $"
-    },
-    "profile": "General Mills, Inc. ist im Bereich Packaged Foods innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "General Mills, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Packaged Foods) ist zulässig, Verschuldung (0.0%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "GL",
@@ -14394,43 +6900,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Globe Life Inc. zählt zur ausgeschlossenen Branche Insurance - Life und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "14.2 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Life",
-      "peRatio": "12.1",
-      "evEbitda": "10.1",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Globe Life Inc. ist im Bereich Insurance - Life innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Globe Life Inc. zählt zur ausgeschlossenen Branche Insurance - Life und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "GLW",
@@ -14463,43 +6933,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Corning Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Components) ist zulässig, Verschuldung (7.9%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "118.8 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Electronic Components",
-      "peRatio": "63.7",
-      "evEbitda": "31.0",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "734 Mio. $"
-    },
-    "profile": "Corning Incorporated ist im Bereich Electronic Components innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Corning Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Components) ist zulässig, Verschuldung (7.9%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "GM",
@@ -14532,43 +6966,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 160.2% (Limit 30%); Cash-Quote zu hoch: 30.8% (Limit 30%)",
-    "insight": "General Motors Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 160.2% (Limit 30%); Cash-Quote zu hoch: 30.8% (Limit 30%)). Die Branche (Auto Manufacturers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "80.4 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Auto Manufacturers",
-      "peRatio": "39.7",
-      "evEbitda": "11.2",
-      "epsGrowth": "-0.3%",
-      "freeCashFlow": "21.9 Mrd. $"
-    },
-    "profile": "General Motors Company ist im Bereich Auto Manufacturers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "General Motors Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 160.2% (Limit 30%); Cash-Quote zu hoch: 30.8% (Limit 30%)). Die Branche (Auto Manufacturers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "GNRC",
@@ -14601,43 +6999,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Generac Holdlings Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (12.9%) und Cash-Quote (2.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "11.6 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "45.2",
-      "evEbitda": "20.2",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "294 Mio. $"
-    },
-    "profile": "Generac Holdlings Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Generac Holdlings Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (12.9%) und Cash-Quote (2.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "GOOG",
@@ -14670,43 +7032,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Alphabet Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Content & Information) ist zulässig, Verschuldung (2.8%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "4.36 Bio. $",
-      "sector": "Kommunikation",
-      "industry": "Internet Content & Information",
-      "peRatio": "17.9",
-      "evEbitda": "24.6",
-      "epsGrowth": "2.9%",
-      "freeCashFlow": "22.7 Mrd. $"
-    },
-    "profile": "Alphabet Inc. ist im Bereich Internet Content & Information innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Alphabet Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Content & Information) ist zulässig, Verschuldung (2.8%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "GOOGL",
@@ -14739,43 +7065,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Alphabet Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Content & Information) ist zulässig, Verschuldung (2.8%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "4.36 Bio. $",
-      "sector": "Kommunikation",
-      "industry": "Internet Content & Information",
-      "peRatio": "17.9",
-      "evEbitda": "24.6",
-      "epsGrowth": "2.9%",
-      "freeCashFlow": "22.7 Mrd. $"
-    },
-    "profile": "Alphabet Inc. ist im Bereich Internet Content & Information innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Alphabet Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Content & Information) ist zulässig, Verschuldung (2.8%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "GPC",
@@ -14808,43 +7098,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 38.8% (Limit 30%)",
-    "insight": "Genuine Parts Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 38.8% (Limit 30%)). Die Branche (Auto Parts) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "17.1 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Auto Parts",
-      "peRatio": "497.5",
-      "evEbitda": "11.3",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "917 Mio. $"
-    },
-    "profile": "Genuine Parts Company ist im Bereich Auto Parts innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Genuine Parts Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 38.8% (Limit 30%)). Die Branche (Auto Parts) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "GPN",
@@ -14877,43 +7131,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 102.6% (Limit 30%)",
-    "insight": "Global Payments Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 102.6% (Limit 30%)). Die Branche (Specialty Business Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "23.0 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Business Services",
-      "peRatio": "30.9",
-      "evEbitda": "10.6",
-      "epsGrowth": "–",
-      "freeCashFlow": "7.1 Mrd. $"
-    },
-    "profile": "Global Payments Inc. ist im Bereich Specialty Business Services innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Global Payments Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 102.6% (Limit 30%)). Die Branche (Specialty Business Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "GRMN",
@@ -14946,43 +7164,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Garmin Ltd. erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (0.4%) und Cash-Quote (4.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "56.7 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Scientific & Technical Instruments",
-      "peRatio": "30.3",
-      "evEbitda": "23.5",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "1.0 Mrd. $"
-    },
-    "profile": "Garmin Ltd. ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Garmin Ltd. erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (0.4%) und Cash-Quote (4.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "GS",
@@ -15015,43 +7197,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Goldman Sachs Group, Inc. (The) zählt zur ausgeschlossenen Branche Capital Markets und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "300.4 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Capital Markets",
-      "peRatio": "15.7",
-      "evEbitda": "–",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Goldman Sachs Group, Inc. (The) ist im Bereich Capital Markets innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-31"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-31",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Goldman Sachs Group, Inc. (The) zählt zur ausgeschlossenen Branche Capital Markets und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "GWW",
@@ -15084,43 +7230,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "W.W. Grainger, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Industrial Distribution) ist zulässig, Verschuldung (4.3%) und Cash-Quote (1.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "65.3 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Industrial Distribution",
-      "peRatio": "37.2",
-      "evEbitda": "22.0",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "W.W. Grainger, Inc. ist im Bereich Industrial Distribution innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-02",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-02",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "W.W. Grainger, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Industrial Distribution) ist zulässig, Verschuldung (4.3%) und Cash-Quote (1.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "HAL",
@@ -15153,43 +7263,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 30.4% (Limit 30%)",
-    "insight": "Halliburton Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 30.4% (Limit 30%)). Die Branche (Oil & Gas Equipment & Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "26.9 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Equipment & Services",
-      "peRatio": "16.9",
-      "evEbitda": "8.0",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "2.1 Mrd. $"
-    },
-    "profile": "Halliburton Company ist im Bereich Oil & Gas Equipment & Services innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Halliburton Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 30.4% (Limit 30%)). Die Branche (Oil & Gas Equipment & Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "HAS",
@@ -15222,43 +7296,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Hasbro, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Leisure) ist zulässig, Verschuldung (29.3%) und Cash-Quote (10.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "13.2 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Leisure",
-      "peRatio": "16.7",
-      "evEbitda": "12.1",
-      "epsGrowth": "–",
-      "freeCashFlow": "688 Mio. $"
-    },
-    "profile": "Hasbro, Inc. ist im Bereich Leisure innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Hasbro, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Leisure) ist zulässig, Verschuldung (29.3%) und Cash-Quote (10.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "HBAN",
@@ -15291,43 +7329,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Huntington Bancshares Incorpora zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "34.4 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Regional",
-      "peRatio": "13.1",
-      "evEbitda": "–",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Huntington Bancshares Incorpora ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Huntington Bancshares Incorpora zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "HCA",
@@ -15360,43 +7362,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 57.7% (Limit 30%)",
-    "insight": "HCA Healthcare, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 57.7% (Limit 30%)). Die Branche (Medical Care Facilities) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "89.3 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Care Facilities",
-      "peRatio": "13.5",
-      "evEbitda": "9.0",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "3.7 Mrd. $"
-    },
-    "profile": "HCA Healthcare, Inc. ist im Bereich Medical Care Facilities innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "HCA Healthcare, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 57.7% (Limit 30%)). Die Branche (Medical Care Facilities) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "HD",
@@ -15429,43 +7395,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Home Depot, Inc. (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Home Improvement Retail) ist zulässig, Verschuldung (19.3%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "331.0 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Home Improvement Retail",
-      "peRatio": "23.6",
-      "evEbitda": "15.8",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "10.1 Mrd. $"
-    },
-    "profile": "Home Depot, Inc. (The) ist im Bereich Home Improvement Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Home Depot, Inc. (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Home Improvement Retail) ist zulässig, Verschuldung (19.3%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "HIG",
@@ -15498,43 +7428,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "The Hartford Insurance Group, I zählt zur ausgeschlossenen Branche Insurance - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "38.9 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Diversified",
-      "peRatio": "9.8",
-      "evEbitda": "7.0",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "5.5 Mrd. $"
-    },
-    "profile": "The Hartford Insurance Group, I ist im Bereich Insurance - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "The Hartford Insurance Group, I zählt zur ausgeschlossenen Branche Insurance - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "HII",
@@ -15567,43 +7461,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Huntington Ingalls Industries, zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "12.9 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "19.5",
-      "evEbitda": "13.5",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "-300 Mio. $"
-    },
-    "profile": "Huntington Ingalls Industries, ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Huntington Ingalls Industries, zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "HLT",
@@ -15636,43 +7494,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Hilton Worldwide Holdings Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Lodging) ist zulässig, Verschuldung (19.4%) und Cash-Quote (1.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "72.1 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Lodging",
-      "peRatio": "47.2",
-      "evEbitda": "27.6",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Hilton Worldwide Holdings Inc. ist im Bereich Lodging innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Hilton Worldwide Holdings Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Lodging) ist zulässig, Verschuldung (19.4%) und Cash-Quote (1.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "HON",
@@ -15705,43 +7527,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 45.4% (Limit 30%)",
-    "insight": "Honeywell International Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 45.4% (Limit 30%)). Die Branche (Conglomerates) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "77.0 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Conglomerates",
-      "peRatio": "9.3",
-      "evEbitda": "12.1",
-      "epsGrowth": "2.6%",
-      "freeCashFlow": "2.6 Mrd. $"
-    },
-    "profile": "Honeywell International Inc. ist im Bereich Conglomerates innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Honeywell International Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 45.4% (Limit 30%)). Die Branche (Conglomerates) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "HONA",
@@ -15774,43 +7560,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Honeywell Aerospace Inc. zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "65.5 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "43.4",
-      "evEbitda": "–",
-      "epsGrowth": "–",
-      "freeCashFlow": "–"
-    },
-    "profile": "Honeywell Aerospace Inc. ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Honeywell Aerospace Inc. zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "HOOD",
@@ -15843,43 +7593,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Robinhood Markets, Inc. zählt zur ausgeschlossenen Branche Capital Markets und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "77.8 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Capital Markets",
-      "peRatio": "38.3",
-      "evEbitda": "–",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Robinhood Markets, Inc. ist im Bereich Capital Markets innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Robinhood Markets, Inc. zählt zur ausgeschlossenen Branche Capital Markets und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "HPE",
@@ -15912,43 +7626,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 33.6% (Limit 30%)",
-    "insight": "Hewlett Packard Enterprise Comp überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.6% (Limit 30%)). Die Branche (Communication Equipment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "63.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Communication Equipment",
-      "peRatio": "44.8",
-      "evEbitda": "14.1",
-      "epsGrowth": "–",
-      "freeCashFlow": "3.8 Mrd. $"
-    },
-    "profile": "Hewlett Packard Enterprise Comp ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Hewlett Packard Enterprise Comp überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.6% (Limit 30%)). Die Branche (Communication Equipment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "HPQ",
@@ -15981,43 +7659,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 43.6% (Limit 30%)",
-    "insight": "HP Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 43.6% (Limit 30%)). Die Branche (Computer Hardware) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "24.9 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Computer Hardware",
-      "peRatio": "10.1",
-      "evEbitda": "6.8",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "3.5 Mrd. $"
-    },
-    "profile": "HP Inc. ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "HP Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 43.6% (Limit 30%)). Die Branche (Computer Hardware) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "HRL",
@@ -16050,43 +7692,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Hormel Foods Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Packaged Foods) ist zulässig, Verschuldung (1.8%) und Cash-Quote (4.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "13.8 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Packaged Foods",
-      "peRatio": "29.4",
-      "evEbitda": "10.7",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "471 Mio. $"
-    },
-    "profile": "Hormel Foods Corporation ist im Bereich Packaged Foods innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Hormel Foods Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Packaged Foods) ist zulässig, Verschuldung (1.8%) und Cash-Quote (4.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "HSIC",
@@ -16119,43 +7725,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 38.4% (Limit 30%)",
-    "insight": "Henry Schein, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 38.4% (Limit 30%)). Die Branche (Medical Distribution) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "9.8 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Distribution",
-      "peRatio": "25.9",
-      "evEbitda": "14.3",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "290 Mio. $"
-    },
-    "profile": "Henry Schein, Inc. ist im Bereich Medical Distribution innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Henry Schein, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 38.4% (Limit 30%)). Die Branche (Medical Distribution) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "HST",
@@ -16188,43 +7758,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 32.4% (Limit 30%)",
-    "insight": "Host Hotels & Resorts, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.4% (Limit 30%)). Die Branche (REIT - Hotel & Motel) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "17.4 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Hotel & Motel",
-      "peRatio": "17.1",
-      "evEbitda": "12.8",
-      "epsGrowth": "1.1%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "Host Hotels & Resorts, Inc. ist im Bereich REIT - Hotel & Motel innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Host Hotels & Resorts, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.4% (Limit 30%)). Die Branche (REIT - Hotel & Motel) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "HSY",
@@ -16257,43 +7791,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "The Hershey Company zählt zur ausgeschlossenen Branche Confectioners und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "35.2 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Confectioners",
-      "peRatio": "23.9",
-      "evEbitda": "14.8",
-      "epsGrowth": "6.3%",
-      "freeCashFlow": "1.7 Mrd. $"
-    },
-    "profile": "The Hershey Company ist im Bereich Confectioners innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-31",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "The Hershey Company zählt zur ausgeschlossenen Branche Confectioners und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "HUBB",
@@ -16326,43 +7824,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Hubbell Inc erfüllt aktuell alle geprüften Kriterien: Die Branche (Electrical Equipment & Parts) ist zulässig, Verschuldung (22.3%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "25.0 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Electrical Equipment & Parts",
-      "peRatio": "28.0",
-      "evEbitda": "19.9",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "496 Mio. $"
-    },
-    "profile": "Hubbell Inc ist im Bereich Electrical Equipment & Parts innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-30"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-30",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Hubbell Inc erfüllt aktuell alle geprüften Kriterien: Die Branche (Electrical Equipment & Parts) ist zulässig, Verschuldung (22.3%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "HUM",
@@ -16395,43 +7857,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 33.7% (Limit 30%); Cash-Quote zu hoch: 54.6% (Limit 30%)",
-    "insight": "Humana Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.7% (Limit 30%); Cash-Quote zu hoch: 54.6% (Limit 30%)). Die Branche (Healthcare Plans) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "43.7 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Healthcare Plans",
-      "peRatio": "34.4",
-      "evEbitda": "9.6",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "1.9 Mrd. $"
-    },
-    "profile": "Humana Inc. ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-23",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Humana Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.7% (Limit 30%); Cash-Quote zu hoch: 54.6% (Limit 30%)). Die Branche (Healthcare Plans) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "HWM",
@@ -16464,43 +7890,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Howmet Aerospace Inc. zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "112.9 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "65.3",
-      "evEbitda": "45.0",
-      "epsGrowth": "0.7%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "Howmet Aerospace Inc. ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Howmet Aerospace Inc. zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "IBKR",
@@ -16533,43 +7923,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Interactive Brokers Group, Inc. zählt zur ausgeschlossenen Branche Capital Markets und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "149.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Capital Markets",
-      "peRatio": "34.9",
-      "evEbitda": "–",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Interactive Brokers Group, Inc. ist im Bereich Capital Markets innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Interactive Brokers Group, Inc. zählt zur ausgeschlossenen Branche Capital Markets und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "IBM",
@@ -16602,43 +7956,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 31.0% (Limit 30%)",
-    "insight": "International Business Machines überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.0% (Limit 30%)). Die Branche (Information Technology Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "210.7 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Information Technology Services",
-      "peRatio": "19.9",
-      "evEbitda": "16.3",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "12.0 Mrd. $"
-    },
-    "profile": "International Business Machines ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-10"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-10",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "International Business Machines überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.0% (Limit 30%)). Die Branche (Information Technology Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ICE",
@@ -16671,43 +7989,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Intercontinental Exchange Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "85.6 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Financial Data & Stock Exchanges",
-      "peRatio": "21.5",
-      "evEbitda": "15.7",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "3.6 Mrd. $"
-    },
-    "profile": "Intercontinental Exchange Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Intercontinental Exchange Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "IDXX",
@@ -16740,43 +8022,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "IDEXX Laboratories, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (2.5%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "44.1 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Diagnostics & Research",
-      "peRatio": "41.1",
-      "evEbitda": "29.1",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "787 Mio. $"
-    },
-    "profile": "IDEXX Laboratories, Inc. ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "IDEXX Laboratories, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (2.5%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "IEX",
@@ -16809,43 +8055,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "IDEX Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (11.1%) und Cash-Quote (3.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "17.0 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "33.1",
-      "evEbitda": "18.9",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "556 Mio. $"
-    },
-    "profile": "IDEX Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "IDEX Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (11.1%) und Cash-Quote (3.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "IFF",
@@ -16878,43 +8088,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 32.0% (Limit 30%)",
-    "insight": "International Flavors & Fragran überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.0% (Limit 30%)). Die Branche (Specialty Chemicals) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "20.2 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Specialty Chemicals",
-      "peRatio": "24.5",
-      "evEbitda": "13.9",
-      "epsGrowth": "–",
-      "freeCashFlow": "3.7 Mrd. $"
-    },
-    "profile": "International Flavors & Fragran ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-30"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-30",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "International Flavors & Fragran überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.0% (Limit 30%)). Die Branche (Specialty Chemicals) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "INCY",
@@ -16947,43 +8121,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Incyte Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Biotechnology) ist zulässig, Verschuldung (0.2%) und Cash-Quote (18.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "24.2 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Biotechnology",
-      "peRatio": "15.2",
-      "evEbitda": "10.2",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "Incyte Corporation ist im Bereich Biotechnology innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Incyte Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Biotechnology) ist zulässig, Verschuldung (0.2%) und Cash-Quote (18.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "INTC",
@@ -17016,43 +8154,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Intel Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (11.1%) und Cash-Quote (6.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "455.0 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "–",
-      "evEbitda": "29.2",
-      "epsGrowth": "–",
-      "freeCashFlow": "4.9 Mrd. $"
-    },
-    "profile": "Intel Corporation ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Intel Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (11.1%) und Cash-Quote (6.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "INTU",
@@ -17085,43 +8187,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Intuit Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (8.0%) und Cash-Quote (7.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "86.5 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "19.3",
-      "evEbitda": "13.5",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "5.2 Mrd. $"
-    },
-    "profile": "Intuit Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Intuit Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (8.0%) und Cash-Quote (7.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "INVH",
@@ -17154,43 +8220,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 48.6% (Limit 30%)",
-    "insight": "Invitation Homes Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 48.6% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "17.7 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Residential",
-      "peRatio": "27.3",
-      "evEbitda": "17.4",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "Invitation Homes Inc. ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Invitation Homes Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 48.6% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "IP",
@@ -17223,43 +8253,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 44.8% (Limit 30%)",
-    "insight": "International Paper Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 44.8% (Limit 30%)). Die Branche (Packaging & Containers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "21.6 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Packaging & Containers",
-      "peRatio": "–",
-      "evEbitda": "8.8",
-      "epsGrowth": "–",
-      "freeCashFlow": "1.8 Mrd. $"
-    },
-    "profile": "International Paper Company ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "International Paper Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 44.8% (Limit 30%)). Die Branche (Packaging & Containers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "IQV",
@@ -17292,43 +8286,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 42.0% (Limit 30%)",
-    "insight": "IQVIA Holdings, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 42.0% (Limit 30%)). Die Branche (Diagnostics & Research) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "38.7 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Diagnostics & Research",
-      "peRatio": "29.2",
-      "evEbitda": "17.4",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "2.1 Mrd. $"
-    },
-    "profile": "IQVIA Holdings, Inc. ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "IQVIA Holdings, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 42.0% (Limit 30%)). Die Branche (Diagnostics & Research) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "IR",
@@ -17361,43 +8319,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Ingersoll Rand Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (14.6%) und Cash-Quote (3.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "32.6 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "34.5",
-      "evEbitda": "17.4",
-      "epsGrowth": "–",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "Ingersoll Rand Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-02",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-02",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Ingersoll Rand Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (14.6%) und Cash-Quote (3.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "IRM",
@@ -17430,43 +8352,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 54.2% (Limit 30%)",
-    "insight": "Iron Mountain Incorporated (Del überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 54.2% (Limit 30%)). Die Branche (REIT - Specialty) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "36.4 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Specialty",
-      "peRatio": "133.0",
-      "evEbitda": "22.9",
-      "epsGrowth": "8.6%",
-      "freeCashFlow": "-499 Mio. $"
-    },
-    "profile": "Iron Mountain Incorporated (Del ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-16",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Iron Mountain Incorporated (Del überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 54.2% (Limit 30%)). Die Branche (REIT - Specialty) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ISRG",
@@ -17499,43 +8385,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Intuitive Surgical, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Instruments & Supplies) ist zulässig, Verschuldung (0.0%) und Cash-Quote (4.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "126.6 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Instruments & Supplies",
-      "peRatio": "40.5",
-      "evEbitda": "28.6",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "2.6 Mrd. $"
-    },
-    "profile": "Intuitive Surgical, Inc. ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-07",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-07",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Intuitive Surgical, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Instruments & Supplies) ist zulässig, Verschuldung (0.0%) und Cash-Quote (4.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "IT",
@@ -17568,43 +8418,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 33.2% (Limit 30%)",
-    "insight": "Gartner, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.2% (Limit 30%)). Die Branche (Information Technology Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "10.1 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Information Technology Services",
-      "peRatio": "14.9",
-      "evEbitda": "8.8",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Gartner, Inc. ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Gartner, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.2% (Limit 30%)). Die Branche (Information Technology Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ITW",
@@ -17637,43 +8451,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Illinois Tool Works Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (11.7%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "82.6 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "26.0",
-      "evEbitda": "18.9",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Illinois Tool Works Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Illinois Tool Works Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (11.7%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "IVZ",
@@ -17706,43 +8484,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Invesco Ltd zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "13.1 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "–",
-      "evEbitda": "10.3",
-      "epsGrowth": "–",
-      "freeCashFlow": "–"
-    },
-    "profile": "Invesco Ltd ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-31",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Invesco Ltd zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "J",
@@ -17775,43 +8517,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Jacobs Solutions Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Engineering & Construction) ist zulässig, Verschuldung (28.6%) und Cash-Quote (8.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "15.9 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Engineering & Construction",
-      "peRatio": "39.8",
-      "evEbitda": "18.6",
-      "epsGrowth": "–",
-      "freeCashFlow": "512 Mio. $"
-    },
-    "profile": "Jacobs Solutions Inc. ist im Bereich Engineering & Construction innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Jacobs Solutions Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Engineering & Construction) ist zulässig, Verschuldung (28.6%) und Cash-Quote (8.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "JBHT",
@@ -17844,43 +8550,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "J.B. Hunt Transport Services, I erfüllt aktuell alle geprüften Kriterien: Die Branche (Integrated Freight & Logistics) ist zulässig, Verschuldung (5.5%) und Cash-Quote (0.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "25.5 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Integrated Freight & Logistics",
-      "peRatio": "38.6",
-      "evEbitda": "16.1",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "903 Mio. $"
-    },
-    "profile": "J.B. Hunt Transport Services, I ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "J.B. Hunt Transport Services, I erfüllt aktuell alle geprüften Kriterien: Die Branche (Integrated Freight & Logistics) ist zulässig, Verschuldung (5.5%) und Cash-Quote (0.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "JBL",
@@ -17913,43 +8583,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Jabil Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Components) ist zulässig, Verschuldung (11.9%) und Cash-Quote (4.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "33.0 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Electronic Components",
-      "peRatio": "39.4",
-      "evEbitda": "14.9",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "Jabil Inc. ist im Bereich Electronic Components innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Jabil Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Components) ist zulässig, Verschuldung (11.9%) und Cash-Quote (4.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "JCI",
@@ -17982,43 +8616,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Johnson Controls International erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Products & Equipment) ist zulässig, Verschuldung (10.7%) und Cash-Quote (0.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "88.8 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Building Products & Equipment",
-      "peRatio": "41.3",
-      "evEbitda": "22.6",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "3.0 Mrd. $"
-    },
-    "profile": "Johnson Controls International ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-09"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Johnson Controls International erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Products & Equipment) ist zulässig, Verschuldung (10.7%) und Cash-Quote (0.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "JKHY",
@@ -18051,43 +8649,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Jack Henry & Associates, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Information Technology Services) ist zulässig, Verschuldung (1.2%) und Cash-Quote (0.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "10.9 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Information Technology Services",
-      "peRatio": "21.5",
-      "evEbitda": "15.5",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "373 Mio. $"
-    },
-    "profile": "Jack Henry & Associates, Inc. ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-09"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-09",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Jack Henry & Associates, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Information Technology Services) ist zulässig, Verschuldung (1.2%) und Cash-Quote (0.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "JNJ",
@@ -18120,43 +8682,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Johnson & Johnson erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (7.9%) und Cash-Quote (3.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "617.8 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Drug Manufacturers - General",
-      "peRatio": "29.8",
-      "evEbitda": "18.5",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "16.9 Mrd. $"
-    },
-    "profile": "Johnson & Johnson ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Johnson & Johnson erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (7.9%) und Cash-Quote (3.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "JPM",
@@ -18189,43 +8715,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "JP Morgan Chase & Co. zählt zur ausgeschlossenen Branche Banks - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "935.1 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Diversified",
-      "peRatio": "15.1",
-      "evEbitda": "–",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "–"
-    },
-    "profile": "JP Morgan Chase & Co. ist im Bereich Banks - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-07"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "JP Morgan Chase & Co. zählt zur ausgeschlossenen Branche Banks - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "KDP",
@@ -18258,43 +8748,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 68.2% (Limit 30%)",
-    "insight": "Keurig Dr Pepper Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 68.2% (Limit 30%)). Die Branche (Beverages - Non-Alcoholic) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "42.3 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Beverages - Non-Alcoholic",
-      "peRatio": "23.1",
-      "evEbitda": "17.7",
-      "epsGrowth": "-0.5%",
-      "freeCashFlow": "-16.3 Mrd. $"
-    },
-    "profile": "Keurig Dr Pepper Inc. ist im Bereich Beverages - Non-Alcoholic innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Keurig Dr Pepper Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 68.2% (Limit 30%)). Die Branche (Beverages - Non-Alcoholic) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "KEY",
@@ -18327,43 +8781,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "KeyCorp zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "24.2 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Regional",
-      "peRatio": "13.2",
-      "evEbitda": "–",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "–"
-    },
-    "profile": "KeyCorp ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "KeyCorp zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "KEYS",
@@ -18396,43 +8814,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Keysight Technologies Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (5.1%) und Cash-Quote (4.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "54.5 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Scientific & Technical Instruments",
-      "peRatio": "51.3",
-      "evEbitda": "38.4",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Keysight Technologies Inc. ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Keysight Technologies Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (5.1%) und Cash-Quote (4.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "KHC",
@@ -18465,43 +8847,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 68.9% (Limit 30%)",
-    "insight": "The Kraft Heinz Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 68.9% (Limit 30%)). Die Branche (Packaged Foods) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "30.7 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Packaged Foods",
-      "peRatio": "–",
-      "evEbitda": "8.3",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "3.2 Mrd. $"
-    },
-    "profile": "The Kraft Heinz Company ist im Bereich Packaged Foods innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "The Kraft Heinz Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 68.9% (Limit 30%)). Die Branche (Packaged Foods) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "KIM",
@@ -18534,43 +8880,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 48.4% (Limit 30%)",
-    "insight": "Kimco Realty Corporation (HC) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 48.4% (Limit 30%)). Die Branche (REIT - Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "17.2 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Retail",
-      "peRatio": "29.3",
-      "evEbitda": "19.4",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "839 Mio. $"
-    },
-    "profile": "Kimco Realty Corporation (HC) ist im Bereich REIT - Retail innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-02"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Kimco Realty Corporation (HC) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 48.4% (Limit 30%)). Die Branche (REIT - Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "KKR",
@@ -18603,43 +8913,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "KKR & Co. Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "94.6 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "34.5",
-      "evEbitda": "–",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "–"
-    },
-    "profile": "KKR & Co. Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "KKR & Co. Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "KLAC",
@@ -18672,43 +8946,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "KLA Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductor Equipment & Materials) ist zulässig, Verschuldung (2.5%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "238.8 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductor Equipment & Materials",
-      "peRatio": "50.0",
-      "evEbitda": "39.6",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "KLA Corporation ist im Bereich Semiconductor Equipment & Materials innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-07",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-07",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "KLA Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductor Equipment & Materials) ist zulässig, Verschuldung (2.5%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "KMB",
@@ -18741,43 +8979,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Kimberly-Clark Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Household & Personal Products) ist zulässig, Verschuldung (19.6%) und Cash-Quote (1.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "36.3 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Household & Personal Products",
-      "peRatio": "21.1",
-      "evEbitda": "12.8",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Kimberly-Clark Corporation ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Kimberly-Clark Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Household & Personal Products) ist zulässig, Verschuldung (19.6%) und Cash-Quote (1.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "KMI",
@@ -18810,43 +9012,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 45.3% (Limit 30%)",
-    "insight": "Kinder Morgan, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 45.3% (Limit 30%)). Die Branche (Oil & Gas Midstream) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "71.6 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Midstream",
-      "peRatio": "20.8",
-      "evEbitda": "13.8",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Kinder Morgan, Inc. ist im Bereich Oil & Gas Midstream innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Kinder Morgan, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 45.3% (Limit 30%)). Die Branche (Oil & Gas Midstream) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "KO",
@@ -18879,43 +9045,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Coca-Cola Company (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Beverages - Non-Alcoholic) ist zulässig, Verschuldung (11.7%) und Cash-Quote (4.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "376.9 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Beverages - Non-Alcoholic",
-      "peRatio": "26.3",
-      "evEbitda": "23.9",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "5.2 Mrd. $"
-    },
-    "profile": "Coca-Cola Company (The) ist im Bereich Beverages - Non-Alcoholic innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-21"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-21",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Coca-Cola Company (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Beverages - Non-Alcoholic) ist zulässig, Verschuldung (11.7%) und Cash-Quote (4.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "KR",
@@ -18948,43 +9078,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 68.4% (Limit 30%)",
-    "insight": "Kroger Company (The) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 68.4% (Limit 30%)). Die Branche (Grocery Stores) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "35.4 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Grocery Stores",
-      "peRatio": "33.8",
-      "evEbitda": "8.3",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "3.0 Mrd. $"
-    },
-    "profile": "Kroger Company (The) ist im Bereich Grocery Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Kroger Company (The) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 68.4% (Limit 30%)). Die Branche (Grocery Stores) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "KVUE",
@@ -19017,43 +9111,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Kenvue Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Household & Personal Products) ist zulässig, Verschuldung (23.8%) und Cash-Quote (2.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "36.9 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Household & Personal Products",
-      "peRatio": "22.9",
-      "evEbitda": "12.9",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "1.9 Mrd. $"
-    },
-    "profile": "Kenvue Inc. ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Kenvue Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Household & Personal Products) ist zulässig, Verschuldung (23.8%) und Cash-Quote (2.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "L",
@@ -19086,43 +9144,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Loews Corporation zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "23.9 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Property & Casualty",
-      "peRatio": "14.7",
-      "evEbitda": "8.5",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "2.1 Mrd. $"
-    },
-    "profile": "Loews Corporation ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Loews Corporation zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "LDOS",
@@ -19155,43 +9177,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 47.8% (Limit 30%)",
-    "insight": "Leidos Holdings, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 47.8% (Limit 30%)). Die Branche (Information Technology Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "14.5 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Information Technology Services",
-      "peRatio": "10.6",
-      "evEbitda": "8.8",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "Leidos Holdings, Inc. ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-21"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Leidos Holdings, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 47.8% (Limit 30%)). Die Branche (Information Technology Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "LEN",
@@ -19224,43 +9210,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 31.5% (Limit 30%)",
-    "insight": "Lennar Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.5% (Limit 30%)). Die Branche (Residential Construction) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "19.8 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Residential Construction",
-      "peRatio": "12.9",
-      "evEbitda": "10.7",
-      "epsGrowth": "-0.3%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Lennar Corporation ist im Bereich Residential Construction innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-16",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Lennar Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.5% (Limit 30%)). Die Branche (Residential Construction) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "LH",
@@ -19293,43 +9243,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Labcorp Holdings Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (27.0%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "25.0 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Diagnostics & Research",
-      "peRatio": "25.6",
-      "evEbitda": "13.6",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "892 Mio. $"
-    },
-    "profile": "Labcorp Holdings Inc. ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Labcorp Holdings Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (27.0%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "LHX",
@@ -19362,43 +9276,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "L3Harris Technologies, Inc. zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "51.6 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "28.0",
-      "evEbitda": "31.8",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "L3Harris Technologies, Inc. ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "L3Harris Technologies, Inc. zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "LII",
@@ -19431,43 +9309,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Lennox International, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Products & Equipment) ist zulässig, Verschuldung (14.1%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "14.4 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Building Products & Equipment",
-      "peRatio": "18.5",
-      "evEbitda": "14.0",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "278 Mio. $"
-    },
-    "profile": "Lennox International, Inc. ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-16",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Lennox International, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Products & Equipment) ist zulässig, Verschuldung (14.1%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "LIN",
@@ -19500,43 +9342,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Linde plc erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (11.9%) und Cash-Quote (1.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "221.2 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Specialty Chemicals",
-      "peRatio": "30.9",
-      "evEbitda": "19.1",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "4.7 Mrd. $"
-    },
-    "profile": "Linde plc ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Linde plc erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (11.9%) und Cash-Quote (1.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "LITE",
@@ -19569,43 +9375,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Lumentum Holdings Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Communication Equipment) ist zulässig, Verschuldung (6.0%) und Cash-Quote (5.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "55.5 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Communication Equipment",
-      "peRatio": "125.0",
-      "evEbitda": "100.9",
-      "epsGrowth": "–",
-      "freeCashFlow": "93 Mio. $"
-    },
-    "profile": "Lumentum Holdings Inc. ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Lumentum Holdings Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Communication Equipment) ist zulässig, Verschuldung (6.0%) und Cash-Quote (5.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "LLY",
@@ -19638,43 +9408,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Eli Lilly and Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (4.2%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "1.02 Bio. $",
-      "sector": "Gesundheit",
-      "industry": "Drug Manufacturers - General",
-      "peRatio": "40.8",
-      "evEbitda": "29.3",
-      "epsGrowth": "1.7%",
-      "freeCashFlow": "9.2 Mrd. $"
-    },
-    "profile": "Eli Lilly and Company ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Eli Lilly and Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (4.2%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "LMT",
@@ -19707,43 +9441,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Lockheed Martin Corporation zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "134.5 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "21.5",
-      "evEbitda": "15.6",
-      "epsGrowth": "4.4%",
-      "freeCashFlow": "5.6 Mrd. $"
-    },
-    "profile": "Lockheed Martin Corporation ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Lockheed Martin Corporation zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "LNT",
@@ -19776,43 +9474,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 66.3% (Limit 30%)",
-    "insight": "Alliant Energy Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 66.3% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "18.3 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "22.3",
-      "evEbitda": "16.6",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "-1.1 Mrd. $"
-    },
-    "profile": "Alliant Energy Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Alliant Energy Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 66.3% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "LOW",
@@ -19845,43 +9507,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 36.5% (Limit 30%)",
-    "insight": "Lowe's Companies, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 36.5% (Limit 30%)). Die Branche (Home Improvement Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "116.6 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Home Improvement Retail",
-      "peRatio": "17.6",
-      "evEbitda": "12.6",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "4.8 Mrd. $"
-    },
-    "profile": "Lowe's Companies, Inc. ist im Bereich Home Improvement Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Lowe's Companies, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 36.5% (Limit 30%)). Die Branche (Home Improvement Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "LRCX",
@@ -19914,43 +9540,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Lam Research Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductor Equipment & Materials) ist zulässig, Verschuldung (1.0%) und Cash-Quote (1.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "366.6 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductor Equipment & Materials",
-      "peRatio": "50.8",
-      "evEbitda": "42.2",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "3.3 Mrd. $"
-    },
-    "profile": "Lam Research Corporation ist im Bereich Semiconductor Equipment & Materials innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Lam Research Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductor Equipment & Materials) ist zulässig, Verschuldung (1.0%) und Cash-Quote (1.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "LULU",
@@ -19983,43 +9573,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "lululemon athletica inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Apparel Retail) ist zulässig, Verschuldung (15.8%) und Cash-Quote (11.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "13.5 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Apparel Retail",
-      "peRatio": "9.6",
-      "evEbitda": "5.5",
-      "epsGrowth": "-0.3%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "lululemon athletica inc. ist im Bereich Apparel Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "lululemon athletica inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Apparel Retail) ist zulässig, Verschuldung (15.8%) und Cash-Quote (11.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "LUV",
@@ -20052,43 +9606,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 31.3% (Limit 30%)",
-    "insight": "Southwest Airlines Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.3% (Limit 30%)). Die Branche (Airlines) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "22.0 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Airlines",
-      "peRatio": "28.1",
-      "evEbitda": "10.7",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "-835 Mio. $"
-    },
-    "profile": "Southwest Airlines Company ist im Bereich Airlines innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Southwest Airlines Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 31.3% (Limit 30%)). Die Branche (Airlines) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "LVS",
@@ -20121,43 +9639,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Las Vegas Sands Corp. zählt zur ausgeschlossenen Branche Resorts & Casinos und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "31.7 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Resorts & Casinos",
-      "peRatio": "18.9",
-      "evEbitda": "9.5",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "2.2 Mrd. $"
-    },
-    "profile": "Las Vegas Sands Corp. ist im Bereich Resorts & Casinos innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-03"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-03",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Las Vegas Sands Corp. zählt zur ausgeschlossenen Branche Resorts & Casinos und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "LYB",
@@ -20190,43 +9672,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 71.5% (Limit 30%)",
-    "insight": "LyondellBasell Industries NV überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 71.5% (Limit 30%)). Die Branche (Specialty Chemicals) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "20.0 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Specialty Chemicals",
-      "peRatio": "–",
-      "evEbitda": "8.9",
-      "epsGrowth": "4.0%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "LyondellBasell Industries NV ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "LyondellBasell Industries NV überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 71.5% (Limit 30%)). Die Branche (Specialty Chemicals) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "LYV",
@@ -20259,43 +9705,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Live Nation Entertainment, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (27.8%) und Cash-Quote (22.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "40.6 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Entertainment",
-      "peRatio": "–",
-      "evEbitda": "28.7",
-      "epsGrowth": "1.6%",
-      "freeCashFlow": "1.7 Mrd. $"
-    },
-    "profile": "Live Nation Entertainment, Inc. ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-10"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-10",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Live Nation Entertainment, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (27.8%) und Cash-Quote (22.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MA",
@@ -20328,43 +9738,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Mastercard Incorporated zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "502.0 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Credit Services",
-      "peRatio": "31.5",
-      "evEbitda": "23.2",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "17.0 Mrd. $"
-    },
-    "profile": "Mastercard Incorporated ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-30"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-30",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Mastercard Incorporated zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "MAA",
@@ -20397,43 +9771,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 36.2% (Limit 30%)",
-    "insight": "Mid-America Apartment Communiti überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 36.2% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "15.8 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Residential",
-      "peRatio": "38.8",
-      "evEbitda": "17.1",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "921 Mio. $"
-    },
-    "profile": "Mid-America Apartment Communiti ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Mid-America Apartment Communiti überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 36.2% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "MAR",
@@ -20466,43 +9804,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Marriott International erfüllt aktuell alle geprüften Kriterien: Die Branche (Lodging) ist zulässig, Verschuldung (17.7%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "98.3 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Lodging",
-      "peRatio": "39.1",
-      "evEbitda": "24.3",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "1.8 Mrd. $"
-    },
-    "profile": "Marriott International ist im Bereich Lodging innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-07",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-07",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Marriott International erfüllt aktuell alle geprüften Kriterien: Die Branche (Lodging) ist zulässig, Verschuldung (17.7%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MAS",
@@ -20535,43 +9837,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Masco Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Products & Equipment) ist zulässig, Verschuldung (24.8%) und Cash-Quote (3.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "14.1 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Building Products & Equipment",
-      "peRatio": "16.5",
-      "evEbitda": "11.5",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "897 Mio. $"
-    },
-    "profile": "Masco Corporation ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Masco Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Products & Equipment) ist zulässig, Verschuldung (24.8%) und Cash-Quote (3.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MCD",
@@ -20604,43 +9870,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "McDonald's Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Restaurants) ist zulässig, Verschuldung (28.5%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "192.3 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Restaurants",
-      "peRatio": "22.3",
-      "evEbitda": "16.5",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "6.0 Mrd. $"
-    },
-    "profile": "McDonald's Corporation ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "McDonald's Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Restaurants) ist zulässig, Verschuldung (28.5%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MCHP",
@@ -20673,43 +9903,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Microchip Technology Incorporat erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (14.0%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "40.3 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "337.7",
-      "evEbitda": "37.5",
-      "epsGrowth": "–",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Microchip Technology Incorporat ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-15",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Microchip Technology Incorporat erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (14.0%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MCK",
@@ -20742,43 +9936,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "McKesson Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Distribution) ist zulässig, Verschuldung (8.8%) und Cash-Quote (4.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "100.2 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Distribution",
-      "peRatio": "22.3",
-      "evEbitda": "15.8",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "5.7 Mrd. $"
-    },
-    "profile": "McKesson Corporation ist im Bereich Medical Distribution innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "McKesson Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Distribution) ist zulässig, Verschuldung (8.8%) und Cash-Quote (4.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MCO",
@@ -20811,43 +9969,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Moody's Corporation zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "82.8 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Financial Data & Stock Exchanges",
-      "peRatio": "30.4",
-      "evEbitda": "22.0",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "2.6 Mrd. $"
-    },
-    "profile": "Moody's Corporation ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Moody's Corporation zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "MDLZ",
@@ -20880,43 +10002,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Mondelez International, Inc. zählt zur ausgeschlossenen Branche Confectioners und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "80.0 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Confectioners",
-      "peRatio": "38.0",
-      "evEbitda": "16.4",
-      "epsGrowth": "1.4%",
-      "freeCashFlow": "2.3 Mrd. $"
-    },
-    "profile": "Mondelez International, Inc. ist im Bereich Confectioners innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Mondelez International, Inc. zählt zur ausgeschlossenen Branche Confectioners und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "MDT",
@@ -20949,43 +10035,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Medtronic plc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (26.7%) und Cash-Quote (8.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "109.3 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Devices",
-      "peRatio": "22.9",
-      "evEbitda": "12.9",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "4.6 Mrd. $"
-    },
-    "profile": "Medtronic plc. ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Medtronic plc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (26.7%) und Cash-Quote (8.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MET",
@@ -21018,43 +10068,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "MetLife, Inc. zählt zur ausgeschlossenen Branche Insurance - Life und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "61.9 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Life",
-      "peRatio": "18.6",
-      "evEbitda": "14.2",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "-17.4 Mrd. $"
-    },
-    "profile": "MetLife, Inc. ist im Bereich Insurance - Life innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-03"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-31",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-03",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "MetLife, Inc. zählt zur ausgeschlossenen Branche Insurance - Life und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "META",
@@ -21087,43 +10101,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Meta Platforms, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Content & Information) ist zulässig, Verschuldung (7.9%) und Cash-Quote (6.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "1.42 Bio. $",
-      "sector": "Kommunikation",
-      "industry": "Internet Content & Information",
-      "peRatio": "21.0",
-      "evEbitda": "13.1",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "21.6 Mrd. $"
-    },
-    "profile": "Meta Platforms, Inc. ist im Bereich Internet Content & Information innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Meta Platforms, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Internet Content & Information) ist zulässig, Verschuldung (7.9%) und Cash-Quote (6.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MGM",
@@ -21156,43 +10134,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "MGM Resorts International zählt zur ausgeschlossenen Branche Resorts & Casinos und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "11.4 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Resorts & Casinos",
-      "peRatio": "27.0",
-      "evEbitda": "17.6",
-      "epsGrowth": "5.2%",
-      "freeCashFlow": "879 Mio. $"
-    },
-    "profile": "MGM Resorts International ist im Bereich Resorts & Casinos innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "MGM Resorts International zählt zur ausgeschlossenen Branche Resorts & Casinos und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "MKC",
@@ -21225,43 +10167,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 36.1% (Limit 30%)",
-    "insight": "McCormick & Company, Incorporat überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 36.1% (Limit 30%)). Die Branche (Packaged Foods) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "13.7 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Packaged Foods",
-      "peRatio": "8.5",
-      "evEbitda": "13.0",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "714 Mio. $"
-    },
-    "profile": "McCormick & Company, Incorporat ist im Bereich Packaged Foods innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-07",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-07",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "McCormick & Company, Incorporat überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 36.1% (Limit 30%)). Die Branche (Packaged Foods) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "MLM",
@@ -21294,43 +10200,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Martin Marietta Materials, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Materials) ist zulässig, Verschuldung (20.1%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "31.5 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Building Materials",
-      "peRatio": "34.1",
-      "evEbitda": "17.8",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "593 Mio. $"
-    },
-    "profile": "Martin Marietta Materials, Inc. ist im Bereich Building Materials innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-16",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Martin Marietta Materials, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Materials) ist zulässig, Verschuldung (20.1%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MMM",
@@ -21363,43 +10233,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "3M Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Conglomerates) ist zulässig, Verschuldung (14.5%) und Cash-Quote (5.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "90.9 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Conglomerates",
-      "peRatio": "31.4",
-      "evEbitda": "15.2",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "6.4 Mrd. $"
-    },
-    "profile": "3M Company ist im Bereich Conglomerates innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "3M Company erfüllt aktuell alle geprüften Kriterien: Die Branche (Conglomerates) ist zulässig, Verschuldung (14.5%) und Cash-Quote (5.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MNST",
@@ -21432,43 +10266,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Monster Beverage Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Beverages - Non-Alcoholic) ist zulässig, Verschuldung (0.1%) und Cash-Quote (3.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "94.3 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Beverages - Non-Alcoholic",
-      "peRatio": "46.6",
-      "evEbitda": "32.4",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "1.7 Mrd. $"
-    },
-    "profile": "Monster Beverage Corporation ist im Bereich Beverages - Non-Alcoholic innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-31"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Monster Beverage Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Beverages - Non-Alcoholic) ist zulässig, Verschuldung (0.1%) und Cash-Quote (3.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MO",
@@ -21501,43 +10299,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Altria Group, Inc. zählt zur ausgeschlossenen Branche Tobacco und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "114.1 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Tobacco",
-      "peRatio": "14.4",
-      "evEbitda": "8.6",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "9.0 Mrd. $"
-    },
-    "profile": "Altria Group, Inc. ist im Bereich Tobacco innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Altria Group, Inc. zählt zur ausgeschlossenen Branche Tobacco und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "MOS",
@@ -21570,43 +10332,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 82.0% (Limit 30%)",
-    "insight": "Mosaic Company (The) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 82.0% (Limit 30%)). Die Branche (Agricultural Inputs) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "7.0 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Agricultural Inputs",
-      "peRatio": "158.0",
-      "evEbitda": "6.4",
-      "epsGrowth": "–",
-      "freeCashFlow": "-290 Mio. $"
-    },
-    "profile": "Mosaic Company (The) ist im Bereich Agricultural Inputs innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-03"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-03",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Mosaic Company (The) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 82.0% (Limit 30%)). Die Branche (Agricultural Inputs) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "MPC",
@@ -21639,43 +10365,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 37.2% (Limit 30%)",
-    "insight": "Marathon Petroleum Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 37.2% (Limit 30%)). Die Branche (Oil & Gas Refining & Marketing) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "92.4 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Refining & Marketing",
-      "peRatio": "20.8",
-      "evEbitda": "12.8",
-      "epsGrowth": "–",
-      "freeCashFlow": "3.5 Mrd. $"
-    },
-    "profile": "Marathon Petroleum Corporation ist im Bereich Oil & Gas Refining & Marketing innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Marathon Petroleum Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 37.2% (Limit 30%)). Die Branche (Oil & Gas Refining & Marketing) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "MPWR",
@@ -21708,43 +10398,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Monolithic Power Systems, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (0.0%) und Cash-Quote (2.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "70.1 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "87.0",
-      "evEbitda": "68.8",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Monolithic Power Systems, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Monolithic Power Systems, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (0.0%) und Cash-Quote (2.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MRK",
@@ -21777,43 +10431,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Merck & Company, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (15.3%) und Cash-Quote (1.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "321.6 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Drug Manufacturers - General",
-      "peRatio": "36.7",
-      "evEbitda": "12.4",
-      "epsGrowth": "–",
-      "freeCashFlow": "14.0 Mrd. $"
-    },
-    "profile": "Merck & Company, Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Merck & Company, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - General) ist zulässig, Verschuldung (15.3%) und Cash-Quote (1.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MRNA",
@@ -21846,43 +10464,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Moderna, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Biotechnology) ist zulässig, Verschuldung (6.0%) und Cash-Quote (23.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "21.8 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Biotechnology",
-      "peRatio": "–",
-      "evEbitda": "-8.3",
-      "epsGrowth": "–",
-      "freeCashFlow": "-20 Mio. $"
-    },
-    "profile": "Moderna, Inc. ist im Bereich Biotechnology innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Moderna, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Biotechnology) ist zulässig, Verschuldung (6.0%) und Cash-Quote (23.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MRSH",
@@ -21915,43 +10497,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Marsh zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "90.5 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance Brokers",
-      "peRatio": "23.2",
-      "evEbitda": "14.4",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "4.8 Mrd. $"
-    },
-    "profile": "Marsh ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Marsh zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "MRVL",
@@ -21984,43 +10530,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Marvell Technology, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (3.1%) und Cash-Quote (2.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "168.3 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "64.5",
-      "evEbitda": "61.0",
-      "epsGrowth": "-0.8%",
-      "freeCashFlow": "2.3 Mrd. $"
-    },
-    "profile": "Marvell Technology, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Marvell Technology, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (3.1%) und Cash-Quote (2.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MS",
@@ -22053,43 +10563,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Morgan Stanley zählt zur ausgeschlossenen Branche Capital Markets und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "330.8 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Capital Markets",
-      "peRatio": "17.0",
-      "evEbitda": "–",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Morgan Stanley ist im Bereich Capital Markets innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Morgan Stanley zählt zur ausgeschlossenen Branche Capital Markets und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "MSCI",
@@ -22122,43 +10596,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "MSCI Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "41.6 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Financial Data & Stock Exchanges",
-      "peRatio": "31.3",
-      "evEbitda": "24.4",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "MSCI Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "MSCI Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "MSFT",
@@ -22191,43 +10629,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Microsoft Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (3.7%) und Cash-Quote (2.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "3.45 Bio. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "25.9",
-      "evEbitda": "18.0",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "16.4 Mrd. $"
-    },
-    "profile": "Microsoft Corporation ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Microsoft Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (3.7%) und Cash-Quote (2.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MSI",
@@ -22260,43 +10662,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Motorola Solutions, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Communication Equipment) ist zulässig, Verschuldung (13.3%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "72.3 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Communication Equipment",
-      "peRatio": "35.1",
-      "evEbitda": "23.2",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "1.8 Mrd. $"
-    },
-    "profile": "Motorola Solutions, Inc. ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Motorola Solutions, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Communication Equipment) ist zulässig, Verschuldung (13.3%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MTB",
@@ -22329,43 +10695,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "M&T Bank Corporation zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "35.7 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Regional",
-      "peRatio": "13.0",
-      "evEbitda": "–",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "–"
-    },
-    "profile": "M&T Bank Corporation ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "M&T Bank Corporation zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "MTD",
@@ -22398,43 +10728,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Mettler-Toledo International, I erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (7.4%) und Cash-Quote (0.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "28.6 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Diagnostics & Research",
-      "peRatio": "31.9",
-      "evEbitda": "24.0",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "715 Mio. $"
-    },
-    "profile": "Mettler-Toledo International, I ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Mettler-Toledo International, I erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (7.4%) und Cash-Quote (0.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "MU",
@@ -22467,43 +10761,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Micron Technology, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (0.7%) und Cash-Quote (2.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "929.5 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "18.6",
-      "evEbitda": "13.3",
-      "epsGrowth": "13.7%",
-      "freeCashFlow": "7.6 Mrd. $"
-    },
-    "profile": "Micron Technology, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Micron Technology, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (0.7%) und Cash-Quote (2.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NCLH",
@@ -22536,43 +10794,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 191.1% (Limit 30%)",
-    "insight": "Norwegian Cruise Line Holdings überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 191.1% (Limit 30%)). Die Branche (Travel Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "8.5 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Travel Services",
-      "peRatio": "11.2",
-      "evEbitda": "9.5",
-      "epsGrowth": "6.2%",
-      "freeCashFlow": "-1.6 Mrd. $"
-    },
-    "profile": "Norwegian Cruise Line Holdings ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Norwegian Cruise Line Holdings überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 191.1% (Limit 30%)). Die Branche (Travel Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "NDAQ",
@@ -22605,43 +10827,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Nasdaq, Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "52.7 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Financial Data & Stock Exchanges",
-      "peRatio": "27.5",
-      "evEbitda": "18.3",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.7 Mrd. $"
-    },
-    "profile": "Nasdaq, Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Nasdaq, Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "NDSN",
@@ -22674,43 +10860,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Nordson Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (11.9%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "16.6 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "31.8",
-      "evEbitda": "20.3",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "575 Mio. $"
-    },
-    "profile": "Nordson Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Nordson Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (11.9%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NEE",
@@ -22743,43 +10893,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 60.8% (Limit 30%)",
-    "insight": "NextEra Energy, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 60.8% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "181.3 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "19.5",
-      "evEbitda": "20.5",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "-17.8 Mrd. $"
-    },
-    "profile": "NextEra Energy, Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "NextEra Energy, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 60.8% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "NEM",
@@ -22812,43 +10926,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Newmont Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Gold) ist zulässig, Verschuldung (5.7%) und Cash-Quote (9.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "98.7 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Gold",
-      "peRatio": "11.8",
-      "evEbitda": "5.6",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "8.8 Mrd. $"
-    },
-    "profile": "Newmont Corporation ist im Bereich Gold innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-30"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-30",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Newmont Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Gold) ist zulässig, Verschuldung (5.7%) und Cash-Quote (9.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NFLX",
@@ -22881,43 +10959,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Netflix, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (5.6%) und Cash-Quote (3.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "298.6 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Entertainment",
-      "peRatio": "22.6",
-      "evEbitda": "20.8",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "25.4 Mrd. $"
-    },
-    "profile": "Netflix, Inc. ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Netflix, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (5.6%) und Cash-Quote (3.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NI",
@@ -22950,43 +10992,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 78.9% (Limit 30%)",
-    "insight": "NiSource Inc überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 78.9% (Limit 30%)). Die Branche (Utilities - Regulated Gas) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "21.3 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Gas",
-      "peRatio": "22.1",
-      "evEbitda": "13.5",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "-1.6 Mrd. $"
-    },
-    "profile": "NiSource Inc ist im Bereich Utilities - Regulated Gas innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "NiSource Inc überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 78.9% (Limit 30%)). Die Branche (Utilities - Regulated Gas) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "NKE",
@@ -23019,43 +11025,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Nike, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Footwear & Accessories) ist zulässig, Verschuldung (17.8%) und Cash-Quote (14.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "61.9 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Footwear & Accessories",
-      "peRatio": "19.9",
-      "evEbitda": "13.0",
-      "epsGrowth": "4.3%",
-      "freeCashFlow": "1.9 Mrd. $"
-    },
-    "profile": "Nike, Inc. ist im Bereich Footwear & Accessories innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-21"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Nike, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Footwear & Accessories) ist zulässig, Verschuldung (17.8%) und Cash-Quote (14.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NOC",
@@ -23088,43 +11058,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Northrop Grumman Corporation zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "77.1 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "17.2",
-      "evEbitda": "12.7",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "2.5 Mrd. $"
-    },
-    "profile": "Northrop Grumman Corporation ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Northrop Grumman Corporation zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "NOW",
@@ -23157,43 +11091,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "ServiceNow, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (7.4%) und Cash-Quote (4.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "115.0 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "69.5",
-      "evEbitda": "41.0",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "5.1 Mrd. $"
-    },
-    "profile": "ServiceNow, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "ServiceNow, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (7.4%) und Cash-Quote (4.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NRG",
@@ -23226,43 +11124,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 82.4% (Limit 30%)",
-    "insight": "NRG Energy, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 82.4% (Limit 30%)). Die Branche (Utilities - Independent Power Producers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "28.3 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Independent Power Producers",
-      "peRatio": "147.6",
-      "evEbitda": "23.1",
-      "epsGrowth": "-0.9%",
-      "freeCashFlow": "432 Mio. $"
-    },
-    "profile": "NRG Energy, Inc. ist im Bereich Utilities - Independent Power Producers innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "NRG Energy, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 82.4% (Limit 30%)). Die Branche (Utilities - Independent Power Producers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "NSC",
@@ -23295,43 +11157,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Norfolk Southern Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Railroads) ist zulässig, Verschuldung (22.8%) und Cash-Quote (1.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "75.4 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Railroads",
-      "peRatio": "28.6",
-      "evEbitda": "16.1",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Norfolk Southern Corporation ist im Bereich Railroads innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Norfolk Southern Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Railroads) ist zulässig, Verschuldung (22.8%) und Cash-Quote (1.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NTAP",
@@ -23364,43 +11190,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "NetApp, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (7.8%) und Cash-Quote (10.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "35.0 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "28.1",
-      "evEbitda": "18.1",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.3 Mrd. $"
-    },
-    "profile": "NetApp, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "NetApp, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (7.8%) und Cash-Quote (10.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NTRS",
@@ -23433,43 +11223,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Northern Trust Corporation zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "33.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "15.7",
-      "evEbitda": "–",
-      "epsGrowth": "1.0%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Northern Trust Corporation ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-10"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-10",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Northern Trust Corporation zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "NUE",
@@ -23502,43 +11256,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Nucor Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Steel) ist zulässig, Verschuldung (12.1%) und Cash-Quote (4.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "58.6 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Steel",
-      "peRatio": "20.5",
-      "evEbitda": "11.3",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "669 Mio. $"
-    },
-    "profile": "Nucor Corporation ist im Bereich Steel innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Nucor Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Steel) ist zulässig, Verschuldung (12.1%) und Cash-Quote (4.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NVDA",
@@ -23571,43 +11289,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "NVIDIA Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (0.3%) und Cash-Quote (1.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "4.86 Bio. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "30.8",
-      "evEbitda": "29.1",
-      "epsGrowth": "2.1%",
-      "freeCashFlow": "46.3 Mrd. $"
-    },
-    "profile": "NVIDIA Corporation ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-04",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-21"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-21",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-04",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "NVIDIA Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (0.3%) und Cash-Quote (1.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NVR",
@@ -23640,43 +11322,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "NVR, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Residential Construction) ist zulässig, Verschuldung (6.4%) und Cash-Quote (6.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "16.5 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Residential Construction",
-      "peRatio": "16.0",
-      "evEbitda": "10.7",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "–"
-    },
-    "profile": "NVR, Inc. ist im Bereich Residential Construction innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "NVR, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Residential Construction) ist zulässig, Verschuldung (6.4%) und Cash-Quote (6.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NWS",
@@ -23709,43 +11355,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "News Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (17.3%) und Cash-Quote (12.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "16.9 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Entertainment",
-      "peRatio": "39.6",
-      "evEbitda": "14.8",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "1.7 Mrd. $"
-    },
-    "profile": "News Corporation ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "News Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (17.3%) und Cash-Quote (12.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NWSA",
@@ -23778,43 +11388,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "News Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (19.6%) und Cash-Quote (14.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "14.9 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Entertainment",
-      "peRatio": "34.9",
-      "evEbitda": "13.2",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "1.7 Mrd. $"
-    },
-    "profile": "News Corporation ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "News Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (19.6%) und Cash-Quote (14.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "NXPI",
@@ -23847,43 +11421,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "NXP Semiconductors N.V. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (19.0%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "57.8 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "45.6",
-      "evEbitda": "13.0",
-      "epsGrowth": "0.7%",
-      "freeCashFlow": "3.6 Mrd. $"
-    },
-    "profile": "NXP Semiconductors N.V. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "NXP Semiconductors N.V. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (19.0%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "O",
@@ -23916,43 +11454,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 50.9% (Limit 30%)",
-    "insight": "Realty Income Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 50.9% (Limit 30%)). Die Branche (REIT - Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "59.6 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Retail",
-      "peRatio": "52.4",
-      "evEbitda": "17.5",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.8 Mrd. $"
-    },
-    "profile": "Realty Income Corporation ist im Bereich REIT - Retail innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-30"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-30",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Realty Income Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 50.9% (Limit 30%)). Die Branche (REIT - Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ODFL",
@@ -23985,43 +11487,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Old Dominion Freight Line, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Trucking) ist zulässig, Verschuldung (0.0%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "44.1 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Trucking",
-      "peRatio": "40.8",
-      "evEbitda": "24.1",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Old Dominion Freight Line, Inc. ist im Bereich Trucking innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-02"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-02",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Old Dominion Freight Line, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Trucking) ist zulässig, Verschuldung (0.0%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "OKE",
@@ -24054,43 +11520,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 58.8% (Limit 30%)",
-    "insight": "ONEOK, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 58.8% (Limit 30%)). Die Branche (Oil & Gas Midstream) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "57.2 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Midstream",
-      "peRatio": "16.2",
-      "evEbitda": "12.1",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "454 Mio. $"
-    },
-    "profile": "ONEOK, Inc. ist im Bereich Oil & Gas Midstream innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "ONEOK, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 58.8% (Limit 30%)). Die Branche (Oil & Gas Midstream) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "OMC",
@@ -24123,43 +11553,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 50.9% (Limit 30%)",
-    "insight": "Omnicom Group Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 50.9% (Limit 30%)). Die Branche (Advertising Agencies) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "22.4 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Advertising Agencies",
-      "peRatio": "212.7",
-      "evEbitda": "8.3",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "4.3 Mrd. $"
-    },
-    "profile": "Omnicom Group Inc. ist im Bereich Advertising Agencies innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Omnicom Group Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 50.9% (Limit 30%)). Die Branche (Advertising Agencies) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ON",
@@ -24192,43 +11586,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "ON Semiconductor Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (10.2%) und Cash-Quote (7.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "31.8 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "60.0",
-      "evEbitda": "16.0",
-      "epsGrowth": "–",
-      "freeCashFlow": "1.3 Mrd. $"
-    },
-    "profile": "ON Semiconductor Corporation ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "ON Semiconductor Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (10.2%) und Cash-Quote (7.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ORCL",
@@ -24261,43 +11619,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 44.8% (Limit 30%)",
-    "insight": "Oracle Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 44.8% (Limit 30%)). Die Branche (Software - Infrastructure) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "374.1 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "22.3",
-      "evEbitda": "16.9",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "-24.5 Mrd. $"
-    },
-    "profile": "Oracle Corporation ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Oracle Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 44.8% (Limit 30%)). Die Branche (Software - Infrastructure) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ORLY",
@@ -24330,43 +11652,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "O'Reilly Automotive, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Auto Parts) ist zulässig, Verschuldung (13.1%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "72.9 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Auto Parts",
-      "peRatio": "28.4",
-      "evEbitda": "19.7",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.6 Mrd. $"
-    },
-    "profile": "O'Reilly Automotive, Inc. ist im Bereich Auto Parts innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-31",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "O'Reilly Automotive, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Auto Parts) ist zulässig, Verschuldung (13.1%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "OTIS",
@@ -24399,43 +11685,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 32.3% (Limit 30%)",
-    "insight": "Otis Worldwide Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.3% (Limit 30%)). Die Branche (Specialty Industrial Machinery) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "27.4 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "18.5",
-      "evEbitda": "13.5",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Otis Worldwide Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-21"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-21",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Otis Worldwide Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.3% (Limit 30%)). Die Branche (Specialty Industrial Machinery) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "OXY",
@@ -24468,43 +11718,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Occidental Petroleum Corporatio erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (29.3%) und Cash-Quote (6.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "56.8 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas E&P",
-      "peRatio": "77.1",
-      "evEbitda": "7.2",
-      "epsGrowth": "3.2%",
-      "freeCashFlow": "3.0 Mrd. $"
-    },
-    "profile": "Occidental Petroleum Corporatio ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Occidental Petroleum Corporatio erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (29.3%) und Cash-Quote (6.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PANW",
@@ -24537,43 +11751,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Palo Alto Networks, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (0.8%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "270.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "286.1",
-      "evEbitda": "181.6",
-      "epsGrowth": "–",
-      "freeCashFlow": "3.6 Mrd. $"
-    },
-    "profile": "Palo Alto Networks, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-07",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-15",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-07",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Palo Alto Networks, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (0.8%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PAYX",
@@ -24606,43 +11784,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Paychex, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (11.1%) und Cash-Quote (2.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "41.6 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "23.8",
-      "evEbitda": "28.0",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Paychex, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Paychex, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (11.1%) und Cash-Quote (2.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PCAR",
@@ -24675,43 +11817,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "PACCAR Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Farm & Heavy Construction Machinery) ist zulässig, Verschuldung (21.2%) und Cash-Quote (12.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "69.8 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Farm & Heavy Construction Machinery",
-      "peRatio": "27.9",
-      "evEbitda": "23.2",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "1.9 Mrd. $"
-    },
-    "profile": "PACCAR Inc. ist im Bereich Farm & Heavy Construction Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "PACCAR Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Farm & Heavy Construction Machinery) ist zulässig, Verschuldung (21.2%) und Cash-Quote (12.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PCG",
@@ -24744,43 +11850,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 169.0% (Limit 30%)",
-    "insight": "Pacific Gas & Electric Co. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 169.0% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "38.3 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "12.5",
-      "evEbitda": "9.9",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "-6.2 Mrd. $"
-    },
-    "profile": "Pacific Gas & Electric Co. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-02"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-02",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Pacific Gas & Electric Co. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 169.0% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "PEG",
@@ -24813,43 +11883,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 63.9% (Limit 30%)",
-    "insight": "Public Service Enterprise Group überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 63.9% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "38.2 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "17.0",
-      "evEbitda": "13.0",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "-172 Mio. $"
-    },
-    "profile": "Public Service Enterprise Group ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Public Service Enterprise Group überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 63.9% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "PEP",
@@ -24882,43 +11916,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Pepsico, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Beverages - Non-Alcoholic) ist zulässig, Verschuldung (27.9%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "190.6 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Beverages - Non-Alcoholic",
-      "peRatio": "18.3",
-      "evEbitda": "12.3",
-      "epsGrowth": "1.4%",
-      "freeCashFlow": "7.8 Mrd. $"
-    },
-    "profile": "Pepsico, Inc. ist im Bereich Beverages - Non-Alcoholic innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-09"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-09",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Pepsico, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Beverages - Non-Alcoholic) ist zulässig, Verschuldung (27.9%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PFE",
@@ -24951,43 +11949,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 45.4% (Limit 30%)",
-    "insight": "Pfizer, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 45.4% (Limit 30%)). Die Branche (Drug Manufacturers - General) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "142.5 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Drug Manufacturers - General",
-      "peRatio": "19.1",
-      "evEbitda": "7.6",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "12.4 Mrd. $"
-    },
-    "profile": "Pfizer, Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-02",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-02",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Pfizer, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 45.4% (Limit 30%)). Die Branche (Drug Manufacturers - General) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "PFG",
@@ -25020,43 +11982,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Principal Financial Group Inc zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "24.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "16.2",
-      "evEbitda": "10.8",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Principal Financial Group Inc ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Principal Financial Group Inc zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "PG",
@@ -25089,43 +12015,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Procter & Gamble Company (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Household & Personal Products) ist zulässig, Verschuldung (10.1%) und Cash-Quote (3.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "336.5 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Household & Personal Products",
-      "peRatio": "21.8",
-      "evEbitda": "15.5",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "12.8 Mrd. $"
-    },
-    "profile": "Procter & Gamble Company (The) ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Procter & Gamble Company (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Household & Personal Products) ist zulässig, Verschuldung (10.1%) und Cash-Quote (3.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PGR",
@@ -25158,43 +12048,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Progressive Corporation (The) zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "122.9 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Property & Casualty",
-      "peRatio": "10.6",
-      "evEbitda": "8.4",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Progressive Corporation (The) ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Progressive Corporation (The) zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "PH",
@@ -25227,43 +12081,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Parker-Hannifin Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (7.8%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "123.1 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "36.0",
-      "evEbitda": "24.1",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "2.8 Mrd. $"
-    },
-    "profile": "Parker-Hannifin Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Parker-Hannifin Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (7.8%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PHM",
@@ -25296,43 +12114,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "PulteGroup, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Residential Construction) ist zulässig, Verschuldung (10.3%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "24.1 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Residential Construction",
-      "peRatio": "12.9",
-      "evEbitda": "9.0",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "PulteGroup, Inc. ist im Bereich Residential Construction innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "PulteGroup, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Residential Construction) ist zulässig, Verschuldung (10.3%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PKG",
@@ -25365,43 +12147,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Packaging Corporation of Americ erfüllt aktuell alle geprüften Kriterien: Die Branche (Packaging & Containers) ist zulässig, Verschuldung (19.9%) und Cash-Quote (2.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "21.9 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Packaging & Containers",
-      "peRatio": "32.0",
-      "evEbitda": "13.4",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Packaging Corporation of Americ ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Packaging Corporation of Americ erfüllt aktuell alle geprüften Kriterien: Die Branche (Packaging & Containers) ist zulässig, Verschuldung (19.9%) und Cash-Quote (2.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PLD",
@@ -25434,43 +12180,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Prologis, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Industrial) ist zulässig, Verschuldung (26.9%) und Cash-Quote (1.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "138.1 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Industrial",
-      "peRatio": "32.3",
-      "evEbitda": "25.9",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "5.4 Mrd. $"
-    },
-    "profile": "Prologis, Inc. ist im Bereich REIT - Industrial innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Prologis, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Industrial) ist zulässig, Verschuldung (26.9%) und Cash-Quote (1.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PLTR",
@@ -25503,43 +12213,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Palantir Technologies Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (0.1%) und Cash-Quote (2.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "295.0 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "138.3",
-      "evEbitda": "142.4",
-      "epsGrowth": "3.2%",
-      "freeCashFlow": "1.8 Mrd. $"
-    },
-    "profile": "Palantir Technologies Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Palantir Technologies Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (0.1%) und Cash-Quote (2.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PM",
@@ -25572,43 +12246,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Philip Morris International Inc zählt zur ausgeschlossenen Branche Tobacco und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "297.4 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Tobacco",
-      "peRatio": "26.2",
-      "evEbitda": "19.0",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "9.7 Mrd. $"
-    },
-    "profile": "Philip Morris International Inc ist im Bereich Tobacco innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Philip Morris International Inc zählt zur ausgeschlossenen Branche Tobacco und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "PNC",
@@ -25641,43 +12279,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "PNC Financial Services Group, I zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "99.7 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Regional",
-      "peRatio": "13.8",
-      "evEbitda": "–",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "–"
-    },
-    "profile": "PNC Financial Services Group, I ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-20",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "PNC Financial Services Group, I zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "PNR",
@@ -25710,43 +12312,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Pentair plc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (16.7%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "10.6 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "16.9",
-      "evEbitda": "11.7",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "558 Mio. $"
-    },
-    "profile": "Pentair plc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-08-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Pentair plc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (16.7%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PNW",
@@ -25779,43 +12345,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 123.7% (Limit 30%)",
-    "insight": "Pinnacle West Capital Corporati überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 123.7% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "12.2 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "18.8",
-      "evEbitda": "12.8",
-      "epsGrowth": "–",
-      "freeCashFlow": "-831 Mio. $"
-    },
-    "profile": "Pinnacle West Capital Corporati ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Pinnacle West Capital Corporati überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 123.7% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "PODD",
@@ -25848,43 +12378,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Insulet Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (8.9%) und Cash-Quote (4.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "11.5 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Devices",
-      "peRatio": "38.6",
-      "evEbitda": "19.9",
-      "epsGrowth": "1.6%",
-      "freeCashFlow": "253 Mio. $"
-    },
-    "profile": "Insulet Corporation ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-11"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-11",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-23",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Insulet Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (8.9%) und Cash-Quote (4.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PPG",
@@ -25917,43 +12411,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 30.4% (Limit 30%)",
-    "insight": "PPG Industries, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 30.4% (Limit 30%)). Die Branche (Specialty Chemicals) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "24.6 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Specialty Chemicals",
-      "peRatio": "15.9",
-      "evEbitda": "11.3",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "PPG Industries, Inc. ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-04",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-04",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "PPG Industries, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 30.4% (Limit 30%)). Die Branche (Specialty Chemicals) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "PPL",
@@ -25986,43 +12444,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 76.6% (Limit 30%)",
-    "insight": "PPL Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 76.6% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "26.5 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "21.6",
-      "evEbitda": "12.5",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "-1.6 Mrd. $"
-    },
-    "profile": "PPL Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "PPL Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 76.6% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "PRU",
@@ -26055,43 +12477,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Prudential Financial, Inc. zählt zur ausgeschlossenen Branche Insurance - Life und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "42.4 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Life",
-      "peRatio": "12.6",
-      "evEbitda": "12.2",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "10.4 Mrd. $"
-    },
-    "profile": "Prudential Financial, Inc. ist im Bereich Insurance - Life innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Prudential Financial, Inc. zählt zur ausgeschlossenen Branche Insurance - Life und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "PSA",
@@ -26124,43 +12510,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Public Storage erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Industrial) ist zulässig, Verschuldung (16.8%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "60.5 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Industrial",
-      "peRatio": "31.0",
-      "evEbitda": "20.7",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "2.3 Mrd. $"
-    },
-    "profile": "Public Storage ist im Bereich REIT - Industrial innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Public Storage erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Industrial) ist zulässig, Verschuldung (16.8%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PSKY",
@@ -26193,43 +12543,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 186.3% (Limit 30%)",
-    "insight": "Paramount Skydance Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 186.3% (Limit 30%)). Die Branche (Entertainment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "8.9 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Entertainment",
-      "peRatio": "398.0",
-      "evEbitda": "8.0",
-      "epsGrowth": "-0.3%",
-      "freeCashFlow": "16.4 Mrd. $"
-    },
-    "profile": "Paramount Skydance Corporation ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Paramount Skydance Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 186.3% (Limit 30%)). Die Branche (Entertainment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "PSX",
@@ -26262,43 +12576,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 32.0% (Limit 30%)",
-    "insight": "Phillips 66 überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.0% (Limit 30%)). Die Branche (Oil & Gas Refining & Marketing) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "84.9 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Refining & Marketing",
-      "peRatio": "20.9",
-      "evEbitda": "15.3",
-      "epsGrowth": "-0.6%",
-      "freeCashFlow": "-1.1 Mrd. $"
-    },
-    "profile": "Phillips 66 ist im Bereich Oil & Gas Refining & Marketing innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Phillips 66 überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.0% (Limit 30%)). Die Branche (Oil & Gas Refining & Marketing) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "PTC",
@@ -26331,43 +12609,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "PTC Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (10.1%) und Cash-Quote (2.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "15.8 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "13.3",
-      "evEbitda": "13.3",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "PTC Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "PTC Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (10.1%) und Cash-Quote (2.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PWR",
@@ -26400,43 +12642,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Quanta Services, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Engineering & Construction) ist zulässig, Verschuldung (6.6%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "100.3 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Engineering & Construction",
-      "peRatio": "76.4",
-      "evEbitda": "35.0",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "2.0 Mrd. $"
-    },
-    "profile": "Quanta Services, Inc. ist im Bereich Engineering & Construction innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Quanta Services, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Engineering & Construction) ist zulässig, Verschuldung (6.6%) und Cash-Quote (0.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "PYPL",
@@ -26469,43 +12675,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "PayPal Holdings, Inc. zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "49.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Credit Services",
-      "peRatio": "10.8",
-      "evEbitda": "8.0",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "4.4 Mrd. $"
-    },
-    "profile": "PayPal Holdings, Inc. ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "PayPal Holdings, Inc. zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "Q",
@@ -26538,43 +12708,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Qnity Electronics, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductor Equipment & Materials) ist zulässig, Verschuldung (16.5%) und Cash-Quote (3.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "27.5 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductor Equipment & Materials",
-      "peRatio": "42.2",
-      "evEbitda": "21.7",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "702 Mio. $"
-    },
-    "profile": "Qnity Electronics, Inc. ist im Bereich Semiconductor Equipment & Materials innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Qnity Electronics, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductor Equipment & Materials) ist zulässig, Verschuldung (16.5%) und Cash-Quote (3.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "QCOM",
@@ -26607,43 +12741,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "QUALCOMM Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (9.9%) und Cash-Quote (5.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "155.0 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "16.9",
-      "evEbitda": "13.5",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "10.2 Mrd. $"
-    },
-    "profile": "QUALCOMM Incorporated ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "QUALCOMM Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (9.9%) und Cash-Quote (5.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "RCL",
@@ -26676,43 +12774,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Royal Caribbean Cruises Ltd. erfüllt aktuell alle geprüften Kriterien: Die Branche (Travel Services) ist zulässig, Verschuldung (27.6%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "85.1 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Travel Services",
-      "peRatio": "19.6",
-      "evEbitda": "15.6",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "-1.5 Mrd. $"
-    },
-    "profile": "Royal Caribbean Cruises Ltd. ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Royal Caribbean Cruises Ltd. erfüllt aktuell alle geprüften Kriterien: Die Branche (Travel Services) ist zulässig, Verschuldung (27.6%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "REG",
@@ -26745,43 +12807,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 34.3% (Limit 30%)",
-    "insight": "Regency Centers Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.3% (Limit 30%)). Die Branche (REIT - Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "15.0 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Retail",
-      "peRatio": "27.0",
-      "evEbitda": "18.9",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Regency Centers Corporation ist im Bereich REIT - Retail innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Regency Centers Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.3% (Limit 30%)). Die Branche (REIT - Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "REGN",
@@ -26814,43 +12840,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Regeneron Pharmaceuticals, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Biotechnology) ist zulässig, Verschuldung (3.4%) und Cash-Quote (10.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "78.5 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Biotechnology",
-      "peRatio": "18.9",
-      "evEbitda": "15.1",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "3.1 Mrd. $"
-    },
-    "profile": "Regeneron Pharmaceuticals, Inc. ist im Bereich Biotechnology innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-07",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-07",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Regeneron Pharmaceuticals, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Biotechnology) ist zulässig, Verschuldung (3.4%) und Cash-Quote (10.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "RF",
@@ -26883,43 +12873,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Regions Financial Corporation zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "26.4 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Regional",
-      "peRatio": "12.6",
-      "evEbitda": "–",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Regions Financial Corporation ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Regions Financial Corporation zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "RJF",
@@ -26952,43 +12906,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Raymond James Financial, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "33.8 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "15.3",
-      "evEbitda": "–",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Raymond James Financial, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-04",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-04",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Raymond James Financial, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "RL",
@@ -27021,43 +12939,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Ralph Lauren Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Apparel Manufacturing) ist zulässig, Verschuldung (13.3%) und Cash-Quote (9.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "22.6 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Apparel Manufacturing",
-      "peRatio": "25.2",
-      "evEbitda": "15.5",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "656 Mio. $"
-    },
-    "profile": "Ralph Lauren Corporation ist im Bereich Apparel Manufacturing innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Ralph Lauren Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Apparel Manufacturing) ist zulässig, Verschuldung (13.3%) und Cash-Quote (9.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "RMD",
@@ -27090,43 +12972,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "ResMed Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Instruments & Supplies) ist zulässig, Verschuldung (2.8%) und Cash-Quote (5.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "30.6 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Instruments & Supplies",
-      "peRatio": "20.3",
-      "evEbitda": "14.1",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "ResMed Inc. ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-20",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "ResMed Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Instruments & Supplies) ist zulässig, Verschuldung (2.8%) und Cash-Quote (5.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ROK",
@@ -27159,43 +13005,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Rockwell Automation, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (7.6%) und Cash-Quote (0.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "53.4 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "49.7",
-      "evEbitda": "29.0",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "974 Mio. $"
-    },
-    "profile": "Rockwell Automation, Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Rockwell Automation, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (7.6%) und Cash-Quote (0.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ROL",
@@ -27228,43 +13038,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Rollins, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Personal Services) ist zulässig, Verschuldung (6.1%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "18.3 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Personal Services",
-      "peRatio": "34.5",
-      "evEbitda": "22.3",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "502 Mio. $"
-    },
-    "profile": "Rollins, Inc. ist im Bereich Personal Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-21"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Rollins, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Personal Services) ist zulässig, Verschuldung (6.1%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ROP",
@@ -27297,43 +13071,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Roper Technologies, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (29.2%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "38.8 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "16.3",
-      "evEbitda": "15.4",
-      "epsGrowth": "2.3%",
-      "freeCashFlow": "2.3 Mrd. $"
-    },
-    "profile": "Roper Technologies, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-02"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-02",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Roper Technologies, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (29.2%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ROST",
@@ -27366,43 +13104,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Ross Stores, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Apparel Retail) ist zulässig, Verschuldung (5.9%) und Cash-Quote (5.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "80.5 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Apparel Retail",
-      "peRatio": "35.1",
-      "evEbitda": "23.6",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "2.0 Mrd. $"
-    },
-    "profile": "Ross Stores, Inc. ist im Bereich Apparel Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Ross Stores, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Apparel Retail) ist zulässig, Verschuldung (5.9%) und Cash-Quote (5.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "RSG",
@@ -27435,43 +13137,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Republic Services, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Waste Management) ist zulässig, Verschuldung (21.7%) und Cash-Quote (0.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "64.8 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Waste Management",
-      "peRatio": "30.2",
-      "evEbitda": "15.2",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.8 Mrd. $"
-    },
-    "profile": "Republic Services, Inc. ist im Bereich Waste Management innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-15",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Republic Services, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Waste Management) ist zulässig, Verschuldung (21.7%) und Cash-Quote (0.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "RTX",
@@ -27504,43 +13170,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "RTX Corporation zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "290.1 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "37.9",
-      "evEbitda": "20.3",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "9.9 Mrd. $"
-    },
-    "profile": "RTX Corporation ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-10"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-10",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "RTX Corporation zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "RVTY",
@@ -27573,43 +13203,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Revvity, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (26.7%) und Cash-Quote (6.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "12.6 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Diagnostics & Research",
-      "peRatio": "54.1",
-      "evEbitda": "17.6",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "509 Mio. $"
-    },
-    "profile": "Revvity, Inc. ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Revvity, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (26.7%) und Cash-Quote (6.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "SBAC",
@@ -27642,43 +13236,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 80.3% (Limit 30%)",
-    "insight": "SBA Communications Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 80.3% (Limit 30%)). Die Branche (REIT - Specialty) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "19.2 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Specialty",
-      "peRatio": "19.1",
-      "evEbitda": "18.8",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "708 Mio. $"
-    },
-    "profile": "SBA Communications Corporation ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "SBA Communications Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 80.3% (Limit 30%)). Die Branche (REIT - Specialty) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "SBUX",
@@ -27711,43 +13269,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Starbucks Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Restaurants) ist zulässig, Verschuldung (18.7%) und Cash-Quote (3.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "120.0 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Restaurants",
-      "peRatio": "60.8",
-      "evEbitda": "24.6",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "3.1 Mrd. $"
-    },
-    "profile": "Starbucks Corporation ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Starbucks Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Restaurants) ist zulässig, Verschuldung (18.7%) und Cash-Quote (3.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "SCHW",
@@ -27780,43 +13302,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Charles Schwab Corporation (The zählt zur ausgeschlossenen Branche Capital Markets und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "183.0 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Capital Markets",
-      "peRatio": "19.2",
-      "evEbitda": "–",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Charles Schwab Corporation (The ist im Bereich Capital Markets innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Charles Schwab Corporation (The zählt zur ausgeschlossenen Branche Capital Markets und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "SHW",
@@ -27849,43 +13335,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Sherwin-Williams Company (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (18.2%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "82.7 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Specialty Chemicals",
-      "peRatio": "31.4",
-      "evEbitda": "20.6",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "2.5 Mrd. $"
-    },
-    "profile": "Sherwin-Williams Company (The) ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Sherwin-Williams Company (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Chemicals) ist zulässig, Verschuldung (18.2%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "SJM",
@@ -27918,43 +13368,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 55.9% (Limit 30%)",
-    "insight": "The J.M. Smucker Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 55.9% (Limit 30%)). Die Branche (Packaged Foods) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "12.7 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Packaged Foods",
-      "peRatio": "–",
-      "evEbitda": "10.3",
-      "epsGrowth": "–",
-      "freeCashFlow": "1.0 Mrd. $"
-    },
-    "profile": "The J.M. Smucker Company ist im Bereich Packaged Foods innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "The J.M. Smucker Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 55.9% (Limit 30%)). Die Branche (Packaged Foods) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "SLB",
@@ -27987,43 +13401,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "SLB Limited erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas Equipment & Services) ist zulässig, Verschuldung (17.4%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "73.6 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Equipment & Services",
-      "peRatio": "24.2",
-      "evEbitda": "11.3",
-      "epsGrowth": "-0.3%",
-      "freeCashFlow": "3.0 Mrd. $"
-    },
-    "profile": "SLB Limited ist im Bereich Oil & Gas Equipment & Services innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "SLB Limited erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas Equipment & Services) ist zulässig, Verschuldung (17.4%) und Cash-Quote (5.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "SMCI",
@@ -28056,43 +13434,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 49.8% (Limit 30%)",
-    "insight": "Super Micro Computer, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 49.8% (Limit 30%)). Die Branche (Computer Hardware) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "18.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Computer Hardware",
-      "peRatio": "14.9",
-      "evEbitda": "15.8",
-      "epsGrowth": "3.3%",
-      "freeCashFlow": "-7.4 Mrd. $"
-    },
-    "profile": "Super Micro Computer, Inc. ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-20",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Super Micro Computer, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 49.8% (Limit 30%)). Die Branche (Computer Hardware) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "SNA",
@@ -28125,43 +13467,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Snap-On Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Tools & Accessories) ist zulässig, Verschuldung (6.2%) und Cash-Quote (7.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "21.2 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Tools & Accessories",
-      "peRatio": "20.9",
-      "evEbitda": "14.8",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Snap-On Incorporated ist im Bereich Tools & Accessories innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-14",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-14",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Snap-On Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Tools & Accessories) ist zulässig, Verschuldung (6.2%) und Cash-Quote (7.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "SNDK",
@@ -28194,43 +13500,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Sandisk Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Computer Hardware) ist zulässig, Verschuldung (0.1%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "179.9 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Computer Hardware",
-      "peRatio": "41.5",
-      "evEbitda": "31.3",
-      "epsGrowth": "–",
-      "freeCashFlow": "2.3 Mrd. $"
-    },
-    "profile": "Sandisk Corporation ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Sandisk Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Computer Hardware) ist zulässig, Verschuldung (0.1%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "SNPS",
@@ -28263,43 +13533,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Synopsys, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (14.6%) und Cash-Quote (3.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "74.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "89.4",
-      "evEbitda": "48.8",
-      "epsGrowth": "-1.0%",
-      "freeCashFlow": "3.5 Mrd. $"
-    },
-    "profile": "Synopsys, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Synopsys, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (14.6%) und Cash-Quote (3.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "SO",
@@ -28332,43 +13566,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 70.9% (Limit 30%)",
-    "insight": "Southern Company (The) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 70.9% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "108.8 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "22.8",
-      "evEbitda": "12.8",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "-3.8 Mrd. $"
-    },
-    "profile": "Southern Company (The) ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Southern Company (The) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 70.9% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "SOLV",
@@ -28401,43 +13599,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 35.8% (Limit 30%)",
-    "insight": "Solventum Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 35.8% (Limit 30%)). Die Branche (Medical Instruments & Supplies) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "14.8 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Instruments & Supplies",
-      "peRatio": "10.5",
-      "evEbitda": "17.4",
-      "epsGrowth": "-0.9%",
-      "freeCashFlow": "378 Mio. $"
-    },
-    "profile": "Solventum Corporation ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Solventum Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 35.8% (Limit 30%)). Die Branche (Medical Instruments & Supplies) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "SPG",
@@ -28470,43 +13632,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 33.3% (Limit 30%)",
-    "insight": "Simon Property Group, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.3% (Limit 30%)). Die Branche (REIT - Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "87.2 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Retail",
-      "peRatio": "16.0",
-      "evEbitda": "21.2",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "2.5 Mrd. $"
-    },
-    "profile": "Simon Property Group, Inc. ist im Bereich REIT - Retail innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-09"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-09",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Simon Property Group, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.3% (Limit 30%)). Die Branche (REIT - Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "SPGI",
@@ -28539,43 +13665,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "S&P Global Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "121.4 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Financial Data & Stock Exchanges",
-      "peRatio": "25.1",
-      "evEbitda": "17.0",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "5.4 Mrd. $"
-    },
-    "profile": "S&P Global Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "S&P Global Inc. zählt zur ausgeschlossenen Branche Financial Data & Stock Exchanges und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "SRE",
@@ -28608,43 +13698,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 62.9% (Limit 30%)",
-    "insight": "DBA Sempra überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 62.9% (Limit 30%)). Die Branche (Utilities - Diversified) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "57.9 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Diversified",
-      "peRatio": "30.1",
-      "evEbitda": "18.5",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "-28.2 Mrd. $"
-    },
-    "profile": "DBA Sempra ist im Bereich Utilities - Diversified innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "DBA Sempra überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 62.9% (Limit 30%)). Die Branche (Utilities - Diversified) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "STE",
@@ -28677,43 +13731,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "STERIS plc (Ireland) erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (9.4%) und Cash-Quote (2.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "22.3 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Devices",
-      "peRatio": "28.8",
-      "evEbitda": "15.0",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "837 Mio. $"
-    },
-    "profile": "STERIS plc (Ireland) ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "STERIS plc (Ireland) erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (9.4%) und Cash-Quote (2.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "STLD",
@@ -28746,43 +13764,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Steel Dynamics, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Steel) ist zulässig, Verschuldung (12.2%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "36.0 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Steel",
-      "peRatio": "22.8",
-      "evEbitda": "14.9",
-      "epsGrowth": "0.8%",
-      "freeCashFlow": "234 Mio. $"
-    },
-    "profile": "Steel Dynamics, Inc. ist im Bereich Steel innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Steel Dynamics, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Steel) ist zulässig, Verschuldung (12.2%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "STT",
@@ -28815,43 +13797,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "State Street Corporation zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "50.6 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "16.3",
-      "evEbitda": "–",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "–"
-    },
-    "profile": "State Street Corporation ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-27",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "State Street Corporation zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "STX",
@@ -28884,43 +13830,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Seagate Technology Holdings PLC erfüllt aktuell alle geprüften Kriterien: Die Branche (Computer Hardware) ist zulässig, Verschuldung (1.8%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "193.7 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Computer Hardware",
-      "peRatio": "61.7",
-      "evEbitda": "43.6",
-      "epsGrowth": "1.5%",
-      "freeCashFlow": "2.0 Mrd. $"
-    },
-    "profile": "Seagate Technology Holdings PLC ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-07",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-07",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Seagate Technology Holdings PLC erfüllt aktuell alle geprüften Kriterien: Die Branche (Computer Hardware) ist zulässig, Verschuldung (1.8%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "STZ",
@@ -28953,43 +13863,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Constellation Brands, Inc. zählt zur ausgeschlossenen Branche Beverages - Brewers und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "22.2 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Beverages - Brewers",
-      "peRatio": "12.4",
-      "evEbitda": "9.5",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "2.2 Mrd. $"
-    },
-    "profile": "Constellation Brands, Inc. ist im Bereich Beverages - Brewers innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Constellation Brands, Inc. zählt zur ausgeschlossenen Branche Beverages - Brewers und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "SW",
@@ -29022,43 +13896,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 58.7% (Limit 30%)",
-    "insight": "Smurfit WestRock plc überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 58.7% (Limit 30%)). Die Branche (Packaging & Containers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "24.1 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Packaging & Containers",
-      "peRatio": "48.9",
-      "evEbitda": "8.2",
-      "epsGrowth": "–",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "Smurfit WestRock plc ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Smurfit WestRock plc überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 58.7% (Limit 30%)). Die Branche (Packaging & Containers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "SWK",
@@ -29091,43 +13929,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 36.5% (Limit 30%)",
-    "insight": "Stanley Black & Decker, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 36.5% (Limit 30%)). Die Branche (Tools & Accessories) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "14.3 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Tools & Accessories",
-      "peRatio": "23.1",
-      "evEbitda": "10.6",
-      "epsGrowth": "2.5%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Stanley Black & Decker, Inc. ist im Bereich Tools & Accessories innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-21"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-08-21",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Stanley Black & Decker, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 36.5% (Limit 30%)). Die Branche (Tools & Accessories) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "SWKS",
@@ -29160,43 +13962,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Skyworks Solutions, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (7.3%) und Cash-Quote (8.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "9.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "32.3",
-      "evEbitda": "10.5",
-      "epsGrowth": "-0.7%",
-      "freeCashFlow": "449 Mio. $"
-    },
-    "profile": "Skyworks Solutions, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-26",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-26",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Skyworks Solutions, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (7.3%) und Cash-Quote (8.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "SYF",
@@ -29229,43 +13995,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Synchrony Financial zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "24.7 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Credit Services",
-      "peRatio": "7.8",
-      "evEbitda": "–",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Synchrony Financial ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Synchrony Financial zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "SYK",
@@ -29298,43 +14028,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Stryker Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (11.4%) und Cash-Quote (2.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "124.9 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Devices",
-      "peRatio": "37.7",
-      "evEbitda": "18.4",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "4.9 Mrd. $"
-    },
-    "profile": "Stryker Corporation ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-31"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-31",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Stryker Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Devices) ist zulässig, Verschuldung (11.4%) und Cash-Quote (2.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "SYY",
@@ -29367,43 +14061,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 37.7% (Limit 30%)",
-    "insight": "Sysco Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 37.7% (Limit 30%)). Die Branche (Food Distribution) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "40.8 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Food Distribution",
-      "peRatio": "23.7",
-      "evEbitda": "11.9",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "1.9 Mrd. $"
-    },
-    "profile": "Sysco Corporation ist im Bereich Food Distribution innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-24"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Sysco Corporation überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 37.7% (Limit 30%)). Die Branche (Food Distribution) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "T",
@@ -29436,43 +14094,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 104.0% (Limit 30%)",
-    "insight": "AT&T Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 104.0% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "159.3 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Telecom Services",
-      "peRatio": "7.7",
-      "evEbitda": "7.2",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "10.1 Mrd. $"
-    },
-    "profile": "AT&T Inc. ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "AT&T Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 104.0% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "TAP",
@@ -29505,43 +14127,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Molson Coors Beverage Company zählt zur ausgeschlossenen Branche Beverages - Brewers und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "7.8 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Beverages - Brewers",
-      "peRatio": "–",
-      "evEbitda": "5.8",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "774 Mio. $"
-    },
-    "profile": "Molson Coors Beverage Company ist im Bereich Beverages - Brewers innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-30"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-30",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Molson Coors Beverage Company zählt zur ausgeschlossenen Branche Beverages - Brewers und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "TDG",
@@ -29574,43 +14160,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Transdigm Group Incorporated zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "70.2 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "39.2",
-      "evEbitda": "20.3",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.5 Mrd. $"
-    },
-    "profile": "Transdigm Group Incorporated ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Transdigm Group Incorporated zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "TDY",
@@ -29643,43 +14193,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Teledyne Technologies Incorpora erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (6.7%) und Cash-Quote (1.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "30.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Scientific & Technical Instruments",
-      "peRatio": "31.7",
-      "evEbitda": "20.1",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "913 Mio. $"
-    },
-    "profile": "Teledyne Technologies Incorpora ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Teledyne Technologies Incorpora erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (6.7%) und Cash-Quote (1.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TECH",
@@ -29712,43 +14226,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Bio-Techne Corp erfüllt aktuell alle geprüften Kriterien: Die Branche (Biotechnology) ist zulässig, Verschuldung (2.6%) und Cash-Quote (1.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "11.2 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Biotechnology",
-      "peRatio": "103.0",
-      "evEbitda": "31.0",
-      "epsGrowth": "1.3%",
-      "freeCashFlow": "300 Mio. $"
-    },
-    "profile": "Bio-Techne Corp ist im Bereich Biotechnology innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Bio-Techne Corp erfüllt aktuell alle geprüften Kriterien: Die Branche (Biotechnology) ist zulässig, Verschuldung (2.6%) und Cash-Quote (1.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TEL",
@@ -29781,43 +14259,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "TE Connectivity plc erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Components) ist zulässig, Verschuldung (9.8%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "59.6 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Electronic Components",
-      "peRatio": "20.2",
-      "evEbitda": "13.0",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "2.3 Mrd. $"
-    },
-    "profile": "TE Connectivity plc ist im Bereich Electronic Components innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-29",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "TE Connectivity plc erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Components) ist zulässig, Verschuldung (9.8%) und Cash-Quote (2.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TER",
@@ -29850,43 +14292,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Teradyne, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductor Equipment & Materials) ist zulässig, Verschuldung (0.2%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "57.6 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductor Equipment & Materials",
-      "peRatio": "50.5",
-      "evEbitda": "38.1",
-      "epsGrowth": "3.9%",
-      "freeCashFlow": "439 Mio. $"
-    },
-    "profile": "Teradyne, Inc. ist im Bereich Semiconductor Equipment & Materials innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-23",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Teradyne, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductor Equipment & Materials) ist zulässig, Verschuldung (0.2%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TFC",
@@ -29919,43 +14325,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Truist Financial Corporation zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "63.3 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Regional",
-      "peRatio": "11.9",
-      "evEbitda": "–",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Truist Financial Corporation ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Truist Financial Corporation zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "TGT",
@@ -29988,43 +14358,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Target Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Discount Stores) ist zulässig, Verschuldung (29.4%) und Cash-Quote (5.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "65.6 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Discount Stores",
-      "peRatio": "19.1",
-      "evEbitda": "9.8",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "3.1 Mrd. $"
-    },
-    "profile": "Target Corporation ist im Bereich Discount Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-03"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-03",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Target Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Discount Stores) ist zulässig, Verschuldung (29.4%) und Cash-Quote (5.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TJX",
@@ -30057,43 +14391,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "TJX Companies, Inc. (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Apparel Retail) ist zulässig, Verschuldung (8.2%) und Cash-Quote (3.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "173.8 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Apparel Retail",
-      "peRatio": "30.6",
-      "evEbitda": "20.6",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "4.3 Mrd. $"
-    },
-    "profile": "TJX Companies, Inc. (The) ist im Bereich Apparel Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "TJX Companies, Inc. (The) erfüllt aktuell alle geprüften Kriterien: Die Branche (Apparel Retail) ist zulässig, Verschuldung (8.2%) und Cash-Quote (3.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TKO",
@@ -30126,43 +14424,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "TKO Group Holdings, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (14.3%) und Cash-Quote (2.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "34.7 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Entertainment",
-      "peRatio": "67.6",
-      "evEbitda": "15.9",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "831 Mio. $"
-    },
-    "profile": "TKO Group Holdings, Inc. ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-04",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-29",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-04",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "TKO Group Holdings, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Entertainment) ist zulässig, Verschuldung (14.3%) und Cash-Quote (2.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TMO",
@@ -30195,43 +14457,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Thermo Fisher Scientific Inc erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (19.9%) und Cash-Quote (1.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "213.4 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Diagnostics & Research",
-      "peRatio": "30.9",
-      "evEbitda": "21.4",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "6.2 Mrd. $"
-    },
-    "profile": "Thermo Fisher Scientific Inc ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Thermo Fisher Scientific Inc erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (19.9%) und Cash-Quote (1.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TMUS",
@@ -30264,43 +14490,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 65.0% (Limit 30%)",
-    "insight": "T-Mobile US, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 65.0% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "185.3 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Telecom Services",
-      "peRatio": "18.0",
-      "evEbitda": "8.8",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "11.3 Mrd. $"
-    },
-    "profile": "T-Mobile US, Inc. ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-02"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "T-Mobile US, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 65.0% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "TPL",
@@ -30333,43 +14523,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Texas Pacific Land Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (0.1%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "27.8 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas E&P",
-      "peRatio": "55.2",
-      "evEbitda": "39.9",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "-56 Mio. $"
-    },
-    "profile": "Texas Pacific Land Corporation ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Texas Pacific Land Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas E&P) ist zulässig, Verschuldung (0.1%) und Cash-Quote (0.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TPR",
@@ -30402,43 +14556,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Tapestry, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Luxury Goods) ist zulässig, Verschuldung (12.7%) und Cash-Quote (3.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "30.8 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Luxury Goods",
-      "peRatio": "46.5",
-      "evEbitda": "17.1",
-      "epsGrowth": "0.7%",
-      "freeCashFlow": "1.5 Mrd. $"
-    },
-    "profile": "Tapestry, Inc. ist im Bereich Luxury Goods innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Tapestry, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Luxury Goods) ist zulässig, Verschuldung (12.7%) und Cash-Quote (3.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TRGP",
@@ -30471,43 +14589,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 33.0% (Limit 30%)",
-    "insight": "Targa Resources, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.0% (Limit 30%)). Die Branche (Oil & Gas Midstream) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "58.0 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Midstream",
-      "peRatio": "27.6",
-      "evEbitda": "14.8",
-      "epsGrowth": "1.4%",
-      "freeCashFlow": "-319 Mio. $"
-    },
-    "profile": "Targa Resources, Inc. ist im Bereich Oil & Gas Midstream innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-19"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-19",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-12-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Targa Resources, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 33.0% (Limit 30%)). Die Branche (Oil & Gas Midstream) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "TRMB",
@@ -30540,43 +14622,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Trimble Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (10.7%) und Cash-Quote (1.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "13.2 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Scientific & Technical Instruments",
-      "peRatio": "29.6",
-      "evEbitda": "16.6",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "370 Mio. $"
-    },
-    "profile": "Trimble Inc. ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Trimble Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Scientific & Technical Instruments) ist zulässig, Verschuldung (10.7%) und Cash-Quote (1.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TROW",
@@ -30609,43 +14655,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "T. Rowe Price Group, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "23.9 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Asset Management",
-      "peRatio": "11.2",
-      "evEbitda": "8.0",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "1.9 Mrd. $"
-    },
-    "profile": "T. Rowe Price Group, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "T. Rowe Price Group, Inc. zählt zur ausgeschlossenen Branche Asset Management und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "TRV",
@@ -30678,43 +14688,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "The Travelers Companies, Inc. zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "78.1 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Property & Casualty",
-      "peRatio": "10.1",
-      "evEbitda": "7.2",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "14.8 Mrd. $"
-    },
-    "profile": "The Travelers Companies, Inc. ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "The Travelers Companies, Inc. zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "TSCO",
@@ -30747,43 +14721,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 40.6% (Limit 30%)",
-    "insight": "Tractor Supply Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 40.6% (Limit 30%)). Die Branche (Specialty Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "16.1 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Specialty Retail",
-      "peRatio": "16.0",
-      "evEbitda": "11.6",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "103 Mio. $"
-    },
-    "profile": "Tractor Supply Company ist im Bereich Specialty Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Tractor Supply Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 40.6% (Limit 30%)). Die Branche (Specialty Retail) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "TSLA",
@@ -30816,43 +14754,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Tesla, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Auto Manufacturers) ist zulässig, Verschuldung (1.3%) und Cash-Quote (3.5%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "1.23 Bio. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Auto Manufacturers",
-      "peRatio": "285.5",
-      "evEbitda": "111.8",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "4.8 Mrd. $"
-    },
-    "profile": "Tesla, Inc. ist im Bereich Auto Manufacturers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-09"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-09",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Tesla, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Auto Manufacturers) ist zulässig, Verschuldung (1.3%) und Cash-Quote (3.5%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TSN",
@@ -30885,43 +14787,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 39.6% (Limit 30%)",
-    "insight": "Tyson Foods, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 39.6% (Limit 30%)). Die Branche (Farm Products) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "20.4 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Farm Products",
-      "peRatio": "45.6",
-      "evEbitda": "10.4",
-      "epsGrowth": "36.0%",
-      "freeCashFlow": "1.0 Mrd. $"
-    },
-    "profile": "Tyson Foods, Inc. ist im Bereich Farm Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Tyson Foods, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 39.6% (Limit 30%)). Die Branche (Farm Products) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "TT",
@@ -30954,43 +14820,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Trane Technologies plc erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Products & Equipment) ist zulässig, Verschuldung (4.6%) und Cash-Quote (1.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "100.1 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Building Products & Equipment",
-      "peRatio": "33.9",
-      "evEbitda": "24.0",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "3.1 Mrd. $"
-    },
-    "profile": "Trane Technologies plc ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-21",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-21",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Trane Technologies plc erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Products & Equipment) ist zulässig, Verschuldung (4.6%) und Cash-Quote (1.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TTD",
@@ -31023,43 +14853,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "The Trade Desk, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Advertising Agencies) ist zulässig, Verschuldung (5.0%) und Cash-Quote (16.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "8.5 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Advertising Agencies",
-      "peRatio": "20.5",
-      "evEbitda": "10.6",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "569 Mio. $"
-    },
-    "profile": "The Trade Desk, Inc. ist im Bereich Advertising Agencies innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-15",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "The Trade Desk, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Advertising Agencies) ist zulässig, Verschuldung (5.0%) und Cash-Quote (16.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TTWO",
@@ -31092,43 +14886,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Take-Two Interactive Software, erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Gaming & Multimedia) ist zulässig, Verschuldung (6.5%) und Cash-Quote (4.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "45.4 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Electronic Gaming & Multimedia",
-      "peRatio": "–",
-      "evEbitda": "58.4",
-      "epsGrowth": "–",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Take-Two Interactive Software, ist im Bereich Electronic Gaming & Multimedia innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-16",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Take-Two Interactive Software, erfüllt aktuell alle geprüften Kriterien: Die Branche (Electronic Gaming & Multimedia) ist zulässig, Verschuldung (6.5%) und Cash-Quote (4.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TXN",
@@ -31161,43 +14919,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Texas Instruments Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (5.6%) und Cash-Quote (2.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "251.8 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Semiconductors",
-      "peRatio": "41.8",
-      "evEbitda": "27.2",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "3.5 Mrd. $"
-    },
-    "profile": "Texas Instruments Incorporated ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-10",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Texas Instruments Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Semiconductors) ist zulässig, Verschuldung (5.6%) und Cash-Quote (2.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "TXT",
@@ -31230,43 +14952,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Textron Inc. zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "14.8 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Aerospace & Defense",
-      "peRatio": "16.1",
-      "evEbitda": "10.4",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "453 Mio. $"
-    },
-    "profile": "Textron Inc. ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Textron Inc. zählt zur ausgeschlossenen Branche Aerospace & Defense und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "TYL",
@@ -31299,43 +14985,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Tyler Technologies, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (11.5%) und Cash-Quote (7.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "12.7 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "40.6",
-      "evEbitda": "28.7",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "594 Mio. $"
-    },
-    "profile": "Tyler Technologies, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-23",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-23",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Tyler Technologies, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (11.5%) und Cash-Quote (7.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "UAL",
@@ -31368,43 +15018,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 85.5% (Limit 30%); Cash-Quote zu hoch: 42.2% (Limit 30%)",
-    "insight": "United Airlines Holdings, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 85.5% (Limit 30%); Cash-Quote zu hoch: 42.2% (Limit 30%)). Die Branche (Airlines) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "39.4 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Airlines",
-      "peRatio": "11.4",
-      "evEbitda": "8.0",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "910 Mio. $"
-    },
-    "profile": "United Airlines Holdings, Inc. ist im Bereich Airlines innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "United Airlines Holdings, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 85.5% (Limit 30%); Cash-Quote zu hoch: 42.2% (Limit 30%)). Die Branche (Airlines) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "UBER",
@@ -31437,43 +15051,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Uber Technologies, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (8.7%) und Cash-Quote (4.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "143.2 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "17.5",
-      "evEbitda": "21.5",
-      "epsGrowth": "-0.8%",
-      "freeCashFlow": "6.5 Mrd. $"
-    },
-    "profile": "Uber Technologies, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-01-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Uber Technologies, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (8.7%) und Cash-Quote (4.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "UDR",
@@ -31506,43 +15084,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 42.4% (Limit 30%)",
-    "insight": "UDR, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 42.4% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "14.1 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Residential",
-      "peRatio": "24.2",
-      "evEbitda": "18.4",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "780 Mio. $"
-    },
-    "profile": "UDR, Inc. ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-02"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-08-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-02",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "UDR, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 42.4% (Limit 30%)). Die Branche (REIT - Residential) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "UHS",
@@ -31575,43 +15117,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 51.6% (Limit 30%)",
-    "insight": "Universal Health Services, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 51.6% (Limit 30%)). Die Branche (Medical Care Facilities) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "10.2 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Care Facilities",
-      "peRatio": "6.9",
-      "evEbitda": "5.7",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "498 Mio. $"
-    },
-    "profile": "Universal Health Services, Inc. ist im Bereich Medical Care Facilities innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-16",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Universal Health Services, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 51.6% (Limit 30%)). Die Branche (Medical Care Facilities) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ULTA",
@@ -31644,43 +15150,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Ulta Beauty, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Retail) ist zulässig, Verschuldung (10.4%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "22.0 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Specialty Retail",
-      "peRatio": "19.2",
-      "evEbitda": "12.8",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "973 Mio. $"
-    },
-    "profile": "Ulta Beauty, Inc. ist im Bereich Specialty Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        }
-      ]
-    }
+    "insight": "Ulta Beauty, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Retail) ist zulässig, Verschuldung (10.4%) und Cash-Quote (1.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "UNH",
@@ -31713,43 +15183,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "UnitedHealth Group Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Healthcare Plans) ist zulässig, Verschuldung (19.5%) und Cash-Quote (8.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "376.3 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Healthcare Plans",
-      "peRatio": "31.3",
-      "evEbitda": "17.3",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "22.8 Mrd. $"
-    },
-    "profile": "UnitedHealth Group Incorporated ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-09"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "UnitedHealth Group Incorporated erfüllt aktuell alle geprüften Kriterien: Die Branche (Healthcare Plans) ist zulässig, Verschuldung (19.5%) und Cash-Quote (8.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "UNP",
@@ -31782,43 +15216,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Union Pacific Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Railroads) ist zulässig, Verschuldung (18.0%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "173.5 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Railroads",
-      "peRatio": "23.6",
-      "evEbitda": "15.7",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "4.7 Mrd. $"
-    },
-    "profile": "Union Pacific Corporation ist im Bereich Railroads innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Union Pacific Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Railroads) ist zulässig, Verschuldung (18.0%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "UPS",
@@ -31851,43 +15249,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 32.4% (Limit 30%)",
-    "insight": "United Parcel Service, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.4% (Limit 30%)). Die Branche (Integrated Freight & Logistics) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "88.6 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Integrated Freight & Logistics",
-      "peRatio": "19.4",
-      "evEbitda": "10.2",
-      "epsGrowth": "-0.5%",
-      "freeCashFlow": "5.0 Mrd. $"
-    },
-    "profile": "United Parcel Service, Inc. ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-01",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-05"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-05",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-01",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "United Parcel Service, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 32.4% (Limit 30%)). Die Branche (Integrated Freight & Logistics) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "URI",
@@ -31920,43 +15282,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "United Rentals, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Rental & Leasing Services) ist zulässig, Verschuldung (22.9%) und Cash-Quote (0.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "67.2 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Rental & Leasing Services",
-      "peRatio": "26.0",
-      "evEbitda": "17.6",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "1.7 Mrd. $"
-    },
-    "profile": "United Rentals, Inc. ist im Bereich Rental & Leasing Services innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-26"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "United Rentals, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Rental & Leasing Services) ist zulässig, Verschuldung (22.9%) und Cash-Quote (0.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "USB",
@@ -31989,43 +15315,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "U.S. Bancorp zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "98.2 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Regional",
-      "peRatio": "12.6",
-      "evEbitda": "–",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "–"
-    },
-    "profile": "U.S. Bancorp ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "U.S. Bancorp zählt zur ausgeschlossenen Branche Banks - Regional und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "V",
@@ -32058,43 +15348,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Visa Inc. zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "683.6 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Credit Services",
-      "peRatio": "31.2",
-      "evEbitda": "22.0",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "20.4 Mrd. $"
-    },
-    "profile": "Visa Inc. ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-15",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-28"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-15",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Visa Inc. zählt zur ausgeschlossenen Branche Credit Services und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "VEEV",
@@ -32127,43 +15381,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Veeva Systems Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Health Information Services) ist zulässig, Verschuldung (0.3%) und Cash-Quote (22.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "33.1 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Health Information Services",
-      "peRatio": "36.1",
-      "evEbitda": "25.2",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.3 Mrd. $"
-    },
-    "profile": "Veeva Systems Inc. ist im Bereich Health Information Services innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-18",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-03"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-03",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-17",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-04-18",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Veeva Systems Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Health Information Services) ist zulässig, Verschuldung (0.3%) und Cash-Quote (22.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "VICI",
@@ -32196,43 +15414,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 61.5% (Limit 30%)",
-    "insight": "VICI Properties Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 61.5% (Limit 30%)). Die Branche (REIT - Diversified) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "29.0 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Diversified",
-      "peRatio": "10.2",
-      "evEbitda": "12.9",
-      "epsGrowth": "-0.4%",
-      "freeCashFlow": "267 Mio. $"
-    },
-    "profile": "VICI Properties Inc. ist im Bereich REIT - Diversified innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-06",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-02"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-02",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-06",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "VICI Properties Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 61.5% (Limit 30%)). Die Branche (REIT - Diversified) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "VLO",
@@ -32265,43 +15447,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Valero Energy Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas Refining & Marketing) ist zulässig, Verschuldung (12.6%) und Cash-Quote (8.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "90.1 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Refining & Marketing",
-      "peRatio": "13.1",
-      "evEbitda": "7.2",
-      "epsGrowth": "4.5%",
-      "freeCashFlow": "8.4 Mrd. $"
-    },
-    "profile": "Valero Energy Corporation ist im Bereich Oil & Gas Refining & Marketing innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-10",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-21",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-10",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Valero Energy Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas Refining & Marketing) ist zulässig, Verschuldung (12.6%) und Cash-Quote (8.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "VLTO",
@@ -32334,43 +15480,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Veralto Corp erfüllt aktuell alle geprüften Kriterien: Die Branche (Pollution & Treatment Controls) ist zulässig, Verschuldung (15.7%) und Cash-Quote (9.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "23.0 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Pollution & Treatment Controls",
-      "peRatio": "23.7",
-      "evEbitda": "17.6",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "807 Mio. $"
-    },
-    "profile": "Veralto Corp ist im Bereich Pollution & Treatment Controls innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Veralto Corp erfüllt aktuell alle geprüften Kriterien: Die Branche (Pollution & Treatment Controls) ist zulässig, Verschuldung (15.7%) und Cash-Quote (9.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "VMC",
@@ -32403,43 +15513,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Vulcan Materials Company (Holdi erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Materials) ist zulässig, Verschuldung (14.2%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "34.8 Mrd. $",
-      "sector": "Grundstoffe",
-      "industry": "Building Materials",
-      "peRatio": "31.6",
-      "evEbitda": "16.9",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "844 Mio. $"
-    },
-    "profile": "Vulcan Materials Company (Holdi ist im Bereich Building Materials innerhalb des Sektors Grundstoffe tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-13",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Vulcan Materials Company (Holdi erfüllt aktuell alle geprüften Kriterien: Die Branche (Building Materials) ist zulässig, Verschuldung (14.2%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "VRSK",
@@ -32472,43 +15546,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Verisk Analytics, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Consulting Services) ist zulässig, Verschuldung (18.1%) und Cash-Quote (2.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "25.5 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Consulting Services",
-      "peRatio": "29.9",
-      "evEbitda": "19.4",
-      "epsGrowth": "-0.0%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Verisk Analytics, Inc. ist im Bereich Consulting Services innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-09"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-09",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Verisk Analytics, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Consulting Services) ist zulässig, Verschuldung (18.1%) und Cash-Quote (2.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "VRSN",
@@ -32541,43 +15579,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "VeriSign, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (8.9%) und Cash-Quote (3.9%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "26.2 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "31.5",
-      "evEbitda": "23.2",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "833 Mio. $"
-    },
-    "profile": "VeriSign, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-08",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-21"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-21",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-08",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "VeriSign, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (8.9%) und Cash-Quote (3.9%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "VRT",
@@ -32610,43 +15612,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Vertiv Holdings, LLC erfüllt aktuell alle geprüften Kriterien: Die Branche (Electrical Equipment & Parts) ist zulässig, Verschuldung (3.6%) und Cash-Quote (3.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "93.0 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Electrical Equipment & Parts",
-      "peRatio": "54.7",
-      "evEbitda": "34.8",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "2.7 Mrd. $"
-    },
-    "profile": "Vertiv Holdings, LLC ist im Bereich Electrical Equipment & Parts innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-30",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-30",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Vertiv Holdings, LLC erfüllt aktuell alle geprüften Kriterien: Die Branche (Electrical Equipment & Parts) ist zulässig, Verschuldung (3.6%) und Cash-Quote (3.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "VRTX",
@@ -32679,43 +15645,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Vertex Pharmaceuticals Incorpor erfüllt aktuell alle geprüften Kriterien: Die Branche (Biotechnology) ist zulässig, Verschuldung (1.6%) und Cash-Quote (6.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "121.1 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Biotechnology",
-      "peRatio": "28.3",
-      "evEbitda": "23.3",
-      "epsGrowth": "0.6%",
-      "freeCashFlow": "2.8 Mrd. $"
-    },
-    "profile": "Vertex Pharmaceuticals Incorpor ist im Bereich Biotechnology innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-29"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-15",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-29",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Vertex Pharmaceuticals Incorpor erfüllt aktuell alle geprüften Kriterien: Die Branche (Biotechnology) ist zulässig, Verschuldung (1.6%) und Cash-Quote (6.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "VST",
@@ -32748,43 +15678,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 41.2% (Limit 30%)",
-    "insight": "Vistra Corp. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 41.2% (Limit 30%)). Die Branche (Utilities - Independent Power Producers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "50.0 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Independent Power Producers",
-      "peRatio": "24.7",
-      "evEbitda": "10.7",
-      "epsGrowth": "–",
-      "freeCashFlow": "-164 Mio. $"
-    },
-    "profile": "Vistra Corp. ist im Bereich Utilities - Independent Power Producers innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-20"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-20",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Vistra Corp. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 41.2% (Limit 30%)). Die Branche (Utilities - Independent Power Producers) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "VTR",
@@ -32817,43 +15711,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Ventas, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Healthcare Facilities) ist zulässig, Verschuldung (26.9%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "48.0 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Healthcare Facilities",
-      "peRatio": "170.0",
-      "evEbitda": "25.7",
-      "epsGrowth": "-0.1%",
-      "freeCashFlow": "1.5 Mrd. $"
-    },
-    "profile": "Ventas, Inc. ist im Bereich REIT - Healthcare Facilities innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-16",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-07",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-16",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Ventas, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Healthcare Facilities) ist zulässig, Verschuldung (26.9%) und Cash-Quote (0.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "VTRS",
@@ -32886,43 +15744,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 71.4% (Limit 30%)",
-    "insight": "Viatris Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 71.4% (Limit 30%)). Die Branche (Drug Manufacturers - Specialty & Generic) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "20.4 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Drug Manufacturers - Specialty & Generic",
-      "peRatio": "–",
-      "evEbitda": "7.9",
-      "epsGrowth": "–",
-      "freeCashFlow": "2.2 Mrd. $"
-    },
-    "profile": "Viatris Inc. ist im Bereich Drug Manufacturers - Specialty & Generic innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-04",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Viatris Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 71.4% (Limit 30%)). Die Branche (Drug Manufacturers - Specialty & Generic) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "VZ",
@@ -32955,43 +15777,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 96.4% (Limit 30%)",
-    "insight": "Verizon Communications Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 96.4% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "195.5 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Telecom Services",
-      "peRatio": "12.2",
-      "evEbitda": "7.7",
-      "epsGrowth": "-0.2%",
-      "freeCashFlow": "18.9 Mrd. $"
-    },
-    "profile": "Verizon Communications Inc. ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-19",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-04"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-04",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-19",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Verizon Communications Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 96.4% (Limit 30%)). Die Branche (Telecom Services) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "WAB",
@@ -33024,43 +15810,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Westinghouse Air Brake Technolo erfüllt aktuell alle geprüften Kriterien: Die Branche (Railroads) ist zulässig, Verschuldung (14.1%) und Cash-Quote (1.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "49.1 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Railroads",
-      "peRatio": "39.2",
-      "evEbitda": "20.9",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.1 Mrd. $"
-    },
-    "profile": "Westinghouse Air Brake Technolo ist im Bereich Railroads innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-01-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-24",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-01-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Westinghouse Air Brake Technolo erfüllt aktuell alle geprüften Kriterien: Die Branche (Railroads) ist zulässig, Verschuldung (14.1%) und Cash-Quote (1.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "WAT",
@@ -33093,43 +15843,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Waters Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (15.1%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "37.0 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Diagnostics & Research",
-      "peRatio": "48.1",
-      "evEbitda": "37.2",
-      "epsGrowth": "–",
-      "freeCashFlow": "-502 Mio. $"
-    },
-    "profile": "Waters Corporation ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-20",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-10-01",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-03-20",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Waters Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Diagnostics & Research) ist zulässig, Verschuldung (15.1%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "WBD",
@@ -33162,43 +15876,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 49.2% (Limit 30%)",
-    "insight": "Warner Bros. Discovery, Inc. - überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 49.2% (Limit 30%)). Die Branche (Entertainment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "65.9 Mrd. $",
-      "sector": "Kommunikation",
-      "industry": "Entertainment",
-      "peRatio": "–",
-      "evEbitda": "12.7",
-      "epsGrowth": "–",
-      "freeCashFlow": "18.5 Mrd. $"
-    },
-    "profile": "Warner Bros. Discovery, Inc. - ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-08-31",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-31",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-10-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Warner Bros. Discovery, Inc. - überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 49.2% (Limit 30%)). Die Branche (Entertainment) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "WDAY",
@@ -33231,43 +15909,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Workday, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (9.6%) und Cash-Quote (11.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "39.6 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Application",
-      "peRatio": "50.0",
-      "evEbitda": "25.8",
-      "epsGrowth": "2.5%",
-      "freeCashFlow": "3.1 Mrd. $"
-    },
-    "profile": "Workday, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-20",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Workday, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Application) ist zulässig, Verschuldung (9.6%) und Cash-Quote (11.0%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "WDC",
@@ -33300,43 +15942,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Western Digital Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Computer Hardware) ist zulässig, Verschuldung (0.9%) und Cash-Quote (1.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "187.8 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Computer Hardware",
-      "peRatio": "32.6",
-      "evEbitda": "47.4",
-      "epsGrowth": "4.8%",
-      "freeCashFlow": "2.1 Mrd. $"
-    },
-    "profile": "Western Digital Corporation ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Western Digital Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Computer Hardware) ist zulässig, Verschuldung (0.9%) und Cash-Quote (1.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "WEC",
@@ -33369,43 +15975,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 64.5% (Limit 30%)",
-    "insight": "WEC Energy Group, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 64.5% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "35.7 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "21.2",
-      "evEbitda": "14.9",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "-2.3 Mrd. $"
-    },
-    "profile": "WEC Energy Group, Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-12-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-12-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "WEC Energy Group, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 64.5% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "WELL",
@@ -33438,43 +16008,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Welltower Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Healthcare Facilities) ist zulässig, Verschuldung (11.7%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "168.9 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Healthcare Facilities",
-      "peRatio": "105.1",
-      "evEbitda": "56.3",
-      "epsGrowth": "0.4%",
-      "freeCashFlow": "2.8 Mrd. $"
-    },
-    "profile": "Welltower Inc. ist im Bereich REIT - Healthcare Facilities innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-13",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-13",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Welltower Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (REIT - Healthcare Facilities) ist zulässig, Verschuldung (11.7%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "WFC",
@@ -33507,43 +16041,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Wells Fargo & Company zählt zur ausgeschlossenen Branche Banks - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "261.4 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Banks - Diversified",
-      "peRatio": "12.6",
-      "evEbitda": "–",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "–"
-    },
-    "profile": "Wells Fargo & Company ist im Bereich Banks - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-24",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-08-25",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-24",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Wells Fargo & Company zählt zur ausgeschlossenen Branche Banks - Diversified und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "WM",
@@ -33576,43 +16074,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Waste Management, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Waste Management) ist zulässig, Verschuldung (25.8%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "90.6 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Waste Management",
-      "peRatio": "59.5",
-      "evEbitda": "14.6",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "2.3 Mrd. $"
-    },
-    "profile": "Waste Management, Inc. ist im Bereich Waste Management innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-30"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-08",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-30",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Waste Management, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Waste Management) ist zulässig, Verschuldung (25.8%) und Cash-Quote (0.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "WMB",
@@ -33645,43 +16107,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 34.6% (Limit 30%)",
-    "insight": "Williams Companies, Inc. (The) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.6% (Limit 30%)). Die Branche (Oil & Gas Midstream) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "87.5 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Midstream",
-      "peRatio": "31.4",
-      "evEbitda": "17.5",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "-190 Mio. $"
-    },
-    "profile": "Williams Companies, Inc. (The) ist im Bereich Oil & Gas Midstream innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-11",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-18"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-18",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-05-11",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Williams Companies, Inc. (The) überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 34.6% (Limit 30%)). Die Branche (Oil & Gas Midstream) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "WMT",
@@ -33714,43 +16140,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Walmart Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Discount Stores) ist zulässig, Verschuldung (8.5%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "884.9 Mrd. $",
-      "sector": "Konsumgüter (Basis)",
-      "industry": "Discount Stores",
-      "peRatio": "39.2",
-      "evEbitda": "21.3",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "6.9 Mrd. $"
-    },
-    "profile": "Walmart Inc. ist im Bereich Discount Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-03-05",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-03-05",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Walmart Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Discount Stores) ist zulässig, Verschuldung (8.5%) und Cash-Quote (1.2%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "WRB",
@@ -33783,43 +16173,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "W.R. Berkley Corporation zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "26.9 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance - Property & Casualty",
-      "peRatio": "14.9",
-      "evEbitda": "10.8",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "–"
-    },
-    "profile": "W.R. Berkley Corporation ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-25",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-25",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "W.R. Berkley Corporation zählt zur ausgeschlossenen Branche Insurance - Property & Casualty und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "WSM",
@@ -33852,43 +16206,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Williams-Sonoma, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Retail) ist zulässig, Verschuldung (5.5%) und Cash-Quote (2.4%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "26.9 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Specialty Retail",
-      "peRatio": "25.6",
-      "evEbitda": "16.8",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "885 Mio. $"
-    },
-    "profile": "Williams-Sonoma, Inc. ist im Bereich Specialty Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-16"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-26",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-16",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Williams-Sonoma, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Retail) ist zulässig, Verschuldung (5.5%) und Cash-Quote (2.4%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "WST",
@@ -33921,43 +16239,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "West Pharmaceutical Services, I erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Instruments & Supplies) ist zulässig, Verschuldung (1.3%) und Cash-Quote (1.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "24.0 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Instruments & Supplies",
-      "peRatio": "43.7",
-      "evEbitda": "26.2",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "278 Mio. $"
-    },
-    "profile": "West Pharmaceutical Services, I ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-03",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-12"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-12",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-19",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-03",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "West Pharmaceutical Services, I erfüllt aktuell alle geprüften Kriterien: Die Branche (Medical Instruments & Supplies) ist zulässig, Verschuldung (1.3%) und Cash-Quote (1.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "WTW",
@@ -33990,43 +16272,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Willis Towers Watson Public Lim zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "31.2 Mrd. $",
-      "sector": "Finanzdienstleistungen",
-      "industry": "Insurance Brokers",
-      "peRatio": "20.8",
-      "evEbitda": "13.0",
-      "epsGrowth": "-0.3%",
-      "freeCashFlow": "1.4 Mrd. $"
-    },
-    "profile": "Willis Towers Watson Public Lim ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-04-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-15"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-03",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-15",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-04-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Willis Towers Watson Public Lim zählt zur ausgeschlossenen Branche Insurance Brokers und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "WY",
@@ -34059,43 +16305,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 30.1% (Limit 30%)",
-    "insight": "Weyerhaeuser Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 30.1% (Limit 30%)). Die Branche (REIT - Specialty) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "18.0 Mrd. $",
-      "sector": "Immobilien",
-      "industry": "REIT - Specialty",
-      "peRatio": "37.9",
-      "evEbitda": "32.7",
-      "epsGrowth": "0.9%",
-      "freeCashFlow": "46 Mio. $"
-    },
-    "profile": "Weyerhaeuser Company ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-01"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-01",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-06",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-11-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Weyerhaeuser Company überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 30.1% (Limit 30%)). Die Branche (REIT - Specialty) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "WYNN",
@@ -34128,43 +16338,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Wynn Resorts, Limited zählt zur ausgeschlossenen Branche Resorts & Casinos und ist damit unabhängig von den Finanzkennzahlen nicht konform.",
-    "eckdaten": {
-      "marketCap": "10.3 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Resorts & Casinos",
-      "peRatio": "28.5",
-      "evEbitda": "11.2",
-      "epsGrowth": "0.5%",
-      "freeCashFlow": "357 Mio. $"
-    },
-    "profile": "Wynn Resorts, Limited ist im Bereich Resorts & Casinos innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-17",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-13"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-13",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-02",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-17",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Wynn Resorts, Limited zählt zur ausgeschlossenen Branche Resorts & Casinos und ist damit unabhängig von den Finanzkennzahlen nicht konform."
   },
   {
     "ticker": "XEL",
@@ -34197,43 +16371,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 85.3% (Limit 30%)",
-    "insight": "Xcel Energy Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 85.3% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "48.8 Mrd. $",
-      "sector": "Versorger",
-      "industry": "Utilities - Regulated Electric",
-      "peRatio": "21.4",
-      "evEbitda": "14.5",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "-7.9 Mrd. $"
-    },
-    "profile": "Xcel Energy Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-27",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-27"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-27",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-10-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2027-02-27",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Xcel Energy Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 85.3% (Limit 30%)). Die Branche (Utilities - Regulated Electric) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "XOM",
@@ -34266,43 +16404,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "ExxonMobil Holdings Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas Integrated) ist zulässig, Verschuldung (7.4%) und Cash-Quote (1.3%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "644.3 Mrd. $",
-      "sector": "Energie",
-      "industry": "Oil & Gas Integrated",
-      "peRatio": "26.2",
-      "evEbitda": "12.4",
-      "epsGrowth": "-0.4%",
-      "freeCashFlow": "11.6 Mrd. $"
-    },
-    "profile": "ExxonMobil Holdings Corporation ist im Bereich Oil & Gas Integrated innerhalb des Sektors Energie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-22",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-25"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-25",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-18",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-22",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "ExxonMobil Holdings Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Oil & Gas Integrated) ist zulässig, Verschuldung (7.4%) und Cash-Quote (1.3%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "XYL",
@@ -34335,43 +16437,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Xylem Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (11.2%) und Cash-Quote (4.7%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "27.3 Mrd. $",
-      "sector": "Industrie",
-      "industry": "Specialty Industrial Machinery",
-      "peRatio": "27.9",
-      "evEbitda": "14.8",
-      "epsGrowth": "0.2%",
-      "freeCashFlow": "1.2 Mrd. $"
-    },
-    "profile": "Xylem Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-05-28",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-14"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-23",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-14",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-05-28",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Xylem Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Specialty Industrial Machinery) ist zulässig, Verschuldung (11.2%) und Cash-Quote (4.7%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "XYZ",
@@ -34404,43 +16470,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Block, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (16.8%) und Cash-Quote (15.1%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "48.4 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Software - Infrastructure",
-      "peRatio": "63.5",
-      "evEbitda": "31.2",
-      "epsGrowth": "–",
-      "freeCashFlow": "-795 Mio. $"
-    },
-    "profile": "Block, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-09-12",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-23"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-05",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-09-12",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        },
-        {
-          "date": "2026-09-23",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        }
-      ]
-    }
+    "insight": "Block, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Software - Infrastructure) ist zulässig, Verschuldung (16.8%) und Cash-Quote (15.1%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "YUM",
@@ -34473,43 +16503,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Yum! Brands, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Restaurants) ist zulässig, Verschuldung (29.3%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "41.8 Mrd. $",
-      "sector": "Konsumgüter (zyklisch)",
-      "industry": "Restaurants",
-      "peRatio": "19.3",
-      "evEbitda": "17.5",
-      "epsGrowth": "1.3%",
-      "freeCashFlow": "814 Mio. $"
-    },
-    "profile": "Yum! Brands, Inc. ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-04",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-09-06"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-06",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-30",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-04",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Yum! Brands, Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Restaurants) ist zulässig, Verschuldung (29.3%) und Cash-Quote (1.6%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ZBH",
@@ -34542,43 +16536,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": "Verschuldungsgrad zu hoch: 41.8% (Limit 30%)",
-    "insight": "Zimmer Biomet Holdings, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 41.8% (Limit 30%)). Die Branche (Medical Devices) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen.",
-    "eckdaten": {
-      "marketCap": "18.2 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Medical Devices",
-      "peRatio": "24.3",
-      "evEbitda": "9.8",
-      "epsGrowth": "0.3%",
-      "freeCashFlow": "1.0 Mrd. $"
-    },
-    "profile": "Zimmer Biomet Holdings, Inc. ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2027-02-04",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-08"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-28",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-08",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2027-02-04",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Zimmer Biomet Holdings, Inc. überschreitet aktuell einen Grenzwert (Verschuldungsgrad zu hoch: 41.8% (Limit 30%)). Die Branche (Medical Devices) selbst ist zulässig — eine regelmäßige Neuprüfung wird empfohlen."
   },
   {
     "ticker": "ZBRA",
@@ -34611,43 +16569,7 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Zebra Technologies Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Communication Equipment) ist zulässig, Verschuldung (20.4%) und Cash-Quote (0.8%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "14.0 Mrd. $",
-      "sector": "Technologie",
-      "industry": "Communication Equipment",
-      "peRatio": "35.4",
-      "evEbitda": "16.3",
-      "epsGrowth": "0.0%",
-      "freeCashFlow": "559 Mio. $"
-    },
-    "profile": "Zebra Technologies Corporation ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-10-09",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-08-22"
-      },
-      "timeline": [
-        {
-          "date": "2026-08-22",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-09-14",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-09",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Zebra Technologies Corporation erfüllt aktuell alle geprüften Kriterien: Die Branche (Communication Equipment) ist zulässig, Verschuldung (20.4%) und Cash-Quote (0.8%) liegen unter dem 30%-Grenzwert."
   },
   {
     "ticker": "ZTS",
@@ -34680,42 +16602,6 @@ export const ALL_STOCKS = [
       }
     ],
     "note": null,
-    "insight": "Zoetis Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - Specialty & Generic) ist zulässig, Verschuldung (28.6%) und Cash-Quote (6.0%) liegen unter dem 30%-Grenzwert.",
-    "eckdaten": {
-      "marketCap": "32.4 Mrd. $",
-      "sector": "Gesundheit",
-      "industry": "Drug Manufacturers - Specialty & Generic",
-      "peRatio": "12.7",
-      "evEbitda": "9.7",
-      "epsGrowth": "0.1%",
-      "freeCashFlow": "1.8 Mrd. $"
-    },
-    "profile": "Zoetis Inc. ist im Bereich Drug Manufacturers - Specialty & Generic innerhalb des Sektors Gesundheit tätig.",
-    "events": {
-      "agm": {
-        "date": "2026-11-02",
-        "status": "Bevorstehend"
-      },
-      "nextEarnings": {
-        "date": "2026-10-17"
-      },
-      "timeline": [
-        {
-          "date": "2026-09-12",
-          "type": "Dividende",
-          "label": "Dividendenstichtag (Ex-Div-Date)"
-        },
-        {
-          "date": "2026-10-17",
-          "type": "Earnings",
-          "label": "Quartalszahlen (Earnings Call)"
-        },
-        {
-          "date": "2026-11-02",
-          "type": "HV",
-          "label": "Hauptversammlung"
-        }
-      ]
-    }
+    "insight": "Zoetis Inc. erfüllt aktuell alle geprüften Kriterien: Die Branche (Drug Manufacturers - Specialty & Generic) ist zulässig, Verschuldung (28.6%) und Cash-Quote (6.0%) liegen unter dem 30%-Grenzwert."
   }
 ];
