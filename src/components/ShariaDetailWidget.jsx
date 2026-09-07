@@ -15,6 +15,11 @@
 // "Non-Halal Income" ist als dritte Kennzahl vorgesehen, aber in eurer
 // aktuellen Datenbasis nicht befüllt (siehe stock.financials) — das Widget
 // zeigt in dem Fall "Nicht verfügbar" statt eine Zahl zu erfinden.
+//
+// Update: jetzt mit Tooltips je Kriterium und einer automatisch generierten
+// "Warum {Status}?"-Begründung — bewusst komplett eigenständig gehalten
+// (keine Imports aus App.jsx), damit das Widget auch außerhalb dieses
+// Projekts wiederverwendbar bleibt.
 
 import { useEffect } from "react";
 
@@ -23,6 +28,45 @@ export const DEFAULT_SHARIA_THRESHOLDS = {
   cashRatio: 30, // Cash & Zinsanlagen / Marktkapitalisierung
   nonHalalIncome: 5, // Zinstragende/unzulässige Erträge / Umsatz
 };
+
+// Kurzerklärungen für den Tooltip je Kriterium — Keyword-Matching auf das
+// Label, damit es unabhängig vom genauen Wortlaut einzelner Aktien funktioniert.
+const CRITERIA_INFO = [
+  ["Kerngeschäft", "Prüft, ob das Hauptgeschäft der Firma in einer erlaubten Branche liegt (z. B. keine Bank, kein Alkohol, keine Rüstung)."],
+  ["Ausgeschlossene Branche", "Die Branche selbst gilt als grundsätzlich unzulässig — unabhängig von den Finanzkennzahlen."],
+  ["Branche zulässig", "Die Branche des Unternehmens fällt nicht unter eine der Ausschlusskategorien."],
+  ["Nebeneinnahmen", "Auch bei erlaubten Firmen darf nur ein kleiner Teil des Umsatzes aus unzulässigen Quellen wie Zinsen stammen."],
+  ["Wesentlicher Umsatz", "Prüft, ob ein Großteil des Umsatzes aus unzulässigen Geschäftsfeldern wie dem Zinsgeschäft stammt."],
+];
+
+function getCriterionInfo(label) {
+  const hit = CRITERIA_INFO.find(([key]) => label.includes(key));
+  return hit ? hit[1] : "Teil des Geschäftsmodell-Screens.";
+}
+
+// Generiert automatisch eine kurze, konkrete Begründung aus den Daten selbst
+// (nicht aus Freitext) — damit sie nie von den tatsächlich geprüften Werten abweicht.
+function getWhyText(stock, t) {
+  const status = stock.status;
+  const failedBiz = (stock.business || []).find((b) => !b.pass);
+
+  if (status === "Nicht Halal") {
+    if (failedBiz) return `Nicht Halal, weil: ${failedBiz.label}.`;
+    const findRatio = (kw) => stock.financials?.find((f) => f.label.toLowerCase().includes(kw));
+    const debt = findRatio("verschuldung");
+    const cash = findRatio("cash");
+    if (debt?.value > t.debtRatio) return `Nicht Halal, weil Verschuldung bei ${debt.value}% liegt (erlaubt: max. ${t.debtRatio}%).`;
+    if (cash?.value > t.cashRatio) return `Nicht Halal, weil Cash-Quote bei ${cash.value}% liegt (erlaubt: max. ${t.cashRatio}%).`;
+    return "Diese Aktie erfüllt mindestens ein Ausschlusskriterium.";
+  }
+
+  if (status === "Grenzwertig") {
+    if (stock.note) return stock.note;
+    return "Mindestens eine Kennzahl liegt nah am Grenzwert und sollte regelmäßig neu geprüft werden.";
+  }
+
+  return "Alle Geschäftsmodell- und Finanz-Kriterien liegen innerhalb der Grenzwerte.";
+}
 
 function RatioRow({ label, value, max }) {
   const available = value != null && !Number.isNaN(value);
@@ -65,14 +109,20 @@ function BusinessCheckRow({ label, pass }) {
       >
         {pass ? "✓" : "✕"}
       </span>
-      <span className="text-[var(--text-soft)]">{label}</span>
+      <span className="flex-1 text-[var(--text-soft)]">{label}</span>
+      <span
+        title={getCriterionInfo(label)}
+        className="ml-auto flex h-4 w-4 flex-shrink-0 cursor-help items-center justify-center rounded-full border border-[var(--border)] text-[9px] text-[var(--faint)] hover:border-[var(--muted)] hover:text-[var(--muted)]"
+      >
+        ?
+      </span>
     </li>
   );
 }
 
 /**
  * @param {object} stock - erwartet { ticker, name, status, business: [{label, pass}],
- *   financials: [{label, value, max}] } — passend zum bestehenden Amanah-Schema
+ *   financials: [{label, value, max}], note?: string } — passend zum bestehenden Amanah-Schema
  * @param {"card"|"modal"} variant
  * @param {object} thresholds - überschreibt DEFAULT_SHARIA_THRESHOLDS teilweise
  * @param {boolean} open - nur für variant="modal" relevant
@@ -132,6 +182,13 @@ export function ShariaDetailWidget({
           <RatioRow label="Cash & Zinsanlagen / Marktkapitalisierung" value={cash?.value} max={t.cashRatio} />
           <RatioRow label="Non-Halal Income / Umsatz" value={nonHalal?.value} max={t.nonHalalIncome} />
         </div>
+      </div>
+
+      <div className="mt-5 rounded-xl border border-[var(--border)] bg-[var(--bg-deep)] px-4 py-3">
+        <p className="text-sm text-[var(--text-soft)]">
+          <span className="font-medium text-[var(--text)]">Warum {stock.status}? </span>
+          {getWhyText(stock, t)}
+        </p>
       </div>
     </div>
   );
