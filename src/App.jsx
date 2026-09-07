@@ -144,6 +144,12 @@ const CHART_RANGES = [
   { key: "MAX", label: "Max", days: 3650 },
 ];
 
+// Fixer Näherungskurs für die Dollar->Euro-Anzeige (EZB-Referenzkurs, Stand 04.09.2026:
+// 1 € = 1,1622 $ → 1 $ ≈ 0,86 €). KEINE Live-Umrechnung — für ein fertiges Produkt
+// sollte hier ein echter FX-Endpoint (z.B. exchangerate.host, Twelve Data "currency_conversion")
+// angebunden werden, idealerweise mit demselben Caching-Muster wie price-history.js.
+const USD_EUR_RATE = 0.86;
+
 function parseEuro(str) {
   return parseFloat(str.replace(/\./g, "").replace(",", ".").replace("$", "").replace("€", "").trim());
 }
@@ -972,13 +978,14 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist, onOpenS
             <p className="mt-1 text-sm text-[var(--muted)]">{stock.sector}</p>
             <div className="mt-4 flex items-baseline gap-3">
               <span className="font-[IBM_Plex_Mono] text-2xl text-[var(--text)]">{stock.price}</span>
+              <span className="font-[IBM_Plex_Mono] text-sm text-[var(--faint)]">≈ {(priceNum * USD_EUR_RATE).toFixed(2).replace(".", ",")} €</span>
               <span className={"font-[IBM_Plex_Mono] text-sm " + (stock.up ? "text-[var(--emerald-soft)]" : "text-[var(--red-soft)]")}>
                 {stock.up ? "+" : ""}{dayPct.toFixed(2)}% ({stock.up ? "+" : ""}{dayAbs.toFixed(2)} $) heute
               </span>
             </div>
             <p className="mt-1.5 flex flex-wrap items-center gap-2 text-[11px] text-[var(--faint)]">
               <span>
-                Zuletzt aktualisiert: {lastUpdated ? lastUpdated.toLocaleString("de-DE", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" }) : "—"} · Demo-Kurs
+                Zuletzt aktualisiert: {lastUpdated ? lastUpdated.toLocaleString("de-DE", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" }) : "—"} · Demo-Kurs · Euro-Wert: fixer Näherungskurs (1 $ ≈ {USD_EUR_RATE} €, Stand Sept. 2026), keine Live-Umrechnung
               </span>
               <span
                 className={
