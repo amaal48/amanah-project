@@ -2,15 +2,14 @@
 // 503 Unternehmen — Quelle: euer eigener Screening-Lauf (yfinance-Skript).
 // Demo-Kurse (price/change) sind NICHT aus der CSV, sondern deterministisch erzeugte
 // Platzhalter, da die CSV keine Kursdaten enthält — siehe price-history.js für die
-// echte Kursanbindung. Währung: USD ($), da alle Titel US-notiert sind (NYSE/NASDAQ).
+// echte Kursanbindung. Basiswährung: USD ($), da alle Titel US-notiert sind.
+// Zusätzlich '...EUR'-Felder (marketCapEUR, freeCashFlowEUR, week52RangeEUR) als
+// fixe Näherungsumrechnung (1 $ = 0.86 €, EZB-Referenzkurs Stand 04.09.2026) —
+// KEINE Live-Umrechnung. Für ein fertiges Produkt: echten FX-Endpoint anbinden.
 // 'profile' ist ein automatisch generierter, rein faktischer Ein-Satz-Platzhalter
 // (Branche/Sektor) — KEINE echte Unternehmensbeschreibung.
 // 'events' (HV/Earnings/Dividende) sind ebenfalls DEMO-TERMINE, deterministisch aus
 // dem Ticker erzeugt — KEINE echten Termine.
-// 'eckdaten.week52Range' und 'eckdaten.dividendYield' sind ebenfalls deterministische
-// DEMO-WERTE (aus dem Demo-Kurs abgeleitet), NICHT aus der CSV — die enthält keine
-// 52-Wochen- oder Dividendendaten. Für ein fertiges Produkt: über die Kurs-API
-// (siehe price-history.js) mit abrufen, die meisten Anbieter liefern beides mit.
 
 export const ALL_STOCKS = [
   {
@@ -54,7 +53,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "931 Mio. $",
       "week52Range": "314,46 – 466,27 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "33.63 Mrd. €",
+      "freeCashFlowEUR": "800.66 Mio. €",
+      "week52RangeEUR": "270,44 – 400,99 €"
     },
     "profile": "Agilent Technologies, Inc. ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -125,7 +127,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "107.7 Mrd. $",
       "week52Range": "246,06 – 434,71 $",
-      "dividendYield": "2,0%"
+      "dividendYield": "2,0%",
+      "marketCapEUR": "3.90 Bio. €",
+      "freeCashFlowEUR": "92.62 Mrd. €",
+      "week52RangeEUR": "211,61 – 373,85 €"
     },
     "profile": "Apple Inc. ist im Bereich Consumer Electronics innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -196,7 +201,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.9%",
       "freeCashFlow": "–",
       "week52Range": "96,05 – 123,94 $",
-      "dividendYield": "0,8%"
+      "dividendYield": "0,8%",
+      "marketCapEUR": "381.32 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "82,60 – 106,59 €"
     },
     "profile": "AbbVie Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -267,7 +275,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "3.2 Mrd. $",
       "week52Range": "152,49 – 283,54 $",
-      "dividendYield": "1,3%"
+      "dividendYield": "1,3%",
+      "marketCapEUR": "77.31 Mrd. €",
+      "freeCashFlowEUR": "2.75 Mrd. €",
+      "week52RangeEUR": "131,14 – 243,84 €"
     },
     "profile": "Airbnb, Inc. ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -338,7 +349,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.5%",
       "freeCashFlow": "7.2 Mrd. $",
       "week52Range": "25,47 – 35,52 $",
-      "dividendYield": "0,8%"
+      "dividendYield": "0,8%",
+      "marketCapEUR": "158.33 Mrd. €",
+      "freeCashFlowEUR": "6.19 Mrd. €",
+      "week52RangeEUR": "21,90 – 30,55 €"
     },
     "profile": "Abbott Laboratories ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -409,7 +423,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "5.3 Mrd. $",
       "week52Range": "78,92 – 138,39 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "29.50 Mrd. €",
+      "freeCashFlowEUR": "4.56 Mrd. €",
+      "week52RangeEUR": "67,87 – 119,02 €"
     },
     "profile": "Arch Capital Group Ltd. ist im Bereich Insurance - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -480,7 +497,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "12.1 Mrd. $",
       "week52Range": "152,99 – 201,81 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "87.29 Mrd. €",
+      "freeCashFlowEUR": "10.41 Mrd. €",
+      "week52RangeEUR": "131,57 – 173,56 €"
     },
     "profile": "Accenture plc ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -551,7 +571,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "9.2 Mrd. $",
       "week52Range": "146,07 – 323,27 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "85.57 Mrd. €",
+      "freeCashFlowEUR": "7.91 Mrd. €",
+      "week52RangeEUR": "125,62 – 278,01 €"
     },
     "profile": "Adobe Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -622,7 +645,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.1%",
       "freeCashFlow": "3.9 Mrd. $",
       "week52Range": "288,41 – 476,68 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "153.94 Mrd. €",
+      "freeCashFlowEUR": "3.35 Mrd. €",
+      "week52RangeEUR": "248,03 – 409,94 €"
     },
     "profile": "Analog Devices, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -693,7 +719,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "1.6 Mrd. $",
       "week52Range": "93,82 – 123,14 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "32.85 Mrd. €",
+      "freeCashFlowEUR": "1.38 Mrd. €",
+      "week52RangeEUR": "80,69 – 105,90 €"
     },
     "profile": "Archer-Daniels-Midland Company ist im Bereich Farm Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -764,7 +793,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "5.3 Mrd. $",
       "week52Range": "119,41 – 230,30 $",
-      "dividendYield": "3,2%"
+      "dividendYield": "3,2%",
+      "marketCapEUR": "91.16 Mrd. €",
+      "freeCashFlowEUR": "4.56 Mrd. €",
+      "week52RangeEUR": "102,69 – 198,06 €"
     },
     "profile": "Automatic Data Processing, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -835,7 +867,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.3%",
       "freeCashFlow": "3.1 Mrd. $",
       "week52Range": "185,55 – 294,85 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "42.57 Mrd. €",
+      "freeCashFlowEUR": "2.67 Mrd. €",
+      "week52RangeEUR": "159,57 – 253,57 €"
     },
     "profile": "Autodesk, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -906,7 +941,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "-1.8 Mrd. $",
       "week52Range": "326,73 – 513,43 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "26.06 Mrd. €",
+      "freeCashFlowEUR": "-1.55 Mrd. €",
+      "week52RangeEUR": "280,99 – 441,55 €"
     },
     "profile": "Ameren Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -977,7 +1015,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.4%",
       "freeCashFlow": "-6.0 Mrd. $",
       "week52Range": "159,34 – 268,89 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "59.86 Mrd. €",
+      "freeCashFlowEUR": "-5.16 Mrd. €",
+      "week52RangeEUR": "137,03 – 231,25 €"
     },
     "profile": "American Electric Power Company ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -1048,7 +1089,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "9.5%",
       "freeCashFlow": "-3.0 Mrd. $",
       "week52Range": "234,36 – 490,35 $",
-      "dividendYield": "2,7%"
+      "dividendYield": "2,7%",
+      "marketCapEUR": "9.03 Mrd. €",
+      "freeCashFlowEUR": "-2.58 Mrd. €",
+      "week52RangeEUR": "201,55 – 421,70 €"
     },
     "profile": "The AES Corporation ist im Bereich Utilities - Diversified innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -1119,7 +1163,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "38.6%",
       "freeCashFlow": "4.9 Mrd. $",
       "week52Range": "44,48 – 60,70 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "55.81 Mrd. €",
+      "freeCashFlowEUR": "4.21 Mrd. €",
+      "week52RangeEUR": "38,25 – 52,20 €"
     },
     "profile": "AFLAC Incorporated ist im Bereich Insurance - Life innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -1190,7 +1237,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "9.5 Mrd. $",
       "week52Range": "254,39 – 363,00 $",
-      "dividendYield": "0,6%"
+      "dividendYield": "0,6%",
+      "marketCapEUR": "35.86 Mrd. €",
+      "freeCashFlowEUR": "8.17 Mrd. €",
+      "week52RangeEUR": "218,78 – 312,18 €"
     },
     "profile": "American International Group, I ist im Bereich Insurance - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -1261,7 +1311,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "2.0 Mrd. $",
       "week52Range": "38,14 – 82,64 $",
-      "dividendYield": "3,6%"
+      "dividendYield": "3,6%",
+      "marketCapEUR": "11.87 Mrd. €",
+      "freeCashFlowEUR": "1.72 Mrd. €",
+      "week52RangeEUR": "32,80 – 71,07 €"
     },
     "profile": "Assurant, Inc. ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -1332,7 +1385,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "–",
       "week52Range": "92,59 – 167,26 $",
-      "dividendYield": "1,4%"
+      "dividendYield": "1,4%",
+      "marketCapEUR": "55.13 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "79,63 – 143,84 €"
     },
     "profile": "Arthur J. Gallagher & Co. ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -1403,7 +1459,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "701 Mio. $",
       "week52Range": "371,31 – 488,56 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "14.36 Mrd. €",
+      "freeCashFlowEUR": "602.86 Mio. €",
+      "week52RangeEUR": "319,33 – 420,16 €"
     },
     "profile": "Akamai Technologies, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -1474,7 +1533,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "717 Mio. $",
       "week52Range": "317,12 – 512,28 $",
-      "dividendYield": "2,2%"
+      "dividendYield": "2,2%",
+      "marketCapEUR": "11.95 Mrd. €",
+      "freeCashFlowEUR": "616.62 Mio. €",
+      "week52RangeEUR": "272,72 – 440,56 €"
     },
     "profile": "Albemarle Corporation ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -1545,7 +1607,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "646 Mio. $",
       "week52Range": "81,73 – 165,80 $",
-      "dividendYield": "0,8%"
+      "dividendYield": "0,8%",
+      "marketCapEUR": "10.41 Mrd. €",
+      "freeCashFlowEUR": "555.56 Mio. €",
+      "week52RangeEUR": "70,29 – 142,59 €"
     },
     "profile": "Align Technology, Inc. ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -1616,7 +1681,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "3.4%",
       "freeCashFlow": "12.4 Mrd. $",
       "week52Range": "239,05 – 427,16 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "58.48 Mrd. €",
+      "freeCashFlowEUR": "10.66 Mrd. €",
+      "week52RangeEUR": "205,58 – 367,36 €"
     },
     "profile": "Allstate Corporation (The) ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -1687,7 +1755,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "484 Mio. $",
       "week52Range": "256,99 – 384,04 $",
-      "dividendYield": "2,4%"
+      "dividendYield": "2,4%",
+      "marketCapEUR": "11.52 Mrd. €",
+      "freeCashFlowEUR": "416.24 Mio. €",
+      "week52RangeEUR": "221,01 – 330,27 €"
     },
     "profile": "Allegion plc ist im Bereich Security & Protection Services innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -1758,7 +1829,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "3.0 Mrd. $",
       "week52Range": "172,62 – 272,21 $",
-      "dividendYield": "2,1%"
+      "dividendYield": "2,1%",
+      "marketCapEUR": "346.67 Mrd. €",
+      "freeCashFlowEUR": "2.58 Mrd. €",
+      "week52RangeEUR": "148,45 – 234,10 €"
     },
     "profile": "Applied Materials, Inc. ist im Bereich Semiconductor Equipment & Materials innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -1829,7 +1903,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "150 Mio. $",
       "week52Range": "199,34 – 379,39 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "17.89 Mrd. €",
+      "freeCashFlowEUR": "129.00 Mio. €",
+      "week52RangeEUR": "171,43 – 326,28 €"
     },
     "profile": "Amcor plc ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -1900,7 +1977,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "7.2 Mrd. $",
       "week52Range": "221,59 – 426,12 $",
-      "dividendYield": "2,1%"
+      "dividendYield": "2,1%",
+      "marketCapEUR": "667.70 Mrd. €",
+      "freeCashFlowEUR": "6.19 Mrd. €",
+      "week52RangeEUR": "190,57 – 366,46 €"
     },
     "profile": "Advanced Micro Devices, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -1971,7 +2051,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "12,59 – 22,44 $",
-      "dividendYield": "4,4%"
+      "dividendYield": "4,4%",
+      "marketCapEUR": "47.64 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "10,83 – 19,30 €"
     },
     "profile": "AMETEK, Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -2042,7 +2125,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "7.4 Mrd. $",
       "week52Range": "149,29 – 230,72 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "178.79 Mrd. €",
+      "freeCashFlowEUR": "6.36 Mrd. €",
+      "week52RangeEUR": "128,39 – 198,42 €"
     },
     "profile": "Amgen Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -2113,7 +2199,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "–",
       "week52Range": "168,73 – 236,22 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "41.54 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "145,11 – 203,15 €"
     },
     "profile": "Ameriprise Financial, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -2184,7 +2273,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.4%",
       "freeCashFlow": "2.9 Mrd. $",
       "week52Range": "260,24 – 506,42 $",
-      "dividendYield": "3,5%"
+      "dividendYield": "3,5%",
+      "marketCapEUR": "69.49 Mrd. €",
+      "freeCashFlowEUR": "2.49 Mrd. €",
+      "week52RangeEUR": "223,81 – 435,52 €"
     },
     "profile": "American Tower Corporation (REI ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -2255,7 +2347,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.4%",
       "freeCashFlow": "22.7 Mrd. $",
       "week52Range": "386,20 – 447,18 $",
-      "dividendYield": "1,6%"
+      "dividendYield": "1,6%",
+      "marketCapEUR": "2.51 Bio. €",
+      "freeCashFlowEUR": "19.52 Mrd. €",
+      "week52RangeEUR": "332,13 – 384,57 €"
     },
     "profile": "Amazon.com, Inc. ist im Bereich Internet Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -2326,7 +2421,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "4.4 Mrd. $",
       "week52Range": "75,30 – 97,98 $",
-      "dividendYield": "0,8%"
+      "dividendYield": "0,8%",
+      "marketCapEUR": "195.31 Mrd. €",
+      "freeCashFlowEUR": "3.78 Mrd. €",
+      "week52RangeEUR": "64,76 – 84,26 €"
     },
     "profile": "Arista Networks, Inc. ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -2397,7 +2495,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "3.2 Mrd. $",
       "week52Range": "116,30 – 201,35 $",
-      "dividendYield": "1,9%"
+      "dividendYield": "1,9%",
+      "marketCapEUR": "65.79 Mrd. €",
+      "freeCashFlowEUR": "2.75 Mrd. €",
+      "week52RangeEUR": "100,02 – 173,16 €"
     },
     "profile": "Aon plc ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -2468,7 +2569,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "485 Mio. $",
       "week52Range": "135,51 – 186,86 $",
-      "dividendYield": "2,4%"
+      "dividendYield": "2,4%",
+      "marketCapEUR": "7.05 Mrd. €",
+      "freeCashFlowEUR": "417.10 Mio. €",
+      "week52RangeEUR": "116,54 – 160,70 €"
     },
     "profile": "A.O. Smith Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -2539,7 +2643,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "1.7 Mrd. $",
       "week52Range": "265,93 – 491,24 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "11.35 Mrd. €",
+      "freeCashFlowEUR": "1.46 Mrd. €",
+      "week52RangeEUR": "228,70 – 422,47 €"
     },
     "profile": "APA Corporation ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
     "events": {
@@ -2610,7 +2717,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "-3.8 Mrd. $",
       "week52Range": "18,71 – 25,72 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "56.50 Mrd. €",
+      "freeCashFlowEUR": "-3.27 Mrd. €",
+      "week52RangeEUR": "16,09 – 22,12 €"
     },
     "profile": "Air Products and Chemicals, Inc ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -2681,7 +2791,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "3.8 Mrd. $",
       "week52Range": "216,63 – 297,56 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "170.02 Mrd. €",
+      "freeCashFlowEUR": "3.27 Mrd. €",
+      "week52RangeEUR": "186,30 – 255,90 €"
     },
     "profile": "Amphenol Corporation ist im Bereich Electronic Components innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -2752,7 +2865,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "–",
       "week52Range": "145,42 – 283,70 $",
-      "dividendYield": "1,9%"
+      "dividendYield": "1,9%",
+      "marketCapEUR": "62.26 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "125,06 – 243,98 €"
     },
     "profile": "Apollo Global Management, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -2823,7 +2939,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.1%",
       "freeCashFlow": "3.2 Mrd. $",
       "week52Range": "253,21 – 365,16 $",
-      "dividendYield": "0,6%"
+      "dividendYield": "0,6%",
+      "marketCapEUR": "114.38 Mrd. €",
+      "freeCashFlowEUR": "2.75 Mrd. €",
+      "week52RangeEUR": "217,76 – 314,04 €"
     },
     "profile": "Applovin Corporation ist im Bereich Advertising Agencies innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -2894,7 +3013,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "282,50 – 466,13 $",
-      "dividendYield": "3,0%"
+      "dividendYield": "3,0%",
+      "marketCapEUR": "10.32 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "242,95 – 400,87 €"
     },
     "profile": "Aptiv PLC ist im Bereich Auto Parts innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -2965,7 +3087,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "315,26 – 541,00 $",
-      "dividendYield": "1,6%"
+      "dividendYield": "1,6%",
+      "marketCapEUR": "7.74 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "271,12 – 465,26 €"
     },
     "profile": "Alexandria Real Estate Equities ist im Bereich REIT - Office innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -3036,7 +3161,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "7.7%",
       "freeCashFlow": "1.8 Mrd. $",
       "week52Range": "389,86 – 489,39 $",
-      "dividendYield": "1,6%"
+      "dividendYield": "1,6%",
+      "marketCapEUR": "36.38 Mrd. €",
+      "freeCashFlowEUR": "1.55 Mrd. €",
+      "week52RangeEUR": "335,28 – 420,88 €"
     },
     "profile": "Ares Management Corporation ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -3107,7 +3235,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "-2.2 Mrd. $",
       "week52Range": "90,48 – 158,89 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "24.77 Mrd. €",
+      "freeCashFlowEUR": "-1.89 Mrd. €",
+      "week52RangeEUR": "77,81 – 136,65 €"
     },
     "profile": "Atmos Energy Corporation ist im Bereich Utilities - Regulated Gas innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -3178,7 +3309,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.4%",
       "freeCashFlow": "–",
       "week52Range": "26,21 – 46,37 $",
-      "dividendYield": "2,3%"
+      "dividendYield": "2,3%",
+      "marketCapEUR": "22.79 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "22,54 – 39,88 €"
     },
     "profile": "AvalonBay Communities, Inc. ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -3249,7 +3383,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "27.2 Mrd. $",
       "week52Range": "16,41 – 23,41 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "1.59 Bio. €",
+      "freeCashFlowEUR": "23.39 Mrd. €",
+      "week52RangeEUR": "14,11 – 20,13 €"
     },
     "profile": "Broadcom Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -3320,7 +3457,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "957 Mio. $",
       "week52Range": "152,97 – 199,61 $",
-      "dividendYield": "0,6%"
+      "dividendYield": "0,6%",
+      "marketCapEUR": "11.18 Mrd. €",
+      "freeCashFlowEUR": "823.02 Mio. €",
+      "week52RangeEUR": "131,55 – 171,66 €"
     },
     "profile": "Avery Dennison Corporation ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -3391,7 +3531,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "-1.8 Mrd. $",
       "week52Range": "156,07 – 269,95 $",
-      "dividendYield": "0,4%"
+      "dividendYield": "0,4%",
+      "marketCapEUR": "22.96 Mrd. €",
+      "freeCashFlowEUR": "-1.55 Mrd. €",
+      "week52RangeEUR": "134,22 – 232,16 €"
     },
     "profile": "American Water Works Company, I ist im Bereich Utilities - Regulated Water innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -3462,7 +3605,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "63 Mio. $",
       "week52Range": "278,19 – 413,43 $",
-      "dividendYield": "0,7%"
+      "dividendYield": "0,7%",
+      "marketCapEUR": "36.55 Mrd. €",
+      "freeCashFlowEUR": "54.18 Mio. €",
+      "week52RangeEUR": "239,24 – 355,55 €"
     },
     "profile": "Axon Enterprise, Inc. ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -3533,7 +3679,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "–",
       "week52Range": "187,53 – 215,75 $",
-      "dividendYield": "4,2%"
+      "dividendYield": "4,2%",
+      "marketCapEUR": "195.31 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "161,28 – 185,54 €"
     },
     "profile": "American Express Company ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -3604,7 +3753,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "904 Mio. $",
       "week52Range": "292,60 – 407,66 $",
-      "dividendYield": "2,0%"
+      "dividendYield": "2,0%",
+      "marketCapEUR": "42.31 Mrd. €",
+      "freeCashFlowEUR": "777.44 Mio. €",
+      "week52RangeEUR": "251,64 – 350,59 €"
     },
     "profile": "AutoZone, Inc. ist im Bereich Auto Parts innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -3675,7 +3827,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "5.6 Mrd. $",
       "week52Range": "244,03 – 473,27 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "146.80 Mrd. €",
+      "freeCashFlowEUR": "4.82 Mrd. €",
+      "week52RangeEUR": "209,87 – 407,01 €"
     },
     "profile": "Boeing Company (The) ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -3746,7 +3901,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "–",
       "week52Range": "301,80 – 549,43 $",
-      "dividendYield": "4,0%"
+      "dividendYield": "4,0%",
+      "marketCapEUR": "373.93 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "259,55 – 472,51 €"
     },
     "profile": "Bank of America Corporation ist im Bereich Banks - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -3817,7 +3975,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "404 Mio. $",
       "week52Range": "197,03 – 369,05 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "14.88 Mrd. €",
+      "freeCashFlowEUR": "347.44 Mio. €",
+      "week52RangeEUR": "169,45 – 317,38 €"
     },
     "profile": "Ball Corporation ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -3888,7 +4049,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "1.0 Mrd. $",
       "week52Range": "310,22 – 470,81 $",
-      "dividendYield": "2,7%"
+      "dividendYield": "2,7%",
+      "marketCapEUR": "11.61 Mrd. €",
+      "freeCashFlowEUR": "0.86 Mrd. €",
+      "week52RangeEUR": "266,79 – 404,90 €"
     },
     "profile": "Baxter International Inc. ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -3959,7 +4123,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "125,87 – 224,16 $",
-      "dividendYield": "0,5%"
+      "dividendYield": "0,5%",
+      "marketCapEUR": "15.65 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "108,25 – 192,78 €"
     },
     "profile": "Best Buy Co., Inc. ist im Bereich Specialty Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -4030,7 +4197,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "4.5 Mrd. $",
       "week52Range": "327,41 – 524,65 $",
-      "dividendYield": "0,9%"
+      "dividendYield": "0,9%",
+      "marketCapEUR": "39.22 Mrd. €",
+      "freeCashFlowEUR": "3.87 Mrd. €",
+      "week52RangeEUR": "281,57 – 451,20 €"
     },
     "profile": "Becton, Dickinson and Company ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -4101,7 +4271,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.1%",
       "freeCashFlow": "-3.2 Mrd. $",
       "week52Range": "237,52 – 288,23 $",
-      "dividendYield": "0,5%"
+      "dividendYield": "0,5%",
+      "marketCapEUR": "15.14 Mrd. €",
+      "freeCashFlowEUR": "-2.75 Mrd. €",
+      "week52RangeEUR": "204,27 – 247,88 €"
     },
     "profile": "Franklin Resources, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -4172,7 +4345,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.6%",
       "freeCashFlow": "740 Mio. $",
       "week52Range": "312,32 – 356,45 $",
-      "dividendYield": "1,2%"
+      "dividendYield": "1,2%",
+      "marketCapEUR": "11.35 Mrd. €",
+      "freeCashFlowEUR": "636.40 Mio. €",
+      "week52RangeEUR": "268,60 – 306,55 €"
     },
     "profile": "Brown Forman Inc ist im Bereich Beverages - Wineries & Distilleries innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -4243,7 +4419,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "-6.5 Mrd. $",
       "week52Range": "167,94 – 276,48 $",
-      "dividendYield": "3,1%"
+      "dividendYield": "3,1%",
+      "marketCapEUR": "17.54 Mrd. €",
+      "freeCashFlowEUR": "-5.59 Mrd. €",
+      "week52RangeEUR": "144,43 – 237,77 €"
     },
     "profile": "Bunge Limited ist im Bereich Farm Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -4314,7 +4493,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.8%",
       "freeCashFlow": "1.3 Mrd. $",
       "week52Range": "245,64 – 298,68 $",
-      "dividendYield": "2,7%"
+      "dividendYield": "2,7%",
+      "marketCapEUR": "25.80 Mrd. €",
+      "freeCashFlowEUR": "1.12 Mrd. €",
+      "week52RangeEUR": "211,25 – 256,86 €"
     },
     "profile": "Biogen Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -4385,7 +4567,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.4%",
       "freeCashFlow": "7.1 Mrd. $",
       "week52Range": "25,71 – 57,85 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "128.57 Mrd. €",
+      "freeCashFlowEUR": "6.11 Mrd. €",
+      "week52RangeEUR": "22,11 – 49,75 €"
     },
     "profile": "Booking Holdings Inc. Common St ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -4456,7 +4641,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "4.4 Mrd. $",
       "week52Range": "206,27 – 447,98 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "51.60 Mrd. €",
+      "freeCashFlowEUR": "3.78 Mrd. €",
+      "week52RangeEUR": "177,39 – 385,26 €"
     },
     "profile": "Baker Hughes Company ist im Bereich Oil & Gas Equipment & Services innerhalb des Sektors Energie tätig.",
     "events": {
@@ -4527,7 +4715,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "465 Mio. $",
       "week52Range": "44,90 – 74,03 $",
-      "dividendYield": "1,1%"
+      "dividendYield": "1,1%",
+      "marketCapEUR": "6.11 Mrd. €",
+      "freeCashFlowEUR": "399.90 Mio. €",
+      "week52RangeEUR": "38,61 – 63,67 €"
     },
     "profile": "Builders FirstSource, Inc. ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -4598,7 +4789,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "–",
       "week52Range": "389,87 – 481,11 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "152.48 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "335,29 – 413,75 €"
     },
     "profile": "BlackRock, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -4669,7 +4863,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.5%",
       "freeCashFlow": "8.1 Mrd. $",
       "week52Range": "67,78 – 134,63 $",
-      "dividendYield": "0,4%"
+      "dividendYield": "0,4%",
+      "marketCapEUR": "114.72 Mrd. €",
+      "freeCashFlowEUR": "6.97 Mrd. €",
+      "week52RangeEUR": "58,29 – 115,78 €"
     },
     "profile": "Bristol-Myers Squibb Company ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -4740,7 +4937,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "–",
       "week52Range": "39,36 – 76,38 $",
-      "dividendYield": "2,6%"
+      "dividendYield": "2,6%",
+      "marketCapEUR": "91.25 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "33,85 – 65,69 €"
     },
     "profile": "The Bank of New York Mellon Cor ist im Bereich Banks - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -4811,7 +5011,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "187,22 – 371,88 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "15.31 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "161,01 – 319,82 €"
     },
     "profile": "Broadridge Financial Solutions, ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -4882,7 +5085,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.2%",
       "freeCashFlow": "61.2 Mrd. $",
       "week52Range": "384,05 – 592,78 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "0.95 Bio. €",
+      "freeCashFlowEUR": "52.63 Mrd. €",
+      "week52RangeEUR": "330,28 – 509,79 €"
     },
     "profile": "Berkshire Hathaway Inc. New ist im Bereich Insurance - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -4953,7 +5159,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.6 Mrd. $",
       "week52Range": "223,62 – 465,88 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "20.30 Mrd. €",
+      "freeCashFlowEUR": "1.38 Mrd. €",
+      "week52RangeEUR": "192,31 – 400,66 €"
     },
     "profile": "Brown & Brown, Inc. ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -5024,7 +5233,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "–",
       "week52Range": "23,73 – 28,73 $",
-      "dividendYield": "1,8%"
+      "dividendYield": "1,8%",
+      "marketCapEUR": "59.77 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "20,41 – 24,71 €"
     },
     "profile": "Boston Scientific Corporation ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -5095,7 +5307,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "–",
       "week52Range": "74,02 – 95,75 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "136.74 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "63,66 – 82,34 €"
     },
     "profile": "Blackstone Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -5166,7 +5381,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "–",
       "week52Range": "87,29 – 132,47 $",
-      "dividendYield": "2,0%"
+      "dividendYield": "2,0%",
+      "marketCapEUR": "10.75 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "75,07 – 113,92 €"
     },
     "profile": "BXP, Inc. ist im Bereich REIT - Office innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -5237,7 +5455,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "–",
       "week52Range": "53,72 – 77,19 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "191.09 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "46,20 – 66,38 €"
     },
     "profile": "Citigroup, Inc. ist im Bereich Banks - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -5308,7 +5529,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "4.8 Mrd. $",
       "week52Range": "324,65 – 507,26 $",
-      "dividendYield": "1,7%"
+      "dividendYield": "1,7%",
+      "marketCapEUR": "46.35 Mrd. €",
+      "freeCashFlowEUR": "4.13 Mrd. €",
+      "week52RangeEUR": "279,20 – 436,24 €"
     },
     "profile": "Cardinal Health, Inc. ist im Bereich Medical Distribution innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -5379,7 +5603,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "862 Mio. $",
       "week52Range": "69,39 – 112,87 $",
-      "dividendYield": "0,7%"
+      "dividendYield": "0,7%",
+      "marketCapEUR": "44.12 Mrd. €",
+      "freeCashFlowEUR": "741.32 Mio. €",
+      "week52RangeEUR": "59,68 – 97,07 €"
     },
     "profile": "Carrier Global Corporation ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -5450,7 +5677,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.7%",
       "freeCashFlow": "551 Mio. $",
       "week52Range": "217,26 – 447,89 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "27.69 Mrd. €",
+      "freeCashFlowEUR": "473.86 Mio. €",
+      "week52RangeEUR": "186,84 – 385,19 €"
     },
     "profile": "Caseys General Stores, Inc. ist im Bereich Specialty Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -5521,7 +5751,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "3.8 Mrd. $",
       "week52Range": "206,17 – 367,98 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "322.76 Mrd. €",
+      "freeCashFlowEUR": "3.27 Mrd. €",
+      "week52RangeEUR": "177,31 – 316,46 €"
     },
     "profile": "Caterpillar, Inc. ist im Bereich Farm & Heavy Construction Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -5592,7 +5825,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "10.5 Mrd. $",
       "week52Range": "178,84 – 306,58 $",
-      "dividendYield": "3,1%"
+      "dividendYield": "3,1%",
+      "marketCapEUR": "116.36 Mrd. €",
+      "freeCashFlowEUR": "9.03 Mrd. €",
+      "week52RangeEUR": "153,80 – 263,66 €"
     },
     "profile": "Chubb Limited ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -5663,7 +5899,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "1.0 Mrd. $",
       "week52Range": "177,07 – 251,39 $",
-      "dividendYield": "2,5%"
+      "dividendYield": "2,5%",
+      "marketCapEUR": "27.95 Mrd. €",
+      "freeCashFlowEUR": "0.86 Mrd. €",
+      "week52RangeEUR": "152,28 – 216,20 €"
     },
     "profile": "Cboe Global Markets, Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -5734,7 +5973,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "1.6 Mrd. $",
       "week52Range": "38,22 – 54,10 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "36.55 Mrd. €",
+      "freeCashFlowEUR": "1.38 Mrd. €",
+      "week52RangeEUR": "32,87 – 46,53 €"
     },
     "profile": "CBRE Group Inc ist im Bereich Real Estate Services innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -5805,7 +6047,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.7%",
       "freeCashFlow": "1.0 Mrd. $",
       "week52Range": "50,03 – 88,77 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "28.64 Mrd. €",
+      "freeCashFlowEUR": "0.86 Mrd. €",
+      "week52RangeEUR": "43,03 – 76,34 €"
     },
     "profile": "Crown Castle Inc. ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -5876,7 +6121,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "1.9 Mrd. $",
       "week52Range": "277,40 – 509,26 $",
-      "dividendYield": "3,8%"
+      "dividendYield": "3,8%",
+      "marketCapEUR": "32.77 Mrd. €",
+      "freeCashFlowEUR": "1.63 Mrd. €",
+      "week52RangeEUR": "238,56 – 437,96 €"
     },
     "profile": "Carnival Corporation Ltd. ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -5947,7 +6195,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.3%",
       "freeCashFlow": "1.6 Mrd. $",
       "week52Range": "168,61 – 316,98 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "80.67 Mrd. €",
+      "freeCashFlowEUR": "1.38 Mrd. €",
+      "week52RangeEUR": "145,00 – 272,60 €"
     },
     "profile": "Cadence Design Systems, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -6018,7 +6269,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "884 Mio. $",
       "week52Range": "97,97 – 149,98 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "16.25 Mrd. €",
+      "freeCashFlowEUR": "760.24 Mio. €",
+      "week52RangeEUR": "84,25 – 128,98 €"
     },
     "profile": "CDW Corporation ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -6089,7 +6343,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "10.9%",
       "freeCashFlow": "-4.5 Mrd. $",
       "week52Range": "253,94 – 578,66 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "80.67 Mrd. €",
+      "freeCashFlowEUR": "-3.87 Mrd. €",
+      "week52RangeEUR": "218,39 – 497,65 €"
     },
     "profile": "Constellation Energy Corporatio ist im Bereich Utilities - Independent Power Producers innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -6160,7 +6417,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.2%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "84,10 – 113,10 $",
-      "dividendYield": "0,9%"
+      "dividendYield": "0,9%",
+      "marketCapEUR": "16.51 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "72,33 – 97,27 €"
     },
     "profile": "CF Industries Holdings, Inc. ist im Bereich Agricultural Inputs innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -6231,7 +6491,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "–",
       "week52Range": "89,75 – 138,15 $",
-      "dividendYield": "0,9%"
+      "dividendYield": "0,9%",
+      "marketCapEUR": "26.06 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "77,19 – 118,81 €"
     },
     "profile": "Citizens Financial Group, Inc. ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -6302,7 +6565,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "939 Mio. $",
       "week52Range": "31,71 – 47,73 $",
-      "dividendYield": "2,4%"
+      "dividendYield": "2,4%",
+      "marketCapEUR": "20.12 Mrd. €",
+      "freeCashFlowEUR": "807.54 Mio. €",
+      "week52RangeEUR": "27,27 – 41,05 €"
     },
     "profile": "Church & Dwight Company, Inc. ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -6373,7 +6639,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "485 Mio. $",
       "week52Range": "61,44 – 108,78 $",
-      "dividendYield": "3,6%"
+      "dividendYield": "3,6%",
+      "marketCapEUR": "14.96 Mrd. €",
+      "freeCashFlowEUR": "417.10 Mio. €",
+      "week52RangeEUR": "52,84 – 93,55 €"
     },
     "profile": "C.H. Robinson Worldwide, Inc. ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -6444,7 +6713,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "2.2 Mrd. $",
       "week52Range": "223,81 – 474,74 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "16.77 Mrd. €",
+      "freeCashFlowEUR": "1.89 Mrd. €",
+      "week52RangeEUR": "192,48 – 408,28 €"
     },
     "profile": "Charter Communications, Inc. ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -6515,7 +6787,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "8.0 Mrd. $",
       "week52Range": "156,46 – 244,81 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "63.38 Mrd. €",
+      "freeCashFlowEUR": "6.88 Mrd. €",
+      "week52RangeEUR": "134,56 – 210,54 €"
     },
     "profile": "The Cigna Group ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -6586,7 +6861,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "23.8%",
       "freeCashFlow": "701 Mio. $",
       "week52Range": "79,88 – 106,20 $",
-      "dividendYield": "1,6%"
+      "dividendYield": "1,6%",
+      "marketCapEUR": "45.92 Mrd. €",
+      "freeCashFlowEUR": "602.86 Mio. €",
+      "week52RangeEUR": "68,70 – 91,33 €"
     },
     "profile": "Ciena Corporation ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -6657,7 +6935,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "3.0 Mrd. $",
       "week52Range": "156,94 – 253,07 $",
-      "dividendYield": "1,9%"
+      "dividendYield": "1,9%",
+      "marketCapEUR": "23.48 Mrd. €",
+      "freeCashFlowEUR": "2.58 Mrd. €",
+      "week52RangeEUR": "134,97 – 217,64 €"
     },
     "profile": "Cincinnati Financial Corporatio ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -6728,7 +7009,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "3.3 Mrd. $",
       "week52Range": "81,65 – 133,16 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "62.87 Mrd. €",
+      "freeCashFlowEUR": "2.84 Mrd. €",
+      "week52RangeEUR": "70,22 – 114,52 €"
     },
     "profile": "Colgate-Palmolive Company ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -6799,7 +7083,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "63 Mio. $",
       "week52Range": "279,84 – 571,85 $",
-      "dividendYield": "3,9%"
+      "dividendYield": "3,9%",
+      "marketCapEUR": "9.98 Mrd. €",
+      "freeCashFlowEUR": "54.18 Mio. €",
+      "week52RangeEUR": "240,66 – 491,79 €"
     },
     "profile": "Clorox Company (The) ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -6870,7 +7157,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.7%",
       "freeCashFlow": "12.7 Mrd. $",
       "week52Range": "216,83 – 393,62 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "73.10 Mrd. €",
+      "freeCashFlowEUR": "10.92 Mrd. €",
+      "week52RangeEUR": "186,47 – 338,51 €"
     },
     "profile": "Comcast Corporation ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -6941,7 +7231,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "2.9 Mrd. $",
       "week52Range": "58,11 – 96,58 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "82.82 Mrd. €",
+      "freeCashFlowEUR": "2.49 Mrd. €",
+      "week52RangeEUR": "49,97 – 83,06 €"
     },
     "profile": "CME Group Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -7012,7 +7305,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "91,67 – 131,23 $",
-      "dividendYield": "3,1%"
+      "dividendYield": "3,1%",
+      "marketCapEUR": "40.59 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "78,84 – 112,86 €"
     },
     "profile": "Chipotle Mexican Grill, Inc. ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -7083,7 +7379,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "1.7 Mrd. $",
       "week52Range": "258,64 – 484,96 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "75.25 Mrd. €",
+      "freeCashFlowEUR": "1.46 Mrd. €",
+      "week52RangeEUR": "222,43 – 417,07 €"
     },
     "profile": "Cummins Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -7154,7 +7453,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.4%",
       "freeCashFlow": "-2.2 Mrd. $",
       "week52Range": "248,60 – 366,69 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "19.09 Mrd. €",
+      "freeCashFlowEUR": "-1.89 Mrd. €",
+      "week52RangeEUR": "213,80 – 315,35 €"
     },
     "profile": "CMS Energy Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -7225,7 +7527,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "9.6 Mrd. $",
       "week52Range": "260,63 – 310,98 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "26.40 Mrd. €",
+      "freeCashFlowEUR": "8.26 Mrd. €",
+      "week52RangeEUR": "224,14 – 267,44 €"
     },
     "profile": "Centene Corporation ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -7296,7 +7601,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "-5.2 Mrd. $",
       "week52Range": "125,40 – 204,77 $",
-      "dividendYield": "3,4%"
+      "dividendYield": "3,4%",
+      "marketCapEUR": "23.82 Mrd. €",
+      "freeCashFlowEUR": "-4.47 Mrd. €",
+      "week52RangeEUR": "107,84 – 176,10 €"
     },
     "profile": "CenterPoint Energy, Inc (Holdin ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -7367,7 +7675,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "–",
       "week52Range": "127,54 – 250,91 $",
-      "dividendYield": "3,9%"
+      "dividendYield": "3,9%",
+      "marketCapEUR": "110.25 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "109,68 – 215,78 €"
     },
     "profile": "Capital One Financial Corporati ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -7438,7 +7749,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "-198 Mio. $",
       "week52Range": "358,21 – 553,97 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "44.20 Mrd. €",
+      "freeCashFlowEUR": "-170.28 Mio. €",
+      "week52RangeEUR": "308,06 – 476,41 €"
     },
     "profile": "Coherent Corp. ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -7509,7 +7823,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "2.7 Mrd. $",
       "week52Range": "373,70 – 554,53 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "33.20 Mrd. €",
+      "freeCashFlowEUR": "2.32 Mrd. €",
+      "week52RangeEUR": "321,38 – 476,90 €"
     },
     "profile": "Coinbase Global, Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -7580,7 +7897,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "424 Mio. $",
       "week52Range": "27,21 – 58,55 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "12.13 Mrd. €",
+      "freeCashFlowEUR": "364.64 Mio. €",
+      "week52RangeEUR": "23,40 – 50,35 €"
     },
     "profile": "The Cooper Companies, Inc. ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -7651,7 +7971,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "5.3 Mrd. $",
       "week52Range": "18,10 – 32,41 $",
-      "dividendYield": "4,4%"
+      "dividendYield": "4,4%",
+      "marketCapEUR": "126.25 Mrd. €",
+      "freeCashFlowEUR": "4.56 Mrd. €",
+      "week52RangeEUR": "15,57 – 27,87 €"
     },
     "profile": "ConocoPhillips ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
     "events": {
@@ -7722,7 +8045,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.3%",
       "freeCashFlow": "-318 Mio. $",
       "week52Range": "223,31 – 390,80 $",
-      "dividendYield": "3,2%"
+      "dividendYield": "3,2%",
+      "marketCapEUR": "52.12 Mrd. €",
+      "freeCashFlowEUR": "-273.48 Mio. €",
+      "week52RangeEUR": "192,05 – 336,09 €"
     },
     "profile": "Cencora, Inc. ist im Bereich Medical Distribution innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -7793,7 +8119,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "7.0 Mrd. $",
       "week52Range": "53,58 – 98,36 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "363.01 Mrd. €",
+      "freeCashFlowEUR": "6.02 Mrd. €",
+      "week52RangeEUR": "46,08 – 84,59 €"
     },
     "profile": "Costco Wholesale Corporation ist im Bereich Discount Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -7864,7 +8193,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "2.1 Mrd. $",
       "week52Range": "277,21 – 421,37 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "21.50 Mrd. €",
+      "freeCashFlowEUR": "1.81 Mrd. €",
+      "week52RangeEUR": "238,40 – 362,38 €"
     },
     "profile": "Corpay, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -7935,7 +8267,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "1000 Mio. $",
       "week52Range": "377,03 – 536,85 $",
-      "dividendYield": "3,1%"
+      "dividendYield": "3,1%",
+      "marketCapEUR": "24.17 Mrd. €",
+      "freeCashFlowEUR": "860.00 Mio. €",
+      "week52RangeEUR": "324,25 – 461,69 €"
     },
     "profile": "Copart, Inc. ist im Bereich Specialty Business Services innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -8006,7 +8341,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.8%",
       "freeCashFlow": "140 Mio. $",
       "week52Range": "201,66 – 331,29 $",
-      "dividendYield": "2,9%"
+      "dividendYield": "2,9%",
+      "marketCapEUR": "9.46 Mrd. €",
+      "freeCashFlowEUR": "120.40 Mio. €",
+      "week52RangeEUR": "173,43 – 284,91 €"
     },
     "profile": "Camden Property Trust ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -8077,7 +8415,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "2.0 Mrd. $",
       "week52Range": "169,15 – 317,16 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "54.35 Mrd. €",
+      "freeCashFlowEUR": "1.72 Mrd. €",
+      "week52RangeEUR": "145,47 – 272,76 €"
     },
     "profile": "CRH PLC ist im Bereich Building Materials innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -8148,7 +8489,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "510 Mio. $",
       "week52Range": "166,25 – 344,38 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "9.63 Mrd. €",
+      "freeCashFlowEUR": "438.60 Mio. €",
+      "week52RangeEUR": "142,97 – 296,17 €"
     },
     "profile": "Charles River Laboratories Inte ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -8219,7 +8563,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "16.6 Mrd. $",
       "week52Range": "65,70 – 85,98 $",
-      "dividendYield": "3,8%"
+      "dividendYield": "3,8%",
+      "marketCapEUR": "129.60 Mrd. €",
+      "freeCashFlowEUR": "14.28 Mrd. €",
+      "week52RangeEUR": "56,50 – 73,94 €"
     },
     "profile": "Salesforce, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -8290,7 +8637,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "1.9 Mrd. $",
       "week52Range": "221,69 – 352,10 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "167.10 Mrd. €",
+      "freeCashFlowEUR": "1.63 Mrd. €",
+      "week52RangeEUR": "190,65 – 302,81 €"
     },
     "profile": "CrowdStrike Holdings, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -8361,7 +8711,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "9.3 Mrd. $",
       "week52Range": "171,99 – 257,00 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "393.19 Mrd. €",
+      "freeCashFlowEUR": "8.00 Mrd. €",
+      "week52RangeEUR": "147,91 – 221,02 €"
     },
     "profile": "Cisco Systems, Inc. ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -8432,7 +8785,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "12.6%",
       "freeCashFlow": "413 Mio. $",
       "week52Range": "46,47 – 64,09 $",
-      "dividendYield": "3,2%"
+      "dividendYield": "3,2%",
+      "marketCapEUR": "10.06 Mrd. €",
+      "freeCashFlowEUR": "355.18 Mio. €",
+      "week52RangeEUR": "39,96 – 55,12 €"
     },
     "profile": "CoStar Group, Inc. ist im Bereich Real Estate Services innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -8503,7 +8859,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "2.0 Mrd. $",
       "week52Range": "20,72 – 35,22 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "80.32 Mrd. €",
+      "freeCashFlowEUR": "1.72 Mrd. €",
+      "week52RangeEUR": "17,82 – 30,29 €"
     },
     "profile": "CSX Corporation ist im Bereich Railroads innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -8574,7 +8933,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.5 Mrd. $",
       "week52Range": "218,79 – 378,15 $",
-      "dividendYield": "2,6%"
+      "dividendYield": "2,6%",
+      "marketCapEUR": "70.43 Mrd. €",
+      "freeCashFlowEUR": "1.29 Mrd. €",
+      "week52RangeEUR": "188,16 – 325,21 €"
     },
     "profile": "Cintas Corporation ist im Bereich Specialty Business Services innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -8645,7 +9007,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "2.2 Mrd. $",
       "week52Range": "18,07 – 38,36 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "22.53 Mrd. €",
+      "freeCashFlowEUR": "1.89 Mrd. €",
+      "week52RangeEUR": "15,54 – 32,99 €"
     },
     "profile": "Cognizant Technology Solutions ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -8716,7 +9081,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "2.4 Mrd. $",
       "week52Range": "305,53 – 465,09 $",
-      "dividendYield": "3,9%"
+      "dividendYield": "3,9%",
+      "marketCapEUR": "45.24 Mrd. €",
+      "freeCashFlowEUR": "2.06 Mrd. €",
+      "week52RangeEUR": "262,76 – 399,98 €"
     },
     "profile": "Corteva, Inc. ist im Bereich Agricultural Inputs innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -8787,7 +9155,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "424 Mio. $",
       "week52Range": "283,71 – 376,22 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "79.81 Mrd. €",
+      "freeCashFlowEUR": "364.64 Mio. €",
+      "week52RangeEUR": "243,99 – 323,55 €"
     },
     "profile": "Carvana Co. ist im Bereich Auto & Truck Dealerships innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -8858,7 +9229,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "5.2 Mrd. $",
       "week52Range": "172,15 – 254,03 $",
-      "dividendYield": "3,6%"
+      "dividendYield": "3,6%",
+      "marketCapEUR": "114.55 Mrd. €",
+      "freeCashFlowEUR": "4.47 Mrd. €",
+      "week52RangeEUR": "148,05 – 218,47 €"
     },
     "profile": "CVS Health Corporation ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -8929,7 +9303,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "3.2%",
       "freeCashFlow": "–",
       "week52Range": "198,09 – 256,61 $",
-      "dividendYield": "4,0%"
+      "dividendYield": "4,0%",
+      "marketCapEUR": "337.12 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "170,36 – 220,68 €"
     },
     "profile": "Chevron Corporation ist im Bereich Oil & Gas Integrated innerhalb des Sektors Energie tätig.",
     "events": {
@@ -9000,7 +9377,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.6%",
       "freeCashFlow": "-9.6 Mrd. $",
       "week52Range": "30,25 – 39,00 $",
-      "dividendYield": "1,1%"
+      "dividendYield": "1,1%",
+      "marketCapEUR": "52.29 Mrd. €",
+      "freeCashFlowEUR": "-8.26 Mrd. €",
+      "week52RangeEUR": "26,02 – 33,54 €"
     },
     "profile": "Dominion Energy, Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -9071,7 +9451,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.3%",
       "freeCashFlow": "2.8 Mrd. $",
       "week52Range": "187,54 – 369,03 $",
-      "dividendYield": "2,6%"
+      "dividendYield": "2,6%",
+      "marketCapEUR": "49.45 Mrd. €",
+      "freeCashFlowEUR": "2.41 Mrd. €",
+      "week52RangeEUR": "161,28 – 317,37 €"
     },
     "profile": "Delta Air Lines, Inc. ist im Bereich Airlines innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -9142,7 +9525,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "2.3 Mrd. $",
       "week52Range": "290,07 – 430,21 $",
-      "dividendYield": "3,4%"
+      "dividendYield": "3,4%",
+      "marketCapEUR": "73.53 Mrd. €",
+      "freeCashFlowEUR": "1.98 Mrd. €",
+      "week52RangeEUR": "249,46 – 369,98 €"
     },
     "profile": "DoorDash, Inc. ist im Bereich Internet Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -9213,7 +9599,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "-125 Mio. $",
       "week52Range": "232,05 – 374,44 $",
-      "dividendYield": "1,6%"
+      "dividendYield": "1,6%",
+      "marketCapEUR": "15.91 Mrd. €",
+      "freeCashFlowEUR": "-107.50 Mio. €",
+      "week52RangeEUR": "199,56 – 322,02 €"
     },
     "profile": "DuPont de Nemours, Inc. ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -9284,7 +9673,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.0%",
       "freeCashFlow": "937 Mio. $",
       "week52Range": "107,05 – 230,32 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "82.04 Mrd. €",
+      "freeCashFlowEUR": "805.82 Mio. €",
+      "week52RangeEUR": "92,06 – 198,08 €"
     },
     "profile": "Datadog, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -9355,7 +9747,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "111,24 – 168,19 $",
-      "dividendYield": "0,4%"
+      "dividendYield": "0,4%",
+      "marketCapEUR": "137.69 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "95,67 – 144,64 €"
     },
     "profile": "Deere & Company ist im Bereich Farm & Heavy Construction Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -9426,7 +9821,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "871 Mio. $",
       "week52Range": "19,20 – 32,84 $",
-      "dividendYield": "2,4%"
+      "dividendYield": "2,4%",
+      "marketCapEUR": "11.35 Mrd. €",
+      "freeCashFlowEUR": "749.06 Mio. €",
+      "week52RangeEUR": "16,51 – 28,24 €"
     },
     "profile": "Deckers Outdoor Corporation ist im Bereich Footwear & Accessories innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -9497,7 +9895,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.8%",
       "freeCashFlow": "5.4 Mrd. $",
       "week52Range": "56,00 – 78,40 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "225.23 Mrd. €",
+      "freeCashFlowEUR": "4.64 Mrd. €",
+      "week52RangeEUR": "48,16 – 67,42 €"
     },
     "profile": "Dell Technologies Inc. ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -9568,7 +9969,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.9 Mrd. $",
       "week52Range": "186,40 – 333,72 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "24.08 Mrd. €",
+      "freeCashFlowEUR": "1.63 Mrd. €",
+      "week52RangeEUR": "160,30 – 287,00 €"
     },
     "profile": "Dollar General Corporation ist im Bereich Discount Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -9639,7 +10043,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "910 Mio. $",
       "week52Range": "210,05 – 370,68 $",
-      "dividendYield": "0,6%"
+      "dividendYield": "0,6%",
+      "marketCapEUR": "22.10 Mrd. €",
+      "freeCashFlowEUR": "782.60 Mio. €",
+      "week52RangeEUR": "180,64 – 318,78 €"
     },
     "profile": "Quest Diagnostics Incorporated ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -9710,7 +10117,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "2.4 Mrd. $",
       "week52Range": "209,76 – 425,43 $",
-      "dividendYield": "4,2%"
+      "dividendYield": "4,2%",
+      "marketCapEUR": "34.40 Mrd. €",
+      "freeCashFlowEUR": "2.06 Mrd. €",
+      "week52RangeEUR": "180,39 – 365,87 €"
     },
     "profile": "D.R. Horton, Inc. ist im Bereich Residential Construction innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -9781,7 +10191,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "4.3 Mrd. $",
       "week52Range": "154,73 – 300,22 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "117.91 Mrd. €",
+      "freeCashFlowEUR": "3.70 Mrd. €",
+      "week52RangeEUR": "133,07 – 258,19 €"
     },
     "profile": "Danaher Corporation ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -9852,7 +10265,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.3%",
       "freeCashFlow": "3.8 Mrd. $",
       "week52Range": "96,70 – 174,05 $",
-      "dividendYield": "2,1%"
+      "dividendYield": "2,1%",
+      "marketCapEUR": "143.62 Mrd. €",
+      "freeCashFlowEUR": "3.27 Mrd. €",
+      "week52RangeEUR": "83,16 – 149,68 €"
     },
     "profile": "Walt Disney Company (The) ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -9923,7 +10339,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.6%",
       "freeCashFlow": "–",
       "week52Range": "335,36 – 423,81 $",
-      "dividendYield": "4,1%"
+      "dividendYield": "4,1%",
+      "marketCapEUR": "60.97 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "288,41 – 364,48 €"
     },
     "profile": "Digital Realty Trust, Inc. ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -9994,7 +10413,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "225,18 – 293,26 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "20.98 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "193,65 – 252,20 €"
     },
     "profile": "Dollar Tree, Inc. ist im Bereich Discount Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -10065,7 +10487,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "3.6%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "200,46 – 321,94 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "12.99 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "172,40 – 276,87 €"
     },
     "profile": "Healthpeak Properties, Inc. ist im Bereich REIT - Healthcare Facilities innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -10136,7 +10561,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "906 Mio. $",
       "week52Range": "168,98 – 257,70 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "23.74 Mrd. €",
+      "freeCashFlowEUR": "779.16 Mio. €",
+      "week52RangeEUR": "145,32 – 221,62 €"
     },
     "profile": "Dover Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -10207,7 +10635,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "238 Mio. $",
       "week52Range": "217,66 – 375,00 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "18.83 Mrd. €",
+      "freeCashFlowEUR": "204.68 Mio. €",
+      "week52RangeEUR": "187,19 – 322,50 €"
     },
     "profile": "Dow Inc. ist im Bereich Chemicals innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -10278,7 +10709,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "531 Mio. $",
       "week52Range": "107,93 – 147,91 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "9.89 Mrd. €",
+      "freeCashFlowEUR": "456.66 Mio. €",
+      "week52RangeEUR": "92,82 – 127,20 €"
     },
     "profile": "Domino's Pizza Inc ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -10349,7 +10783,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "791 Mio. $",
       "week52Range": "64,46 – 113,98 $",
-      "dividendYield": "0,6%"
+      "dividendYield": "0,6%",
+      "marketCapEUR": "20.04 Mrd. €",
+      "freeCashFlowEUR": "680.26 Mio. €",
+      "week52RangeEUR": "55,44 – 98,02 €"
     },
     "profile": "Darden Restaurants, Inc. ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -10420,7 +10857,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "-2.6 Mrd. $",
       "week52Range": "198,00 – 289,75 $",
-      "dividendYield": "4,1%"
+      "dividendYield": "4,1%",
+      "marketCapEUR": "25.37 Mrd. €",
+      "freeCashFlowEUR": "-2.24 Mrd. €",
+      "week52RangeEUR": "170,28 – 249,19 €"
     },
     "profile": "DTE Energy Company ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -10491,7 +10931,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "-2.2 Mrd. $",
       "week52Range": "79,61 – 141,53 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "84.11 Mrd. €",
+      "freeCashFlowEUR": "-1.89 Mrd. €",
+      "week52RangeEUR": "68,46 – 121,72 €"
     },
     "profile": "Duke Energy Corporation (Holdin ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -10562,7 +11005,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "1000 Mio. $",
       "week52Range": "108,04 – 176,56 $",
-      "dividendYield": "3,8%"
+      "dividendYield": "3,8%",
+      "marketCapEUR": "13.24 Mrd. €",
+      "freeCashFlowEUR": "860.00 Mio. €",
+      "week52RangeEUR": "92,91 – 151,84 €"
     },
     "profile": "DaVita Inc. ist im Bereich Medical Care Facilities innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -10633,7 +11079,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.8%",
       "freeCashFlow": "1.6 Mrd. $",
       "week52Range": "108,22 – 218,19 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "44.81 Mrd. €",
+      "freeCashFlowEUR": "1.38 Mrd. €",
+      "week52RangeEUR": "93,07 – 187,64 €"
     },
     "profile": "Devon Energy Corporation ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
     "events": {
@@ -10704,7 +11153,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "1.0 Mrd. $",
       "week52Range": "162,49 – 268,80 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "27.09 Mrd. €",
+      "freeCashFlowEUR": "0.86 Mrd. €",
+      "week52RangeEUR": "139,74 – 231,17 €"
     },
     "profile": "DexCom, Inc. ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -10775,7 +11227,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "2.2 Mrd. $",
       "week52Range": "219,58 – 506,45 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "45.24 Mrd. €",
+      "freeCashFlowEUR": "1.89 Mrd. €",
+      "week52RangeEUR": "188,84 – 435,55 €"
     },
     "profile": "Electronic Arts Inc. ist im Bereich Electronic Gaming & Multimedia innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -10846,7 +11301,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "235,49 – 317,40 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "43.52 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "202,52 – 272,96 €"
     },
     "profile": "eBay Inc. ist im Bereich Internet Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -10917,7 +11375,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "-458 Mio. $",
       "week52Range": "340,20 – 416,65 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "20.98 Mrd. €",
+      "freeCashFlowEUR": "-393.88 Mio. €",
+      "week52RangeEUR": "292,57 – 358,32 €"
     },
     "profile": "EchoStar Corporation ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -10988,7 +11449,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "–",
       "week52Range": "113,70 – 175,29 $",
-      "dividendYield": "1,2%"
+      "dividendYield": "1,2%",
+      "marketCapEUR": "67.17 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "97,78 – 150,75 €"
     },
     "profile": "Ecolab Inc. ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -11059,7 +11523,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "-833 Mio. $",
       "week52Range": "296,74 – 416,85 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "34.49 Mrd. €",
+      "freeCashFlowEUR": "-716.38 Mio. €",
+      "week52RangeEUR": "255,20 – 358,49 €"
     },
     "profile": "Consolidated Edison, Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -11130,7 +11597,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "948 Mio. $",
       "week52Range": "358,26 – 549,89 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "17.46 Mrd. €",
+      "freeCashFlowEUR": "815.28 Mio. €",
+      "week52RangeEUR": "308,10 – 472,91 €"
     },
     "profile": "Equifax, Inc. ist im Bereich Consulting Services innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -11201,7 +11671,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "2.1 Mrd. $",
       "week52Range": "221,80 – 348,14 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "12.47 Mrd. €",
+      "freeCashFlowEUR": "1.81 Mrd. €",
+      "week52RangeEUR": "190,75 – 299,40 €"
     },
     "profile": "Everest Group, Ltd. ist im Bereich Insurance - Reinsurance innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -11272,7 +11745,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "82 Mio. $",
       "week52Range": "247,15 – 550,11 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "24.25 Mrd. €",
+      "freeCashFlowEUR": "70.52 Mio. €",
+      "week52RangeEUR": "212,55 – 473,09 €"
     },
     "profile": "Edison International ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -11343,7 +11819,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.5%",
       "freeCashFlow": "1.8 Mrd. $",
       "week52Range": "116,96 – 207,27 $",
-      "dividendYield": "2,9%"
+      "dividendYield": "2,9%",
+      "marketCapEUR": "26.14 Mrd. €",
+      "freeCashFlowEUR": "1.55 Mrd. €",
+      "week52RangeEUR": "100,59 – 178,25 €"
     },
     "profile": "Estee Lauder Companies, Inc. (T ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -11414,7 +11893,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "4.3 Mrd. $",
       "week52Range": "159,19 – 258,69 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "70.09 Mrd. €",
+      "freeCashFlowEUR": "3.70 Mrd. €",
+      "week52RangeEUR": "136,90 – 222,47 €"
     },
     "profile": "Elevance Health, Inc. ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -11485,7 +11967,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "978 Mio. $",
       "week52Range": "88,01 – 151,42 $",
-      "dividendYield": "1,2%"
+      "dividendYield": "1,2%",
+      "marketCapEUR": "30.27 Mrd. €",
+      "freeCashFlowEUR": "841.08 Mio. €",
+      "week52RangeEUR": "75,69 – 130,22 €"
     },
     "profile": "EMCOR Group, Inc. ist im Bereich Engineering & Construction innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -11556,7 +12041,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "3.3 Mrd. $",
       "week52Range": "316,80 – 457,60 $",
-      "dividendYield": "0,6%"
+      "dividendYield": "0,6%",
+      "marketCapEUR": "72.15 Mrd. €",
+      "freeCashFlowEUR": "2.84 Mrd. €",
+      "week52RangeEUR": "272,45 – 393,54 €"
     },
     "profile": "Emerson Electric Company ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -11627,7 +12115,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "2.9 Mrd. $",
       "week52Range": "46,66 – 60,66 $",
-      "dividendYield": "1,0%"
+      "dividendYield": "1,0%",
+      "marketCapEUR": "68.11 Mrd. €",
+      "freeCashFlowEUR": "2.49 Mrd. €",
+      "week52RangeEUR": "40,13 – 52,17 €"
     },
     "profile": "EOG Resources, Inc. ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
     "events": {
@@ -11698,7 +12189,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "3.8 Mrd. $",
       "week52Range": "289,55 – 467,13 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "86.52 Mrd. €",
+      "freeCashFlowEUR": "3.27 Mrd. €",
+      "week52RangeEUR": "249,01 – 401,73 €"
     },
     "profile": "Equinix, Inc. ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -11769,7 +12263,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.4%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "283,37 – 481,72 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "22.10 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "243,70 – 414,28 €"
     },
     "profile": "Equity Residential ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -11840,7 +12337,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.7%",
       "freeCashFlow": "2.5 Mrd. $",
       "week52Range": "20,21 – 37,38 $",
-      "dividendYield": "3,1%"
+      "dividendYield": "3,1%",
+      "marketCapEUR": "28.64 Mrd. €",
+      "freeCashFlowEUR": "2.15 Mrd. €",
+      "week52RangeEUR": "17,38 – 32,15 €"
     },
     "profile": "EQT Corporation ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
     "events": {
@@ -11911,7 +12411,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "481 Mio. $",
       "week52Range": "93,89 – 141,48 $",
-      "dividendYield": "1,1%"
+      "dividendYield": "1,1%",
+      "marketCapEUR": "10.92 Mrd. €",
+      "freeCashFlowEUR": "413.66 Mio. €",
+      "week52RangeEUR": "80,75 – 121,67 €"
     },
     "profile": "Erie Indemnity Company ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -11982,7 +12485,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.9%",
       "freeCashFlow": "–",
       "week52Range": "60,47 – 89,12 $",
-      "dividendYield": "0,5%"
+      "dividendYield": "0,5%",
+      "marketCapEUR": "23.13 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "52,00 – 76,64 €"
     },
     "profile": "Eversource Energy (D/B/A) ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -12053,7 +12559,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.7%",
       "freeCashFlow": "1.0 Mrd. $",
       "week52Range": "80,16 – 123,53 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "16.86 Mrd. €",
+      "freeCashFlowEUR": "0.86 Mrd. €",
+      "week52RangeEUR": "68,94 – 106,24 €"
     },
     "profile": "Essex Property Trust, Inc. ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -12124,7 +12633,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "3.1 Mrd. $",
       "week52Range": "329,61 – 528,17 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "138.63 Mrd. €",
+      "freeCashFlowEUR": "2.67 Mrd. €",
+      "week52RangeEUR": "283,46 – 454,23 €"
     },
     "profile": "Eaton Corporation, PLC ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -12195,7 +12707,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "-4.4 Mrd. $",
       "week52Range": "161,27 – 182,08 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "43.17 Mrd. €",
+      "freeCashFlowEUR": "-3.78 Mrd. €",
+      "week52RangeEUR": "138,69 – 156,59 €"
     },
     "profile": "Entergy Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -12266,7 +12781,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "-1.1 Mrd. $",
       "week52Range": "202,00 – 342,22 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "16.43 Mrd. €",
+      "freeCashFlowEUR": "-0.95 Mrd. €",
+      "week52RangeEUR": "173,72 – 294,31 €"
     },
     "profile": "Evergy, Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -12337,7 +12855,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.3%",
       "freeCashFlow": "–",
       "week52Range": "197,07 – 326,50 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "42.66 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "169,48 – 280,79 €"
     },
     "profile": "Edwards Lifesciences Corporatio ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -12408,7 +12929,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "-2.7 Mrd. $",
       "week52Range": "219,39 – 300,64 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "40.59 Mrd. €",
+      "freeCashFlowEUR": "-2.32 Mrd. €",
+      "week52RangeEUR": "188,68 – 258,55 €"
     },
     "profile": "Exelon Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -12479,7 +13003,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.5%",
       "freeCashFlow": "1.5 Mrd. $",
       "week52Range": "16,81 – 23,95 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "19.35 Mrd. €",
+      "freeCashFlowEUR": "1.29 Mrd. €",
+      "week52RangeEUR": "14,46 – 20,60 €"
     },
     "profile": "Expand Energy Corporation ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
     "events": {
@@ -12550,7 +13077,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "783 Mio. $",
       "week52Range": "112,25 – 213,27 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "18.92 Mrd. €",
+      "freeCashFlowEUR": "673.38 Mio. €",
+      "week52RangeEUR": "96,53 – 183,41 €"
     },
     "profile": "Expeditors International of Was ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -12621,7 +13151,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "3.5 Mrd. $",
       "week52Range": "47,56 – 88,32 $",
-      "dividendYield": "1,1%"
+      "dividendYield": "1,1%",
+      "marketCapEUR": "30.44 Mrd. €",
+      "freeCashFlowEUR": "3.01 Mrd. €",
+      "week52RangeEUR": "40,90 – 75,96 €"
     },
     "profile": "Expedia Group, Inc. ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -12692,7 +13225,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "–",
       "week52Range": "86,91 – 150,82 $",
-      "dividendYield": "3,7%"
+      "dividendYield": "3,7%",
+      "marketCapEUR": "28.12 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "74,74 – 129,71 €"
     },
     "profile": "Extra Space Storage Inc ist im Bereich REIT - Industrial innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -12763,7 +13299,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "-7.9 Mrd. $",
       "week52Range": "173,17 – 301,64 $",
-      "dividendYield": "0,9%"
+      "dividendYield": "0,9%",
+      "marketCapEUR": "50.31 Mrd. €",
+      "freeCashFlowEUR": "-6.79 Mrd. €",
+      "week52RangeEUR": "148,93 – 259,41 €"
     },
     "profile": "Ford Motor Company ist im Bereich Auto Manufacturers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -12834,7 +13373,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-1.0%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "155,01 – 274,25 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "49.11 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "133,31 – 235,85 €"
     },
     "profile": "Diamondback Energy, Inc. ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
     "events": {
@@ -12905,7 +13447,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "916 Mio. $",
       "week52Range": "155,07 – 316,98 $",
-      "dividendYield": "1,5%"
+      "dividendYield": "1,5%",
+      "marketCapEUR": "47.04 Mrd. €",
+      "freeCashFlowEUR": "787.76 Mio. €",
+      "week52RangeEUR": "133,36 – 272,60 €"
     },
     "profile": "Fastenal Company ist im Bereich Industrial Distribution innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -12976,7 +13521,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "2.2 Mrd. $",
       "week52Range": "145,79 – 252,99 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "77.40 Mrd. €",
+      "freeCashFlowEUR": "1.89 Mrd. €",
+      "week52RangeEUR": "125,38 – 217,57 €"
     },
     "profile": "Freeport-McMoRan, Inc. ist im Bereich Copper innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -13047,7 +13595,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "621 Mio. $",
       "week52Range": "225,75 – 435,61 $",
-      "dividendYield": "1,8%"
+      "dividendYield": "1,8%",
+      "marketCapEUR": "8.08 Mrd. €",
+      "freeCashFlowEUR": "534.06 Mio. €",
+      "week52RangeEUR": "194,15 – 374,62 €"
     },
     "profile": "FactSet Research Systems Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -13118,7 +13669,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "5.7 Mrd. $",
       "week52Range": "281,04 – 349,67 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "62.52 Mrd. €",
+      "freeCashFlowEUR": "4.90 Mrd. €",
+      "week52RangeEUR": "241,69 – 300,72 €"
     },
     "profile": "FedEx Corporation ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -13189,7 +13743,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "–",
       "week52Range": "93,09 – 140,72 $",
-      "dividendYield": "1,6%"
+      "dividendYield": "1,6%",
+      "marketCapEUR": "17.97 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "80,06 – 121,02 €"
     },
     "profile": "FedEx Freight Holding Company, ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -13260,7 +13817,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "-2.0 Mrd. $",
       "week52Range": "88,08 – 128,01 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "23.99 Mrd. €",
+      "freeCashFlowEUR": "-1.72 Mrd. €",
+      "week52RangeEUR": "75,75 – 110,09 €"
     },
     "profile": "FirstEnergy Corp. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -13331,7 +13891,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "752 Mio. $",
       "week52Range": "86,06 – 127,71 $",
-      "dividendYield": "4,3%"
+      "dividendYield": "4,3%",
+      "marketCapEUR": "19.69 Mrd. €",
+      "freeCashFlowEUR": "646.72 Mio. €",
+      "week52RangeEUR": "74,01 – 109,83 €"
     },
     "profile": "F5, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -13402,7 +13965,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "774 Mio. $",
       "week52Range": "91,53 – 202,78 $",
-      "dividendYield": "4,2%"
+      "dividendYield": "4,2%",
+      "marketCapEUR": "20.90 Mrd. €",
+      "freeCashFlowEUR": "665.64 Mio. €",
+      "week52RangeEUR": "78,72 – 174,39 €"
     },
     "profile": "Fair Isaac Corporation ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -13473,7 +14039,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "30.4%",
       "freeCashFlow": "2.4 Mrd. $",
       "week52Range": "143,09 – 278,24 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "19.87 Mrd. €",
+      "freeCashFlowEUR": "2.06 Mrd. €",
+      "week52RangeEUR": "123,06 – 239,29 €"
     },
     "profile": "Fidelity National Information S ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -13544,7 +14113,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "–",
       "week52Range": "38,28 – 76,55 $",
-      "dividendYield": "1,2%"
+      "dividendYield": "1,2%",
+      "marketCapEUR": "24.77 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "32,92 – 65,83 €"
     },
     "profile": "Fiserv, Inc. ist im Bereich  innerhalb des Sektors Sonstige tätig.",
     "events": {
@@ -13615,7 +14187,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "–",
       "week52Range": "163,07 – 301,06 $",
-      "dividendYield": "2,5%"
+      "dividendYield": "2,5%",
+      "marketCapEUR": "44.03 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "140,24 – 258,91 €"
     },
     "profile": "Fifth Third Bancorp ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -13686,7 +14261,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "1.8 Mrd. $",
       "week52Range": "145,58 – 319,84 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "52.37 Mrd. €",
+      "freeCashFlowEUR": "1.55 Mrd. €",
+      "week52RangeEUR": "125,20 – 275,06 €"
     },
     "profile": "Comfort Systems USA, Inc. ist im Bereich Engineering & Construction innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -13757,7 +14335,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "621 Mio. $",
       "week52Range": "44,39 – 61,81 $",
-      "dividendYield": "1,4%"
+      "dividendYield": "1,4%",
+      "marketCapEUR": "35.86 Mrd. €",
+      "freeCashFlowEUR": "534.06 Mio. €",
+      "week52RangeEUR": "38,18 – 53,16 €"
     },
     "profile": "Flex Ltd. ist im Bereich Electronic Components innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -13828,7 +14409,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.5%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "156,30 – 255,97 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "18.75 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "134,42 – 220,13 €"
     },
     "profile": "Fox Corporation ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -13899,7 +14483,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.5%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "265,21 – 415,62 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "21.07 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "228,08 – 357,43 €"
     },
     "profile": "Fox Corporation ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -13970,7 +14557,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.5%",
       "freeCashFlow": "456 Mio. $",
       "week52Range": "45,00 – 108,00 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "9.29 Mrd. €",
+      "freeCashFlowEUR": "392.16 Mio. €",
+      "week52RangeEUR": "38,70 – 92,88 €"
     },
     "profile": "Federal Realty Investment Trust ist im Bereich REIT - Retail innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -14041,7 +14631,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.6 Mrd. $",
       "week52Range": "115,08 – 159,34 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "19.52 Mrd. €",
+      "freeCashFlowEUR": "1.38 Mrd. €",
+      "week52RangeEUR": "98,97 – 137,03 €"
     },
     "profile": "First Solar, Inc. ist im Bereich Solar innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -14112,7 +14705,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "2.3 Mrd. $",
       "week52Range": "49,29 – 69,94 $",
-      "dividendYield": "3,8%"
+      "dividendYield": "3,8%",
+      "marketCapEUR": "102.17 Mrd. €",
+      "freeCashFlowEUR": "1.98 Mrd. €",
+      "week52RangeEUR": "42,39 – 60,15 €"
     },
     "profile": "Fortinet, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -14183,7 +14779,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "939 Mio. $",
       "week52Range": "14,31 – 25,58 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "15.57 Mrd. €",
+      "freeCashFlowEUR": "807.54 Mio. €",
+      "week52RangeEUR": "12,31 – 22,00 €"
     },
     "profile": "Fortive Corporation ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -14254,7 +14853,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "4.4 Mrd. $",
       "week52Range": "26,06 – 46,99 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "89.18 Mrd. €",
+      "freeCashFlowEUR": "3.78 Mrd. €",
+      "week52RangeEUR": "22,41 – 40,41 €"
     },
     "profile": "General Dynamics Corporation ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -14325,7 +14927,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "170,57 – 331,80 $",
-      "dividendYield": "2,2%"
+      "dividendYield": "2,2%",
+      "marketCapEUR": "9.46 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "146,69 – 285,35 €"
     },
     "profile": "GoDaddy Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -14396,7 +15001,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "6.6 Mrd. $",
       "week52Range": "159,13 – 293,77 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "321.30 Mrd. €",
+      "freeCashFlowEUR": "5.68 Mrd. €",
+      "week52RangeEUR": "136,85 – 252,64 €"
     },
     "profile": "GE Aerospace ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -14467,7 +15075,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.6 Mrd. $",
       "week52Range": "163,78 – 292,76 $",
-      "dividendYield": "4,2%"
+      "dividendYield": "4,2%",
+      "marketCapEUR": "26.57 Mrd. €",
+      "freeCashFlowEUR": "1.38 Mrd. €",
+      "week52RangeEUR": "140,85 – 251,77 €"
     },
     "profile": "GE HealthCare Technologies Inc. ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -14538,7 +15149,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.7%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "149,39 – 310,45 $",
-      "dividendYield": "3,8%"
+      "dividendYield": "3,8%",
+      "marketCapEUR": "14.10 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "128,48 – 266,99 €"
     },
     "profile": "Gen Digital Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -14609,7 +15223,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "15.7 Mrd. $",
       "week52Range": "25,06 – 45,60 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "226.78 Mrd. €",
+      "freeCashFlowEUR": "13.50 Mrd. €",
+      "week52RangeEUR": "21,55 – 39,22 €"
     },
     "profile": "GE Vernova Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -14680,7 +15297,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "7.9 Mrd. $",
       "week52Range": "151,49 – 212,09 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "139.06 Mrd. €",
+      "freeCashFlowEUR": "6.79 Mrd. €",
+      "week52RangeEUR": "130,28 – 182,40 €"
     },
     "profile": "Gilead Sciences, Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -14751,7 +15371,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "2.3 Mrd. $",
       "week52Range": "236,06 – 482,54 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "16.43 Mrd. €",
+      "freeCashFlowEUR": "1.98 Mrd. €",
+      "week52RangeEUR": "203,01 – 414,98 €"
     },
     "profile": "General Mills, Inc. ist im Bereich Packaged Foods innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -14822,7 +15445,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "–",
       "week52Range": "311,30 – 502,23 $",
-      "dividendYield": "4,1%"
+      "dividendYield": "4,1%",
+      "marketCapEUR": "12.21 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "267,72 – 431,92 €"
     },
     "profile": "Globe Life Inc. ist im Bereich Insurance - Life innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -14893,7 +15519,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "734 Mio. $",
       "week52Range": "138,41 – 268,69 $",
-      "dividendYield": "3,9%"
+      "dividendYield": "3,9%",
+      "marketCapEUR": "102.17 Mrd. €",
+      "freeCashFlowEUR": "631.24 Mio. €",
+      "week52RangeEUR": "119,03 – 231,07 €"
     },
     "profile": "Corning Incorporated ist im Bereich Electronic Components innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -14964,7 +15593,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.3%",
       "freeCashFlow": "21.9 Mrd. $",
       "week52Range": "236,50 – 358,83 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "69.14 Mrd. €",
+      "freeCashFlowEUR": "18.83 Mrd. €",
+      "week52RangeEUR": "203,39 – 308,59 €"
     },
     "profile": "General Motors Company ist im Bereich Auto Manufacturers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -15035,7 +15667,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "294 Mio. $",
       "week52Range": "340,72 – 437,55 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "9.98 Mrd. €",
+      "freeCashFlowEUR": "252.84 Mio. €",
+      "week52RangeEUR": "293,02 – 376,29 €"
     },
     "profile": "Generac Holdlings Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -15106,7 +15741,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.9%",
       "freeCashFlow": "22.7 Mrd. $",
       "week52Range": "90,08 – 155,96 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "3.75 Bio. €",
+      "freeCashFlowEUR": "19.52 Mrd. €",
+      "week52RangeEUR": "77,47 – 134,13 €"
     },
     "profile": "Alphabet Inc. ist im Bereich Internet Content & Information innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -15177,7 +15815,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.9%",
       "freeCashFlow": "22.7 Mrd. $",
       "week52Range": "53,18 – 74,46 $",
-      "dividendYield": "4,3%"
+      "dividendYield": "4,3%",
+      "marketCapEUR": "3.75 Bio. €",
+      "freeCashFlowEUR": "19.52 Mrd. €",
+      "week52RangeEUR": "45,73 – 64,04 €"
     },
     "profile": "Alphabet Inc. ist im Bereich Internet Content & Information innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -15248,7 +15889,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "917 Mio. $",
       "week52Range": "68,05 – 89,50 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "14.71 Mrd. €",
+      "freeCashFlowEUR": "788.62 Mio. €",
+      "week52RangeEUR": "58,52 – 76,97 €"
     },
     "profile": "Genuine Parts Company ist im Bereich Auto Parts innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -15319,7 +15963,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "7.1 Mrd. $",
       "week52Range": "61,03 – 69,48 $",
-      "dividendYield": "2,2%"
+      "dividendYield": "2,2%",
+      "marketCapEUR": "19.78 Mrd. €",
+      "freeCashFlowEUR": "6.11 Mrd. €",
+      "week52RangeEUR": "52,49 – 59,75 €"
     },
     "profile": "Global Payments Inc. ist im Bereich Specialty Business Services innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -15390,7 +16037,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "1.0 Mrd. $",
       "week52Range": "253,31 – 398,05 $",
-      "dividendYield": "3,0%"
+      "dividendYield": "3,0%",
+      "marketCapEUR": "48.76 Mrd. €",
+      "freeCashFlowEUR": "0.86 Mrd. €",
+      "week52RangeEUR": "217,85 – 342,32 €"
     },
     "profile": "Garmin Ltd. ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -15461,7 +16111,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "–",
       "week52Range": "363,04 – 439,68 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "258.34 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "312,21 – 378,12 €"
     },
     "profile": "Goldman Sachs Group, Inc. (The) ist im Bereich Capital Markets innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -15532,7 +16185,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "206,56 – 358,05 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "56.16 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "177,64 – 307,92 €"
     },
     "profile": "W.W. Grainger, Inc. ist im Bereich Industrial Distribution innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -15603,7 +16259,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "2.1 Mrd. $",
       "week52Range": "231,28 – 275,10 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "23.13 Mrd. €",
+      "freeCashFlowEUR": "1.81 Mrd. €",
+      "week52RangeEUR": "198,90 – 236,59 €"
     },
     "profile": "Halliburton Company ist im Bereich Oil & Gas Equipment & Services innerhalb des Sektors Energie tätig.",
     "events": {
@@ -15674,7 +16333,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "688 Mio. $",
       "week52Range": "151,58 – 329,22 $",
-      "dividendYield": "0,6%"
+      "dividendYield": "0,6%",
+      "marketCapEUR": "11.35 Mrd. €",
+      "freeCashFlowEUR": "591.68 Mio. €",
+      "week52RangeEUR": "130,36 – 283,13 €"
     },
     "profile": "Hasbro, Inc. ist im Bereich Leisure innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -15745,7 +16407,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "–",
       "week52Range": "250,17 – 427,21 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "29.58 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "215,15 – 367,40 €"
     },
     "profile": "Huntington Bancshares Incorpora ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -15816,7 +16481,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "3.7 Mrd. $",
       "week52Range": "186,69 – 233,90 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "76.80 Mrd. €",
+      "freeCashFlowEUR": "3.18 Mrd. €",
+      "week52RangeEUR": "160,55 – 201,15 €"
     },
     "profile": "HCA Healthcare, Inc. ist im Bereich Medical Care Facilities innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -15887,7 +16555,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "10.1 Mrd. $",
       "week52Range": "30,57 – 60,26 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "284.66 Mrd. €",
+      "freeCashFlowEUR": "8.69 Mrd. €",
+      "week52RangeEUR": "26,29 – 51,82 €"
     },
     "profile": "Home Depot, Inc. (The) ist im Bereich Home Improvement Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -15958,7 +16629,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "5.5 Mrd. $",
       "week52Range": "88,66 – 156,39 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "33.45 Mrd. €",
+      "freeCashFlowEUR": "4.73 Mrd. €",
+      "week52RangeEUR": "76,25 – 134,50 €"
     },
     "profile": "The Hartford Insurance Group, I ist im Bereich Insurance - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -16029,7 +16703,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "-300 Mio. $",
       "week52Range": "102,64 – 199,73 $",
-      "dividendYield": "0,5%"
+      "dividendYield": "0,5%",
+      "marketCapEUR": "11.09 Mrd. €",
+      "freeCashFlowEUR": "-258.00 Mio. €",
+      "week52RangeEUR": "88,27 – 171,77 €"
     },
     "profile": "Huntington Ingalls Industries, ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -16100,7 +16777,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "306,90 – 511,50 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "62.01 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "263,93 – 439,89 €"
     },
     "profile": "Hilton Worldwide Holdings Inc. ist im Bereich Lodging innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -16171,7 +16851,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.6%",
       "freeCashFlow": "2.6 Mrd. $",
       "week52Range": "93,41 – 136,33 $",
-      "dividendYield": "1,2%"
+      "dividendYield": "1,2%",
+      "marketCapEUR": "66.22 Mrd. €",
+      "freeCashFlowEUR": "2.24 Mrd. €",
+      "week52RangeEUR": "80,33 – 117,24 €"
     },
     "profile": "Honeywell International Inc. ist im Bereich Conglomerates innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -16242,7 +16925,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "–",
       "week52Range": "377,56 – 456,39 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "56.33 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "324,70 – 392,50 €"
     },
     "profile": "Honeywell Aerospace Inc. ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -16313,7 +16999,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "–",
       "week52Range": "378,30 – 500,33 $",
-      "dividendYield": "2,7%"
+      "dividendYield": "2,7%",
+      "marketCapEUR": "66.91 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "325,34 – 430,28 €"
     },
     "profile": "Robinhood Markets, Inc. ist im Bereich Capital Markets innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -16384,7 +17073,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "3.8 Mrd. $",
       "week52Range": "137,47 – 324,52 $",
-      "dividendYield": "4,4%"
+      "dividendYield": "4,4%",
+      "marketCapEUR": "54.52 Mrd. €",
+      "freeCashFlowEUR": "3.27 Mrd. €",
+      "week52RangeEUR": "118,22 – 279,09 €"
     },
     "profile": "Hewlett Packard Enterprise Comp ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -16455,7 +17147,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "3.5 Mrd. $",
       "week52Range": "110,24 – 176,12 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "21.41 Mrd. €",
+      "freeCashFlowEUR": "3.01 Mrd. €",
+      "week52RangeEUR": "94,81 – 151,46 €"
     },
     "profile": "HP Inc. ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -16526,7 +17221,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "471 Mio. $",
       "week52Range": "297,68 – 517,22 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "11.87 Mrd. €",
+      "freeCashFlowEUR": "405.06 Mio. €",
+      "week52RangeEUR": "256,00 – 444,81 €"
     },
     "profile": "Hormel Foods Corporation ist im Bereich Packaged Foods innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -16597,7 +17295,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "290 Mio. $",
       "week52Range": "302,11 – 508,62 $",
-      "dividendYield": "2,7%"
+      "dividendYield": "2,7%",
+      "marketCapEUR": "8.43 Mrd. €",
+      "freeCashFlowEUR": "249.40 Mio. €",
+      "week52RangeEUR": "259,81 – 437,41 €"
     },
     "profile": "Henry Schein, Inc. ist im Bereich Medical Distribution innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -16668,7 +17369,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.1%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "203,99 – 449,42 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "14.96 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "175,43 – 386,50 €"
     },
     "profile": "Host Hotels & Resorts, Inc. ist im Bereich REIT - Hotel & Motel innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -16739,7 +17443,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "6.3%",
       "freeCashFlow": "1.7 Mrd. $",
       "week52Range": "136,79 – 193,91 $",
-      "dividendYield": "0,3%"
+      "dividendYield": "0,3%",
+      "marketCapEUR": "30.27 Mrd. €",
+      "freeCashFlowEUR": "1.46 Mrd. €",
+      "week52RangeEUR": "117,64 – 166,76 €"
     },
     "profile": "The Hershey Company ist im Bereich Confectioners innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -16810,7 +17517,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "496 Mio. $",
       "week52Range": "306,95 – 466,95 $",
-      "dividendYield": "1,6%"
+      "dividendYield": "1,6%",
+      "marketCapEUR": "21.50 Mrd. €",
+      "freeCashFlowEUR": "426.56 Mio. €",
+      "week52RangeEUR": "263,98 – 401,58 €"
     },
     "profile": "Hubbell Inc ist im Bereich Electrical Equipment & Parts innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -16881,7 +17591,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "1.9 Mrd. $",
       "week52Range": "106,74 – 190,80 $",
-      "dividendYield": "0,9%"
+      "dividendYield": "0,9%",
+      "marketCapEUR": "37.58 Mrd. €",
+      "freeCashFlowEUR": "1.63 Mrd. €",
+      "week52RangeEUR": "91,80 – 164,09 €"
     },
     "profile": "Humana Inc. ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -16952,7 +17665,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.7%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "220,62 – 359,79 $",
-      "dividendYield": "2,2%"
+      "dividendYield": "2,2%",
+      "marketCapEUR": "97.09 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "189,73 – 309,42 €"
     },
     "profile": "Howmet Aerospace Inc. ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -17023,7 +17739,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "–",
       "week52Range": "329,30 – 518,56 $",
-      "dividendYield": "1,4%"
+      "dividendYield": "1,4%",
+      "marketCapEUR": "128.40 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "283,20 – 445,96 €"
     },
     "profile": "Interactive Brokers Group, Inc. ist im Bereich Capital Markets innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -17094,7 +17813,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "12.0 Mrd. $",
       "week52Range": "200,31 – 321,54 $",
-      "dividendYield": "3,1%"
+      "dividendYield": "3,1%",
+      "marketCapEUR": "181.20 Mrd. €",
+      "freeCashFlowEUR": "10.32 Mrd. €",
+      "week52RangeEUR": "172,27 – 276,52 €"
     },
     "profile": "International Business Machines ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -17165,7 +17887,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "3.6 Mrd. $",
       "week52Range": "105,06 – 166,34 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "73.62 Mrd. €",
+      "freeCashFlowEUR": "3.10 Mrd. €",
+      "week52RangeEUR": "90,35 – 143,05 €"
     },
     "profile": "Intercontinental Exchange Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -17236,7 +17961,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "787 Mio. $",
       "week52Range": "79,34 – 154,28 $",
-      "dividendYield": "4,3%"
+      "dividendYield": "4,3%",
+      "marketCapEUR": "37.93 Mrd. €",
+      "freeCashFlowEUR": "676.82 Mio. €",
+      "week52RangeEUR": "68,23 – 132,68 €"
     },
     "profile": "IDEXX Laboratories, Inc. ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -17307,7 +18035,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "556 Mio. $",
       "week52Range": "320,07 – 486,35 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "14.62 Mrd. €",
+      "freeCashFlowEUR": "478.16 Mio. €",
+      "week52RangeEUR": "275,26 – 418,26 €"
     },
     "profile": "IDEX Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -17378,7 +18109,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "3.7 Mrd. $",
       "week52Range": "61,89 – 116,05 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "17.37 Mrd. €",
+      "freeCashFlowEUR": "3.18 Mrd. €",
+      "week52RangeEUR": "53,23 – 99,80 €"
     },
     "profile": "International Flavors & Fragran ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -17449,7 +18183,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "312,16 – 499,46 $",
-      "dividendYield": "2,3%"
+      "dividendYield": "2,3%",
+      "marketCapEUR": "20.81 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "268,46 – 429,54 €"
     },
     "profile": "Incyte Corporation ist im Bereich Biotechnology innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -17520,7 +18257,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "4.9 Mrd. $",
       "week52Range": "170,48 – 365,70 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "391.30 Mrd. €",
+      "freeCashFlowEUR": "4.21 Mrd. €",
+      "week52RangeEUR": "146,61 – 314,50 €"
     },
     "profile": "Intel Corporation ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -17591,7 +18331,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "5.2 Mrd. $",
       "week52Range": "210,38 – 420,76 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "74.39 Mrd. €",
+      "freeCashFlowEUR": "4.47 Mrd. €",
+      "week52RangeEUR": "180,93 – 361,85 €"
     },
     "profile": "Intuit Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -17662,7 +18405,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "108,67 – 200,09 $",
-      "dividendYield": "2,5%"
+      "dividendYield": "2,5%",
+      "marketCapEUR": "15.22 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "93,46 – 172,08 €"
     },
     "profile": "Invitation Homes Inc. ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -17733,7 +18479,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "1.8 Mrd. $",
       "week52Range": "258,27 – 568,99 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "18.58 Mrd. €",
+      "freeCashFlowEUR": "1.55 Mrd. €",
+      "week52RangeEUR": "222,11 – 489,33 €"
     },
     "profile": "International Paper Company ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -17804,7 +18553,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "2.1 Mrd. $",
       "week52Range": "214,16 – 418,13 $",
-      "dividendYield": "4,4%"
+      "dividendYield": "4,4%",
+      "marketCapEUR": "33.28 Mrd. €",
+      "freeCashFlowEUR": "1.81 Mrd. €",
+      "week52RangeEUR": "184,18 – 359,59 €"
     },
     "profile": "IQVIA Holdings, Inc. ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -17875,7 +18627,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "165,79 – 313,16 $",
-      "dividendYield": "2,9%"
+      "dividendYield": "2,9%",
+      "marketCapEUR": "28.04 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "142,58 – 269,32 €"
     },
     "profile": "Ingersoll Rand Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -17946,7 +18701,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "8.6%",
       "freeCashFlow": "-499 Mio. $",
       "week52Range": "268,84 – 381,15 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "31.30 Mrd. €",
+      "freeCashFlowEUR": "-429.14 Mio. €",
+      "week52RangeEUR": "231,20 – 327,79 €"
     },
     "profile": "Iron Mountain Incorporated (Del ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -18017,7 +18775,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "2.6 Mrd. $",
       "week52Range": "21,23 – 40,92 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "108.88 Mrd. €",
+      "freeCashFlowEUR": "2.24 Mrd. €",
+      "week52RangeEUR": "18,26 – 35,19 €"
     },
     "profile": "Intuitive Surgical, Inc. ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -18088,7 +18849,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "296,44 – 485,83 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "8.69 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "254,94 – 417,81 €"
     },
     "profile": "Gartner, Inc. ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -18159,7 +18923,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "–",
       "week52Range": "190,09 – 239,28 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "71.04 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "163,48 – 205,78 €"
     },
     "profile": "Illinois Tool Works Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -18230,7 +18997,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "–",
       "week52Range": "270,87 – 419,65 $",
-      "dividendYield": "1,1%"
+      "dividendYield": "1,1%",
+      "marketCapEUR": "11.27 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "232,95 – 360,90 €"
     },
     "profile": "Invesco Ltd ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -18301,7 +19071,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "512 Mio. $",
       "week52Range": "322,51 – 387,74 $",
-      "dividendYield": "3,9%"
+      "dividendYield": "3,9%",
+      "marketCapEUR": "13.67 Mrd. €",
+      "freeCashFlowEUR": "440.32 Mio. €",
+      "week52RangeEUR": "277,36 – 333,46 €"
     },
     "profile": "Jacobs Solutions Inc. ist im Bereich Engineering & Construction innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -18372,7 +19145,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "903 Mio. $",
       "week52Range": "36,13 – 55,76 $",
-      "dividendYield": "3,1%"
+      "dividendYield": "3,1%",
+      "marketCapEUR": "21.93 Mrd. €",
+      "freeCashFlowEUR": "776.58 Mio. €",
+      "week52RangeEUR": "31,07 – 47,95 €"
     },
     "profile": "J.B. Hunt Transport Services, I ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -18443,7 +19219,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "145,77 – 173,39 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "28.38 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "125,36 – 149,12 €"
     },
     "profile": "Jabil Inc. ist im Bereich Electronic Components innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -18514,7 +19293,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "3.0 Mrd. $",
       "week52Range": "202,84 – 369,27 $",
-      "dividendYield": "2,9%"
+      "dividendYield": "2,9%",
+      "marketCapEUR": "76.37 Mrd. €",
+      "freeCashFlowEUR": "2.58 Mrd. €",
+      "week52RangeEUR": "174,44 – 317,57 €"
     },
     "profile": "Johnson Controls International ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -18585,7 +19367,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "373 Mio. $",
       "week52Range": "227,74 – 393,36 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "9.37 Mrd. €",
+      "freeCashFlowEUR": "320.78 Mio. €",
+      "week52RangeEUR": "195,86 – 338,29 €"
     },
     "profile": "Jack Henry & Associates, Inc. ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -18656,7 +19441,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "16.9 Mrd. $",
       "week52Range": "199,38 – 331,48 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "531.31 Mrd. €",
+      "freeCashFlowEUR": "14.53 Mrd. €",
+      "week52RangeEUR": "171,47 – 285,07 €"
     },
     "profile": "Johnson & Johnson ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -18727,7 +19515,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "–",
       "week52Range": "15,77 – 35,86 $",
-      "dividendYield": "0,7%"
+      "dividendYield": "0,7%",
+      "marketCapEUR": "804.19 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "13,56 – 30,84 €"
     },
     "profile": "JP Morgan Chase & Co. ist im Bereich Banks - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -18798,7 +19589,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.5%",
       "freeCashFlow": "-16.3 Mrd. $",
       "week52Range": "62,20 – 102,35 $",
-      "dividendYield": "4,3%"
+      "dividendYield": "4,3%",
+      "marketCapEUR": "36.38 Mrd. €",
+      "freeCashFlowEUR": "-14.02 Mrd. €",
+      "week52RangeEUR": "53,49 – 88,02 €"
     },
     "profile": "Keurig Dr Pepper Inc. ist im Bereich Beverages - Non-Alcoholic innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -18869,7 +19663,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "–",
       "week52Range": "22,98 – 36,71 $",
-      "dividendYield": "1,4%"
+      "dividendYield": "1,4%",
+      "marketCapEUR": "20.81 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "19,76 – 31,57 €"
     },
     "profile": "KeyCorp ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -18940,7 +19737,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "105,22 – 180,58 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "46.87 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "90,49 – 155,30 €"
     },
     "profile": "Keysight Technologies Inc. ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -19011,7 +19811,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "3.2 Mrd. $",
       "week52Range": "198,25 – 409,28 $",
-      "dividendYield": "3,1%"
+      "dividendYield": "3,1%",
+      "marketCapEUR": "26.40 Mrd. €",
+      "freeCashFlowEUR": "2.75 Mrd. €",
+      "week52RangeEUR": "170,50 – 351,98 €"
     },
     "profile": "The Kraft Heinz Company ist im Bereich Packaged Foods innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -19082,7 +19885,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "839 Mio. $",
       "week52Range": "20,56 – 25,87 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "14.79 Mrd. €",
+      "freeCashFlowEUR": "721.54 Mio. €",
+      "week52RangeEUR": "17,68 – 22,25 €"
     },
     "profile": "Kimco Realty Corporation (HC) ist im Bereich REIT - Retail innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -19153,7 +19959,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "–",
       "week52Range": "187,85 – 241,52 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "81.36 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "161,55 – 207,71 €"
     },
     "profile": "KKR & Co. Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -19224,7 +20033,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "–",
       "week52Range": "342,26 – 414,52 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "205.37 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "294,34 – 356,49 €"
     },
     "profile": "KLA Corporation ist im Bereich Semiconductor Equipment & Materials innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -19295,7 +20107,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "227,99 – 459,48 $",
-      "dividendYield": "1,9%"
+      "dividendYield": "1,9%",
+      "marketCapEUR": "31.22 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "196,07 – 395,15 €"
     },
     "profile": "Kimberly-Clark Corporation ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -19366,7 +20181,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "16,79 – 39,75 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "61.58 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "14,44 – 34,19 €"
     },
     "profile": "Kinder Morgan, Inc. ist im Bereich Oil & Gas Midstream innerhalb des Sektors Energie tätig.",
     "events": {
@@ -19437,7 +20255,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "5.2 Mrd. $",
       "week52Range": "13,26 – 27,40 $",
-      "dividendYield": "1,4%"
+      "dividendYield": "1,4%",
+      "marketCapEUR": "324.13 Mrd. €",
+      "freeCashFlowEUR": "4.47 Mrd. €",
+      "week52RangeEUR": "11,40 – 23,56 €"
     },
     "profile": "Coca-Cola Company (The) ist im Bereich Beverages - Non-Alcoholic innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -19508,7 +20329,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "3.0 Mrd. $",
       "week52Range": "224,98 – 374,96 $",
-      "dividendYield": "1,5%"
+      "dividendYield": "1,5%",
+      "marketCapEUR": "30.44 Mrd. €",
+      "freeCashFlowEUR": "2.58 Mrd. €",
+      "week52RangeEUR": "193,48 – 322,47 €"
     },
     "profile": "Kroger Company (The) ist im Bereich Grocery Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -19579,7 +20403,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "1.9 Mrd. $",
       "week52Range": "104,63 – 150,98 $",
-      "dividendYield": "3,5%"
+      "dividendYield": "3,5%",
+      "marketCapEUR": "31.73 Mrd. €",
+      "freeCashFlowEUR": "1.63 Mrd. €",
+      "week52RangeEUR": "89,98 – 129,84 €"
     },
     "profile": "Kenvue Inc. ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -19650,7 +20477,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "2.1 Mrd. $",
       "week52Range": "112,95 – 180,45 $",
-      "dividendYield": "0,4%"
+      "dividendYield": "0,4%",
+      "marketCapEUR": "20.55 Mrd. €",
+      "freeCashFlowEUR": "1.81 Mrd. €",
+      "week52RangeEUR": "97,14 – 155,19 €"
     },
     "profile": "Loews Corporation ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -19721,7 +20551,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "329,65 – 497,98 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "12.47 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "283,50 – 428,26 €"
     },
     "profile": "Leidos Holdings, Inc. ist im Bereich Information Technology Services innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -19792,7 +20625,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.3%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "37,30 – 46,94 $",
-      "dividendYield": "2,2%"
+      "dividendYield": "2,2%",
+      "marketCapEUR": "17.03 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "32,08 – 40,37 €"
     },
     "profile": "Lennar Corporation ist im Bereich Residential Construction innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -19863,7 +20699,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "892 Mio. $",
       "week52Range": "30,94 – 39,44 $",
-      "dividendYield": "2,4%"
+      "dividendYield": "2,4%",
+      "marketCapEUR": "21.50 Mrd. €",
+      "freeCashFlowEUR": "767.12 Mio. €",
+      "week52RangeEUR": "26,61 – 33,92 €"
     },
     "profile": "Labcorp Holdings Inc. ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -19934,7 +20773,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "–",
       "week52Range": "103,42 – 179,16 $",
-      "dividendYield": "1,0%"
+      "dividendYield": "1,0%",
+      "marketCapEUR": "44.38 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "88,94 – 154,08 €"
     },
     "profile": "L3Harris Technologies, Inc. ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -20005,7 +20847,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "278 Mio. $",
       "week52Range": "12,21 – 19,69 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "12.38 Mrd. €",
+      "freeCashFlowEUR": "239.08 Mio. €",
+      "week52RangeEUR": "10,50 – 16,93 €"
     },
     "profile": "Lennox International, Inc. ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -20076,7 +20921,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "4.7 Mrd. $",
       "week52Range": "156,51 – 265,20 $",
-      "dividendYield": "1,2%"
+      "dividendYield": "1,2%",
+      "marketCapEUR": "190.23 Mrd. €",
+      "freeCashFlowEUR": "4.04 Mrd. €",
+      "week52RangeEUR": "134,60 – 228,07 €"
     },
     "profile": "Linde plc ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -20147,7 +20995,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "93 Mio. $",
       "week52Range": "37,93 – 50,58 $",
-      "dividendYield": "0,8%"
+      "dividendYield": "0,8%",
+      "marketCapEUR": "47.73 Mrd. €",
+      "freeCashFlowEUR": "79.98 Mio. €",
+      "week52RangeEUR": "32,62 – 43,50 €"
     },
     "profile": "Lumentum Holdings Inc. ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -20218,7 +21069,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.7%",
       "freeCashFlow": "9.2 Mrd. $",
       "week52Range": "98,36 – 128,29 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "0.88 Bio. €",
+      "freeCashFlowEUR": "7.91 Mrd. €",
+      "week52RangeEUR": "84,59 – 110,33 €"
     },
     "profile": "Eli Lilly and Company ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -20289,7 +21143,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "4.4%",
       "freeCashFlow": "5.6 Mrd. $",
       "week52Range": "99,19 – 144,03 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "115.67 Mrd. €",
+      "freeCashFlowEUR": "4.82 Mrd. €",
+      "week52RangeEUR": "85,30 – 123,87 €"
     },
     "profile": "Lockheed Martin Corporation ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -20360,7 +21217,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "-1.1 Mrd. $",
       "week52Range": "224,62 – 295,28 $",
-      "dividendYield": "2,7%"
+      "dividendYield": "2,7%",
+      "marketCapEUR": "15.74 Mrd. €",
+      "freeCashFlowEUR": "-0.95 Mrd. €",
+      "week52RangeEUR": "193,17 – 253,94 €"
     },
     "profile": "Alliant Energy Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -20431,7 +21291,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "4.8 Mrd. $",
       "week52Range": "22,15 – 29,88 $",
-      "dividendYield": "3,6%"
+      "dividendYield": "3,6%",
+      "marketCapEUR": "100.28 Mrd. €",
+      "freeCashFlowEUR": "4.13 Mrd. €",
+      "week52RangeEUR": "19,05 – 25,70 €"
     },
     "profile": "Lowe's Companies, Inc. ist im Bereich Home Improvement Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -20502,7 +21365,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "3.3 Mrd. $",
       "week52Range": "188,54 – 350,15 $",
-      "dividendYield": "3,4%"
+      "dividendYield": "3,4%",
+      "marketCapEUR": "315.28 Mrd. €",
+      "freeCashFlowEUR": "2.84 Mrd. €",
+      "week52RangeEUR": "162,14 – 301,13 €"
     },
     "profile": "Lam Research Corporation ist im Bereich Semiconductor Equipment & Materials innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -20573,7 +21439,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.3%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "96,64 – 168,14 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "11.61 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "83,11 – 144,60 €"
     },
     "profile": "lululemon athletica inc. ist im Bereich Apparel Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -20644,7 +21513,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "-835 Mio. $",
       "week52Range": "249,65 – 402,22 $",
-      "dividendYield": "1,2%"
+      "dividendYield": "1,2%",
+      "marketCapEUR": "18.92 Mrd. €",
+      "freeCashFlowEUR": "-718.10 Mio. €",
+      "week52RangeEUR": "214,70 – 345,91 €"
     },
     "profile": "Southwest Airlines Company ist im Bereich Airlines innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -20715,7 +21587,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "2.2 Mrd. $",
       "week52Range": "136,92 – 246,46 $",
-      "dividendYield": "3,8%"
+      "dividendYield": "3,8%",
+      "marketCapEUR": "27.26 Mrd. €",
+      "freeCashFlowEUR": "1.89 Mrd. €",
+      "week52RangeEUR": "117,75 – 211,96 €"
     },
     "profile": "Las Vegas Sands Corp. ist im Bereich Resorts & Casinos innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -20786,7 +21661,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "4.0%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "189,94 – 220,91 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "17.20 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "163,35 – 189,98 €"
     },
     "profile": "LyondellBasell Industries NV ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -20857,7 +21735,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.6%",
       "freeCashFlow": "1.7 Mrd. $",
       "week52Range": "141,95 – 265,38 $",
-      "dividendYield": "1,9%"
+      "dividendYield": "1,9%",
+      "marketCapEUR": "34.92 Mrd. €",
+      "freeCashFlowEUR": "1.46 Mrd. €",
+      "week52RangeEUR": "122,08 – 228,23 €"
     },
     "profile": "Live Nation Entertainment, Inc. ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -20928,7 +21809,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "17.0 Mrd. $",
       "week52Range": "220,60 – 448,31 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "431.72 Mrd. €",
+      "freeCashFlowEUR": "14.62 Mrd. €",
+      "week52RangeEUR": "189,72 – 385,55 €"
     },
     "profile": "Mastercard Incorporated ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -20999,7 +21883,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "921 Mio. $",
       "week52Range": "78,00 – 119,41 $",
-      "dividendYield": "2,5%"
+      "dividendYield": "2,5%",
+      "marketCapEUR": "13.59 Mrd. €",
+      "freeCashFlowEUR": "792.06 Mio. €",
+      "week52RangeEUR": "67,08 – 102,69 €"
     },
     "profile": "Mid-America Apartment Communiti ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -21070,7 +21957,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "1.8 Mrd. $",
       "week52Range": "320,01 – 502,29 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "84.54 Mrd. €",
+      "freeCashFlowEUR": "1.55 Mrd. €",
+      "week52RangeEUR": "275,21 – 431,97 €"
     },
     "profile": "Marriott International ist im Bereich Lodging innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -21141,7 +22031,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "897 Mio. $",
       "week52Range": "247,77 – 407,29 $",
-      "dividendYield": "3,8%"
+      "dividendYield": "3,8%",
+      "marketCapEUR": "12.13 Mrd. €",
+      "freeCashFlowEUR": "771.42 Mio. €",
+      "week52RangeEUR": "213,08 – 350,27 €"
     },
     "profile": "Masco Corporation ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -21212,7 +22105,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "6.0 Mrd. $",
       "week52Range": "117,86 – 244,92 $",
-      "dividendYield": "3,4%"
+      "dividendYield": "3,4%",
+      "marketCapEUR": "165.38 Mrd. €",
+      "freeCashFlowEUR": "5.16 Mrd. €",
+      "week52RangeEUR": "101,36 – 210,63 €"
     },
     "profile": "McDonald's Corporation ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -21283,7 +22179,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "165,03 – 227,14 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "34.66 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "141,93 – 195,34 €"
     },
     "profile": "Microchip Technology Incorporat ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -21354,7 +22253,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "5.7 Mrd. $",
       "week52Range": "39,32 – 57,47 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "86.17 Mrd. €",
+      "freeCashFlowEUR": "4.90 Mrd. €",
+      "week52RangeEUR": "33,82 – 49,42 €"
     },
     "profile": "McKesson Corporation ist im Bereich Medical Distribution innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -21425,7 +22327,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "2.6 Mrd. $",
       "week52Range": "57,20 – 105,28 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "71.21 Mrd. €",
+      "freeCashFlowEUR": "2.24 Mrd. €",
+      "week52RangeEUR": "49,19 – 90,54 €"
     },
     "profile": "Moody's Corporation ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -21496,7 +22401,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.4%",
       "freeCashFlow": "2.3 Mrd. $",
       "week52Range": "83,87 – 131,64 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "68.80 Mrd. €",
+      "freeCashFlowEUR": "1.98 Mrd. €",
+      "week52RangeEUR": "72,13 – 113,21 €"
     },
     "profile": "Mondelez International, Inc. ist im Bereich Confectioners innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -21567,7 +22475,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "4.6 Mrd. $",
       "week52Range": "115,61 – 161,32 $",
-      "dividendYield": "3,2%"
+      "dividendYield": "3,2%",
+      "marketCapEUR": "94.00 Mrd. €",
+      "freeCashFlowEUR": "3.96 Mrd. €",
+      "week52RangeEUR": "99,42 – 138,74 €"
     },
     "profile": "Medtronic plc. ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -21638,7 +22549,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "-17.4 Mrd. $",
       "week52Range": "73,36 – 92,12 $",
-      "dividendYield": "3,7%"
+      "dividendYield": "3,7%",
+      "marketCapEUR": "53.23 Mrd. €",
+      "freeCashFlowEUR": "-14.96 Mrd. €",
+      "week52RangeEUR": "63,09 – 79,22 €"
     },
     "profile": "MetLife, Inc. ist im Bereich Insurance - Life innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -21709,7 +22623,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "21.6 Mrd. $",
       "week52Range": "180,74 – 296,42 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "1.22 Bio. €",
+      "freeCashFlowEUR": "18.58 Mrd. €",
+      "week52RangeEUR": "155,44 – 254,92 €"
     },
     "profile": "Meta Platforms, Inc. ist im Bereich Internet Content & Information innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -21780,7 +22697,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "5.2%",
       "freeCashFlow": "879 Mio. $",
       "week52Range": "155,75 – 265,35 $",
-      "dividendYield": "1,3%"
+      "dividendYield": "1,3%",
+      "marketCapEUR": "9.80 Mrd. €",
+      "freeCashFlowEUR": "755.94 Mio. €",
+      "week52RangeEUR": "133,94 – 228,20 €"
     },
     "profile": "MGM Resorts International ist im Bereich Resorts & Casinos innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -21851,7 +22771,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "714 Mio. $",
       "week52Range": "262,86 – 361,43 $",
-      "dividendYield": "0,5%"
+      "dividendYield": "0,5%",
+      "marketCapEUR": "11.78 Mrd. €",
+      "freeCashFlowEUR": "614.04 Mio. €",
+      "week52RangeEUR": "226,06 – 310,83 €"
     },
     "profile": "McCormick & Company, Incorporat ist im Bereich Packaged Foods innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -21922,7 +22845,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "593 Mio. $",
       "week52Range": "113,86 – 202,58 $",
-      "dividendYield": "4,4%"
+      "dividendYield": "4,4%",
+      "marketCapEUR": "27.09 Mrd. €",
+      "freeCashFlowEUR": "509.98 Mio. €",
+      "week52RangeEUR": "97,92 – 174,22 €"
     },
     "profile": "Martin Marietta Materials, Inc. ist im Bereich Building Materials innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -21993,7 +22919,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "6.4 Mrd. $",
       "week52Range": "163,70 – 260,43 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "78.17 Mrd. €",
+      "freeCashFlowEUR": "5.50 Mrd. €",
+      "week52RangeEUR": "140,78 – 223,97 €"
     },
     "profile": "3M Company ist im Bereich Conglomerates innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -22064,7 +22993,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "1.7 Mrd. $",
       "week52Range": "201,12 – 235,36 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "81.10 Mrd. €",
+      "freeCashFlowEUR": "1.46 Mrd. €",
+      "week52RangeEUR": "172,96 – 202,41 €"
     },
     "profile": "Monster Beverage Corporation ist im Bereich Beverages - Non-Alcoholic innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -22135,7 +23067,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "9.0 Mrd. $",
       "week52Range": "165,55 – 213,61 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "98.13 Mrd. €",
+      "freeCashFlowEUR": "7.74 Mrd. €",
+      "week52RangeEUR": "142,37 – 183,70 €"
     },
     "profile": "Altria Group, Inc. ist im Bereich Tobacco innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -22206,7 +23141,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "-290 Mio. $",
       "week52Range": "287,01 – 396,52 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "6.02 Mrd. €",
+      "freeCashFlowEUR": "-249.40 Mio. €",
+      "week52RangeEUR": "246,83 – 341,01 €"
     },
     "profile": "Mosaic Company (The) ist im Bereich Agricultural Inputs innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -22277,7 +23215,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "3.5 Mrd. $",
       "week52Range": "51,19 – 114,97 $",
-      "dividendYield": "4,2%"
+      "dividendYield": "4,2%",
+      "marketCapEUR": "79.46 Mrd. €",
+      "freeCashFlowEUR": "3.01 Mrd. €",
+      "week52RangeEUR": "44,02 – 98,87 €"
     },
     "profile": "Marathon Petroleum Corporation ist im Bereich Oil & Gas Refining & Marketing innerhalb des Sektors Energie tätig.",
     "events": {
@@ -22348,7 +23289,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "–",
       "week52Range": "203,16 – 369,39 $",
-      "dividendYield": "4,2%"
+      "dividendYield": "4,2%",
+      "marketCapEUR": "60.29 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "174,72 – 317,68 €"
     },
     "profile": "Monolithic Power Systems, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -22419,7 +23363,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "14.0 Mrd. $",
       "week52Range": "90,24 – 154,10 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "276.58 Mrd. €",
+      "freeCashFlowEUR": "12.04 Mrd. €",
+      "week52RangeEUR": "77,61 – 132,53 €"
     },
     "profile": "Merck & Company, Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -22490,7 +23437,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "-20 Mio. $",
       "week52Range": "157,05 – 229,26 $",
-      "dividendYield": "4,4%"
+      "dividendYield": "4,4%",
+      "marketCapEUR": "18.75 Mrd. €",
+      "freeCashFlowEUR": "-17.20 Mio. €",
+      "week52RangeEUR": "135,06 – 197,16 €"
     },
     "profile": "Moderna, Inc. ist im Bereich Biotechnology innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -22561,7 +23511,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "4.8 Mrd. $",
       "week52Range": "243,55 – 382,28 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "77.83 Mrd. €",
+      "freeCashFlowEUR": "4.13 Mrd. €",
+      "week52RangeEUR": "209,45 – 328,76 €"
     },
     "profile": "Marsh ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -22632,7 +23585,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.8%",
       "freeCashFlow": "2.3 Mrd. $",
       "week52Range": "81,37 – 112,90 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "144.74 Mrd. €",
+      "freeCashFlowEUR": "1.98 Mrd. €",
+      "week52RangeEUR": "69,98 – 97,09 €"
     },
     "profile": "Marvell Technology, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -22703,7 +23659,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "–",
       "week52Range": "256,73 – 394,75 $",
-      "dividendYield": "3,2%"
+      "dividendYield": "3,2%",
+      "marketCapEUR": "284.49 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "220,79 – 339,49 €"
     },
     "profile": "Morgan Stanley ist im Bereich Capital Markets innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -22774,7 +23733,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "117,80 – 201,50 $",
-      "dividendYield": "1,1%"
+      "dividendYield": "1,1%",
+      "marketCapEUR": "35.78 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "101,31 – 173,29 €"
     },
     "profile": "MSCI Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -22845,7 +23807,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "16.4 Mrd. $",
       "week52Range": "67,51 – 88,70 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "2.97 Bio. €",
+      "freeCashFlowEUR": "14.10 Mrd. €",
+      "week52RangeEUR": "58,06 – 76,28 €"
     },
     "profile": "Microsoft Corporation ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -22916,7 +23881,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "1.8 Mrd. $",
       "week52Range": "142,98 – 215,40 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "62.18 Mrd. €",
+      "freeCashFlowEUR": "1.55 Mrd. €",
+      "week52RangeEUR": "122,96 – 185,24 €"
     },
     "profile": "Motorola Solutions, Inc. ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -22987,7 +23955,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "–",
       "week52Range": "258,40 – 408,33 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "30.70 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "222,22 – 351,16 €"
     },
     "profile": "M&T Bank Corporation ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -23058,7 +24029,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "715 Mio. $",
       "week52Range": "57,84 – 116,49 $",
-      "dividendYield": "0,6%"
+      "dividendYield": "0,6%",
+      "marketCapEUR": "24.60 Mrd. €",
+      "freeCashFlowEUR": "614.90 Mio. €",
+      "week52RangeEUR": "49,74 – 100,18 €"
     },
     "profile": "Mettler-Toledo International, I ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -23129,7 +24103,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "13.7%",
       "freeCashFlow": "7.6 Mrd. $",
       "week52Range": "359,97 – 526,40 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "799.37 Mrd. €",
+      "freeCashFlowEUR": "6.54 Mrd. €",
+      "week52RangeEUR": "309,57 – 452,70 €"
     },
     "profile": "Micron Technology, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -23200,7 +24177,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "6.2%",
       "freeCashFlow": "-1.6 Mrd. $",
       "week52Range": "182,02 – 292,34 $",
-      "dividendYield": "4,0%"
+      "dividendYield": "4,0%",
+      "marketCapEUR": "7.31 Mrd. €",
+      "freeCashFlowEUR": "-1.38 Mrd. €",
+      "week52RangeEUR": "156,54 – 251,41 €"
     },
     "profile": "Norwegian Cruise Line Holdings ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -23271,7 +24251,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.7 Mrd. $",
       "week52Range": "23,98 – 36,28 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "45.32 Mrd. €",
+      "freeCashFlowEUR": "1.46 Mrd. €",
+      "week52RangeEUR": "20,62 – 31,20 €"
     },
     "profile": "Nasdaq, Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -23342,7 +24325,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "575 Mio. $",
       "week52Range": "211,11 – 238,05 $",
-      "dividendYield": "3,7%"
+      "dividendYield": "3,7%",
+      "marketCapEUR": "14.28 Mrd. €",
+      "freeCashFlowEUR": "494.50 Mio. €",
+      "week52RangeEUR": "181,55 – 204,72 €"
     },
     "profile": "Nordson Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -23413,7 +24399,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "-17.8 Mrd. $",
       "week52Range": "207,85 – 243,99 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "155.92 Mrd. €",
+      "freeCashFlowEUR": "-15.31 Mrd. €",
+      "week52RangeEUR": "178,75 – 209,83 €"
     },
     "profile": "NextEra Energy, Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -23484,7 +24473,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "8.8 Mrd. $",
       "week52Range": "197,29 – 366,39 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "84.88 Mrd. €",
+      "freeCashFlowEUR": "7.57 Mrd. €",
+      "week52RangeEUR": "169,67 – 315,10 €"
     },
     "profile": "Newmont Corporation ist im Bereich Gold innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -23555,7 +24547,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "25.4 Mrd. $",
       "week52Range": "251,80 – 407,24 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "256.80 Mrd. €",
+      "freeCashFlowEUR": "21.84 Mrd. €",
+      "week52RangeEUR": "216,55 – 350,23 €"
     },
     "profile": "Netflix, Inc. ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -23626,7 +24621,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "-1.6 Mrd. $",
       "week52Range": "152,81 – 203,74 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "18.32 Mrd. €",
+      "freeCashFlowEUR": "-1.38 Mrd. €",
+      "week52RangeEUR": "131,42 – 175,22 €"
     },
     "profile": "NiSource Inc ist im Bereich Utilities - Regulated Gas innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -23697,7 +24695,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "4.3%",
       "freeCashFlow": "1.9 Mrd. $",
       "week52Range": "278,23 – 444,50 $",
-      "dividendYield": "2,5%"
+      "dividendYield": "2,5%",
+      "marketCapEUR": "53.23 Mrd. €",
+      "freeCashFlowEUR": "1.63 Mrd. €",
+      "week52RangeEUR": "239,28 – 382,27 €"
     },
     "profile": "Nike, Inc. ist im Bereich Footwear & Accessories innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -23768,7 +24769,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "2.5 Mrd. $",
       "week52Range": "31,82 – 46,23 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "66.31 Mrd. €",
+      "freeCashFlowEUR": "2.15 Mrd. €",
+      "week52RangeEUR": "27,37 – 39,76 €"
     },
     "profile": "Northrop Grumman Corporation ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -23839,7 +24843,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "5.1 Mrd. $",
       "week52Range": "53,52 – 106,27 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "98.90 Mrd. €",
+      "freeCashFlowEUR": "4.39 Mrd. €",
+      "week52RangeEUR": "46,03 – 91,39 €"
     },
     "profile": "ServiceNow, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -23910,7 +24917,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.9%",
       "freeCashFlow": "432 Mio. $",
       "week52Range": "42,22 – 75,53 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "24.34 Mrd. €",
+      "freeCashFlowEUR": "371.52 Mio. €",
+      "week52RangeEUR": "36,31 – 64,96 €"
     },
     "profile": "NRG Energy, Inc. ist im Bereich Utilities - Independent Power Producers innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -23981,7 +24991,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "93,60 – 198,12 $",
-      "dividendYield": "3,5%"
+      "dividendYield": "3,5%",
+      "marketCapEUR": "64.84 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "80,50 – 170,38 €"
     },
     "profile": "Norfolk Southern Corporation ist im Bereich Railroads innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -24052,7 +25065,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.3 Mrd. $",
       "week52Range": "226,24 – 266,01 $",
-      "dividendYield": "3,4%"
+      "dividendYield": "3,4%",
+      "marketCapEUR": "30.10 Mrd. €",
+      "freeCashFlowEUR": "1.12 Mrd. €",
+      "week52RangeEUR": "194,57 – 228,77 €"
     },
     "profile": "NetApp, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -24123,7 +25139,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.0%",
       "freeCashFlow": "–",
       "week52Range": "92,67 – 153,69 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "28.64 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "79,70 – 132,17 €"
     },
     "profile": "Northern Trust Corporation ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -24194,7 +25213,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "669 Mio. $",
       "week52Range": "240,50 – 435,69 $",
-      "dividendYield": "1,0%"
+      "dividendYield": "1,0%",
+      "marketCapEUR": "50.40 Mrd. €",
+      "freeCashFlowEUR": "575.34 Mio. €",
+      "week52RangeEUR": "206,83 – 374,69 €"
     },
     "profile": "Nucor Corporation ist im Bereich Steel innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -24265,7 +25287,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.1%",
       "freeCashFlow": "46.3 Mrd. $",
       "week52Range": "161,36 – 271,88 $",
-      "dividendYield": "1,1%"
+      "dividendYield": "1,1%",
+      "marketCapEUR": "4.18 Bio. €",
+      "freeCashFlowEUR": "39.82 Mrd. €",
+      "week52RangeEUR": "138,77 – 233,82 €"
     },
     "profile": "NVIDIA Corporation ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -24336,7 +25361,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "–",
       "week52Range": "239,47 – 342,46 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "14.19 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "205,94 – 294,52 €"
     },
     "profile": "NVR, Inc. ist im Bereich Residential Construction innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -24407,7 +25435,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "1.7 Mrd. $",
       "week52Range": "284,91 – 394,99 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "14.53 Mrd. €",
+      "freeCashFlowEUR": "1.46 Mrd. €",
+      "week52RangeEUR": "245,02 – 339,69 €"
     },
     "profile": "News Corporation ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -24478,7 +25509,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "1.7 Mrd. $",
       "week52Range": "44,60 – 78,90 $",
-      "dividendYield": "3,6%"
+      "dividendYield": "3,6%",
+      "marketCapEUR": "12.81 Mrd. €",
+      "freeCashFlowEUR": "1.46 Mrd. €",
+      "week52RangeEUR": "38,36 – 67,85 €"
     },
     "profile": "News Corporation ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -24549,7 +25583,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.7%",
       "freeCashFlow": "3.6 Mrd. $",
       "week52Range": "144,13 – 286,15 $",
-      "dividendYield": "3,2%"
+      "dividendYield": "3,2%",
+      "marketCapEUR": "49.71 Mrd. €",
+      "freeCashFlowEUR": "3.10 Mrd. €",
+      "week52RangeEUR": "123,95 – 246,09 €"
     },
     "profile": "NXP Semiconductors N.V. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -24620,7 +25657,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.8 Mrd. $",
       "week52Range": "86,59 – 131,06 $",
-      "dividendYield": "1,9%"
+      "dividendYield": "1,9%",
+      "marketCapEUR": "51.26 Mrd. €",
+      "freeCashFlowEUR": "1.55 Mrd. €",
+      "week52RangeEUR": "74,47 – 112,71 €"
     },
     "profile": "Realty Income Corporation ist im Bereich REIT - Retail innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -24691,7 +25731,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "–",
       "week52Range": "222,42 – 447,98 $",
-      "dividendYield": "1,3%"
+      "dividendYield": "1,3%",
+      "marketCapEUR": "37.93 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "191,28 – 385,26 €"
     },
     "profile": "Old Dominion Freight Line, Inc. ist im Bereich Trucking innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -24762,7 +25805,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "454 Mio. $",
       "week52Range": "46,99 – 63,26 $",
-      "dividendYield": "3,6%"
+      "dividendYield": "3,6%",
+      "marketCapEUR": "49.19 Mrd. €",
+      "freeCashFlowEUR": "390.44 Mio. €",
+      "week52RangeEUR": "40,41 – 54,40 €"
     },
     "profile": "ONEOK, Inc. ist im Bereich Oil & Gas Midstream innerhalb des Sektors Energie tätig.",
     "events": {
@@ -24833,7 +25879,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "4.3 Mrd. $",
       "week52Range": "201,78 – 362,63 $",
-      "dividendYield": "4,4%"
+      "dividendYield": "4,4%",
+      "marketCapEUR": "19.26 Mrd. €",
+      "freeCashFlowEUR": "3.70 Mrd. €",
+      "week52RangeEUR": "173,53 – 311,86 €"
     },
     "profile": "Omnicom Group Inc. ist im Bereich Advertising Agencies innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -24904,7 +25953,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "1.3 Mrd. $",
       "week52Range": "266,17 – 306,68 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "27.35 Mrd. €",
+      "freeCashFlowEUR": "1.12 Mrd. €",
+      "week52RangeEUR": "228,91 – 263,74 €"
     },
     "profile": "ON Semiconductor Corporation ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -24975,7 +26027,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "-24.5 Mrd. $",
       "week52Range": "119,79 – 217,97 $",
-      "dividendYield": "0,4%"
+      "dividendYield": "0,4%",
+      "marketCapEUR": "321.73 Mrd. €",
+      "freeCashFlowEUR": "-21.07 Mrd. €",
+      "week52RangeEUR": "103,02 – 187,45 €"
     },
     "profile": "Oracle Corporation ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -25046,7 +26101,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.6 Mrd. $",
       "week52Range": "347,40 – 479,04 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "62.69 Mrd. €",
+      "freeCashFlowEUR": "1.38 Mrd. €",
+      "week52RangeEUR": "298,76 – 411,97 €"
     },
     "profile": "O'Reilly Automotive, Inc. ist im Bereich Auto Parts innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -25117,7 +26175,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "55,45 – 99,11 $",
-      "dividendYield": "1,9%"
+      "dividendYield": "1,9%",
+      "marketCapEUR": "23.56 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "47,69 – 85,23 €"
     },
     "profile": "Otis Worldwide Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -25188,7 +26249,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "3.2%",
       "freeCashFlow": "3.0 Mrd. $",
       "week52Range": "102,61 – 195,89 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "48.85 Mrd. €",
+      "freeCashFlowEUR": "2.58 Mrd. €",
+      "week52RangeEUR": "88,24 – 168,47 €"
     },
     "profile": "Occidental Petroleum Corporatio ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
     "events": {
@@ -25259,7 +26323,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "3.6 Mrd. $",
       "week52Range": "277,70 – 575,53 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "232.54 Mrd. €",
+      "freeCashFlowEUR": "3.10 Mrd. €",
+      "week52RangeEUR": "238,82 – 494,96 €"
     },
     "profile": "Palo Alto Networks, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -25330,7 +26397,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "–",
       "week52Range": "328,61 – 414,33 $",
-      "dividendYield": "3,8%"
+      "dividendYield": "3,8%",
+      "marketCapEUR": "35.78 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "282,60 – 356,32 €"
     },
     "profile": "Paychex, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -25401,7 +26471,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "1.9 Mrd. $",
       "week52Range": "57,03 – 93,33 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "60.03 Mrd. €",
+      "freeCashFlowEUR": "1.63 Mrd. €",
+      "week52RangeEUR": "49,05 – 80,26 €"
     },
     "profile": "PACCAR Inc. ist im Bereich Farm & Heavy Construction Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -25472,7 +26545,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "-6.2 Mrd. $",
       "week52Range": "144,60 – 188,74 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "32.94 Mrd. €",
+      "freeCashFlowEUR": "-5.33 Mrd. €",
+      "week52RangeEUR": "124,36 – 162,32 €"
     },
     "profile": "Pacific Gas & Electric Co. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -25543,7 +26619,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "-172 Mio. $",
       "week52Range": "273,20 – 350,82 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "32.85 Mrd. €",
+      "freeCashFlowEUR": "-147.92 Mio. €",
+      "week52RangeEUR": "234,95 – 301,71 €"
     },
     "profile": "Public Service Enterprise Group ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -25614,7 +26693,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.4%",
       "freeCashFlow": "7.8 Mrd. $",
       "week52Range": "160,71 – 240,21 $",
-      "dividendYield": "0,5%"
+      "dividendYield": "0,5%",
+      "marketCapEUR": "163.92 Mrd. €",
+      "freeCashFlowEUR": "6.71 Mrd. €",
+      "week52RangeEUR": "138,21 – 206,58 €"
     },
     "profile": "Pepsico, Inc. ist im Bereich Beverages - Non-Alcoholic innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -25685,7 +26767,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "12.4 Mrd. $",
       "week52Range": "115,96 – 197,29 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "122.55 Mrd. €",
+      "freeCashFlowEUR": "10.66 Mrd. €",
+      "week52RangeEUR": "99,73 – 169,67 €"
     },
     "profile": "Pfizer, Inc. ist im Bereich Drug Manufacturers - General innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -25756,7 +26841,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "276,59 – 479,16 $",
-      "dividendYield": "2,3%"
+      "dividendYield": "2,3%",
+      "marketCapEUR": "20.90 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "237,87 – 412,08 €"
     },
     "profile": "Principal Financial Group Inc ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -25827,7 +26915,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "12.8 Mrd. $",
       "week52Range": "210,39 – 403,01 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "289.39 Mrd. €",
+      "freeCashFlowEUR": "11.01 Mrd. €",
+      "week52RangeEUR": "180,94 – 346,59 €"
     },
     "profile": "Procter & Gamble Company (The) ist im Bereich Household & Personal Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -25898,7 +26989,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "–",
       "week52Range": "145,08 – 256,68 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "105.69 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "124,77 – 220,74 €"
     },
     "profile": "Progressive Corporation (The) ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -25969,7 +27063,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "2.8 Mrd. $",
       "week52Range": "313,11 – 549,95 $",
-      "dividendYield": "1,5%"
+      "dividendYield": "1,5%",
+      "marketCapEUR": "105.87 Mrd. €",
+      "freeCashFlowEUR": "2.41 Mrd. €",
+      "week52RangeEUR": "269,27 – 472,96 €"
     },
     "profile": "Parker-Hannifin Corporation ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -26040,7 +27137,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "112,09 – 215,22 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "20.73 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "96,40 – 185,09 €"
     },
     "profile": "PulteGroup, Inc. ist im Bereich Residential Construction innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -26111,7 +27211,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "–",
       "week52Range": "36,40 – 69,77 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "18.83 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "31,30 – 60,00 €"
     },
     "profile": "Packaging Corporation of Americ ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -26182,7 +27285,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "5.4 Mrd. $",
       "week52Range": "194,26 – 326,81 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "118.77 Mrd. €",
+      "freeCashFlowEUR": "4.64 Mrd. €",
+      "week52RangeEUR": "167,06 – 281,06 €"
     },
     "profile": "Prologis, Inc. ist im Bereich REIT - Industrial innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -26253,7 +27359,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "3.2%",
       "freeCashFlow": "1.8 Mrd. $",
       "week52Range": "319,72 – 472,15 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "253.70 Mrd. €",
+      "freeCashFlowEUR": "1.55 Mrd. €",
+      "week52RangeEUR": "274,96 – 406,05 €"
     },
     "profile": "Palantir Technologies Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -26324,7 +27433,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "9.7 Mrd. $",
       "week52Range": "137,54 – 260,01 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "255.76 Mrd. €",
+      "freeCashFlowEUR": "8.34 Mrd. €",
+      "week52RangeEUR": "118,28 – 223,61 €"
     },
     "profile": "Philip Morris International Inc ist im Bereich Tobacco innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -26395,7 +27507,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "–",
       "week52Range": "233,62 – 456,46 $",
-      "dividendYield": "1,4%"
+      "dividendYield": "1,4%",
+      "marketCapEUR": "85.74 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "200,91 – 392,56 €"
     },
     "profile": "PNC Financial Services Group, I ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -26466,7 +27581,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "558 Mio. $",
       "week52Range": "82,07 – 133,65 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "9.12 Mrd. €",
+      "freeCashFlowEUR": "479.88 Mio. €",
+      "week52RangeEUR": "70,58 – 114,94 €"
     },
     "profile": "Pentair plc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -26537,7 +27655,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "-831 Mio. $",
       "week52Range": "37,14 – 52,51 $",
-      "dividendYield": "2,6%"
+      "dividendYield": "2,6%",
+      "marketCapEUR": "10.49 Mrd. €",
+      "freeCashFlowEUR": "-714.66 Mio. €",
+      "week52RangeEUR": "31,94 – 45,16 €"
     },
     "profile": "Pinnacle West Capital Corporati ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -26608,7 +27729,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.6%",
       "freeCashFlow": "253 Mio. $",
       "week52Range": "79,04 – 126,69 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "9.89 Mrd. €",
+      "freeCashFlowEUR": "217.58 Mio. €",
+      "week52RangeEUR": "67,97 – 108,95 €"
     },
     "profile": "Insulet Corporation ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -26679,7 +27803,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "249,62 – 379,55 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "21.16 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "214,67 – 326,41 €"
     },
     "profile": "PPG Industries, Inc. ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -26750,7 +27877,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "-1.6 Mrd. $",
       "week52Range": "237,44 – 297,43 $",
-      "dividendYield": "4,2%"
+      "dividendYield": "4,2%",
+      "marketCapEUR": "22.79 Mrd. €",
+      "freeCashFlowEUR": "-1.38 Mrd. €",
+      "week52RangeEUR": "204,20 – 255,79 €"
     },
     "profile": "PPL Corporation ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -26821,7 +27951,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "10.4 Mrd. $",
       "week52Range": "31,20 – 48,23 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "36.46 Mrd. €",
+      "freeCashFlowEUR": "8.94 Mrd. €",
+      "week52RangeEUR": "26,83 – 41,48 €"
     },
     "profile": "Prudential Financial, Inc. ist im Bereich Insurance - Life innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -26892,7 +28025,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "2.3 Mrd. $",
       "week52Range": "359,64 – 514,32 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "52.03 Mrd. €",
+      "freeCashFlowEUR": "1.98 Mrd. €",
+      "week52RangeEUR": "309,29 – 442,32 €"
     },
     "profile": "Public Storage ist im Bereich REIT - Industrial innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -26963,7 +28099,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.3%",
       "freeCashFlow": "16.4 Mrd. $",
       "week52Range": "61,86 – 87,71 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "7.65 Mrd. €",
+      "freeCashFlowEUR": "14.10 Mrd. €",
+      "week52RangeEUR": "53,20 – 75,43 €"
     },
     "profile": "Paramount Skydance Corporation ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -27034,7 +28173,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.6%",
       "freeCashFlow": "-1.1 Mrd. $",
       "week52Range": "132,51 – 180,84 $",
-      "dividendYield": "3,5%"
+      "dividendYield": "3,5%",
+      "marketCapEUR": "73.01 Mrd. €",
+      "freeCashFlowEUR": "-0.95 Mrd. €",
+      "week52RangeEUR": "113,96 – 155,52 €"
     },
     "profile": "Phillips 66 ist im Bereich Oil & Gas Refining & Marketing innerhalb des Sektors Energie tätig.",
     "events": {
@@ -27105,7 +28247,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "–",
       "week52Range": "86,97 – 151,57 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "13.59 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "74,79 – 130,35 €"
     },
     "profile": "PTC Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -27176,7 +28321,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "2.0 Mrd. $",
       "week52Range": "294,82 – 423,81 $",
-      "dividendYield": "3,0%"
+      "dividendYield": "3,0%",
+      "marketCapEUR": "86.26 Mrd. €",
+      "freeCashFlowEUR": "1.72 Mrd. €",
+      "week52RangeEUR": "253,55 – 364,48 €"
     },
     "profile": "Quanta Services, Inc. ist im Bereich Engineering & Construction innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -27247,7 +28395,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "4.4 Mrd. $",
       "week52Range": "139,45 – 274,47 $",
-      "dividendYield": "4,4%"
+      "dividendYield": "4,4%",
+      "marketCapEUR": "42.40 Mrd. €",
+      "freeCashFlowEUR": "3.78 Mrd. €",
+      "week52RangeEUR": "119,93 – 236,04 €"
     },
     "profile": "PayPal Holdings, Inc. ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -27318,7 +28469,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "702 Mio. $",
       "week52Range": "92,87 – 176,45 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "23.65 Mrd. €",
+      "freeCashFlowEUR": "603.72 Mio. €",
+      "week52RangeEUR": "79,87 – 151,75 €"
     },
     "profile": "Qnity Electronics, Inc. ist im Bereich Semiconductor Equipment & Materials innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -27389,7 +28543,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "10.2 Mrd. $",
       "week52Range": "250,41 – 470,47 $",
-      "dividendYield": "2,5%"
+      "dividendYield": "2,5%",
+      "marketCapEUR": "133.30 Mrd. €",
+      "freeCashFlowEUR": "8.77 Mrd. €",
+      "week52RangeEUR": "215,35 – 404,60 €"
     },
     "profile": "QUALCOMM Incorporated ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -27460,7 +28617,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "-1.5 Mrd. $",
       "week52Range": "368,57 – 512,79 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "73.19 Mrd. €",
+      "freeCashFlowEUR": "-1.29 Mrd. €",
+      "week52RangeEUR": "316,97 – 441,00 €"
     },
     "profile": "Royal Caribbean Cruises Ltd. ist im Bereich Travel Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -27531,7 +28691,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "–",
       "week52Range": "19,26 – 31,73 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "12.90 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "16,56 – 27,29 €"
     },
     "profile": "Regency Centers Corporation ist im Bereich REIT - Retail innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -27602,7 +28765,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "3.1 Mrd. $",
       "week52Range": "125,83 – 206,84 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "67.51 Mrd. €",
+      "freeCashFlowEUR": "2.67 Mrd. €",
+      "week52RangeEUR": "108,21 – 177,88 €"
     },
     "profile": "Regeneron Pharmaceuticals, Inc. ist im Bereich Biotechnology innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -27673,7 +28839,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "–",
       "week52Range": "248,67 – 466,26 $",
-      "dividendYield": "1,0%"
+      "dividendYield": "1,0%",
+      "marketCapEUR": "22.70 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "213,86 – 400,98 €"
     },
     "profile": "Regions Financial Corporation ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -27744,7 +28913,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "–",
       "week52Range": "104,46 – 210,37 $",
-      "dividendYield": "4,4%"
+      "dividendYield": "4,4%",
+      "marketCapEUR": "29.07 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "89,84 – 180,92 €"
     },
     "profile": "Raymond James Financial, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -27815,7 +28987,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "656 Mio. $",
       "week52Range": "190,98 – 282,44 $",
-      "dividendYield": "3,9%"
+      "dividendYield": "3,9%",
+      "marketCapEUR": "19.44 Mrd. €",
+      "freeCashFlowEUR": "564.16 Mio. €",
+      "week52RangeEUR": "164,24 – 242,90 €"
     },
     "profile": "Ralph Lauren Corporation ist im Bereich Apparel Manufacturing innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -27886,7 +29061,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "73,79 – 100,21 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "26.32 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "63,46 – 86,18 €"
     },
     "profile": "ResMed Inc. ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -27957,7 +29135,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "974 Mio. $",
       "week52Range": "125,76 – 174,13 $",
-      "dividendYield": "1,9%"
+      "dividendYield": "1,9%",
+      "marketCapEUR": "45.92 Mrd. €",
+      "freeCashFlowEUR": "837.64 Mio. €",
+      "week52RangeEUR": "108,15 – 149,75 €"
     },
     "profile": "Rockwell Automation, Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -28028,7 +29209,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "502 Mio. $",
       "week52Range": "308,73 – 459,04 $",
-      "dividendYield": "2,6%"
+      "dividendYield": "2,6%",
+      "marketCapEUR": "15.74 Mrd. €",
+      "freeCashFlowEUR": "431.72 Mio. €",
+      "week52RangeEUR": "265,51 – 394,77 €"
     },
     "profile": "Rollins, Inc. ist im Bereich Personal Services innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -28099,7 +29283,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.3%",
       "freeCashFlow": "2.3 Mrd. $",
       "week52Range": "307,71 – 443,67 $",
-      "dividendYield": "1,1%"
+      "dividendYield": "1,1%",
+      "marketCapEUR": "33.37 Mrd. €",
+      "freeCashFlowEUR": "1.98 Mrd. €",
+      "week52RangeEUR": "264,63 – 381,56 €"
     },
     "profile": "Roper Technologies, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -28170,7 +29357,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "2.0 Mrd. $",
       "week52Range": "360,59 – 457,52 $",
-      "dividendYield": "4,2%"
+      "dividendYield": "4,2%",
+      "marketCapEUR": "69.23 Mrd. €",
+      "freeCashFlowEUR": "1.72 Mrd. €",
+      "week52RangeEUR": "310,11 – 393,47 €"
     },
     "profile": "Ross Stores, Inc. ist im Bereich Apparel Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -28241,7 +29431,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.8 Mrd. $",
       "week52Range": "230,57 – 457,48 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "55.73 Mrd. €",
+      "freeCashFlowEUR": "1.55 Mrd. €",
+      "week52RangeEUR": "198,29 – 393,43 €"
     },
     "profile": "Republic Services, Inc. ist im Bereich Waste Management innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -28312,7 +29505,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "9.9 Mrd. $",
       "week52Range": "204,26 – 279,51 $",
-      "dividendYield": "2,3%"
+      "dividendYield": "2,3%",
+      "marketCapEUR": "249.49 Mrd. €",
+      "freeCashFlowEUR": "8.51 Mrd. €",
+      "week52RangeEUR": "175,66 – 240,38 €"
     },
     "profile": "RTX Corporation ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -28383,7 +29579,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "509 Mio. $",
       "week52Range": "23,06 – 38,10 $",
-      "dividendYield": "2,5%"
+      "dividendYield": "2,5%",
+      "marketCapEUR": "10.84 Mrd. €",
+      "freeCashFlowEUR": "437.74 Mio. €",
+      "week52RangeEUR": "19,83 – 32,77 €"
     },
     "profile": "Revvity, Inc. ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -28454,7 +29653,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "708 Mio. $",
       "week52Range": "265,13 – 432,41 $",
-      "dividendYield": "3,2%"
+      "dividendYield": "3,2%",
+      "marketCapEUR": "16.51 Mrd. €",
+      "freeCashFlowEUR": "608.88 Mio. €",
+      "week52RangeEUR": "228,01 – 371,87 €"
     },
     "profile": "SBA Communications Corporation ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -28525,7 +29727,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "3.1 Mrd. $",
       "week52Range": "322,75 – 529,95 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "103.20 Mrd. €",
+      "freeCashFlowEUR": "2.67 Mrd. €",
+      "week52RangeEUR": "277,56 – 455,76 €"
     },
     "profile": "Starbucks Corporation ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -28596,7 +29801,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "–",
       "week52Range": "213,39 – 391,67 $",
-      "dividendYield": "2,4%"
+      "dividendYield": "2,4%",
+      "marketCapEUR": "157.38 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "183,52 – 336,84 €"
     },
     "profile": "Charles Schwab Corporation (The ist im Bereich Capital Markets innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -28667,7 +29875,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "2.5 Mrd. $",
       "week52Range": "152,33 – 237,19 $",
-      "dividendYield": "0,9%"
+      "dividendYield": "0,9%",
+      "marketCapEUR": "71.12 Mrd. €",
+      "freeCashFlowEUR": "2.15 Mrd. €",
+      "week52RangeEUR": "131,00 – 203,98 €"
     },
     "profile": "Sherwin-Williams Company (The) ist im Bereich Specialty Chemicals innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -28738,7 +29949,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "1.0 Mrd. $",
       "week52Range": "211,84 – 329,25 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "10.92 Mrd. €",
+      "freeCashFlowEUR": "0.86 Mrd. €",
+      "week52RangeEUR": "182,18 – 283,15 €"
     },
     "profile": "The J.M. Smucker Company ist im Bereich Packaged Foods innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -28809,7 +30023,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.3%",
       "freeCashFlow": "3.0 Mrd. $",
       "week52Range": "211,44 – 317,17 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "63.30 Mrd. €",
+      "freeCashFlowEUR": "2.58 Mrd. €",
+      "week52RangeEUR": "181,84 – 272,77 €"
     },
     "profile": "SLB Limited ist im Bereich Oil & Gas Equipment & Services innerhalb des Sektors Energie tätig.",
     "events": {
@@ -28880,7 +30097,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "3.3%",
       "freeCashFlow": "-7.4 Mrd. $",
       "week52Range": "331,16 – 507,78 $",
-      "dividendYield": "3,8%"
+      "dividendYield": "3,8%",
+      "marketCapEUR": "15.82 Mrd. €",
+      "freeCashFlowEUR": "-6.36 Mrd. €",
+      "week52RangeEUR": "284,80 – 436,69 €"
     },
     "profile": "Super Micro Computer, Inc. ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -28951,7 +30171,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "99,98 – 132,95 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "18.23 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "85,98 – 114,34 €"
     },
     "profile": "Snap-On Incorporated ist im Bereich Tools & Accessories innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -29022,7 +30245,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "2.3 Mrd. $",
       "week52Range": "59,36 – 91,38 $",
-      "dividendYield": "1,4%"
+      "dividendYield": "1,4%",
+      "marketCapEUR": "154.71 Mrd. €",
+      "freeCashFlowEUR": "1.98 Mrd. €",
+      "week52RangeEUR": "51,05 – 78,59 €"
     },
     "profile": "Sandisk Corporation ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -29093,7 +30319,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-1.0%",
       "freeCashFlow": "3.5 Mrd. $",
       "week52Range": "157,96 – 207,65 $",
-      "dividendYield": "3,9%"
+      "dividendYield": "3,9%",
+      "marketCapEUR": "63.98 Mrd. €",
+      "freeCashFlowEUR": "3.01 Mrd. €",
+      "week52RangeEUR": "135,85 – 178,58 €"
     },
     "profile": "Synopsys, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -29164,7 +30393,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "-3.8 Mrd. $",
       "week52Range": "135,24 – 284,20 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "93.57 Mrd. €",
+      "freeCashFlowEUR": "-3.27 Mrd. €",
+      "week52RangeEUR": "116,31 – 244,41 €"
     },
     "profile": "Southern Company (The) ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -29235,7 +30467,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.9%",
       "freeCashFlow": "378 Mio. $",
       "week52Range": "159,47 – 217,47 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "12.73 Mrd. €",
+      "freeCashFlowEUR": "325.08 Mio. €",
+      "week52RangeEUR": "137,14 – 187,02 €"
     },
     "profile": "Solventum Corporation ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -29306,7 +30541,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "2.5 Mrd. $",
       "week52Range": "183,06 – 396,63 $",
-      "dividendYield": "1,5%"
+      "dividendYield": "1,5%",
+      "marketCapEUR": "74.99 Mrd. €",
+      "freeCashFlowEUR": "2.15 Mrd. €",
+      "week52RangeEUR": "157,43 – 341,10 €"
     },
     "profile": "Simon Property Group, Inc. ist im Bereich REIT - Retail innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -29377,7 +30615,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "5.4 Mrd. $",
       "week52Range": "66,12 – 107,92 $",
-      "dividendYield": "3,1%"
+      "dividendYield": "3,1%",
+      "marketCapEUR": "104.40 Mrd. €",
+      "freeCashFlowEUR": "4.64 Mrd. €",
+      "week52RangeEUR": "56,86 – 92,81 €"
     },
     "profile": "S&P Global Inc. ist im Bereich Financial Data & Stock Exchanges innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -29448,7 +30689,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "-28.2 Mrd. $",
       "week52Range": "97,52 – 149,06 $",
-      "dividendYield": "1,6%"
+      "dividendYield": "1,6%",
+      "marketCapEUR": "49.79 Mrd. €",
+      "freeCashFlowEUR": "-24.25 Mrd. €",
+      "week52RangeEUR": "83,87 – 128,19 €"
     },
     "profile": "DBA Sempra ist im Bereich Utilities - Diversified innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -29519,7 +30763,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "837 Mio. $",
       "week52Range": "195,33 – 381,78 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "19.18 Mrd. €",
+      "freeCashFlowEUR": "719.82 Mio. €",
+      "week52RangeEUR": "167,98 – 328,33 €"
     },
     "profile": "STERIS plc (Ireland) ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -29590,7 +30837,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.8%",
       "freeCashFlow": "234 Mio. $",
       "week52Range": "66,22 – 116,80 $",
-      "dividendYield": "3,8%"
+      "dividendYield": "3,8%",
+      "marketCapEUR": "30.96 Mrd. €",
+      "freeCashFlowEUR": "201.24 Mio. €",
+      "week52RangeEUR": "56,95 – 100,45 €"
     },
     "profile": "Steel Dynamics, Inc. ist im Bereich Steel innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -29661,7 +30911,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "–",
       "week52Range": "147,53 – 282,04 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "43.52 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "126,88 – 242,55 €"
     },
     "profile": "State Street Corporation ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -29732,7 +30985,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.5%",
       "freeCashFlow": "2.0 Mrd. $",
       "week52Range": "194,09 – 273,88 $",
-      "dividendYield": "2,9%"
+      "dividendYield": "2,9%",
+      "marketCapEUR": "166.58 Mrd. €",
+      "freeCashFlowEUR": "1.72 Mrd. €",
+      "week52RangeEUR": "166,92 – 235,54 €"
     },
     "profile": "Seagate Technology Holdings PLC ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -29803,7 +31059,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "2.2 Mrd. $",
       "week52Range": "159,43 – 235,26 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "19.09 Mrd. €",
+      "freeCashFlowEUR": "1.89 Mrd. €",
+      "week52RangeEUR": "137,11 – 202,32 €"
     },
     "profile": "Constellation Brands, Inc. ist im Bereich Beverages - Brewers innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -29874,7 +31133,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "39,72 – 90,00 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "20.73 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "34,16 – 77,40 €"
     },
     "profile": "Smurfit WestRock plc ist im Bereich Packaging & Containers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -29945,7 +31207,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.5%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "229,07 – 448,19 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "12.30 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "197,00 – 385,44 €"
     },
     "profile": "Stanley Black & Decker, Inc. ist im Bereich Tools & Accessories innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -30016,7 +31281,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.7%",
       "freeCashFlow": "449 Mio. $",
       "week52Range": "211,11 – 376,48 $",
-      "dividendYield": "0,7%"
+      "dividendYield": "0,7%",
+      "marketCapEUR": "8.08 Mrd. €",
+      "freeCashFlowEUR": "386.14 Mio. €",
+      "week52RangeEUR": "181,55 – 323,77 €"
     },
     "profile": "Skyworks Solutions, Inc. ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -30087,7 +31355,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "–",
       "week52Range": "186,30 – 261,31 $",
-      "dividendYield": "1,4%"
+      "dividendYield": "1,4%",
+      "marketCapEUR": "21.24 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "160,22 – 224,73 €"
     },
     "profile": "Synchrony Financial ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -30158,7 +31429,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "4.9 Mrd. $",
       "week52Range": "132,41 – 266,92 $",
-      "dividendYield": "0,5%"
+      "dividendYield": "0,5%",
+      "marketCapEUR": "107.41 Mrd. €",
+      "freeCashFlowEUR": "4.21 Mrd. €",
+      "week52RangeEUR": "113,87 – 229,55 €"
     },
     "profile": "Stryker Corporation ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -30229,7 +31503,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "1.9 Mrd. $",
       "week52Range": "287,95 – 433,47 $",
-      "dividendYield": "2,1%"
+      "dividendYield": "2,1%",
+      "marketCapEUR": "35.09 Mrd. €",
+      "freeCashFlowEUR": "1.63 Mrd. €",
+      "week52RangeEUR": "247,64 – 372,78 €"
     },
     "profile": "Sysco Corporation ist im Bereich Food Distribution innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -30300,7 +31577,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "10.1 Mrd. $",
       "week52Range": "60,22 – 113,56 $",
-      "dividendYield": "0,6%"
+      "dividendYield": "0,6%",
+      "marketCapEUR": "137.00 Mrd. €",
+      "freeCashFlowEUR": "8.69 Mrd. €",
+      "week52RangeEUR": "51,79 – 97,66 €"
     },
     "profile": "AT&T Inc. ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -30371,7 +31651,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "774 Mio. $",
       "week52Range": "47,69 – 56,79 $",
-      "dividendYield": "3,0%"
+      "dividendYield": "3,0%",
+      "marketCapEUR": "6.71 Mrd. €",
+      "freeCashFlowEUR": "665.64 Mio. €",
+      "week52RangeEUR": "41,01 – 48,84 €"
     },
     "profile": "Molson Coors Beverage Company ist im Bereich Beverages - Brewers innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -30442,7 +31725,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.5 Mrd. $",
       "week52Range": "192,69 – 287,68 $",
-      "dividendYield": "3,0%"
+      "dividendYield": "3,0%",
+      "marketCapEUR": "60.37 Mrd. €",
+      "freeCashFlowEUR": "1.29 Mrd. €",
+      "week52RangeEUR": "165,71 – 247,40 €"
     },
     "profile": "Transdigm Group Incorporated ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -30513,7 +31799,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "913 Mio. $",
       "week52Range": "301,28 – 429,32 $",
-      "dividendYield": "4,0%"
+      "dividendYield": "4,0%",
+      "marketCapEUR": "26.14 Mrd. €",
+      "freeCashFlowEUR": "785.18 Mio. €",
+      "week52RangeEUR": "259,10 – 369,22 €"
     },
     "profile": "Teledyne Technologies Incorpora ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -30584,7 +31873,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.3%",
       "freeCashFlow": "300 Mio. $",
       "week52Range": "184,40 – 394,72 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "9.63 Mrd. €",
+      "freeCashFlowEUR": "258.00 Mio. €",
+      "week52RangeEUR": "158,58 – 339,46 €"
     },
     "profile": "Bio-Techne Corp ist im Bereich Biotechnology innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -30655,7 +31947,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "2.3 Mrd. $",
       "week52Range": "132,03 – 242,35 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "51.26 Mrd. €",
+      "freeCashFlowEUR": "1.98 Mrd. €",
+      "week52RangeEUR": "113,55 – 208,42 €"
     },
     "profile": "TE Connectivity plc ist im Bereich Electronic Components innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -30726,7 +32021,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "3.9%",
       "freeCashFlow": "439 Mio. $",
       "week52Range": "122,41 – 261,76 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "49.54 Mrd. €",
+      "freeCashFlowEUR": "377.54 Mio. €",
+      "week52RangeEUR": "105,27 – 225,11 €"
     },
     "profile": "Teradyne, Inc. ist im Bereich Semiconductor Equipment & Materials innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -30797,7 +32095,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "–",
       "week52Range": "254,73 – 436,69 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "54.44 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "219,07 – 375,55 €"
     },
     "profile": "Truist Financial Corporation ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -30868,7 +32169,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "3.1 Mrd. $",
       "week52Range": "167,67 – 235,84 $",
-      "dividendYield": "2,7%"
+      "dividendYield": "2,7%",
+      "marketCapEUR": "56.42 Mrd. €",
+      "freeCashFlowEUR": "2.67 Mrd. €",
+      "week52RangeEUR": "144,20 – 202,82 €"
     },
     "profile": "Target Corporation ist im Bereich Discount Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -30939,7 +32243,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "4.3 Mrd. $",
       "week52Range": "238,07 – 363,94 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "149.47 Mrd. €",
+      "freeCashFlowEUR": "3.70 Mrd. €",
+      "week52RangeEUR": "204,74 – 312,99 €"
     },
     "profile": "TJX Companies, Inc. (The) ist im Bereich Apparel Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -31010,7 +32317,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "831 Mio. $",
       "week52Range": "243,58 – 323,81 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "29.84 Mrd. €",
+      "freeCashFlowEUR": "714.66 Mio. €",
+      "week52RangeEUR": "209,48 – 278,48 €"
     },
     "profile": "TKO Group Holdings, Inc. ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -31081,7 +32391,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "6.2 Mrd. $",
       "week52Range": "114,30 – 186,40 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "183.52 Mrd. €",
+      "freeCashFlowEUR": "5.33 Mrd. €",
+      "week52RangeEUR": "98,30 – 160,30 €"
     },
     "profile": "Thermo Fisher Scientific Inc ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -31152,7 +32465,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "11.3 Mrd. $",
       "week52Range": "82,23 – 155,33 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "159.36 Mrd. €",
+      "freeCashFlowEUR": "9.72 Mrd. €",
+      "week52RangeEUR": "70,72 – 133,58 €"
     },
     "profile": "T-Mobile US, Inc. ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -31223,7 +32539,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "-56 Mio. $",
       "week52Range": "59,99 – 104,99 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "23.91 Mrd. €",
+      "freeCashFlowEUR": "-48.16 Mio. €",
+      "week52RangeEUR": "51,59 – 90,29 €"
     },
     "profile": "Texas Pacific Land Corporation ist im Bereich Oil & Gas E&P innerhalb des Sektors Energie tätig.",
     "events": {
@@ -31294,7 +32613,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.7%",
       "freeCashFlow": "1.5 Mrd. $",
       "week52Range": "256,45 – 461,61 $",
-      "dividendYield": "1,3%"
+      "dividendYield": "1,3%",
+      "marketCapEUR": "26.49 Mrd. €",
+      "freeCashFlowEUR": "1.29 Mrd. €",
+      "week52RangeEUR": "220,55 – 396,98 €"
     },
     "profile": "Tapestry, Inc. ist im Bereich Luxury Goods innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -31365,7 +32687,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.4%",
       "freeCashFlow": "-319 Mio. $",
       "week52Range": "234,47 – 347,36 $",
-      "dividendYield": "1,0%"
+      "dividendYield": "1,0%",
+      "marketCapEUR": "49.88 Mrd. €",
+      "freeCashFlowEUR": "-274.34 Mio. €",
+      "week52RangeEUR": "201,64 – 298,73 €"
     },
     "profile": "Targa Resources, Inc. ist im Bereich Oil & Gas Midstream innerhalb des Sektors Energie tätig.",
     "events": {
@@ -31436,7 +32761,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "370 Mio. $",
       "week52Range": "110,01 – 170,13 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "11.35 Mrd. €",
+      "freeCashFlowEUR": "318.20 Mio. €",
+      "week52RangeEUR": "94,61 – 146,31 €"
     },
     "profile": "Trimble Inc. ist im Bereich Scientific & Technical Instruments innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -31507,7 +32835,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "1.9 Mrd. $",
       "week52Range": "139,67 – 281,66 $",
-      "dividendYield": "2,5%"
+      "dividendYield": "2,5%",
+      "marketCapEUR": "20.55 Mrd. €",
+      "freeCashFlowEUR": "1.63 Mrd. €",
+      "week52RangeEUR": "120,12 – 242,23 €"
     },
     "profile": "T. Rowe Price Group, Inc. ist im Bereich Asset Management innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -31578,7 +32909,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "14.8 Mrd. $",
       "week52Range": "235,86 – 493,16 $",
-      "dividendYield": "4,5%"
+      "dividendYield": "4,5%",
+      "marketCapEUR": "67.17 Mrd. €",
+      "freeCashFlowEUR": "12.73 Mrd. €",
+      "week52RangeEUR": "202,84 – 424,12 €"
     },
     "profile": "The Travelers Companies, Inc. ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -31649,7 +32983,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "103 Mio. $",
       "week52Range": "143,20 – 228,72 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "13.85 Mrd. €",
+      "freeCashFlowEUR": "88.58 Mio. €",
+      "week52RangeEUR": "123,15 – 196,70 €"
     },
     "profile": "Tractor Supply Company ist im Bereich Specialty Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -31720,7 +33057,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "4.8 Mrd. $",
       "week52Range": "316,43 – 430,89 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "1.06 Bio. €",
+      "freeCashFlowEUR": "4.13 Mrd. €",
+      "week52RangeEUR": "272,13 – 370,57 €"
     },
     "profile": "Tesla, Inc. ist im Bereich Auto Manufacturers innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -31791,7 +33131,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "36.0%",
       "freeCashFlow": "1.0 Mrd. $",
       "week52Range": "336,59 – 540,81 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "17.54 Mrd. €",
+      "freeCashFlowEUR": "0.86 Mrd. €",
+      "week52RangeEUR": "289,47 – 465,10 €"
     },
     "profile": "Tyson Foods, Inc. ist im Bereich Farm Products innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -31862,7 +33205,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "3.1 Mrd. $",
       "week52Range": "257,05 – 392,00 $",
-      "dividendYield": "3,0%"
+      "dividendYield": "3,0%",
+      "marketCapEUR": "86.09 Mrd. €",
+      "freeCashFlowEUR": "2.67 Mrd. €",
+      "week52RangeEUR": "221,06 – 337,12 €"
     },
     "profile": "Trane Technologies plc ist im Bereich Building Products & Equipment innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -31933,7 +33279,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "569 Mio. $",
       "week52Range": "83,12 – 106,16 $",
-      "dividendYield": "2,7%"
+      "dividendYield": "2,7%",
+      "marketCapEUR": "7.31 Mrd. €",
+      "freeCashFlowEUR": "489.34 Mio. €",
+      "week52RangeEUR": "71,48 – 91,30 €"
     },
     "profile": "The Trade Desk, Inc. ist im Bereich Advertising Agencies innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -32004,7 +33353,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "296,08 – 470,69 $",
-      "dividendYield": "4,1%"
+      "dividendYield": "4,1%",
+      "marketCapEUR": "39.04 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "254,63 – 404,79 €"
     },
     "profile": "Take-Two Interactive Software, ist im Bereich Electronic Gaming & Multimedia innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -32075,7 +33427,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "3.5 Mrd. $",
       "week52Range": "89,86 – 153,37 $",
-      "dividendYield": "0,7%"
+      "dividendYield": "0,7%",
+      "marketCapEUR": "216.55 Mrd. €",
+      "freeCashFlowEUR": "3.01 Mrd. €",
+      "week52RangeEUR": "77,28 – 131,90 €"
     },
     "profile": "Texas Instruments Incorporated ist im Bereich Semiconductors innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -32146,7 +33501,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "453 Mio. $",
       "week52Range": "349,92 – 528,69 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "12.73 Mrd. €",
+      "freeCashFlowEUR": "389.58 Mio. €",
+      "week52RangeEUR": "300,93 – 454,67 €"
     },
     "profile": "Textron Inc. ist im Bereich Aerospace & Defense innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -32217,7 +33575,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "594 Mio. $",
       "week52Range": "221,26 – 375,83 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "10.92 Mrd. €",
+      "freeCashFlowEUR": "510.84 Mio. €",
+      "week52RangeEUR": "190,28 – 323,21 €"
     },
     "profile": "Tyler Technologies, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -32288,7 +33649,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "910 Mio. $",
       "week52Range": "57,98 – 94,95 $",
-      "dividendYield": "1,1%"
+      "dividendYield": "1,1%",
+      "marketCapEUR": "33.88 Mrd. €",
+      "freeCashFlowEUR": "782.60 Mio. €",
+      "week52RangeEUR": "49,86 – 81,66 €"
     },
     "profile": "United Airlines Holdings, Inc. ist im Bereich Airlines innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -32359,7 +33723,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.8%",
       "freeCashFlow": "6.5 Mrd. $",
       "week52Range": "228,92 – 384,72 $",
-      "dividendYield": "3,5%"
+      "dividendYield": "3,5%",
+      "marketCapEUR": "123.15 Mrd. €",
+      "freeCashFlowEUR": "5.59 Mrd. €",
+      "week52RangeEUR": "196,87 – 330,86 €"
     },
     "profile": "Uber Technologies, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -32430,7 +33797,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "780 Mio. $",
       "week52Range": "135,90 – 298,57 $",
-      "dividendYield": "0,6%"
+      "dividendYield": "0,6%",
+      "marketCapEUR": "12.13 Mrd. €",
+      "freeCashFlowEUR": "670.80 Mio. €",
+      "week52RangeEUR": "116,87 – 256,77 €"
     },
     "profile": "UDR, Inc. ist im Bereich REIT - Residential innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -32501,7 +33871,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "498 Mio. $",
       "week52Range": "287,74 – 380,10 $",
-      "dividendYield": "3,7%"
+      "dividendYield": "3,7%",
+      "marketCapEUR": "8.77 Mrd. €",
+      "freeCashFlowEUR": "428.28 Mio. €",
+      "week52RangeEUR": "247,46 – 326,89 €"
     },
     "profile": "Universal Health Services, Inc. ist im Bereich Medical Care Facilities innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -32572,7 +33945,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "973 Mio. $",
       "week52Range": "319,56 – 414,67 $",
-      "dividendYield": "2,3%"
+      "dividendYield": "2,3%",
+      "marketCapEUR": "18.92 Mrd. €",
+      "freeCashFlowEUR": "836.78 Mio. €",
+      "week52RangeEUR": "274,82 – 356,62 €"
     },
     "profile": "Ulta Beauty, Inc. ist im Bereich Specialty Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -32643,7 +34019,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "22.8 Mrd. $",
       "week52Range": "76,42 – 114,12 $",
-      "dividendYield": "0,5%"
+      "dividendYield": "0,5%",
+      "marketCapEUR": "323.62 Mrd. €",
+      "freeCashFlowEUR": "19.61 Mrd. €",
+      "week52RangeEUR": "65,72 – 98,14 €"
     },
     "profile": "UnitedHealth Group Incorporated ist im Bereich Healthcare Plans innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -32714,7 +34093,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "4.7 Mrd. $",
       "week52Range": "206,36 – 382,05 $",
-      "dividendYield": "0,8%"
+      "dividendYield": "0,8%",
+      "marketCapEUR": "149.21 Mrd. €",
+      "freeCashFlowEUR": "4.04 Mrd. €",
+      "week52RangeEUR": "177,47 – 328,56 €"
     },
     "profile": "Union Pacific Corporation ist im Bereich Railroads innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -32785,7 +34167,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.5%",
       "freeCashFlow": "5.0 Mrd. $",
       "week52Range": "270,38 – 478,96 $",
-      "dividendYield": "3,4%"
+      "dividendYield": "3,4%",
+      "marketCapEUR": "76.20 Mrd. €",
+      "freeCashFlowEUR": "4.30 Mrd. €",
+      "week52RangeEUR": "232,53 – 411,91 €"
     },
     "profile": "United Parcel Service, Inc. ist im Bereich Integrated Freight & Logistics innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -32856,7 +34241,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "1.7 Mrd. $",
       "week52Range": "305,64 – 392,97 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "57.79 Mrd. €",
+      "freeCashFlowEUR": "1.46 Mrd. €",
+      "week52RangeEUR": "262,85 – 337,95 €"
     },
     "profile": "United Rentals, Inc. ist im Bereich Rental & Leasing Services innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -32927,7 +34315,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "–",
       "week52Range": "176,80 – 299,79 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "84.45 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "152,05 – 257,82 €"
     },
     "profile": "U.S. Bancorp ist im Bereich Banks - Regional innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -32998,7 +34389,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "20.4 Mrd. $",
       "week52Range": "224,28 – 399,08 $",
-      "dividendYield": "2,2%"
+      "dividendYield": "2,2%",
+      "marketCapEUR": "587.90 Mrd. €",
+      "freeCashFlowEUR": "17.54 Mrd. €",
+      "week52RangeEUR": "192,88 – 343,21 €"
     },
     "profile": "Visa Inc. ist im Bereich Credit Services innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -33069,7 +34463,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.3 Mrd. $",
       "week52Range": "250,58 – 396,26 $",
-      "dividendYield": "2,9%"
+      "dividendYield": "2,9%",
+      "marketCapEUR": "28.47 Mrd. €",
+      "freeCashFlowEUR": "1.12 Mrd. €",
+      "week52RangeEUR": "215,50 – 340,78 €"
     },
     "profile": "Veeva Systems Inc. ist im Bereich Health Information Services innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -33140,7 +34537,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.4%",
       "freeCashFlow": "267 Mio. $",
       "week52Range": "27,05 – 45,40 $",
-      "dividendYield": "1,3%"
+      "dividendYield": "1,3%",
+      "marketCapEUR": "24.94 Mrd. €",
+      "freeCashFlowEUR": "229.62 Mio. €",
+      "week52RangeEUR": "23,26 – 39,04 €"
     },
     "profile": "VICI Properties Inc. ist im Bereich REIT - Diversified innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -33211,7 +34611,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "4.5%",
       "freeCashFlow": "8.4 Mrd. $",
       "week52Range": "167,84 – 282,27 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "77.49 Mrd. €",
+      "freeCashFlowEUR": "7.22 Mrd. €",
+      "week52RangeEUR": "144,34 – 242,75 €"
     },
     "profile": "Valero Energy Corporation ist im Bereich Oil & Gas Refining & Marketing innerhalb des Sektors Energie tätig.",
     "events": {
@@ -33282,7 +34685,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "807 Mio. $",
       "week52Range": "92,88 – 190,25 $",
-      "dividendYield": "2,6%"
+      "dividendYield": "2,6%",
+      "marketCapEUR": "19.78 Mrd. €",
+      "freeCashFlowEUR": "694.02 Mio. €",
+      "week52RangeEUR": "79,88 – 163,62 €"
     },
     "profile": "Veralto Corp ist im Bereich Pollution & Treatment Controls innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -33353,7 +34759,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "844 Mio. $",
       "week52Range": "296,04 – 579,91 $",
-      "dividendYield": "1,5%"
+      "dividendYield": "1,5%",
+      "marketCapEUR": "29.93 Mrd. €",
+      "freeCashFlowEUR": "725.84 Mio. €",
+      "week52RangeEUR": "254,59 – 498,72 €"
     },
     "profile": "Vulcan Materials Company (Holdi ist im Bereich Building Materials innerhalb des Sektors Grundstoffe tätig.",
     "events": {
@@ -33424,7 +34833,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.0%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "244,56 – 401,77 $",
-      "dividendYield": "2,9%"
+      "dividendYield": "2,9%",
+      "marketCapEUR": "21.93 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "210,32 – 345,52 €"
     },
     "profile": "Verisk Analytics, Inc. ist im Bereich Consulting Services innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -33495,7 +34907,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "833 Mio. $",
       "week52Range": "150,11 – 212,51 $",
-      "dividendYield": "3,4%"
+      "dividendYield": "3,4%",
+      "marketCapEUR": "22.53 Mrd. €",
+      "freeCashFlowEUR": "716.38 Mio. €",
+      "week52RangeEUR": "129,09 – 182,76 €"
     },
     "profile": "VeriSign, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -33566,7 +34981,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "2.7 Mrd. $",
       "week52Range": "89,62 – 124,18 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "79.98 Mrd. €",
+      "freeCashFlowEUR": "2.32 Mrd. €",
+      "week52RangeEUR": "77,07 – 106,79 €"
     },
     "profile": "Vertiv Holdings, LLC ist im Bereich Electrical Equipment & Parts innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -33637,7 +35055,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.6%",
       "freeCashFlow": "2.8 Mrd. $",
       "week52Range": "200,29 – 259,63 $",
-      "dividendYield": "1,8%"
+      "dividendYield": "1,8%",
+      "marketCapEUR": "104.15 Mrd. €",
+      "freeCashFlowEUR": "2.41 Mrd. €",
+      "week52RangeEUR": "172,25 – 223,28 €"
     },
     "profile": "Vertex Pharmaceuticals Incorpor ist im Bereich Biotechnology innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -33708,7 +35129,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "-164 Mio. $",
       "week52Range": "52,98 – 88,93 $",
-      "dividendYield": "1,9%"
+      "dividendYield": "1,9%",
+      "marketCapEUR": "43.00 Mrd. €",
+      "freeCashFlowEUR": "-141.04 Mio. €",
+      "week52RangeEUR": "45,56 – 76,48 €"
     },
     "profile": "Vistra Corp. ist im Bereich Utilities - Independent Power Producers innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -33779,7 +35203,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.1%",
       "freeCashFlow": "1.5 Mrd. $",
       "week52Range": "184,62 – 266,94 $",
-      "dividendYield": "4,2%"
+      "dividendYield": "4,2%",
+      "marketCapEUR": "41.28 Mrd. €",
+      "freeCashFlowEUR": "1.29 Mrd. €",
+      "week52RangeEUR": "158,77 – 229,57 €"
     },
     "profile": "Ventas, Inc. ist im Bereich REIT - Healthcare Facilities innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -33850,7 +35277,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "2.2 Mrd. $",
       "week52Range": "125,52 – 158,62 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "17.54 Mrd. €",
+      "freeCashFlowEUR": "1.89 Mrd. €",
+      "week52RangeEUR": "107,95 – 136,41 €"
     },
     "profile": "Viatris Inc. ist im Bereich Drug Manufacturers - Specialty & Generic innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -33921,7 +35351,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.2%",
       "freeCashFlow": "18.9 Mrd. $",
       "week52Range": "337,91 – 482,15 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "168.13 Mrd. €",
+      "freeCashFlowEUR": "16.25 Mrd. €",
+      "week52RangeEUR": "290,60 – 414,65 €"
     },
     "profile": "Verizon Communications Inc. ist im Bereich Telecom Services innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -33992,7 +35425,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.1 Mrd. $",
       "week52Range": "292,32 – 418,63 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "42.23 Mrd. €",
+      "freeCashFlowEUR": "0.95 Mrd. €",
+      "week52RangeEUR": "251,40 – 360,02 €"
     },
     "profile": "Westinghouse Air Brake Technolo ist im Bereich Railroads innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -34063,7 +35499,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "-502 Mio. $",
       "week52Range": "107,92 – 237,43 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "31.82 Mrd. €",
+      "freeCashFlowEUR": "-431.72 Mio. €",
+      "week52RangeEUR": "92,81 – 204,19 €"
     },
     "profile": "Waters Corporation ist im Bereich Diagnostics & Research innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -34134,7 +35573,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "18.5 Mrd. $",
       "week52Range": "81,67 – 105,98 $",
-      "dividendYield": "1,1%"
+      "dividendYield": "1,1%",
+      "marketCapEUR": "56.67 Mrd. €",
+      "freeCashFlowEUR": "15.91 Mrd. €",
+      "week52RangeEUR": "70,24 – 91,14 €"
     },
     "profile": "Warner Bros. Discovery, Inc. - ist im Bereich Entertainment innerhalb des Sektors Kommunikation tätig.",
     "events": {
@@ -34205,7 +35647,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "2.5%",
       "freeCashFlow": "3.1 Mrd. $",
       "week52Range": "269,60 – 363,96 $",
-      "dividendYield": "4,1%"
+      "dividendYield": "4,1%",
+      "marketCapEUR": "34.06 Mrd. €",
+      "freeCashFlowEUR": "2.67 Mrd. €",
+      "week52RangeEUR": "231,86 – 313,01 €"
     },
     "profile": "Workday, Inc. ist im Bereich Software - Application innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -34276,7 +35721,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "4.8%",
       "freeCashFlow": "2.1 Mrd. $",
       "week52Range": "310,80 – 504,60 $",
-      "dividendYield": "1,7%"
+      "dividendYield": "1,7%",
+      "marketCapEUR": "161.51 Mrd. €",
+      "freeCashFlowEUR": "1.81 Mrd. €",
+      "week52RangeEUR": "267,29 – 433,96 €"
     },
     "profile": "Western Digital Corporation ist im Bereich Computer Hardware innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -34347,7 +35795,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "-2.3 Mrd. $",
       "week52Range": "224,41 – 359,67 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "30.70 Mrd. €",
+      "freeCashFlowEUR": "-1.98 Mrd. €",
+      "week52RangeEUR": "192,99 – 309,32 €"
     },
     "profile": "WEC Energy Group, Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -34418,7 +35869,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.4%",
       "freeCashFlow": "2.8 Mrd. $",
       "week52Range": "290,47 – 500,44 $",
-      "dividendYield": "1,9%"
+      "dividendYield": "1,9%",
+      "marketCapEUR": "145.25 Mrd. €",
+      "freeCashFlowEUR": "2.41 Mrd. €",
+      "week52RangeEUR": "249,80 – 430,38 €"
     },
     "profile": "Welltower Inc. ist im Bereich REIT - Healthcare Facilities innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -34489,7 +35943,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "–",
       "week52Range": "304,41 – 444,28 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "224.80 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "261,79 – 382,08 €"
     },
     "profile": "Wells Fargo & Company ist im Bereich Banks - Diversified innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -34560,7 +36017,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "2.3 Mrd. $",
       "week52Range": "279,76 – 489,58 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "77.92 Mrd. €",
+      "freeCashFlowEUR": "1.98 Mrd. €",
+      "week52RangeEUR": "240,59 – 421,04 €"
     },
     "profile": "Waste Management, Inc. ist im Bereich Waste Management innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -34631,7 +36091,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "-190 Mio. $",
       "week52Range": "204,06 – 304,73 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "75.25 Mrd. €",
+      "freeCashFlowEUR": "-163.40 Mio. €",
+      "week52RangeEUR": "175,49 – 262,07 €"
     },
     "profile": "Williams Companies, Inc. (The) ist im Bereich Oil & Gas Midstream innerhalb des Sektors Energie tätig.",
     "events": {
@@ -34702,7 +36165,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "6.9 Mrd. $",
       "week52Range": "121,60 – 189,50 $",
-      "dividendYield": "3,6%"
+      "dividendYield": "3,6%",
+      "marketCapEUR": "761.01 Mrd. €",
+      "freeCashFlowEUR": "5.93 Mrd. €",
+      "week52RangeEUR": "104,58 – 162,97 €"
     },
     "profile": "Walmart Inc. ist im Bereich Discount Stores innerhalb des Sektors Konsumgüter (Basis) tätig.",
     "events": {
@@ -34773,7 +36239,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "–",
       "week52Range": "250,47 – 585,79 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "23.13 Mrd. €",
+      "freeCashFlowEUR": "–",
+      "week52RangeEUR": "215,40 – 503,78 €"
     },
     "profile": "W.R. Berkley Corporation ist im Bereich Insurance - Property & Casualty innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -34844,7 +36313,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "885 Mio. $",
       "week52Range": "256,17 – 408,18 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "23.13 Mrd. €",
+      "freeCashFlowEUR": "761.10 Mio. €",
+      "week52RangeEUR": "220,31 – 351,03 €"
     },
     "profile": "Williams-Sonoma, Inc. ist im Bereich Specialty Retail innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -34915,7 +36387,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "278 Mio. $",
       "week52Range": "17,45 – 30,75 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "20.64 Mrd. €",
+      "freeCashFlowEUR": "239.08 Mio. €",
+      "week52RangeEUR": "15,01 – 26,45 €"
     },
     "profile": "West Pharmaceutical Services, I ist im Bereich Medical Instruments & Supplies innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -34986,7 +36461,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.3%",
       "freeCashFlow": "1.4 Mrd. $",
       "week52Range": "67,56 – 111,95 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "26.83 Mrd. €",
+      "freeCashFlowEUR": "1.20 Mrd. €",
+      "week52RangeEUR": "58,10 – 96,28 €"
     },
     "profile": "Willis Towers Watson Public Lim ist im Bereich Insurance Brokers innerhalb des Sektors Finanzdienstleistungen tätig.",
     "events": {
@@ -35057,7 +36535,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.9%",
       "freeCashFlow": "46 Mio. $",
       "week52Range": "232,03 – 335,46 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "15.48 Mrd. €",
+      "freeCashFlowEUR": "39.56 Mio. €",
+      "week52RangeEUR": "199,55 – 288,50 €"
     },
     "profile": "Weyerhaeuser Company ist im Bereich REIT - Specialty innerhalb des Sektors Immobilien tätig.",
     "events": {
@@ -35128,7 +36609,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.5%",
       "freeCashFlow": "357 Mio. $",
       "week52Range": "328,96 – 526,34 $",
-      "dividendYield": "0,3%"
+      "dividendYield": "0,3%",
+      "marketCapEUR": "8.86 Mrd. €",
+      "freeCashFlowEUR": "307.02 Mio. €",
+      "week52RangeEUR": "282,91 – 452,65 €"
     },
     "profile": "Wynn Resorts, Limited ist im Bereich Resorts & Casinos innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -35199,7 +36683,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "-7.9 Mrd. $",
       "week52Range": "208,91 – 252,14 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "41.97 Mrd. €",
+      "freeCashFlowEUR": "-6.79 Mrd. €",
+      "week52RangeEUR": "179,66 – 216,84 €"
     },
     "profile": "Xcel Energy Inc. ist im Bereich Utilities - Regulated Electric innerhalb des Sektors Versorger tätig.",
     "events": {
@@ -35270,7 +36757,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "-0.4%",
       "freeCashFlow": "11.6 Mrd. $",
       "week52Range": "188,34 – 313,89 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "554.10 Mrd. €",
+      "freeCashFlowEUR": "9.98 Mrd. €",
+      "week52RangeEUR": "161,97 – 269,95 €"
     },
     "profile": "ExxonMobil Holdings Corporation ist im Bereich Oil & Gas Integrated innerhalb des Sektors Energie tätig.",
     "events": {
@@ -35341,7 +36831,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.2%",
       "freeCashFlow": "1.2 Mrd. $",
       "week52Range": "207,77 – 254,18 $",
-      "dividendYield": "1,3%"
+      "dividendYield": "1,3%",
+      "marketCapEUR": "23.48 Mrd. €",
+      "freeCashFlowEUR": "1.03 Mrd. €",
+      "week52RangeEUR": "178,68 – 218,59 €"
     },
     "profile": "Xylem Inc. ist im Bereich Specialty Industrial Machinery innerhalb des Sektors Industrie tätig.",
     "events": {
@@ -35412,7 +36905,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "–",
       "freeCashFlow": "-795 Mio. $",
       "week52Range": "194,38 – 323,96 $",
-      "dividendYield": "2,8%"
+      "dividendYield": "2,8%",
+      "marketCapEUR": "41.62 Mrd. €",
+      "freeCashFlowEUR": "-683.70 Mio. €",
+      "week52RangeEUR": "167,17 – 278,61 €"
     },
     "profile": "Block, Inc. ist im Bereich Software - Infrastructure innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -35483,7 +36979,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "1.3%",
       "freeCashFlow": "814 Mio. $",
       "week52Range": "62,26 – 92,41 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "35.95 Mrd. €",
+      "freeCashFlowEUR": "700.04 Mio. €",
+      "week52RangeEUR": "53,54 – 79,47 €"
     },
     "profile": "Yum! Brands, Inc. ist im Bereich Restaurants innerhalb des Sektors Konsumgüter (zyklisch) tätig.",
     "events": {
@@ -35554,7 +37053,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.3%",
       "freeCashFlow": "1.0 Mrd. $",
       "week52Range": "197,75 – 468,00 $",
-      "dividendYield": "Keine Dividende"
+      "dividendYield": "Keine Dividende",
+      "marketCapEUR": "15.65 Mrd. €",
+      "freeCashFlowEUR": "0.86 Mrd. €",
+      "week52RangeEUR": "170,06 – 402,48 €"
     },
     "profile": "Zimmer Biomet Holdings, Inc. ist im Bereich Medical Devices innerhalb des Sektors Gesundheit tätig.",
     "events": {
@@ -35625,7 +37127,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.0%",
       "freeCashFlow": "559 Mio. $",
       "week52Range": "238,82 – 365,85 $",
-      "dividendYield": "2,5%"
+      "dividendYield": "2,5%",
+      "marketCapEUR": "12.04 Mrd. €",
+      "freeCashFlowEUR": "480.74 Mio. €",
+      "week52RangeEUR": "205,39 – 314,63 €"
     },
     "profile": "Zebra Technologies Corporation ist im Bereich Communication Equipment innerhalb des Sektors Technologie tätig.",
     "events": {
@@ -35696,7 +37201,10 @@ export const ALL_STOCKS = [
       "epsGrowth": "0.1%",
       "freeCashFlow": "1.8 Mrd. $",
       "week52Range": "115,32 – 225,48 $",
-      "dividendYield": "3,3%"
+      "dividendYield": "3,3%",
+      "marketCapEUR": "27.86 Mrd. €",
+      "freeCashFlowEUR": "1.55 Mrd. €",
+      "week52RangeEUR": "99,18 – 193,91 €"
     },
     "profile": "Zoetis Inc. ist im Bereich Drug Manufacturers - Specialty & Generic innerhalb des Sektors Gesundheit tätig.",
     "events": {
