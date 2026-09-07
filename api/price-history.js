@@ -7,25 +7,25 @@
 // 3. Lokal zum Testen: eine .env-Datei mit TWELVE_DATA_API_KEY=dein_key anlegen (NICHT committen!)
 //
 // Da alle 503 Titel aus eurer Screening-CSV regulär in den USA gelistete
-// Aktien sind (NYSE/NASDAQ), reicht der Ticker direkt als Symbol — anders als
-// bei Xetra-Notierungen braucht es hier KEINE ISIN-Zuordnung. Kurse kommen
-// entsprechend in USD zurück (siehe App.jsx, dort wird jetzt $ statt €
-// angezeigt).
+// Aktien sind (NYSE/NASDAQ), reicht der Ticker direkt als Symbol.
+//
+// Range-Keys passend zum Frontend (Trade-Republic/Scalable-Stil):
+// 1D = 1 Tag (intraday), 1W, 1M, 1Y, 5Y, MAX.
 
 const RANGE_TO_PARAMS = {
+  "1D": { interval: "15min", outputsize: 32 }, // ca. ein Handelstag in 15-Min-Kerzen
   "1W": { interval: "1day", outputsize: 7 },
   "1M": { interval: "1day", outputsize: 30 },
-  "3M": { interval: "1day", outputsize: 90 },
-  "6M": { interval: "1day", outputsize: 180 },
   "1Y": { interval: "1day", outputsize: 365 },
-  YTD: { interval: "1day", outputsize: 366 }, // wird unten auf Jahresbeginn zugeschnitten
+  "5Y": { interval: "1week", outputsize: 260 }, // 5 Jahre in Wochenkerzen (weniger Datenpunkte)
+  MAX: { interval: "1month", outputsize: 240 }, // ~20 Jahre in Monatskerzen
 };
 
 export default async function handler(req, res) {
   const { symbol, range } = req.query;
 
   if (!symbol || !RANGE_TO_PARAMS[range]) {
-    return res.status(400).json({ error: "symbol und range (1W/1M/3M/6M/1Y/YTD) erforderlich" });
+    return res.status(400).json({ error: "symbol und range (1D/1W/1M/1Y/5Y/MAX) erforderlich" });
   }
 
   const { interval, outputsize } = RANGE_TO_PARAMS[range];
@@ -40,14 +40,9 @@ export default async function handler(req, res) {
       return res.status(502).json({ error: data.message || "Twelve Data Fehler" });
     }
 
-    let points = (data.values || [])
+    const points = (data.values || [])
       .map((v) => ({ date: v.datetime, price: parseFloat(v.close) }))
       .reverse();
-
-    if (range === "YTD") {
-      const jan1 = new Date(new Date().getFullYear(), 0, 1).toISOString().slice(0, 10);
-      points = points.filter((p) => p.date >= jan1);
-    }
 
     res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate"); // 5 Min. Cache
     return res.status(200).json(points);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { ALL_STOCKS } from "./data/stocks";
 import { useWatchlist } from "./hooks/useWatchlist";
 import { Toast } from "./components/Toast";
@@ -136,19 +136,13 @@ function RatioBar({ label, value, max }) {
    am Ende der Datei / im Chat für konkrete Anbieter und Anbindung. */
 
 const CHART_RANGES = [
+  { key: "1D", label: "1T", days: 1, intraday: true },
   { key: "1W", label: "1W", days: 7 },
   { key: "1M", label: "1M", days: 30 },
-  { key: "3M", label: "3M", days: 90 },
-  { key: "6M", label: "6M", days: 180 },
   { key: "1Y", label: "1J", days: 365 },
-  { key: "YTD", label: "YTD", days: null },
+  { key: "5Y", label: "5J", days: 1825 },
+  { key: "MAX", label: "Max", days: 3650 },
 ];
-
-function daysSinceYearStart() {
-  const now = new Date();
-  const jan1 = new Date(now.getFullYear(), 0, 1);
-  return Math.max(1, Math.round((now - jan1) / 86400000));
-}
 
 function parseEuro(str) {
   return parseFloat(str.replace(/\./g, "").replace(",", ".").replace("$", "").replace("€", "").trim());
@@ -166,16 +160,35 @@ function seededRandom(seed) {
   };
 }
 
+// Intraday-Serie (1T): stündliche Punkte über einen Handelstag (9-17:30 Uhr Xetra-Fenster
+// als Orientierung), statt nur zwei Datenpunkten — sonst sieht "1T" wie eine gerade Linie aus.
+function generateIntradaySeries(ticker, currentPrice) {
+  const seedBase = ticker.split("").reduce((a, c) => a + c.charCodeAt(0), 0) + 1;
+  const rand = seededRandom(seedBase);
+  const points = [];
+  let price = currentPrice * (0.985 + rand() * 0.01);
+  const hours = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "17:30"];
+  for (let i = 0; i < hours.length; i++) {
+    price = price + (rand() - 0.48) * currentPrice * 0.004;
+    points.push({ date: hours[i], price: Number(price.toFixed(2)) });
+  }
+  points[points.length - 1].price = currentPrice;
+  return points;
+}
+
 function generateMockSeries(ticker, days, currentPrice) {
   const seedBase = ticker.split("").reduce((a, c) => a + c.charCodeAt(0), 0) + days;
   const rand = seededRandom(seedBase);
   const points = [];
   let price = currentPrice * (0.92 + rand() * 0.06);
   const today = new Date();
-  for (let i = days; i >= 0; i--) {
+  // Bei langen Zeiträumen nicht jeden einzelnen Tag berechnen (unnötig für die Optik,
+  // kostet nur Performance) — stattdessen auf ca. 180 Stützpunkte verdichten.
+  const step = Math.max(1, Math.floor(days / 180));
+  for (let i = days; i >= 0; i -= step) {
     const d = new Date(today);
     d.setDate(d.getDate() - i);
-    price = Math.max(price + (rand() - 0.485) * currentPrice * 0.012, currentPrice * 0.5);
+    price = Math.max(price + (rand() - 0.485) * currentPrice * 0.012 * step, currentPrice * 0.35);
     points.push({ date: d.toISOString().slice(0, 10), price: Number(price.toFixed(2)) });
   }
   points[points.length - 1].price = currentPrice; // heutiger Kurs bleibt exakt
@@ -187,7 +200,6 @@ function generateMockSeries(ticker, days, currentPrice) {
 // damit die App auch ohne Backend-Setup lauffähig bleibt.
 async function fetchPriceHistory(ticker, rangeKey, currentPrice) {
   const range = CHART_RANGES.find((r) => r.key === rangeKey);
-  const days = range.days ?? daysSinceYearStart();
 
   try {
     const res = await fetch(`/api/price-history?symbol=${ticker}&range=${rangeKey}`);
@@ -198,12 +210,22 @@ async function fetchPriceHistory(ticker, rangeKey, currentPrice) {
   } catch (err) {
     // Fallback: Demo-Daten (z.B. während der lokalen Entwicklung ohne Vercel-Function)
     await new Promise((r) => setTimeout(r, 150));
-    return generateMockSeries(ticker, days, currentPrice);
+    return range.intraday ? generateIntradaySeries(ticker, currentPrice) : generateMockSeries(ticker, range.days, currentPrice);
   }
 }
 
+// Formatiert die X-Achsen-/Tooltip-Beschriftung je nach Zeitraum unterschiedlich fein
+function formatChartLabel(dateStr, rangeKey) {
+  if (rangeKey === "1D") return dateStr; // schon "HH:mm"
+  const d = new Date(dateStr + "T00:00:00");
+  if (rangeKey === "5Y" || rangeKey === "MAX") {
+    return d.toLocaleDateString("de-DE", { month: "short", year: "2-digit" });
+  }
+  return d.toLocaleDateString("de-DE", { day: "2-digit", month: "short" });
+}
+
 function StockChart({ stock }) {
-  const [range, setRange] = useState("3M");
+  const [range, setRange] = useState("1M");
   const [series, setSeries] = useState([]);
   const [loading, setLoading] = useState(true);
   const currentPrice = parseEuro(stock.price);
@@ -266,7 +288,7 @@ function StockChart({ stock }) {
       {loading ? (
         <div className="flex h-56 items-center justify-center text-xs text-[var(--faint)]">Lade Kursdaten…</div>
       ) : (
-        <ResponsiveContainer width="100%" height={220}>
+        <ResponsiveContainer width="100%" height={240}>
           <AreaChart data={series} margin={{ top: 5, right: 5, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="chartFade" x1="0" y1="0" x2="0" y2="1">
@@ -274,14 +296,30 @@ function StockChart({ stock }) {
                 <stop offset="100%" stopColor={color} stopOpacity={0} />
               </linearGradient>
             </defs>
-            <XAxis dataKey="date" hide />
-            <YAxis domain={["dataMin", "dataMax"]} hide />
+            <CartesianGrid stroke="var(--border)" strokeDasharray="3 5" vertical={false} />
+            <XAxis
+              dataKey="date"
+              tickFormatter={(v) => formatChartLabel(v, range)}
+              tick={{ fill: "var(--faint)", fontSize: 11 }}
+              axisLine={{ stroke: "var(--border)" }}
+              tickLine={false}
+              minTickGap={40}
+            />
+            <YAxis
+              domain={["dataMin", "dataMax"]}
+              tick={{ fill: "var(--faint)", fontSize: 11 }}
+              axisLine={false}
+              tickLine={false}
+              width={54}
+              tickFormatter={(v) => `${v.toFixed(0)} $`}
+            />
             <Tooltip
               contentStyle={{ background: "var(--bg-deep)", border: "1px solid var(--border)", borderRadius: 8, fontSize: 12 }}
               labelStyle={{ color: "var(--muted)" }}
+              labelFormatter={(v) => formatChartLabel(v, range)}
               formatter={(v) => [`${v.toFixed(2)} $`, "Kurs"]}
             />
-            <Area type="monotone" dataKey="price" stroke={color} fill="url(#chartFade)" strokeWidth={2} />
+            <Area type="monotone" dataKey="price" stroke={color} fill="url(#chartFade)" strokeWidth={2} activeDot={{ r: 4 }} />
           </AreaChart>
         </ResponsiveContainer>
       )}
@@ -956,7 +994,7 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist, onOpenS
         </div>
 
         {/* ECKDATEN — feste Feldreihenfolge, identisch bei jeder Aktie */}
-        <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] sm:grid-cols-3 md:grid-cols-6">
+        <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] sm:grid-cols-4">
           {[
             { label: "Marktkap.", value: stock.eckdaten?.marketCap ?? "–" },
             { label: "Sektor", value: stock.eckdaten?.sector ?? "–" },
@@ -964,6 +1002,8 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist, onOpenS
             { label: "KGV", value: stock.eckdaten?.peRatio ?? "–" },
             { label: "EV/EBITDA", value: stock.eckdaten?.evEbitda ?? "–" },
             { label: "EPS-Wachstum", value: stock.eckdaten?.epsGrowth ?? "–" },
+            { label: "Dividendenrendite", value: stock.eckdaten?.dividendYield ?? "–" },
+            { label: "52W-Range", value: stock.eckdaten?.week52Range ?? "–" },
           ].map((f) => (
             <div key={f.label} className="bg-[var(--surface)] px-4 py-3">
               <p className="text-[10px] uppercase tracking-[0.12em] text-[var(--faint)]">{f.label}</p>
