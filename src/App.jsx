@@ -253,10 +253,11 @@ function StockChart({ stock }) {
 
   const first = series[0]?.price;
   const last = series[series.length - 1]?.price;
-  const changeAbs = first != null ? last - first : 0;
-  const changePct = first ? (changeAbs / first) * 100 : 0;
+  const changeAbs = first != null ? (last - first) * USD_EUR_RATE : 0;
+  const changePct = first ? ((last - first) / first) * 100 : 0; // Prozent ist währungsunabhängig
   const up = changeAbs >= 0;
   const color = up ? "var(--emerald-soft)" : "var(--red-soft)";
+  const seriesEUR = series.map((p) => ({ ...p, price: Number((p.price * USD_EUR_RATE).toFixed(2)) }));
 
   return (
     <div className="mt-8 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
@@ -270,7 +271,7 @@ function StockChart({ stock }) {
                 {up ? "+" : ""}{changePct.toFixed(2)}%
               </span>
               <span className="ml-2 text-xs text-[var(--muted)]">
-                ({up ? "+" : ""}{changeAbs.toFixed(2)} $) im gewählten Zeitraum
+                ({up ? "+" : ""}{changeAbs.toFixed(2).replace(".", ",")} €) im gewählten Zeitraum
               </span>
             </>
           )}
@@ -295,7 +296,7 @@ function StockChart({ stock }) {
         <div className="flex h-56 items-center justify-center text-xs text-[var(--faint)]">Lade Kursdaten…</div>
       ) : (
         <ResponsiveContainer width="100%" height={240}>
-          <AreaChart data={series} margin={{ top: 5, right: 5, left: 0, bottom: 0 }}>
+          <AreaChart data={seriesEUR} margin={{ top: 5, right: 5, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="chartFade" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor={color} stopOpacity={0.25} />
@@ -317,13 +318,13 @@ function StockChart({ stock }) {
               axisLine={false}
               tickLine={false}
               width={54}
-              tickFormatter={(v) => `${v.toFixed(0)} $`}
+              tickFormatter={(v) => `${v.toFixed(0)} €`}
             />
             <Tooltip
               contentStyle={{ background: "var(--bg-deep)", border: "1px solid var(--border)", borderRadius: 8, fontSize: 12 }}
               labelStyle={{ color: "var(--muted)" }}
               labelFormatter={(v) => formatChartLabel(v, range)}
-              formatter={(v) => [`${v.toFixed(2)} $`, "Kurs"]}
+              formatter={(v) => [`${v.toFixed(2).replace(".", ",")} €`, "Kurs"]}
             />
             <Area type="monotone" dataKey="price" stroke={color} fill="url(#chartFade)" strokeWidth={2} activeDot={{ r: 4 }} />
           </AreaChart>
@@ -331,7 +332,7 @@ function StockChart({ stock }) {
       )}
 
       <div className="mt-3 flex items-center justify-between text-[11px] text-[var(--faint)]">
-        <span>Quelle: Demo-Daten (Platzhalter — siehe fetchPriceHistory für echte API-Anbindung)</span>
+        <span>Quelle: Demo-Daten (Platzhalter) · Anzeige in € umgerechnet, Original in $ (US-notiert)</span>
       </div>
     </div>
   );
@@ -368,8 +369,10 @@ function StockCard({ s, expanded, onToggle }) {
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <div className="text-right">
-            <p className="font-[IBM_Plex_Mono] text-sm text-[var(--text)]">{s.price}</p>
+          <div className="text-right" title={`Original: ${s.price}`}>
+            <p className="font-[IBM_Plex_Mono] text-sm text-[var(--text)]">
+              {(parseEuro(s.price) * USD_EUR_RATE).toFixed(2).replace(".", ",")} €
+            </p>
             <p className={"font-[IBM_Plex_Mono] text-xs " + (s.up ? "text-[var(--emerald-soft)]" : "text-[var(--red-soft)]")}>{s.change}</p>
           </div>
           <span className={"text-[var(--faint)] transition-transform " + (expanded ? "rotate-180" : "")}>⌄</span>
@@ -977,15 +980,15 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist, onOpenS
             <h1 className="font-display mt-1 text-3xl text-[var(--text)]">{stock.name}</h1>
             <p className="mt-1 text-sm text-[var(--muted)]">{stock.sector}</p>
             <div className="mt-4 flex items-baseline gap-3">
-              <span className="font-[IBM_Plex_Mono] text-2xl text-[var(--text)]">{stock.price}</span>
-              <span className="font-[IBM_Plex_Mono] text-sm text-[var(--faint)]">≈ {(priceNum * USD_EUR_RATE).toFixed(2).replace(".", ",")} €</span>
+              <span className="font-[IBM_Plex_Mono] text-2xl text-[var(--text)]">{(priceNum * USD_EUR_RATE).toFixed(2).replace(".", ",")} €</span>
+              <span className="font-[IBM_Plex_Mono] text-sm text-[var(--faint)]">≈ {stock.price}</span>
               <span className={"font-[IBM_Plex_Mono] text-sm " + (stock.up ? "text-[var(--emerald-soft)]" : "text-[var(--red-soft)]")}>
-                {stock.up ? "+" : ""}{dayPct.toFixed(2)}% ({stock.up ? "+" : ""}{dayAbs.toFixed(2)} $) heute
+                {stock.up ? "+" : ""}{dayPct.toFixed(2)}% ({stock.up ? "+" : ""}{(dayAbs * USD_EUR_RATE).toFixed(2).replace(".", ",")} €) heute
               </span>
             </div>
             <p className="mt-1.5 flex flex-wrap items-center gap-2 text-[11px] text-[var(--faint)]">
               <span>
-                Zuletzt aktualisiert: {lastUpdated ? lastUpdated.toLocaleString("de-DE", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" }) : "—"} · Demo-Kurs · Euro-Wert: fixer Näherungskurs (1 $ ≈ {USD_EUR_RATE} €, Stand Sept. 2026), keine Live-Umrechnung
+                Zuletzt aktualisiert: {lastUpdated ? lastUpdated.toLocaleString("de-DE", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" }) : "—"} · Demo-Kurs · Euro-Wert: fixer Näherungskurs (1 $ ≈ {USD_EUR_RATE} €, Stand Sept. 2026), keine Live-Umrechnung — Originalwährung ist $, da US-notiert
               </span>
               <span
                 className={
@@ -1003,21 +1006,31 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist, onOpenS
         {/* ECKDATEN — feste Feldreihenfolge, identisch bei jeder Aktie */}
         <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] sm:grid-cols-4">
           {[
-            { label: "Marktkap.", value: stock.eckdaten?.marketCap ?? "–" },
+            { label: "Marktkap.", value: stock.eckdaten?.marketCapEUR ?? "–", original: stock.eckdaten?.marketCap },
             { label: "Sektor", value: stock.eckdaten?.sector ?? "–" },
             { label: "Branche", value: stock.eckdaten?.industry ?? "–" },
             { label: "KGV", value: stock.eckdaten?.peRatio ?? "–" },
             { label: "EV/EBITDA", value: stock.eckdaten?.evEbitda ?? "–" },
             { label: "EPS-Wachstum", value: stock.eckdaten?.epsGrowth ?? "–" },
             { label: "Dividendenrendite", value: stock.eckdaten?.dividendYield ?? "–" },
-            { label: "52W-Range", value: stock.eckdaten?.week52Range ?? "–" },
+            { label: "52W-Range", value: stock.eckdaten?.week52RangeEUR ?? "–", original: stock.eckdaten?.week52Range },
           ].map((f) => (
             <div key={f.label} className="bg-[var(--surface)] px-4 py-3">
               <p className="text-[10px] uppercase tracking-[0.12em] text-[var(--faint)]">{f.label}</p>
-              <p className="mt-1 truncate text-sm text-[var(--text)]" title={f.value}>{f.value}</p>
+              <p
+                className="mt-1 truncate text-sm text-[var(--text)]"
+                title={f.original ? `Original: ${f.original}` : f.value}
+              >
+                {f.value}
+              </p>
             </div>
           ))}
         </div>
+        {stock.eckdaten && (
+          <p className="mt-1.5 text-[10px] text-[var(--faint)]">
+            Marktkap. & 52W-Range in € umgerechnet (fixer Näherungskurs, s.o.) — Originalwerte in $ beim Überfahren mit der Maus (Tooltip)
+          </p>
+        )}
 
         {/* UNTERNEHMENSPROFIL — feste Position, jede Aktie hat diesen Block */}
         <div className="mt-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-4">
