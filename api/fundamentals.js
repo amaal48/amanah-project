@@ -13,11 +13,18 @@
 // 2. In Vercel: Project Settings -> Environment Variables -> FMP_API_KEY setzen
 // 3. Lokal zum Testen: .env-Datei mit FMP_API_KEY=dein_key (NICHT committen!)
 //
+// WICHTIG (Update): FMP hat ihre API auf eine neue "Stable API" umgestellt —
+// https://financialmodelingprep.com/stable/... mit Query-Parametern
+// (?symbol=NVDA) statt der alten Pfad-Struktur (/api/v3/profile/NVDA).
+// Die alten v3-Endpunkte lieferten deshalb keine Treffer mehr. Falls FMP das
+// Format nochmal ändert: einfach BASE_URL unten anpassen, der Rest bleibt gleich.
+//
 // WICHTIG: Die Berechnungslogik unten (debt_ratio, cash_ratio) ist absichtlich
 // identisch zu eurem Python-Screening-Skript gehalten (30%-Grenzwerte). Wenn
 // ihr die Formel dort änderst, muss sie HIER genauso geändert werden, sonst
 // weichen Live-Werte und CSV-Basis-Werte auseinander.
 
+const BASE_URL = "https://financialmodelingprep.com/stable";
 const DEBT_RATIO_LIMIT = 30;
 const CASH_RATIO_LIMIT = 30;
 
@@ -46,26 +53,35 @@ export default async function handler(req, res) {
 
   try {
     // 1. Profil (Branche, Marktkapitalisierung)
-    const profileUrl = `https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${apiKey}`;
+    const profileUrl = `${BASE_URL}/profile?symbol=${symbol}&apikey=${apiKey}`;
     const profileRes = await fetch(profileUrl);
     const profileData = await profileRes.json();
-    const profile = profileData?.[0];
+    const profile = Array.isArray(profileData) ? profileData[0] : null;
 
     if (!profile) {
-      return res.status(404).json({ error: `Kein Profil für ${symbol} gefunden` });
+      // Rohantwort mitgeben statt nur "nicht gefunden" — spart beim nächsten
+      // Debugging eine Extra-Runde (z.B. bei einem ungültigen Key kommt hier
+      // oft {"Error Message": "..."} statt eines leeren Arrays zurück).
+      return res.status(404).json({
+        error: `Kein Profil für ${symbol} gefunden`,
+        fmpResponse: profileData,
+      });
     }
 
     // 2. Bilanz (aktuellstes Quartal) für Verschuldung und Cash-Quote
-    const balanceUrl = `https://financialmodelingprep.com/api/v3/balance-sheet-statement/${symbol}?period=quarter&limit=1&apikey=${apiKey}`;
+    const balanceUrl = `${BASE_URL}/balance-sheet-statement?symbol=${symbol}&period=quarter&limit=1&apikey=${apiKey}`;
     const balanceRes = await fetch(balanceUrl);
     const balanceData = await balanceRes.json();
-    const balance = balanceData?.[0];
+    const balance = Array.isArray(balanceData) ? balanceData[0] : null;
 
     if (!balance) {
-      return res.status(404).json({ error: `Keine Bilanzdaten für ${symbol} gefunden` });
+      return res.status(404).json({
+        error: `Keine Bilanzdaten für ${symbol} gefunden`,
+        fmpResponse: balanceData,
+      });
     }
 
-    const marketCap = profile.mktCap || 0;
+    const marketCap = profile.marketCap || profile.mktCap || 0;
     const totalDebt = balance.totalDebt || 0;
     const cashAndEquivalents = balance.cashAndShortTermInvestments || 0;
 
