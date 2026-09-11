@@ -1,15 +1,18 @@
-// Automatisch aus halal_screening_results_alle.csv generiert.
-// 503 Unternehmen — Quelle: euer eigener Screening-Lauf (yfinance-Skript).
+// Automatisch aus halal_screening_results_alle.csv generiert, plus manuell ergänzte ETFs.
+// 504 Titel — 503 Aktien aus eurem eigenen Screening-Lauf (yfinance-Skript),
+// zusätzlich Islamic-UCITS-ETFs (aktuell 1, siehe 'assetType': 'ETF') mit VERIFIZIERTEN
+// Stammdaten (ISIN/WKN/TER/Replikation aus offiziellen Fondsdaten), aber weiterhin
+// Demo-Kursen wie bei den Aktien.
 // Demo-Kurse (price/change) sind NICHT aus der CSV, sondern deterministisch erzeugte
 // Platzhalter, da die CSV keine Kursdaten enthält — siehe price-history.js für die
-// echte Kursanbindung. Basiswährung: USD ($), da alle Titel US-notiert sind.
-// Zusätzlich '...EUR'-Felder (marketCapEUR, freeCashFlowEUR, week52RangeEUR) als
-// fixe Näherungsumrechnung (1 $ = 0.86 €, EZB-Referenzkurs Stand 04.09.2026) —
-// KEINE Live-Umrechnung. Für ein fertiges Produkt: echten FX-Endpoint anbinden.
+// echte Kursanbindung. Basiswährung: USD ($), da alle Aktien US-notiert sind.
+// Zusätzlich '...EUR'-Felder als fixe Näherungsumrechnung (1 $ = 0.86 €, EZB-Referenzkurs
+// Stand 04.09.2026) — KEINE Live-Umrechnung.
 // 'profile' ist ein automatisch generierter, rein faktischer Ein-Satz-Platzhalter
-// (Branche/Sektor) — KEINE echte Unternehmensbeschreibung.
-// 'events' (HV/Earnings/Dividende) sind ebenfalls DEMO-TERMINE, deterministisch aus
-// dem Ticker erzeugt — KEINE echten Termine.
+// (Branche/Sektor) — KEINE echte Unternehmensbeschreibung (gilt für Aktien, nicht den ETF).
+// 'events' (HV/Earnings/Dividende) sind bei Aktien DEMO-TERMINE, deterministisch aus
+// dem Ticker erzeugt — KEINE echten Termine. Beim ETF ist der Ausschüttungsmonat real
+// (Mai/November laut Fondsanbieter), das genaue Datum ist trotzdem ein Platzhalter.
 
 export const ALL_STOCKS = [
   {
@@ -84,7 +87,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AAPL",
@@ -158,7 +162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ABBV",
@@ -232,7 +237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ABNB",
@@ -306,7 +312,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ABT",
@@ -380,7 +387,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ACGL",
@@ -454,7 +462,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ACN",
@@ -528,7 +537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ADBE",
@@ -602,7 +612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ADI",
@@ -676,7 +687,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ADM",
@@ -750,7 +762,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ADP",
@@ -824,7 +837,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ADSK",
@@ -898,7 +912,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AEE",
@@ -972,7 +987,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AEP",
@@ -1046,7 +1062,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AES",
@@ -1120,7 +1137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AFL",
@@ -1194,7 +1212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AIG",
@@ -1268,7 +1287,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AIZ",
@@ -1342,7 +1362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AJG",
@@ -1416,7 +1437,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AKAM",
@@ -1490,7 +1512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ALB",
@@ -1564,7 +1587,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ALGN",
@@ -1638,7 +1662,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ALL",
@@ -1712,7 +1737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ALLE",
@@ -1786,7 +1812,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AMAT",
@@ -1860,7 +1887,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AMCR",
@@ -1934,7 +1962,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AMD",
@@ -2008,7 +2037,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AME",
@@ -2082,7 +2112,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AMGN",
@@ -2156,7 +2187,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AMP",
@@ -2230,7 +2262,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AMT",
@@ -2304,7 +2337,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AMZN",
@@ -2378,7 +2412,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ANET",
@@ -2452,7 +2487,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AON",
@@ -2526,7 +2562,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AOS",
@@ -2600,7 +2637,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "APA",
@@ -2674,7 +2712,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "APD",
@@ -2748,7 +2787,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "APH",
@@ -2822,7 +2862,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "APO",
@@ -2896,7 +2937,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "APP",
@@ -2970,7 +3012,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "APTV",
@@ -3044,7 +3087,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ARE",
@@ -3118,7 +3162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ARES",
@@ -3192,7 +3237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ATO",
@@ -3266,7 +3312,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AVB",
@@ -3340,7 +3387,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AVGO",
@@ -3414,7 +3462,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AVY",
@@ -3488,7 +3537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AWK",
@@ -3562,7 +3612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AXON",
@@ -3636,7 +3687,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AXP",
@@ -3710,7 +3762,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "AZO",
@@ -3784,7 +3837,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BA",
@@ -3858,7 +3912,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BAC",
@@ -3932,7 +3987,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BALL",
@@ -4006,7 +4062,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BAX",
@@ -4080,7 +4137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BBY",
@@ -4154,7 +4212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BDX",
@@ -4228,7 +4287,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BEN",
@@ -4302,7 +4362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BF-B",
@@ -4376,7 +4437,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BG",
@@ -4450,7 +4512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BIIB",
@@ -4524,7 +4587,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BKNG",
@@ -4598,7 +4662,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BKR",
@@ -4672,7 +4737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BLDR",
@@ -4746,7 +4812,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BLK",
@@ -4820,7 +4887,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BMY",
@@ -4894,7 +4962,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BNY",
@@ -4968,7 +5037,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BR",
@@ -5042,7 +5112,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BRK-B",
@@ -5116,7 +5187,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BRO",
@@ -5190,7 +5262,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BSX",
@@ -5264,7 +5337,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BX",
@@ -5338,7 +5412,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "BXP",
@@ -5412,7 +5487,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "C",
@@ -5486,7 +5562,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CAH",
@@ -5560,7 +5637,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CARR",
@@ -5634,7 +5712,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CASY",
@@ -5708,7 +5787,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CAT",
@@ -5782,7 +5862,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CB",
@@ -5856,7 +5937,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CBOE",
@@ -5930,7 +6012,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CBRE",
@@ -6004,7 +6087,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CCI",
@@ -6078,7 +6162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CCL",
@@ -6152,7 +6237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CDNS",
@@ -6226,7 +6312,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CDW",
@@ -6300,7 +6387,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CEG",
@@ -6374,7 +6462,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CF",
@@ -6448,7 +6537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CFG",
@@ -6522,7 +6612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CHD",
@@ -6596,7 +6687,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CHRW",
@@ -6670,7 +6762,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CHTR",
@@ -6744,7 +6837,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CI",
@@ -6818,7 +6912,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CIEN",
@@ -6892,7 +6987,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CINF",
@@ -6966,7 +7062,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CL",
@@ -7040,7 +7137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CLX",
@@ -7114,7 +7212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CMCSA",
@@ -7188,7 +7287,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CME",
@@ -7262,7 +7362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CMG",
@@ -7336,7 +7437,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CMI",
@@ -7410,7 +7512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CMS",
@@ -7484,7 +7587,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CNC",
@@ -7558,7 +7662,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CNP",
@@ -7632,7 +7737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "COF",
@@ -7706,7 +7812,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "COHR",
@@ -7780,7 +7887,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "COIN",
@@ -7854,7 +7962,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "COO",
@@ -7928,7 +8037,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "COP",
@@ -8002,7 +8112,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "COR",
@@ -8076,7 +8187,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "COST",
@@ -8150,7 +8262,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CPAY",
@@ -8224,7 +8337,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CPRT",
@@ -8298,7 +8412,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CPT",
@@ -8372,7 +8487,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CRH",
@@ -8446,7 +8562,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CRL",
@@ -8520,7 +8637,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CRM",
@@ -8594,7 +8712,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CRWD",
@@ -8668,7 +8787,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CSCO",
@@ -8742,7 +8862,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CSGP",
@@ -8816,7 +8937,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CSX",
@@ -8890,7 +9012,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CTAS",
@@ -8964,7 +9087,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CTSH",
@@ -9038,7 +9162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CTVA",
@@ -9112,7 +9237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CVNA",
@@ -9186,7 +9312,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CVS",
@@ -9260,7 +9387,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "CVX",
@@ -9334,7 +9462,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "D",
@@ -9408,7 +9537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DAL",
@@ -9482,7 +9612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DASH",
@@ -9556,7 +9687,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DD",
@@ -9630,7 +9762,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DDOG",
@@ -9704,7 +9837,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DE",
@@ -9778,7 +9912,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DECK",
@@ -9852,7 +9987,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DELL",
@@ -9926,7 +10062,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DG",
@@ -10000,7 +10137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DGX",
@@ -10074,7 +10212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DHI",
@@ -10148,7 +10287,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DHR",
@@ -10222,7 +10362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DIS",
@@ -10296,7 +10437,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DLR",
@@ -10370,7 +10512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DLTR",
@@ -10444,7 +10587,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DOC",
@@ -10518,7 +10662,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DOV",
@@ -10592,7 +10737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DOW",
@@ -10666,7 +10812,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DPZ",
@@ -10740,7 +10887,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DRI",
@@ -10814,7 +10962,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DTE",
@@ -10888,7 +11037,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DUK",
@@ -10962,7 +11112,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DVA",
@@ -11036,7 +11187,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DVN",
@@ -11110,7 +11262,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "DXCM",
@@ -11184,7 +11337,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EA",
@@ -11258,7 +11412,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EBAY",
@@ -11332,7 +11487,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ECHO",
@@ -11406,7 +11562,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ECL",
@@ -11480,7 +11637,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ED",
@@ -11554,7 +11712,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EFX",
@@ -11628,7 +11787,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EG",
@@ -11702,7 +11862,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EIX",
@@ -11776,7 +11937,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EL",
@@ -11850,7 +12012,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ELV",
@@ -11924,7 +12087,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EME",
@@ -11998,7 +12162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EMR",
@@ -12072,7 +12237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EOG",
@@ -12146,7 +12312,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EQIX",
@@ -12220,7 +12387,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EQR",
@@ -12294,7 +12462,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EQT",
@@ -12368,7 +12537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ERIE",
@@ -12442,7 +12612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ES",
@@ -12516,7 +12687,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ESS",
@@ -12590,7 +12762,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ETN",
@@ -12664,7 +12837,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ETR",
@@ -12738,7 +12912,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EVRG",
@@ -12812,7 +12987,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EW",
@@ -12886,7 +13062,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EXC",
@@ -12960,7 +13137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EXE",
@@ -13034,7 +13212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EXPD",
@@ -13108,7 +13287,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EXPE",
@@ -13182,7 +13362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "EXR",
@@ -13256,7 +13437,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "F",
@@ -13330,7 +13512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FANG",
@@ -13404,7 +13587,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FAST",
@@ -13478,7 +13662,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FCX",
@@ -13552,7 +13737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FDS",
@@ -13626,7 +13812,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FDX",
@@ -13700,7 +13887,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FDXF",
@@ -13774,7 +13962,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FE",
@@ -13848,7 +14037,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FFIV",
@@ -13922,7 +14112,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FICO",
@@ -13996,7 +14187,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FIS",
@@ -14070,7 +14262,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FISV",
@@ -14144,7 +14337,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FITB",
@@ -14218,7 +14412,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FIX",
@@ -14292,7 +14487,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FLEX",
@@ -14366,7 +14562,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FOX",
@@ -14440,7 +14637,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FOXA",
@@ -14514,7 +14712,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FRT",
@@ -14588,7 +14787,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FSLR",
@@ -14662,7 +14862,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FTNT",
@@ -14736,7 +14937,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "FTV",
@@ -14810,7 +15012,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GD",
@@ -14884,7 +15087,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GDDY",
@@ -14958,7 +15162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GE",
@@ -15032,7 +15237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GEHC",
@@ -15106,7 +15312,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GEN",
@@ -15180,7 +15387,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GEV",
@@ -15254,7 +15462,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GILD",
@@ -15328,7 +15537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GIS",
@@ -15402,7 +15612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GL",
@@ -15476,7 +15687,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GLW",
@@ -15550,7 +15762,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GM",
@@ -15624,7 +15837,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GNRC",
@@ -15698,7 +15912,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GOOG",
@@ -15772,7 +15987,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GOOGL",
@@ -15846,7 +16062,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GPC",
@@ -15920,7 +16137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GPN",
@@ -15994,7 +16212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GRMN",
@@ -16068,7 +16287,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GS",
@@ -16142,7 +16362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "GWW",
@@ -16216,7 +16437,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HAL",
@@ -16290,7 +16512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HAS",
@@ -16364,7 +16587,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HBAN",
@@ -16438,7 +16662,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HCA",
@@ -16512,7 +16737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HD",
@@ -16586,7 +16812,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HIG",
@@ -16660,7 +16887,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HII",
@@ -16734,7 +16962,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HLT",
@@ -16808,7 +17037,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HON",
@@ -16882,7 +17112,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HONA",
@@ -16956,7 +17187,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HOOD",
@@ -17030,7 +17262,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HPE",
@@ -17104,7 +17337,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HPQ",
@@ -17178,7 +17412,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HRL",
@@ -17252,7 +17487,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HSIC",
@@ -17326,7 +17562,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HST",
@@ -17400,7 +17637,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HSY",
@@ -17474,7 +17712,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HUBB",
@@ -17548,7 +17787,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HUM",
@@ -17622,7 +17862,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "HWM",
@@ -17696,7 +17937,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "IBKR",
@@ -17770,7 +18012,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "IBM",
@@ -17844,7 +18087,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ICE",
@@ -17918,7 +18162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "IDXX",
@@ -17992,7 +18237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "IEX",
@@ -18066,7 +18312,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "IFF",
@@ -18140,7 +18387,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "INCY",
@@ -18214,7 +18462,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "INTC",
@@ -18288,7 +18537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "INTU",
@@ -18362,7 +18612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "INVH",
@@ -18436,7 +18687,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "IP",
@@ -18510,7 +18762,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "IQV",
@@ -18584,7 +18837,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "IR",
@@ -18658,7 +18912,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "IRM",
@@ -18732,7 +18987,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ISRG",
@@ -18806,7 +19062,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "IT",
@@ -18880,7 +19137,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ITW",
@@ -18954,7 +19212,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "IVZ",
@@ -19028,7 +19287,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "J",
@@ -19102,7 +19362,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "JBHT",
@@ -19176,7 +19437,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "JBL",
@@ -19250,7 +19512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "JCI",
@@ -19324,7 +19587,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "JKHY",
@@ -19398,7 +19662,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "JNJ",
@@ -19472,7 +19737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "JPM",
@@ -19546,7 +19812,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KDP",
@@ -19620,7 +19887,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KEY",
@@ -19694,7 +19962,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KEYS",
@@ -19768,7 +20037,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KHC",
@@ -19842,7 +20112,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KIM",
@@ -19916,7 +20187,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KKR",
@@ -19990,7 +20262,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KLAC",
@@ -20064,7 +20337,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KMB",
@@ -20138,7 +20412,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KMI",
@@ -20212,7 +20487,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KO",
@@ -20286,7 +20562,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KR",
@@ -20360,7 +20637,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "KVUE",
@@ -20434,7 +20712,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "L",
@@ -20508,7 +20787,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LDOS",
@@ -20582,7 +20862,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LEN",
@@ -20656,7 +20937,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LH",
@@ -20730,7 +21012,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LHX",
@@ -20804,7 +21087,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LII",
@@ -20878,7 +21162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LIN",
@@ -20952,7 +21237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LITE",
@@ -21026,7 +21312,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LLY",
@@ -21100,7 +21387,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LMT",
@@ -21174,7 +21462,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LNT",
@@ -21248,7 +21537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LOW",
@@ -21322,7 +21612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LRCX",
@@ -21396,7 +21687,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LULU",
@@ -21470,7 +21762,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LUV",
@@ -21544,7 +21837,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LVS",
@@ -21618,7 +21912,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LYB",
@@ -21692,7 +21987,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "LYV",
@@ -21766,7 +22062,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MA",
@@ -21840,7 +22137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MAA",
@@ -21914,7 +22212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MAR",
@@ -21988,7 +22287,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MAS",
@@ -22062,7 +22362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MCD",
@@ -22136,7 +22437,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MCHP",
@@ -22210,7 +22512,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MCK",
@@ -22284,7 +22587,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MCO",
@@ -22358,7 +22662,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MDLZ",
@@ -22432,7 +22737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MDT",
@@ -22506,7 +22812,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MET",
@@ -22580,7 +22887,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "META",
@@ -22654,7 +22962,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MGM",
@@ -22728,7 +23037,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MKC",
@@ -22802,7 +23112,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MLM",
@@ -22876,7 +23187,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MMM",
@@ -22950,7 +23262,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MNST",
@@ -23024,7 +23337,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MO",
@@ -23098,7 +23412,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MOS",
@@ -23172,7 +23487,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MPC",
@@ -23246,7 +23562,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MPWR",
@@ -23320,7 +23637,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MRK",
@@ -23394,7 +23712,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MRNA",
@@ -23468,7 +23787,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MRSH",
@@ -23542,7 +23862,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MRVL",
@@ -23616,7 +23937,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MS",
@@ -23690,7 +24012,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MSCI",
@@ -23764,7 +24087,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MSFT",
@@ -23838,7 +24162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MSI",
@@ -23912,7 +24237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MTB",
@@ -23986,7 +24312,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MTD",
@@ -24060,7 +24387,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "MU",
@@ -24134,7 +24462,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NCLH",
@@ -24208,7 +24537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NDAQ",
@@ -24282,7 +24612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NDSN",
@@ -24356,7 +24687,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NEE",
@@ -24430,7 +24762,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NEM",
@@ -24504,7 +24837,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NFLX",
@@ -24578,7 +24912,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NI",
@@ -24652,7 +24987,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NKE",
@@ -24726,7 +25062,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NOC",
@@ -24800,7 +25137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NOW",
@@ -24874,7 +25212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NRG",
@@ -24948,7 +25287,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NSC",
@@ -25022,7 +25362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NTAP",
@@ -25096,7 +25437,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NTRS",
@@ -25170,7 +25512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NUE",
@@ -25244,7 +25587,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NVDA",
@@ -25318,7 +25662,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NVR",
@@ -25392,7 +25737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NWS",
@@ -25466,7 +25812,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NWSA",
@@ -25540,7 +25887,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "NXPI",
@@ -25614,7 +25962,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "O",
@@ -25688,7 +26037,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ODFL",
@@ -25762,7 +26112,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "OKE",
@@ -25836,7 +26187,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "OMC",
@@ -25910,7 +26262,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ON",
@@ -25984,7 +26337,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ORCL",
@@ -26058,7 +26412,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ORLY",
@@ -26132,7 +26487,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "OTIS",
@@ -26206,7 +26562,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "OXY",
@@ -26280,7 +26637,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PANW",
@@ -26354,7 +26712,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PAYX",
@@ -26428,7 +26787,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PCAR",
@@ -26502,7 +26862,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PCG",
@@ -26576,7 +26937,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PEG",
@@ -26650,7 +27012,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PEP",
@@ -26724,7 +27087,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PFE",
@@ -26798,7 +27162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PFG",
@@ -26872,7 +27237,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PG",
@@ -26946,7 +27312,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PGR",
@@ -27020,7 +27387,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PH",
@@ -27094,7 +27462,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PHM",
@@ -27168,7 +27537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PKG",
@@ -27242,7 +27612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PLD",
@@ -27316,7 +27687,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PLTR",
@@ -27390,7 +27762,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PM",
@@ -27464,7 +27837,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PNC",
@@ -27538,7 +27912,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PNR",
@@ -27612,7 +27987,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PNW",
@@ -27686,7 +28062,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PODD",
@@ -27760,7 +28137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PPG",
@@ -27834,7 +28212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PPL",
@@ -27908,7 +28287,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PRU",
@@ -27982,7 +28362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PSA",
@@ -28056,7 +28437,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PSKY",
@@ -28130,7 +28512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PSX",
@@ -28204,7 +28587,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PTC",
@@ -28278,7 +28662,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PWR",
@@ -28352,7 +28737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "PYPL",
@@ -28426,7 +28812,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "Q",
@@ -28500,7 +28887,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "QCOM",
@@ -28574,7 +28962,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "RCL",
@@ -28648,7 +29037,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "REG",
@@ -28722,7 +29112,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "REGN",
@@ -28796,7 +29187,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "RF",
@@ -28870,7 +29262,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "RJF",
@@ -28944,7 +29337,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "RL",
@@ -29018,7 +29412,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "RMD",
@@ -29092,7 +29487,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ROK",
@@ -29166,7 +29562,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ROL",
@@ -29240,7 +29637,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ROP",
@@ -29314,7 +29712,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ROST",
@@ -29388,7 +29787,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "RSG",
@@ -29462,7 +29862,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "RTX",
@@ -29536,7 +29937,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "RVTY",
@@ -29610,7 +30012,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SBAC",
@@ -29684,7 +30087,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SBUX",
@@ -29758,7 +30162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SCHW",
@@ -29832,7 +30237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SHW",
@@ -29906,7 +30312,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SJM",
@@ -29980,7 +30387,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SLB",
@@ -30054,7 +30462,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SMCI",
@@ -30128,7 +30537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SNA",
@@ -30202,7 +30612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SNDK",
@@ -30276,7 +30687,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SNPS",
@@ -30350,7 +30762,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SO",
@@ -30424,7 +30837,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SOLV",
@@ -30498,7 +30912,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SPG",
@@ -30572,7 +30987,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SPGI",
@@ -30646,7 +31062,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SRE",
@@ -30720,7 +31137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "STE",
@@ -30794,7 +31212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "STLD",
@@ -30868,7 +31287,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "STT",
@@ -30942,7 +31362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "STX",
@@ -31016,7 +31437,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "STZ",
@@ -31090,7 +31512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SW",
@@ -31164,7 +31587,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SWK",
@@ -31238,7 +31662,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SWKS",
@@ -31312,7 +31737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SYF",
@@ -31386,7 +31812,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SYK",
@@ -31460,7 +31887,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "SYY",
@@ -31534,7 +31962,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "T",
@@ -31608,7 +32037,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TAP",
@@ -31682,7 +32112,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TDG",
@@ -31756,7 +32187,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TDY",
@@ -31830,7 +32262,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TECH",
@@ -31904,7 +32337,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TEL",
@@ -31978,7 +32412,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TER",
@@ -32052,7 +32487,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TFC",
@@ -32126,7 +32562,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TGT",
@@ -32200,7 +32637,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TJX",
@@ -32274,7 +32712,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TKO",
@@ -32348,7 +32787,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TMO",
@@ -32422,7 +32862,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TMUS",
@@ -32496,7 +32937,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TPL",
@@ -32570,7 +33012,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TPR",
@@ -32644,7 +33087,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TRGP",
@@ -32718,7 +33162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TRMB",
@@ -32792,7 +33237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TROW",
@@ -32866,7 +33312,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TRV",
@@ -32940,7 +33387,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TSCO",
@@ -33014,7 +33462,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TSLA",
@@ -33088,7 +33537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TSN",
@@ -33162,7 +33612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TT",
@@ -33236,7 +33687,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TTD",
@@ -33310,7 +33762,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TTWO",
@@ -33384,7 +33837,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TXN",
@@ -33458,7 +33912,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TXT",
@@ -33532,7 +33987,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "TYL",
@@ -33606,7 +34062,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "UAL",
@@ -33680,7 +34137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "UBER",
@@ -33754,7 +34212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "UDR",
@@ -33828,7 +34287,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "UHS",
@@ -33902,7 +34362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ULTA",
@@ -33976,7 +34437,8 @@ export const ALL_STOCKS = [
           "label": "Dividendenstichtag (Ex-Div-Date)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "UNH",
@@ -34050,7 +34512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "UNP",
@@ -34124,7 +34587,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "UPS",
@@ -34198,7 +34662,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "URI",
@@ -34272,7 +34737,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "USB",
@@ -34346,7 +34812,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "V",
@@ -34420,7 +34887,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VEEV",
@@ -34494,7 +34962,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VICI",
@@ -34568,7 +35037,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VLO",
@@ -34642,7 +35112,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VLTO",
@@ -34716,7 +35187,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VMC",
@@ -34790,7 +35262,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VRSK",
@@ -34864,7 +35337,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VRSN",
@@ -34938,7 +35412,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VRT",
@@ -35012,7 +35487,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VRTX",
@@ -35086,7 +35562,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VST",
@@ -35160,7 +35637,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VTR",
@@ -35234,7 +35712,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VTRS",
@@ -35308,7 +35787,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "VZ",
@@ -35382,7 +35862,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WAB",
@@ -35456,7 +35937,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WAT",
@@ -35530,7 +36012,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WBD",
@@ -35604,7 +36087,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WDAY",
@@ -35678,7 +36162,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WDC",
@@ -35752,7 +36237,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WEC",
@@ -35826,7 +36312,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WELL",
@@ -35900,7 +36387,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WFC",
@@ -35974,7 +36462,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WM",
@@ -36048,7 +36537,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WMB",
@@ -36122,7 +36612,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WMT",
@@ -36196,7 +36687,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WRB",
@@ -36270,7 +36762,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WSM",
@@ -36344,7 +36837,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WST",
@@ -36418,7 +36912,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WTW",
@@ -36492,7 +36987,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WY",
@@ -36566,7 +37062,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "WYNN",
@@ -36640,7 +37137,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "XEL",
@@ -36714,7 +37212,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "XOM",
@@ -36788,7 +37287,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "XYL",
@@ -36862,7 +37362,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "XYZ",
@@ -36936,7 +37437,8 @@ export const ALL_STOCKS = [
           "label": "Quartalszahlen (Earnings Call)"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "YUM",
@@ -37010,7 +37512,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ZBH",
@@ -37084,7 +37587,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ZBRA",
@@ -37158,7 +37662,8 @@ export const ALL_STOCKS = [
           "label": "Hauptversammlung"
         }
       ]
-    }
+    },
+    "assetType": "Aktie"
   },
   {
     "ticker": "ZTS",
@@ -37230,6 +37735,67 @@ export const ALL_STOCKS = [
           "date": "2026-11-02",
           "type": "HV",
           "label": "Hauptversammlung"
+        }
+      ]
+    },
+    "assetType": "Aktie"
+  },
+  {
+    "ticker": "ISWD",
+    "name": "iShares MSCI World Islamic UCITS ETF",
+    "sector": "Diversifiziert (ETF)",
+    "industry": "Global Aktien (MSCI World Islamic Index)",
+    "assetType": "ETF",
+    "price": "138,50 $",
+    "change": "+0,3%",
+    "up": true,
+    "debt": "–",
+    "score": 95,
+    "status": "Halal",
+    "purification": null,
+    "business": [
+      {
+        "label": "Index-Methodik: MSCI World Islamic — alle Basiswerte einzeln nach Sharia-Kriterien vorgescreent",
+        "pass": true
+      }
+    ],
+    "financials": [],
+    "note": null,
+    "insight": "Dieser ETF bildet den MSCI World Islamic Index nach — alle 391 enthaltenen Positionen sind bereits einzeln nach Sharia-Kriterien gescreent, bevor sie in den Index aufgenommen werden. Physische Vollreplikation, TER 0,30% p.a., halbjährliche Ausschüttung.",
+    "profile": "Der iShares MSCI World Islamic UCITS ETF investiert breit gestreut in Aktien aus Industrieländern weltweit, die nach islamischen Grundsätzen als konform gelten.",
+    "eckdaten": {
+      "marketCap": "–",
+      "marketCapEUR": "–",
+      "sector": "Diversifiziert (ETF)",
+      "industry": "Global Aktien (MSCI World Islamic Index)",
+      "peRatio": "–",
+      "evEbitda": "–",
+      "epsGrowth": "–",
+      "freeCashFlow": "–",
+      "freeCashFlowEUR": "–",
+      "week52Range": "–",
+      "week52RangeEUR": "–",
+      "dividendYield": "Ausschüttend (halbjährlich)",
+      "isin": "IE00B27YCN58",
+      "wkn": "A0NA46",
+      "ter": "0,30% p.a.",
+      "holdingsCount": "391",
+      "replication": "Physisch (Vollreplikation)",
+      "sparplanfaehig": "Ja (17+ Broker)"
+    },
+    "events": {
+      "agm": {
+        "date": "2027-04-15",
+        "status": "Bevorstehend"
+      },
+      "nextEarnings": {
+        "date": "2026-11-15"
+      },
+      "timeline": [
+        {
+          "date": "2026-11-15",
+          "type": "Dividende",
+          "label": "Ausschüttung (halbjährlich)"
         }
       ]
     }

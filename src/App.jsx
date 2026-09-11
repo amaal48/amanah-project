@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { ALL_STOCKS } from "./data/stocks";
+import { generateICS, downloadICS } from "./utils/icsExport";
 import { useWatchlist } from "./hooks/useWatchlist";
 import { Toast } from "./components/Toast";
 import { ShariaDetailWidget } from "./components/ShariaDetailWidget";
@@ -82,6 +83,9 @@ function Criterion({ b }) {
 }
 
 function getWhyText(stock) {
+  if (stock.assetType === "ETF") {
+    return "Halal, weil alle enthaltenen Positionen bereits bei der Index-Aufnahme einzeln nach Sharia-Kriterien geprüft werden — die Konformität ergibt sich aus der Indexmethodik, nicht aus einer fondsweiten Finanzkennzahl.";
+  }
   if (stock.status === "Nicht Halal") {
     const failedBiz = stock.business.find((b) => !b.pass);
     if (failedBiz) return `Nicht Halal, weil: ${failedBiz.label}.`;
@@ -362,10 +366,15 @@ function StockCard({ s, expanded, onToggle }) {
           <div>
             <div className="flex items-center gap-2">
               <span className="font-[IBM_Plex_Mono] text-sm text-[var(--text)] tracking-wide">{s.ticker}</span>
+              {s.assetType === "ETF" && (
+                <span className="rounded-full border border-[var(--gold)]/40 px-1.5 py-0.5 text-[10px] uppercase text-[var(--gold-soft)]">ETF</span>
+              )}
               <StatusPill status={s.status} />
             </div>
             <p className="mt-1 text-[15px] text-[var(--text)]/90">{s.name}</p>
-            <p className="text-xs text-[var(--muted)]">{s.sector} · Verschuldung {s.debt}</p>
+            <p className="text-xs text-[var(--muted)]">
+              {s.sector}{s.assetType !== "ETF" && ` · Verschuldung ${s.debt}`}
+            </p>
           </div>
         </div>
         <div className="flex items-center gap-4">
@@ -388,8 +397,18 @@ function StockCard({ s, expanded, onToggle }) {
             </ul>
           </div>
           <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Finanz-Ratios (AAOIFI-Grenzwerte)</p>
-            <div className="space-y-3">{s.financials.map((f, i) => <RatioBar key={i} {...f} />)}</div>
+            <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
+              {s.assetType === "ETF" ? "Screening-Methodik" : "Finanz-Ratios (AAOIFI-Grenzwerte)"}
+            </p>
+            {s.assetType === "ETF" ? (
+              <p className="text-xs leading-relaxed text-[var(--text-soft)]">
+                Bei ETFs wird jede enthaltene Position bereits bei der Index-Aufnahme einzeln
+                gescreent — die Konformität steckt in der Indexmethodik, nicht in einer
+                fondsweiten Kennzahl.
+              </p>
+            ) : (
+              <div className="space-y-3">{s.financials.map((f, i) => <RatioBar key={i} {...f} />)}</div>
+            )}
             {s.purification != null && (
               <p className="mt-4 text-xs text-[var(--muted)]">
                 Spendenanteil auf Dividenden: geschätzt{" "}
@@ -471,7 +490,7 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
     .filter((s) => (screenerQuery ? suggestions.includes(s) : true))
     .filter((s) => (activeStatuses.length ? activeStatuses.includes(s.status) : true))
     .filter((s) => (activeSectors.length ? activeSectors.includes(s.sector) : true))
-    .filter((s) => (s.debt === "—" ? true : parseInt(s.debt) <= maxDebt))
+    .filter((s) => (s.debt === "—" || s.debt === "–" ? true : parseInt(s.debt) <= maxDebt))
     .sort((a, b) => {
       if (sortBy === "score") return b.score - a.score;
       if (sortBy === "az") return a.name.localeCompare(b.name);
@@ -912,9 +931,9 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
 /* ---------- Aktien-Detailseite ---------- */
 
 const EVENT_TYPE_STYLE = {
-  HV: { dot: "bg-[var(--gold)]", text: "text-[var(--gold-soft)]" },
-  Earnings: { dot: "bg-[var(--emerald)]", text: "text-[var(--emerald-soft)]" },
-  Dividende: { dot: "bg-[var(--muted)]", text: "text-[var(--text-soft)]" },
+  Earnings: { dot: "bg-[#8B9EE8]", text: "text-[#8B9EE8]", bg: "bg-[#3B4C7C]/15", border: "border-[#3B4C7C]/40" },
+  Dividende: { dot: "bg-[var(--emerald-soft)]", text: "text-[var(--emerald-soft)]", bg: "bg-[var(--emerald)]/15", border: "border-[var(--emerald)]/40" },
+  HV: { dot: "bg-[var(--amber-soft)]", text: "text-[var(--amber-soft)]", bg: "bg-[var(--amber)]/15", border: "border-[var(--amber)]/40" },
 };
 
 function formatEventDate(iso) {
@@ -975,6 +994,9 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist, onOpenS
           <div>
             <div className="flex items-center gap-3">
               <span className="font-[IBM_Plex_Mono] text-lg tracking-wide text-[var(--text)]">{stock.ticker}</span>
+              {stock.assetType === "ETF" && (
+                <span className="rounded-full border border-[var(--gold)]/40 px-1.5 py-0.5 text-[10px] uppercase text-[var(--gold-soft)]">ETF</span>
+              )}
               <StatusPill status={stock.status} />
             </div>
             <h1 className="font-display mt-1 text-3xl text-[var(--text)]">{stock.name}</h1>
@@ -1003,18 +1025,31 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist, onOpenS
           <ComplianceStar score={stock.score} size={88} label="Sharia-Score" />
         </div>
 
-        {/* ECKDATEN — feste Feldreihenfolge, identisch bei jeder Aktie */}
+        {/* ECKDATEN — feste Feldreihenfolge PRO ASSET-TYP (Aktie vs. ETF haben unterschiedliche
+            sinnvolle Kennzahlen, aber innerhalb eines Typs ist die Struktur bei jedem Titel gleich) */}
         <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] sm:grid-cols-4">
-          {[
-            { label: "Marktkap.", value: stock.eckdaten?.marketCapEUR ?? "–", original: stock.eckdaten?.marketCap },
-            { label: "Sektor", value: stock.eckdaten?.sector ?? "–" },
-            { label: "Branche", value: stock.eckdaten?.industry ?? "–" },
-            { label: "KGV", value: stock.eckdaten?.peRatio ?? "–" },
-            { label: "EV/EBITDA", value: stock.eckdaten?.evEbitda ?? "–" },
-            { label: "EPS-Wachstum", value: stock.eckdaten?.epsGrowth ?? "–" },
-            { label: "Dividendenrendite", value: stock.eckdaten?.dividendYield ?? "–" },
-            { label: "52W-Range", value: stock.eckdaten?.week52RangeEUR ?? "–", original: stock.eckdaten?.week52Range },
-          ].map((f) => (
+          {(stock.assetType === "ETF"
+            ? [
+                { label: "ISIN", value: stock.eckdaten?.isin ?? "–" },
+                { label: "WKN", value: stock.eckdaten?.wkn ?? "–" },
+                { label: "Sektor", value: stock.eckdaten?.sector ?? "–" },
+                { label: "Replikation", value: stock.eckdaten?.replication ?? "–" },
+                { label: "TER (Kosten p.a.)", value: stock.eckdaten?.ter ?? "–" },
+                { label: "Anzahl Positionen", value: stock.eckdaten?.holdingsCount ?? "–" },
+                { label: "Ausschüttung", value: stock.eckdaten?.dividendYield ?? "–" },
+                { label: "Sparplanfähig", value: stock.eckdaten?.sparplanfaehig ?? "–" },
+              ]
+            : [
+                { label: "Marktkap.", value: stock.eckdaten?.marketCapEUR ?? "–", original: stock.eckdaten?.marketCap },
+                { label: "Sektor", value: stock.eckdaten?.sector ?? "–" },
+                { label: "Branche", value: stock.eckdaten?.industry ?? "–" },
+                { label: "KGV", value: stock.eckdaten?.peRatio ?? "–" },
+                { label: "EV/EBITDA", value: stock.eckdaten?.evEbitda ?? "–" },
+                { label: "EPS-Wachstum", value: stock.eckdaten?.epsGrowth ?? "–" },
+                { label: "Dividendenrendite", value: stock.eckdaten?.dividendYield ?? "–" },
+                { label: "52W-Range", value: stock.eckdaten?.week52RangeEUR ?? "–", original: stock.eckdaten?.week52Range },
+              ]
+          ).map((f) => (
             <div key={f.label} className="bg-[var(--surface)] px-4 py-3">
               <p className="text-[10px] uppercase tracking-[0.12em] text-[var(--faint)]">{f.label}</p>
               <p
@@ -1026,9 +1061,14 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist, onOpenS
             </div>
           ))}
         </div>
-        {stock.eckdaten && (
+        {stock.assetType !== "ETF" && stock.eckdaten && (
           <p className="mt-1.5 text-[10px] text-[var(--faint)]">
             Marktkap. & 52W-Range in € umgerechnet (fixer Näherungskurs, s.o.) — Originalwerte in $ beim Überfahren mit der Maus (Tooltip)
+          </p>
+        )}
+        {stock.assetType === "ETF" && (
+          <p className="mt-1.5 text-[10px] text-[var(--faint)]">
+            ISIN/WKN/TER/Replikation sind echte, verifizierte Fondsdaten — nur der Kurs ist wie bei den Aktien ein Demo-Wert.
           </p>
         )}
 
@@ -1121,14 +1161,27 @@ function StockDetailPage({ onBack, ticker, watchlist, onToggleWatchlist, onOpenS
             </ul>
           </div>
           <div>
-            <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Finanz-Ratios (AAOIFI-Grenzwerte)</p>
-            <div className="space-y-3">{stock.financials.map((f, i) => <RatioBar key={i} {...f} />)}</div>
-            <p className="mt-4 text-xs text-[var(--muted)]">
-              Spendenanteil auf Dividenden: geschätzt{" "}
-              <span className="font-[IBM_Plex_Mono] text-[var(--gold-soft)]">{stock.purification}%</span>
-              {" "}·{" "}
-              <span className="cursor-pointer text-[var(--gold-soft)] hover:underline">Zum Reinheits-Rechner</span>
+            <p className="mb-3 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
+              {stock.assetType === "ETF" ? "Screening-Methodik" : "Finanz-Ratios (AAOIFI-Grenzwerte)"}
             </p>
+            {stock.assetType === "ETF" ? (
+              <p className="text-sm leading-relaxed text-[var(--text-soft)]">
+                Finanzkennzahlen wie Verschuldungsquote gelten für einzelne Unternehmen, nicht für
+                einen Fonds als Ganzes. Bei ETFs wird stattdessen jede enthaltene Position bereits
+                bei der Index-Aufnahme einzeln gescreent — die Konformität steckt in der
+                Indexmethodik selbst, nicht in einer fondsweiten Kennzahl.
+              </p>
+            ) : (
+              <div className="space-y-3">{stock.financials.map((f, i) => <RatioBar key={i} {...f} />)}</div>
+            )}
+            {stock.purification != null && (
+              <p className="mt-4 text-xs text-[var(--muted)]">
+                Spendenanteil auf Dividenden: geschätzt{" "}
+                <span className="font-[IBM_Plex_Mono] text-[var(--gold-soft)]">{stock.purification}%</span>
+                {" "}·{" "}
+                <span className="cursor-pointer text-[var(--gold-soft)] hover:underline">Zum Reinheits-Rechner</span>
+              </p>
+            )}
           </div>
         </div>
 
@@ -1257,6 +1310,332 @@ function WatchlistPage({ watchlist, onBack, onOpenStock, onToggleWatchlist }) {
             </div>
           ))}
         </div>
+      </main>
+    </div>
+  );
+}
+
+/* ---------- Kalenderübersicht ---------- */
+
+function addDaysISO(base, n) {
+  const d = new Date(base);
+  d.setDate(d.getDate() + n);
+  return d.toISOString().slice(0, 10);
+}
+
+function todayISO() {
+  const d = new Date();
+  d.setHours(0, 0, 0, 0);
+  return d.toISOString().slice(0, 10);
+}
+
+// Bestimmt das Datums-Fenster für den Strip je nach Schnellumschalter
+function computeDayStripRange(timeframe) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const days = [];
+  if (timeframe === "week") {
+    for (let i = 0; i < 7; i++) days.push(addDaysISO(today, i));
+  } else if (timeframe === "nextweek") {
+    for (let i = 7; i < 14; i++) days.push(addDaysISO(today, i));
+  } else {
+    const endOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+    const diff = Math.max(0, Math.round((endOfMonth - today) / 86400000));
+    for (let i = 0; i <= diff; i++) days.push(addDaysISO(today, i));
+  }
+  return days;
+}
+
+// "Heute" / "Morgen" / "Donnerstag, 17. Sep" — je nach Abstand zu heute
+function dateGroupLabel(iso, isPast) {
+  const days = daysUntil(iso);
+  if (days === 0) return "Heute";
+  if (!isPast && days === 1) return "Morgen";
+  if (isPast && days === -1) return "Gestern";
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("de-DE", { weekday: "long", day: "2-digit", month: "short" });
+}
+
+// Deterministisches Demo-Timing für Earnings (BMO/AMC — Branchenkonvention).
+// Bei HV/Dividende gibt es keine sinnvolle Uhrzeit, daher nur für Earnings.
+function demoEventTiming(ticker, date) {
+  const h = ticker.split("").reduce((a, c) => a + c.charCodeAt(0), 0) + date.length;
+  return h % 2 === 0 ? "Vor Börsenöffnung" : "Nach Handelsschluss";
+}
+
+function DayTile({ dateISO, count, isToday, isSelected, onClick }) {
+  const d = new Date(dateISO + "T00:00:00");
+  const weekday = d.toLocaleDateString("de-DE", { weekday: "short" });
+  return (
+    <button
+      onClick={onClick}
+      className={
+        "flex flex-shrink-0 flex-col items-center gap-1 rounded-xl border px-3.5 py-2.5 transition-colors " +
+        (isSelected
+          ? "border-[var(--gold)] bg-[var(--gold)]/15"
+          : isToday
+          ? "border-[var(--gold)]/50 bg-[var(--surface)]"
+          : "border-[var(--border)] bg-[var(--surface)] hover:border-[var(--muted)]")
+      }
+    >
+      <span className={"text-[10px] uppercase tracking-[0.1em] " + (isSelected ? "text-[var(--gold-soft)]" : "text-[var(--faint)]")}>
+        {weekday}
+      </span>
+      <span className={"font-[IBM_Plex_Mono] text-sm " + (isSelected ? "text-[var(--gold-soft)]" : "text-[var(--text)]")}>
+        {d.getDate()}
+      </span>
+      <span className="flex h-3.5 items-center">
+        {count > 0 && (
+          <span className={"rounded-full px-1.5 text-[9px] " + (isSelected ? "bg-[var(--gold)] text-[var(--bg)]" : "bg-[var(--border)] text-[var(--faint)]")}>
+            {count}
+          </span>
+        )}
+      </span>
+    </button>
+  );
+}
+
+function EventCard({ e, showRelevance, onOpenStock }) {
+  const style = EVENT_TYPE_STYLE[e.type] || EVENT_TYPE_STYLE.Dividende;
+
+  function handleExportSingle(ev) {
+    ev.stopPropagation();
+    const ics = generateICS([e], `${e.ticker} · ${e.label}`);
+    downloadICS(`amanah-${e.ticker}-${e.date}`, ics);
+  }
+
+  return (
+    <div
+      onClick={() => onOpenStock(e.ticker)}
+      className="flex w-full cursor-pointer items-center justify-between gap-4 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3.5 text-left transition-colors hover:border-[var(--gold)]/40 hover:bg-[var(--bg-deep)]"
+    >
+      <div className="flex min-w-0 items-center gap-3">
+        <span className="flex-shrink-0 rounded-lg bg-[var(--bg-deep)] px-2 py-1 font-[IBM_Plex_Mono] text-xs text-[var(--text)]">
+          {e.ticker}
+        </span>
+        <div className="min-w-0">
+          <p className="truncate text-sm text-[var(--text)]">{e.name}</p>
+          <div className="mt-1 flex flex-wrap items-center gap-1.5">
+            <span className={"rounded-full border px-2 py-0.5 text-[10px] " + style.bg + " " + style.border + " " + style.text}>
+              {e.type === "HV" ? "Hauptversammlung" : e.type}
+            </span>
+            {e.type === "Earnings" && (
+              <span className="text-[10px] text-[var(--faint)]">{demoEventTiming(e.ticker, e.date)}</span>
+            )}
+            {showRelevance && e.inWatchlist && (
+              <span className="rounded-full border border-[var(--gold)]/40 px-2 py-0.5 text-[10px] text-[var(--gold-soft)]">★ Watchlist</span>
+            )}
+            {showRelevance && e.inPortfolio && (
+              <span className="rounded-full border border-[var(--border)] px-2 py-0.5 text-[10px] text-[var(--muted)]">Portfolio</span>
+            )}
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-shrink-0 items-center gap-3">
+        <span className="font-[IBM_Plex_Mono] text-xs text-[var(--faint)]">{formatEventDate(e.date)}</span>
+        <button
+          onClick={handleExportSingle}
+          title="Als .ics herunterladen (Apple/Google Kalender)"
+          className="flex h-6 w-6 items-center justify-center rounded-full border border-[var(--border)] text-[var(--faint)] hover:border-[var(--gold)]/50 hover:text-[var(--gold-soft)]"
+          aria-label="Termin exportieren"
+        >
+          ⤓
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function CalendarPage({ watchlist, onBack, onOpenStock }) {
+  const [scope, setScope] = useState(watchlist.length > 0 ? "watchlist" : "alle");
+  const [timeframe, setTimeframe] = useState("week"); // week | nextweek | month
+  const [selectedDay, setSelectedDay] = useState(null);
+  const [showPast, setShowPast] = useState(false);
+
+  const portfolioTickers = holdings.map((h) => h.ticker);
+
+  let tickers;
+  if (scope === "watchlist") tickers = watchlist;
+  else if (scope === "portfolio") tickers = portfolioTickers;
+  else tickers = sampleStocks.map((s) => s.ticker);
+
+  const stocksInScope = sampleStocks.filter((s) => tickers.includes(s.ticker));
+
+  const allEvents = stocksInScope.flatMap((s) =>
+    (s.events?.timeline || []).map((e) => ({
+      ...e,
+      ticker: s.ticker,
+      name: s.name,
+      inWatchlist: watchlist.includes(s.ticker),
+      inPortfolio: portfolioTickers.includes(s.ticker),
+    }))
+  );
+
+  const today = todayISO();
+  const upcoming = allEvents.filter((e) => e.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+  const past = allEvents.filter((e) => e.date < today).sort((a, b) => b.date.localeCompare(a.date));
+
+  const dayStripDates = computeDayStripRange(timeframe);
+  const rangeSet = new Set(dayStripDates);
+  const countsByDay = dayStripDates.reduce((acc, d) => {
+    acc[d] = upcoming.filter((e) => e.date === d).length;
+    return acc;
+  }, {});
+
+  const eventsToShow = showPast
+    ? past
+    : selectedDay
+    ? upcoming.filter((e) => e.date === selectedDay)
+    : upcoming.filter((e) => rangeSet.has(e.date));
+
+  const grouped = eventsToShow.reduce((groups, e) => {
+    (groups[e.date] = groups[e.date] || []).push(e);
+    return groups;
+  }, {});
+
+  const SCOPE_OPTIONS = [
+    { key: "watchlist", label: `Watchlist (${watchlist.length})` },
+    { key: "portfolio", label: `Portfolio (${portfolioTickers.length})` },
+    { key: "alle", label: `Alle Titel (${sampleStocks.length})` },
+  ];
+  const TIMEFRAME_OPTIONS = [
+    { key: "week", label: "Diese Woche" },
+    { key: "nextweek", label: "Nächste Woche" },
+    { key: "month", label: "Monat" },
+  ];
+
+  return (
+    <div className="font-body">
+      <header className="mx-auto flex max-w-5xl items-center gap-3 px-6 py-6 text-sm text-[var(--muted)]">
+        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Amanah</span>
+        <span>/</span>
+        <span className="text-[var(--text)]">Kalender</span>
+      </header>
+      <main className="mx-auto max-w-5xl px-6 pb-24">
+        <h1 className="font-display text-2xl text-[var(--text)]">Termin-Kalender</h1>
+        <p className="mt-1 text-sm text-[var(--muted)]">
+          Hauptversammlungen, Earnings-Calls und Dividendenstichtage — alle Termine sind Demo-Daten.
+        </p>
+        <p className="mt-2 text-xs text-[var(--faint)]">
+          Für den Kalender-Export empfehlen wir, ausschließlich Titel aus der Watchlist oder dem
+          Portfolio auszuwählen — bei „Alle Titel" ist die Anzahl der Einträge für einen
+          persönlichen Kalender nicht praktikabel.
+        </p>
+
+        {/* Filterleiste (Watchlist/Portfolio/Alle) */}
+        <div className="mt-6 flex flex-wrap gap-2">
+          {SCOPE_OPTIONS.map((opt) => (
+            <button
+              key={opt.key}
+              onClick={() => { setScope(opt.key); setSelectedDay(null); }}
+              className={
+                "rounded-full border px-4 py-1.5 text-sm " +
+                (scope === opt.key
+                  ? "border-[var(--gold)] bg-[var(--gold)]/15 text-[var(--gold-soft)]"
+                  : "border-[var(--border)] text-[var(--muted)] hover:text-[var(--text)]")
+              }
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Segmented Control: Anstehend / Vergangen + Export */}
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+          <div className="inline-flex rounded-full border border-[var(--border)] p-1">
+            <button
+              onClick={() => setShowPast(false)}
+              className={"rounded-full px-4 py-1.5 text-xs " + (!showPast ? "bg-[var(--gold)] text-[var(--bg)]" : "text-[var(--muted)] hover:text-[var(--text)]")}
+            >
+              Anstehend ({upcoming.length})
+            </button>
+            <button
+              onClick={() => setShowPast(true)}
+              className={"rounded-full px-4 py-1.5 text-xs " + (showPast ? "bg-[var(--gold)] text-[var(--bg)]" : "text-[var(--muted)] hover:text-[var(--text)]")}
+            >
+              Vergangen ({past.length})
+            </button>
+          </div>
+
+          {scope === "alle" ? (
+            <p className="max-w-xs text-right text-[11px] text-[var(--faint)]">
+              Export ist auf Watchlist und Portfolio beschränkt. Bereich oben wechseln, um zu exportieren.
+            </p>
+          ) : (
+            <button
+              onClick={() => {
+                const ics = generateICS(upcoming, `Amanah — ${SCOPE_OPTIONS.find((o) => o.key === scope).label}`);
+                downloadICS(`amanah-termine-${scope}-${today}`, ics);
+              }}
+              disabled={upcoming.length === 0}
+              className="flex items-center gap-1.5 rounded-full border border-[var(--border)] px-4 py-1.5 text-xs text-[var(--muted)] hover:border-[var(--gold)]/50 hover:text-[var(--gold-soft)] disabled:opacity-40 disabled:hover:border-[var(--border)] disabled:hover:text-[var(--muted)]"
+            >
+              ⤓ Alle anstehenden Termine exportieren (.ics)
+            </button>
+          )}
+        </div>
+
+        {!showPast && (
+          <>
+            {/* Schnellumschalter */}
+            <div className="mt-5 flex gap-2">
+              {TIMEFRAME_OPTIONS.map((opt) => (
+                <button
+                  key={opt.key}
+                  onClick={() => { setTimeframe(opt.key); setSelectedDay(null); }}
+                  className={
+                    "rounded-full px-3 py-1 text-xs " +
+                    (timeframe === opt.key ? "bg-[var(--surface)] text-[var(--text)]" : "text-[var(--faint)] hover:text-[var(--muted)]")
+                  }
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Horizontaler Datums-Strip */}
+            <div className="mt-3 flex gap-2 overflow-x-auto pb-2">
+              {dayStripDates.map((d) => (
+                <DayTile
+                  key={d}
+                  dateISO={d}
+                  count={countsByDay[d]}
+                  isToday={d === today}
+                  isSelected={selectedDay === d}
+                  onClick={() => setSelectedDay(selectedDay === d ? null : d)}
+                />
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* Timeline */}
+        {eventsToShow.length === 0 ? (
+          <p className="mt-8 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-8 text-center text-sm text-[var(--muted)]">
+            {showPast
+              ? "Keine vergangenen Termine in diesem Bereich."
+              : scope === "watchlist" && watchlist.length === 0
+              ? "Deine Watchlist ist leer — füge Titel hinzu, um hier ihre Termine zu sehen."
+              : "Keine anstehenden Termine im gewählten Zeitraum."}
+          </p>
+        ) : (
+          <div className="mt-6 space-y-6">
+            {Object.entries(grouped)
+              .sort(([a], [b]) => (showPast ? b.localeCompare(a) : a.localeCompare(b)))
+              .map(([date, events]) => (
+                <div key={date}>
+                  <p className="mb-2.5 text-xs uppercase tracking-[0.2em] text-[var(--faint)]">
+                    {dateGroupLabel(date, showPast)}
+                  </p>
+                  <div className="space-y-2">
+                    {events.map((e, i) => (
+                      <EventCard key={i} e={e} showRelevance={scope === "alle"} onOpenStock={onOpenStock} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+          </div>
+        )}
       </main>
     </div>
   );
@@ -1743,6 +2122,7 @@ const NAV_GROUPS = [
     children: [
       { label: "Übersicht", page: "home", anchor: "portfolio" },
       { label: "Reinheits-Rechner", page: "home", anchor: "rechner" },
+      { label: "Kalender", page: "calendar" },
     ],
   },
   {
@@ -1768,7 +2148,6 @@ function Sidebar({ page, activeAnchor, activeFilter, onGo, watchlistCount, watch
   const [openGroups, setOpenGroups] = useState({ screener: true });
 
   const toggleGroup = (key) => setOpenGroups((prev) => ({ ...prev, [key]: !prev[key] }));
-  const openGroup = (key) => setOpenGroups((prev) => (prev[key] ? prev : { ...prev, [key]: true }));
 
   const isActive = (item) =>
     item.page === page && (!item.anchor || item.anchor === activeAnchor);
@@ -1847,7 +2226,7 @@ function Sidebar({ page, activeAnchor, activeFilter, onGo, watchlistCount, watch
         </button>
 
         {NAV_GROUPS.map((group) => (
-          <div key={group.key} className="mb-1" onMouseEnter={() => openGroup(group.key)}>
+          <div key={group.key} className="mb-1">
             <div className="flex items-center">
               <button
                 onClick={() => onGo(group.page, group.anchor)}
@@ -2082,6 +2461,9 @@ export default function AmanahPrototype() {
             onOpenStock={openStock}
             onToggleWatchlist={wl.toggle}
           />
+        )}
+        {page === "calendar" && (
+          <CalendarPage watchlist={wl.watchlist} onBack={() => goTo("home")} onOpenStock={openStock} />
         )}
         {page === "reports" && <ReportsPage onBack={() => goTo("home")} />}
         {page === "faq" && <AkademiePage onBack={() => goTo("home")} />}
