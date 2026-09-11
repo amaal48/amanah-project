@@ -1,23 +1,21 @@
 // src/hooks/useWatchlist.js
 //
-// Modularer Watchlist-Hook — löst sich aus der bisherigen, direkt in der
-// Root-Komponente verdrahteten useState-Logik. Kapselt: Hinzufügen/Entfernen,
-// 1-Klick-Toggle, hartes Limit von 5 Assets, und eine Toast-Nachricht bei
-// Erreichen des Limits. Persistenz (localStorage/Backend) ist bewusst als
-// eigener Schritt ausgelagert (siehe persist-Parameter unten).
+// Modularer Watchlist-Hook. Verhalten hängt davon ab, ob `userId` gesetzt ist:
+//   - Kein userId (Gast): Watchlist lebt in localStorage (wie bisher)
+//   - userId gesetzt (eingeloggt): Watchlist wird aus Supabase geladen und
+//     bei jeder Änderung dorthin geschrieben — funktioniert dann
+//     geräteübergreifend, nicht mehr nur im aktuellen Browser.
+//
+// Limit von 5 Assets und Toast-Warnung gelten in beiden Fällen gleich.
 
 import { useState, useCallback, useEffect } from "react";
+import { supabase } from "../lib/supabaseClient";
 
 export const WATCHLIST_MAX_SIZE = 5;
 
-/**
- * @param {string[]} initial - initiale Ticker-Liste
- * @param {object} options
- * @param {string} options.storageKey - falls gesetzt, wird die Watchlist in
- *   localStorage gespiegelt (Klartext-Ticker, keine sensiblen Daten)
- */
-export function useWatchlist(initial = [], { storageKey } = {}) {
+export function useWatchlist(initial = [], { storageKey, userId } = {}) {
   const [watchlist, setWatchlist] = useState(() => {
+    if (userId) return []; // wird per useEffect aus Supabase nachgeladen
     if (storageKey && typeof window !== "undefined") {
       try {
         const raw = localStorage.getItem(storageKey);
@@ -30,52 +28,83 @@ export function useWatchlist(initial = [], { storageKey } = {}) {
   });
 
   const [toast, setToast] = useState(null);
+  const [loading, setLoading] = useState(!!userId);
 
+  // localStorage-Sync nur im Gast-Modus
   useEffect(() => {
-    if (!storageKey) return;
+    if (userId || !storageKey) return;
     localStorage.setItem(storageKey, JSON.stringify(watchlist));
-  }, [watchlist, storageKey]);
+  }, [watchlist, storageKey, userId]);
+
+  // Beim Login (userId wechselt von null -> etwas): aus Supabase laden
+  useEffect(() => {
+    if (!userId) return;
+    let cancelled = false;
+    setLoading(true);
+    supabase
+      .from("watchlist_items")
+      .select("ticker")
+      .eq("user_id", userId)
+      .then(({ data, error }) => {
+        if (cancelled) return;
+        if (!error && data) setWatchlist(data.map((r) => r.ticker));
+        setLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [userId]);
 
   const isWatched = useCallback((ticker) => watchlist.includes(ticker), [watchlist]);
   const isFull = watchlist.length >= WATCHLIST_MAX_SIZE;
 
-  const add = useCallback((ticker) => {
-    let didAdd = false;
-    setWatchlist((prev) => {
-      if (prev.includes(ticker)) return prev;
-      if (prev.length >= WATCHLIST_MAX_SIZE) {
-        setToast({
-          id: Date.now(),
-          type: "warning",
-          message: `Watchlist ist voll (max. ${WATCHLIST_MAX_SIZE} Werte). Entferne zuerst einen Titel.`,
-        });
-        return prev;
-      }
-      didAdd = true;
-      return [...prev, ticker];
+  function showLimitToast() {
+    setToast({
+      id: Date.now(),
+      type: "warning",
+      message: `Watchlist ist voll (max. ${WATCHLIST_MAX_SIZE} Werte). Entferne zuerst einen Titel.`,
     });
-    return didAdd;
-  }, []);
+  }
 
-  const remove = useCallback((ticker) => {
-    setWatchlist((prev) => prev.filter((t) => t !== ticker));
-  }, []);
-
-  // 1-Klick-Action: fügt hinzu ODER entfernt, je nach aktuellem Zustand
-  const toggle = useCallback((ticker) => {
-    setWatchlist((prev) => {
-      if (prev.includes(ticker)) return prev.filter((t) => t !== ticker);
-      if (prev.length >= WATCHLIST_MAX_SIZE) {
-        setToast({
-          id: Date.now(),
-          type: "warning",
-          message: `Watchlist ist voll (max. ${WATCHLIST_MAX_SIZE} Werte). Entferne zuerst einen Titel.`,
-        });
-        return prev;
+  const add = useCallback(
+    (ticker) => {
+      if (watchlist.includes(ticker)) return false;
+      if (watchlist.length >= WATCHLIST_MAX_SIZE) {
+        showLimitToast();
+        return false;
       }
-      return [...prev, ticker];
-    });
-  }, []);
+      setWatchlist((prev) => [...prev, ticker]);
+      if (userId) {
+        supabase.from("watchlist_items").insert({ user_id: userId, ticker }).then(({ error }) => {
+          if (error) {
+            // Fehlgeschlagen (z.B. Netzwerkfehler) -> lokale Änderung zurückrollen
+            setWatchlist((prev) => prev.filter((t) => t !== ticker));
+            setToast({ id: Date.now(), type: "error", message: "Konnte nicht gespeichert werden. Bitte erneut versuchen." });
+          }
+        });
+      }
+      return true;
+    },
+    [watchlist, userId]
+  );
+
+  const remove = useCallback(
+    (ticker) => {
+      setWatchlist((prev) => prev.filter((t) => t !== ticker));
+      if (userId) {
+        supabase.from("watchlist_items").delete().eq("user_id", userId).eq("ticker", ticker).then(() => {});
+      }
+    },
+    [userId]
+  );
+
+  const toggle = useCallback(
+    (ticker) => {
+      if (watchlist.includes(ticker)) remove(ticker);
+      else add(ticker);
+    },
+    [watchlist, add, remove]
+  );
 
   const dismissToast = useCallback(() => setToast(null), []);
 
@@ -88,6 +117,7 @@ export function useWatchlist(initial = [], { storageKey } = {}) {
     toggle,
     toast,
     dismissToast,
+    loading,
     maxSize: WATCHLIST_MAX_SIZE,
     remainingSlots: Math.max(0, WATCHLIST_MAX_SIZE - watchlist.length),
   };

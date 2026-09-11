@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { ALL_STOCKS } from "./data/stocks";
 import { generateICS, downloadICS } from "./utils/icsExport";
+import { supabase } from "./lib/supabaseClient";
+import { AuthPanel } from "./components/AuthPanel";
 import { useWatchlist } from "./hooks/useWatchlist";
 import { Toast } from "./components/Toast";
 import { ShariaDetailWidget } from "./components/ShariaDetailWidget";
@@ -2144,7 +2146,7 @@ function NavIcon({ open }) {
   );
 }
 
-function Sidebar({ page, activeAnchor, activeFilter, onGo, watchlistCount, watchlistMax, compareCount, collapsed, onToggleCollapse }) {
+function Sidebar({ page, activeAnchor, activeFilter, onGo, watchlistCount, watchlistMax, compareCount, collapsed, onToggleCollapse, session, onOpenAuth, onSignOut }) {
   const [openGroups, setOpenGroups] = useState({ screener: true });
 
   const toggleGroup = (key) => setOpenGroups((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -2315,8 +2317,28 @@ function Sidebar({ page, activeAnchor, activeFilter, onGo, watchlistCount, watch
       )}
 
       {!collapsed && (
-        <div className="border-t border-[var(--border)] px-5 py-4 text-[10px] text-[var(--faint)]">
-          Keine Anlageberatung
+        <div className="border-t border-[var(--border)] px-5 py-4">
+          {session ? (
+            <div>
+              <p className="truncate text-xs text-[var(--muted)]" title={session.user.email}>
+                {session.user.email}
+              </p>
+              <button
+                onClick={onSignOut}
+                className="mt-1 text-xs text-[var(--faint)] hover:text-[var(--gold-soft)]"
+              >
+                Abmelden
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={onOpenAuth}
+              className="w-full rounded-full border border-[var(--border)] py-1.5 text-xs text-[var(--muted)] hover:border-[var(--gold)]/50 hover:text-[var(--gold-soft)]"
+            >
+              Anmelden / Registrieren
+            </button>
+          )}
+          <p className="mt-2 text-[10px] text-[var(--faint)]">Keine Anlageberatung</p>
         </div>
       )}
     </aside>
@@ -2336,7 +2358,20 @@ function MenuIcon() {
 export default function AmanahPrototype() {
   const [page, setPage] = useState("home"); // home | detail | watchlist | reports | faq | sectors | compare
   const [selectedTicker, setSelectedTicker] = useState("NVDA");
-  const wl = useWatchlist(["NVDA"], { storageKey: "amanah-watchlist" });
+  const [session, setSession] = useState(null);
+  const [showAuth, setShowAuth] = useState(false);
+
+  // Session beim Start laden, plus auf Login/Logout reagieren
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => setSession(data.session));
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, newSession) => {
+      setSession(newSession);
+    });
+    return () => listener.subscription.unsubscribe();
+  }, []);
+
+  const userId = session?.user?.id ?? null;
+  const wl = useWatchlist(["NVDA"], { storageKey: "amanah-watchlist", userId });
   const [compareTickers, setCompareTickers] = useState([]);
   const [activeAnchor, setActiveAnchor] = useState(null);
   const [pendingAnchor, setPendingAnchor] = useState(null);
@@ -2429,7 +2464,12 @@ export default function AmanahPrototype() {
         watchlistCount={wl.watchlist.length}
         watchlistMax={wl.maxSize}
         compareCount={compareTickers.length}
+        session={session}
+        onOpenAuth={() => setShowAuth(true)}
+        onSignOut={() => supabase.auth.signOut()}
       />
+
+      {showAuth && <AuthPanel onClose={() => setShowAuth(false)} />}
 
       <div
         style={{ marginLeft: sidebarCollapsed ? "4rem" : "15rem", transition: "margin-left 200ms ease" }}
