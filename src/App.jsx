@@ -4,6 +4,7 @@ import { ALL_STOCKS } from "./data/stocks";
 import { generateICS, downloadICS } from "./utils/icsExport";
 import { supabase } from "./lib/supabaseClient";
 import { AuthPanel } from "./components/AuthPanel";
+import { ResetPasswordPanel } from "./components/ResetPasswordPanel";
 import { useWatchlist } from "./hooks/useWatchlist";
 import { Toast } from "./components/Toast";
 import { ShariaDetailWidget } from "./components/ShariaDetailWidget";
@@ -2360,12 +2361,17 @@ export default function AmanahPrototype() {
   const [selectedTicker, setSelectedTicker] = useState("NVDA");
   const [session, setSession] = useState(null);
   const [showAuth, setShowAuth] = useState(false);
+  const [showResetPassword, setShowResetPassword] = useState(false);
 
-  // Session beim Start laden, plus auf Login/Logout reagieren
+  // Session beim Start laden, plus auf Login/Logout reagieren.
+  // PASSWORD_RECOVERY feuert automatisch, wenn ein Nutzer über den Link aus
+  // der "Passwort vergessen"-E-Mail in der App landet — dann zeigen wir
+  // sofort das Formular zum Setzen eines neuen Passworts.
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session));
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, newSession) => {
+    const { data: listener } = supabase.auth.onAuthStateChange((event, newSession) => {
       setSession(newSession);
+      if (event === "PASSWORD_RECOVERY") setShowResetPassword(true);
     });
     return () => listener.subscription.unsubscribe();
   }, []);
@@ -2470,6 +2476,7 @@ export default function AmanahPrototype() {
       />
 
       {showAuth && <AuthPanel onClose={() => setShowAuth(false)} />}
+      {showResetPassword && <ResetPasswordPanel onDone={() => setShowResetPassword(false)} />}
 
       <div
         style={{ marginLeft: sidebarCollapsed ? "4rem" : "15rem", transition: "margin-left 200ms ease" }}
