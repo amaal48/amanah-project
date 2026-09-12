@@ -1646,14 +1646,187 @@ function CalendarPage({ watchlist, onBack, onOpenStock }) {
 
 /* ---------- Berichte-Seite ---------- */
 
+// DEMO-INHALTE: Diese vier Berichte sind von Hand geschrieben, um die
+// Struktur/UI zu zeigen — noch KEINE echte automatische Generierung.
+// Sobald das automatisiert läuft (siehe Roadmap: wöchentlicher Bericht),
+// ersetzt eine echte Datenquelle (vermutlich eine Supabase-Tabelle) dieses
+// Array. Die 6-Monats-Aufbewahrungslogik unten funktioniert schon jetzt
+// unabhängig davon, ob die Daten hier oder aus einer echten Quelle kommen.
 const mockReports = [
-  { date: "27. Juli 2026", title: "Wochenbericht KW 30", highlight: "KI-Infrastruktur weiter stark" },
-  { date: "20. Juli 2026", title: "Wochenbericht KW 29", highlight: "Neu als Halal eingestuft: 4 Titel" },
-  { date: "13. Juli 2026", title: "Wochenbericht KW 28", highlight: "Clean-Energy-ETFs mit Zuflüssen" },
-  { date: "06. Juli 2026", title: "Wochenbericht KW 27", highlight: "Ø Sharia-Score leicht gestiegen" },
+  {
+    date: "27. Juli 2026",
+    isoDate: "2026-07-27",
+    title: "Wochenbericht KW 30",
+    highlight: "KI-Infrastruktur weiter stark",
+    marktueberblick:
+      "Die Kapitalmärkte zeigten sich in KW 30 überwiegend risikofreudig. Technologie- und Halbleiterwerte setzten ihren Aufwärtstrend fort, getrieben von anhaltend hoher Nachfrage nach KI-Infrastruktur. Defensive Sektoren wie Versorger blieben demgegenüber zurück.",
+    entwicklungen: [
+      "Mehrere große Halbleiterhersteller meldeten Umsatzzahlen über den Erwartungen der Analysten.",
+      "Die Rendite zehnjähriger US-Staatsanleihen blieb weitgehend stabil.",
+      "Energiepreise gaben leicht nach, nachdem Lagerbestände stärker als erwartet gestiegen waren.",
+    ],
+    screeningUpdates: ["Keine Statusänderungen bei den 20 meistbeobachteten Titeln in dieser Woche."],
+    sektorFokus:
+      "Technologie bleibt der Sektor mit dem höchsten Anteil Halal-konformer Titel in unserem Datensatz — vor allem, weil viele Unternehmen niedrige Verschuldungsquoten aufweisen.",
+  },
+  {
+    date: "20. Juli 2026",
+    isoDate: "2026-07-20",
+    title: "Wochenbericht KW 29",
+    highlight: "Neu als Halal eingestuft: 4 Titel",
+    marktueberblick:
+      "Eine ruhigere Handelswoche mit geringerer Schwankungsbreite als zuletzt. Im Fokus standen vor allem Neueinstufungen im Rahmen der turnusmäßigen Screening-Aktualisierung.",
+    entwicklungen: [
+      "Vier zuvor als \u201eGrenzwertig\u201c eingestufte Titel erfüllen nach aktuellen Bilanzdaten wieder die 30%-Grenzwerte und gelten nun als Halal.",
+      "Ein Titel wechselte von \u201eHalal\u201c zu \u201eGrenzwertig\u201c aufgrund gestiegener Verschuldung im letzten Quartalsbericht.",
+    ],
+    screeningUpdates: [
+      "4 Titel neu als Halal eingestuft (vorher: Grenzwertig)",
+      "1 Titel neu als Grenzwertig eingestuft (vorher: Halal)",
+    ],
+    sektorFokus: "Die Neueinstufungen verteilten sich über Konsumgüter- und Industriewerte, kein klarer Sektor-Schwerpunkt.",
+  },
+  {
+    date: "13. Juli 2026",
+    isoDate: "2026-07-13",
+    title: "Wochenbericht KW 28",
+    highlight: "Clean-Energy-ETFs mit Zuflüssen",
+    marktueberblick:
+      "Nachhaltigkeits- und Clean-Energy-Themen rückten wieder stärker in den Fokus institutioneller Anleger, nachdem mehrere Länder neue Förderprogramme angekündigt hatten.",
+    entwicklungen: [
+      "Clean-Energy-ETFs verzeichneten laut Marktbeobachtern die höchsten wöchentlichen Mittelzuflüsse seit mehreren Monaten.",
+      "Rohstoffpreise für Industriemetalle, die in der Energiewende eine Rolle spielen, zogen leicht an.",
+    ],
+    screeningUpdates: ["Keine Statusänderungen bei den 20 meistbeobachteten Titeln in dieser Woche."],
+    sektorFokus: "Grundstoffe und Industrie profitierten am stärksten vom gestiegenen Interesse an Energiewende-Themen.",
+  },
+  {
+    date: "06. Juli 2026",
+    isoDate: "2026-07-06",
+    title: "Wochenbericht KW 27",
+    highlight: "Ø Sharia-Score leicht gestiegen",
+    marktueberblick:
+      "Zum Start des dritten Quartals zeigte sich der Gesamtmarkt freundlich. Der durchschnittliche Sharia-Score über alle erfassten Titel stieg leicht an — vor allem, weil mehrere Unternehmen ihre Verschuldung im letzten Geschäftsjahr reduziert haben.",
+    entwicklungen: [
+      "Der durchschnittliche Sharia-Score über alle 504 erfassten Titel liegt aktuell bei 71 Punkten (Vorwoche: 69).",
+      "Mehrere Quartalsberichte zeigten branchenübergreifend sinkende Verschuldungsquoten.",
+    ],
+    screeningUpdates: [],
+    sektorFokus: "Kein einzelner Sektor sticht hervor — der Anstieg verteilt sich breit über mehrere Branchen.",
+  },
 ];
 
+// Berichte bleiben 6 Monate abrufbar, danach werden sie hier ausgeblendet.
+// Bei einer echten, automatisiert befüllten Datenquelle würde diese Filterung
+// serverseitig (z.B. in der Datenbank-Abfrage) passieren, nicht im Frontend —
+// hier reicht das für den aktuellen Demo-Stand.
+const REPORT_RETENTION_DAYS = 182;
+
 function ReportsPage({ onBack }) {
+  const [selectedReport, setSelectedReport] = useState(null);
+  const [liveReports, setLiveReports] = useState(null); // null = noch am Laden
+  const [usingFallback, setUsingFallback] = useState(false);
+
+  useEffect(() => {
+    supabase
+      .from("weekly_reports")
+      .select("*")
+      .order("report_date", { ascending: false })
+      .then(({ data, error }) => {
+        if (error || !data || data.length === 0) {
+          // Noch kein automatisch generierter Bericht vorhanden (z.B. weil
+          // der Cron-Job noch nicht gelaufen ist) -> Demo-Inhalte zeigen,
+          // klar gekennzeichnet, statt einer leeren Seite.
+          setLiveReports(mockReports);
+          setUsingFallback(true);
+          return;
+        }
+        setLiveReports(
+          data.map((r) => ({
+            title: r.week_label,
+            date: new Date(r.report_date).toLocaleDateString("de-DE", { day: "2-digit", month: "long", year: "numeric" }),
+            isoDate: r.report_date,
+            highlight: r.highlight,
+            marktueberblick: r.marktueberblick,
+            entwicklungen: r.entwicklungen || [],
+            screeningUpdates: r.screening_updates || [],
+            sektorFokus: r.sektor_fokus,
+            sourceNote: r.source_note,
+          }))
+        );
+        setUsingFallback(false);
+      });
+  }, []);
+
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - REPORT_RETENTION_DAYS);
+  const visibleReports = (liveReports || []).filter((r) => new Date(r.isoDate) >= cutoff);
+
+  if (selectedReport) {
+    const r = selectedReport;
+    return (
+      <div className="font-body">
+        <header className="mx-auto flex max-w-3xl items-center gap-3 px-6 py-6 text-sm text-[var(--muted)]">
+          <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Amanah</span>
+          <span>/</span>
+          <span onClick={() => setSelectedReport(null)} className="cursor-pointer hover:text-[var(--text)]">Berichte</span>
+          <span>/</span>
+          <span className="text-[var(--text)]">{r.title}</span>
+        </header>
+        <main className="mx-auto max-w-3xl px-6 pb-24">
+          <button
+            onClick={() => setSelectedReport(null)}
+            className="mb-4 text-sm text-[var(--faint)] hover:text-[var(--gold-soft)]"
+          >
+            ← Alle Berichte
+          </button>
+          <h1 className="font-display text-2xl text-[var(--text)]">{r.title}</h1>
+          <p className="mt-1 text-sm text-[var(--muted)]">{r.date} · Automatisch erstellt</p>
+
+          <section className="mt-8">
+            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-[var(--faint)]">Marktüberblick</p>
+            <p className="text-sm leading-relaxed text-[var(--text-soft)]">{r.marktueberblick}</p>
+          </section>
+
+          <section className="mt-8">
+            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-[var(--faint)]">Wichtige Entwicklungen</p>
+            <ul className="space-y-2">
+              {r.entwicklungen.map((e, i) => (
+                <li key={i} className="flex gap-2 text-sm text-[var(--text-soft)]">
+                  <span className="text-[var(--gold-soft)]">•</span>
+                  <span>{e}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {r.screeningUpdates.length > 0 && (
+            <section className="mt-8">
+              <p className="mb-2 text-xs uppercase tracking-[0.2em] text-[var(--faint)]">Screening-Updates</p>
+              <ul className="space-y-2">
+                {r.screeningUpdates.map((e, i) => (
+                  <li key={i} className="flex gap-2 text-sm text-[var(--text-soft)]">
+                    <span className="text-[var(--emerald-soft)]">•</span>
+                    <span>{e}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          <section className="mt-8 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-4">
+            <p className="mb-2 text-xs uppercase tracking-[0.2em] text-[var(--faint)]">Sektor im Fokus</p>
+            <p className="text-sm text-[var(--text-soft)]">{r.sektorFokus}</p>
+          </section>
+
+          <p className="mt-8 text-xs text-[var(--faint)]">
+            {r.sourceNote || "Demo-Inhalt zu Illustrationszwecken"} · Keine Anlageberatung · Berichte bleiben 6 Monate abrufbar.
+          </p>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="font-body">
       <header className="mx-auto flex max-w-5xl items-center gap-3 px-6 py-6 text-sm text-[var(--muted)]">
@@ -1663,20 +1836,33 @@ function ReportsPage({ onBack }) {
       </header>
       <main className="mx-auto max-w-5xl px-6 pb-24">
         <h1 className="font-display text-2xl text-[var(--text)]">Wöchentliche Berichte</h1>
-        <p className="mt-1 text-sm text-[var(--muted)]">Automatisch erstellt, jeden Montag aktualisiert.</p>
-        <div className="mt-6 grid gap-3">
-          {mockReports.map((r) => (
-            <div key={r.title} className="flex items-center justify-between rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-4">
-              <div>
-                <p className="text-sm text-[var(--text)]">{r.title}</p>
-                <p className="text-xs text-[var(--muted)]">{r.date} · {r.highlight}</p>
-              </div>
-              <button className="rounded-full border border-[var(--border)] px-4 py-1.5 text-xs text-[var(--muted)] hover:border-[var(--emerald)]/60 hover:text-[var(--text)]">
-                PDF laden
+        <p className="mt-1 text-sm text-[var(--muted)]">
+          Automatisch erstellt, jeden Montag aktualisiert · Berichte bleiben 6 Monate abrufbar.
+        </p>
+        {usingFallback && (
+          <p className="mt-2 text-xs text-[var(--faint)]">
+            Noch kein automatisch generierter Bericht vorhanden — die folgenden Berichte sind Demo-Inhalte.
+          </p>
+        )}
+        {liveReports === null ? (
+          <p className="mt-8 text-sm text-[var(--muted)]">Lade Berichte …</p>
+        ) : (
+          <div className="mt-6 grid gap-3">
+            {visibleReports.map((r) => (
+              <button
+                key={r.title}
+                onClick={() => setSelectedReport(r)}
+                className="flex w-full items-center justify-between rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-5 py-4 text-left transition-colors hover:border-[var(--gold)]/40 hover:bg-[var(--bg-deep)]"
+              >
+                <div>
+                  <p className="text-sm text-[var(--text)]">{r.title}</p>
+                  <p className="text-xs text-[var(--muted)]">{r.date} · {r.highlight}</p>
+                </div>
+                <span className="text-xs text-[var(--faint)]">Lesen →</span>
               </button>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </main>
     </div>
   );
