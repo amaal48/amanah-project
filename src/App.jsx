@@ -12,7 +12,7 @@ import { ShariaDetailWidget } from "./components/ShariaDetailWidget";
 import { getMarketStatus } from "./utils/germanTradingCalendar";
 
 /* ============================================================
-   AMANAH — Basis-Prototyp
+   TAZKIYAH — Basis-Prototyp
    Enthält: Startseite + Aktien-Detailseite in einer Datei,
    per einfachem State-Switch navigierbar (als Grundlage gedacht,
    nicht als fertiges Routing).
@@ -534,7 +534,7 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
       <header className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-6">
         <div className="flex items-center gap-3">
           <ComplianceStar score={100} size={34} label="" />
-          <span className="font-display text-lg tracking-wide">Amanah</span>
+          <span className="font-display text-lg tracking-wide">Tazkiyah</span>
         </div>
         <button className="rounded-full border border-[var(--gold)]/50 px-4 py-2 text-sm text-[var(--gold-soft)] transition-colors hover:bg-[var(--gold)]/10">
           Kostenlos starten
@@ -554,7 +554,7 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
               <span className="text-[var(--gold-soft)]">Entscheide mit Daten.</span>
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-[var(--muted)]">
-              Amanah prüft jede Aktie nach Sharia-Kriterien und liefert dir
+              Tazkiyah prüft jede Aktie nach Sharia-Kriterien und liefert dir
               verständliche Markteinschätzungen — auch mit kleinem Budget.
             </p>
             <form
@@ -917,7 +917,7 @@ function HomePage({ onOpenStock, onNavigate, watchlist, onToggleWatchlist, compa
       </section>
 
       <footer className="mx-auto max-w-[1440px] px-6 pb-10 text-xs text-[var(--faint)]">
-        Amanah · Screening orientiert an AAOIFI-Standards · Unabhängig, keine Depot- oder Produktbindung · Keine Anlageberatung
+        Tazkiyah · Screening orientiert an AAOIFI-Standards · Unabhängig, keine Depot- oder Produktbindung · Keine Anlageberatung
       </footer>
 
       {shariaModalTicker && (
@@ -1265,7 +1265,7 @@ function WatchlistPage({ watchlist, onBack, onOpenStock, onToggleWatchlist }) {
   return (
     <div className="font-body">
       <header className="mx-auto flex max-w-5xl items-center gap-3 px-6 py-6 text-sm text-[var(--muted)]">
-        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Amanah</span>
+        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Tazkiyah</span>
         <span>/</span>
         <span className="text-[var(--text)]">Watchlist</span>
       </header>
@@ -1405,7 +1405,7 @@ function EventCard({ e, showRelevance, onOpenStock }) {
   function handleExportSingle(ev) {
     ev.stopPropagation();
     const ics = generateICS([e], `${e.ticker} · ${e.label}`);
-    downloadICS(`amanah-${e.ticker}-${e.date}`, ics);
+    downloadICS(`tazkiyah-${e.ticker}-${e.date}`, ics);
   }
 
   return (
@@ -1511,7 +1511,7 @@ function CalendarPage({ watchlist, onBack, onOpenStock }) {
   return (
     <div className="font-body">
       <header className="mx-auto flex max-w-5xl items-center gap-3 px-6 py-6 text-sm text-[var(--muted)]">
-        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Amanah</span>
+        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Tazkiyah</span>
         <span>/</span>
         <span className="text-[var(--text)]">Kalender</span>
       </header>
@@ -1568,8 +1568,8 @@ function CalendarPage({ watchlist, onBack, onOpenStock }) {
           ) : (
             <button
               onClick={() => {
-                const ics = generateICS(upcoming, `Amanah — ${SCOPE_OPTIONS.find((o) => o.key === scope).label}`);
-                downloadICS(`amanah-termine-${scope}-${today}`, ics);
+                const ics = generateICS(upcoming, `Tazkiyah — ${SCOPE_OPTIONS.find((o) => o.key === scope).label}`);
+                downloadICS(`tazkiyah-termine-${scope}-${today}`, ics);
               }}
               disabled={upcoming.length === 0}
               className="flex items-center gap-1.5 rounded-full border border-[var(--border)] px-4 py-1.5 text-xs text-[var(--muted)] hover:border-[var(--gold)]/50 hover:text-[var(--gold-soft)] disabled:opacity-40 disabled:hover:border-[var(--border)] disabled:hover:text-[var(--muted)]"
@@ -1768,7 +1768,7 @@ function ReportsPage({ onBack }) {
     return (
       <div className="font-body">
         <header className="mx-auto flex max-w-3xl items-center gap-3 px-6 py-6 text-sm text-[var(--muted)]">
-          <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Amanah</span>
+          <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Tazkiyah</span>
           <span>/</span>
           <span onClick={() => setSelectedReport(null)} className="cursor-pointer hover:text-[var(--text)]">Berichte</span>
           <span>/</span>
@@ -1831,7 +1831,7 @@ function ReportsPage({ onBack }) {
   return (
     <div className="font-body">
       <header className="mx-auto flex max-w-5xl items-center gap-3 px-6 py-6 text-sm text-[var(--muted)]">
-        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Amanah</span>
+        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Tazkiyah</span>
         <span>/</span>
         <span className="text-[var(--text)]">Berichte</span>
       </header>
@@ -1898,11 +1898,11 @@ const topFragen = [
   },
   {
     q: "Sind Kryptowährungen halal?",
-    a: "Hier gibt es unter Gelehrten keine einheitliche Position: Manche sehen Kryptowährungen grundsätzlich als zulässiges digitales Vermögen, andere äußern Bedenken wegen hoher Unsicherheit (Gharar) oder rein spekulativer Nutzung. Amanah screent aktuell bewusst keine Kryptowerte — auch weil die Meinungen hier deutlich weiter auseinandergehen als bei Aktien.",
+    a: "Hier gibt es unter Gelehrten keine einheitliche Position: Manche sehen Kryptowährungen grundsätzlich als zulässiges digitales Vermögen, andere äußern Bedenken wegen hoher Unsicherheit (Gharar) oder rein spekulativer Nutzung. Tazkiyah screent aktuell bewusst keine Kryptowerte — auch weil die Meinungen hier deutlich weiter auseinandergehen als bei Aktien.",
   },
   {
     q: "Warum schließen manche Screening-Standards mehr Branchen aus als andere?",
-    a: "Es gibt nicht den einen globalen Standard — AAOIFI, der Dow Jones Islamic Market Index und andere Gremien setzen leicht unterschiedliche Grenzwerte und Ausschlusslisten. Amanah orientiert sich an AAOIFI und macht die Kriterien transparent, damit du sie selbst nachvollziehen kannst.",
+    a: "Es gibt nicht den einen globalen Standard — AAOIFI, der Dow Jones Islamic Market Index und andere Gremien setzen leicht unterschiedliche Grenzwerte und Ausschlusslisten. Tazkiyah orientiert sich an AAOIFI und macht die Kriterien transparent, damit du sie selbst nachvollziehen kannst.",
   },
   {
     q: "Ist Leerverkauf (Short Selling) mit islamischen Prinzipien vereinbar?",
@@ -1911,7 +1911,7 @@ const topFragen = [
 ];
 
 const glossarAZ = [
-  { term: "AAOIFI", def: "Accounting and Auditing Organization for Islamic Financial Institutions — das Gremium, dessen Standards Amanah für das Screening zugrunde legt." },
+  { term: "AAOIFI", def: "Accounting and Auditing Organization for Islamic Financial Institutions — das Gremium, dessen Standards Tazkiyah für das Screening zugrunde legt." },
   { term: "Aktie", def: "Ein Anteilsschein an einem Unternehmen. Hält man eine Aktie, ist man Miteigentümer und partizipiert an Gewinn und Verlust." },
   { term: "Anleihe (Bond)", def: "Ein festverzinsliches Wertpapier — der Anleger leiht dem Emittenten Geld gegen einen garantierten Zins. Klassische Anleihen gelten als Riba-basiert und damit nicht konform." },
   { term: "Benchmark", def: "Eine Vergleichsgröße, meist ein Index, an der die Wertentwicklung einer Anlage oder eines Portfolios gemessen wird." },
@@ -1930,7 +1930,7 @@ const glossarAZ = [
   { term: "Fractional Shares (Teilaktien)", def: "Bruchteile einer Aktie — ermöglichen es, auch mit kleinem Budget in teure Einzeltitel zu investieren." },
   { term: "Free Float", def: "Der Anteil der Aktien eines Unternehmens, der frei an der Börse gehandelt wird, ohne fest gebundene Großaktionäre." },
   { term: "Gharar", def: "Übermäßige Unsicherheit oder Mehrdeutigkeit in einem Geschäft. Gilt neben Riba als zentrales Ausschlussprinzip im islamischen Finanzwesen." },
-  { term: "Grenzwertig", def: "Amanahs mittlere Status-Stufe: Mindestens eine Kennzahl liegt knapp über dem AAOIFI-Grenzwert. Weder klar konform noch klar ausgeschlossen — sollte regelmäßig neu geprüft werden." },
+  { term: "Grenzwertig", def: "Tazkiyahs mittlere Status-Stufe: Mindestens eine Kennzahl liegt knapp über dem AAOIFI-Grenzwert. Weder klar konform noch klar ausgeschlossen — sollte regelmäßig neu geprüft werden." },
   { term: "Growth Stock (Wachstumsaktie)", def: "Eine Aktie, deren Wert vor allem auf erwartetem zukünftigem Wachstum beruht, oft mit wenig oder keiner Dividende." },
   { term: "Halal", def: "Wörtlich 'erlaubt'. Im Anlagekontext: eine Aktie oder ein Fonds, der alle Geschäftsmodell- und Finanzkriterien des Screenings erfüllt." },
   { term: "Haram", def: "Wörtlich 'verboten'. Das Gegenstück zu Halal — bezeichnet Geschäftsfelder oder Praktiken, die nach islamischen Grundsätzen unzulässig sind." },
@@ -1946,7 +1946,7 @@ const glossarAZ = [
   { term: "Murabaha", def: "Ein Kostenaufschlag-Verkauf: Der Verkäufer nennt offen Einkaufspreis und Marge, statt Zinsen zu berechnen — eine gängige Struktur im islamischen Handelsfinanzwesen." },
   { term: "Musharakah", def: "Eine Partnerschaft, bei der mehrere Parteien gemeinsam Kapital einbringen und Gewinn wie Verlust anteilig tragen — Grundlage vieler islamischer Beteiligungsmodelle." },
   { term: "Nisab", def: "Der Vermögens-Schwellenwert, ab dem Zakat fällig wird. Liegt das Gesamtvermögen darunter, entfällt die Zakat-Pflicht für den Zeitraum." },
-  { term: "Portfolio", def: "Die Gesamtheit der Anlagen einer Person — bei Amanah inklusive einer aggregierten Halal-Reinheits-Ansicht über alle Positionen hinweg." },
+  { term: "Portfolio", def: "Die Gesamtheit der Anlagen einer Person — bei Tazkiyah inklusive einer aggregierten Halal-Reinheits-Ansicht über alle Positionen hinweg." },
   { term: "Purification (Dividenden-Reinigung)", def: "Das Abtrennen des unzulässigen Ertragsanteils (meist Zinserträge) einer ansonsten erlaubten Dividende — traditionell durch Spende dieses Anteils." },
   { term: "Qard Hasan", def: "Ein zinsloses, wohltätiges Darlehen im islamischen Finanzwesen — der Kreditgeber erwartet ausschließlich die Rückzahlung des Nennbetrags." },
   { term: "Rebalancing", def: "Das planmäßige Zurücksetzen eines Portfolios auf eine Ziel-Gewichtung, nachdem sich die Kurse einzelner Positionen unterschiedlich entwickelt haben." },
@@ -1958,7 +1958,7 @@ const glossarAZ = [
   { term: "TER (Total Expense Ratio)", def: "Die jährliche Gesamtkostenquote eines Fonds oder ETFs, angegeben in Prozent des verwalteten Vermögens." },
   { term: "Takaful", def: "Islamische Versicherung auf Basis gegenseitiger Beistandsleistung — als Alternative zu klassischen, zinsbasierten Versicherungsmodellen." },
   { term: "Value Stock (Substanzaktie)", def: "Eine Aktie, die im Verhältnis zu ihren fundamentalen Kennzahlen (z. B. KGV) als unterbewertet gilt." },
-  { term: "Verschuldungsquote", def: "Das Verhältnis von Schulden zur Marktkapitalisierung. Bei Amanah/AAOIFI-Orientierung gilt eine Aktie ab 30% in der Regel als nicht mehr konform." },
+  { term: "Verschuldungsquote", def: "Das Verhältnis von Schulden zur Marktkapitalisierung. Bei Tazkiyah/AAOIFI-Orientierung gilt eine Aktie ab 30% in der Regel als nicht mehr konform." },
   { term: "Volatilität", def: "Ein Maß für die Schwankungsbreite eines Kurses über einen bestimmten Zeitraum — höhere Volatilität bedeutet größere Kursausschläge in beide Richtungen." },
   { term: "WKN", def: "Wertpapierkennnummer — eine in Deutschland gebräuchliche, sechsstellige Kennung für ein Wertpapier, neben der international gültigen ISIN." },
   { term: "Waqf", def: "Eine islamische Stiftung — Vermögen wird dauerhaft für einen wohltätigen oder gemeinnützigen Zweck gebunden." },
@@ -1967,7 +1967,7 @@ const glossarAZ = [
 
 const einstiegsSteps = [
   { title: "1. Grundbegriffe verstehen", text: "Aktie, ETF, Dividende, Sparplan — bevor es um Halal-Kriterien geht, hilft ein Blick ins Glossar weiter unten. Niemand muss alles auf einmal verstehen." },
-  { title: "2. Broker auswählen", text: "Ein Depot ist Voraussetzung fürs Investieren. Amanah empfiehlt keinen bestimmten Anbieter — der Vergleich unten zeigt nur Kriterien, keine Wertung. Achte besonders auf schariakonforme Kontoführung, falls dir das wichtig ist." },
+  { title: "2. Broker auswählen", text: "Ein Depot ist Voraussetzung fürs Investieren. Tazkiyah empfiehlt keinen bestimmten Anbieter — der Vergleich unten zeigt nur Kriterien, keine Wertung. Achte besonders auf schariakonforme Kontoführung, falls dir das wichtig ist." },
   { title: "3. Screening verstehen", text: "Bevor du eine Aktie kaufst, prüf ihren Status im Screener und lies die 'Warum'-Begründung auf der Detailseite. Bei 'Grenzwertig' lohnt sich ein zweiter Blick vor dem Kauf." },
   { title: "4. Klein anfangen", text: "Ein Sparplan mit kleinen, regelmäßigen Beträgen ist oft sinnvoller als eine einzelne große Investition — gerade am Anfang, wenn Marktschwankungen noch ungewohnt sind." },
   { title: "5. Portfolio im Blick behalten", text: "Nutze die Watchlist, um Statusänderungen (z. B. Halal → Grenzwertig) nicht zu verpassen, und prüfe die Portfolio-Reinheit regelmäßig — Unternehmen können sich verändern." },
@@ -2007,7 +2007,7 @@ function AkademiePage({ onBack }) {
   return (
     <div className="font-body">
       <header className="mx-auto flex max-w-5xl items-center gap-3 px-6 py-6 text-sm text-[var(--muted)]">
-        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Amanah</span>
+        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Tazkiyah</span>
         <span>/</span>
         <span className="text-[var(--text)]">Akademie</span>
       </header>
@@ -2068,7 +2068,7 @@ function AkademiePage({ onBack }) {
               </tbody>
             </table>
             <p className="border-t border-[var(--border)] px-5 py-3 text-xs text-[var(--faint)]">
-              Neutraler Vergleich — Amanah erhält keine Provision und empfiehlt keinen Anbieter. „Swap-free" bedeutet: keine Zinsgutschrift/-belastung bei über Nacht gehaltenen Positionen.
+              Neutraler Vergleich — Tazkiyah erhält keine Provision und empfiehlt keinen Anbieter. „Swap-free" bedeutet: keine Zinsgutschrift/-belastung bei über Nacht gehaltenen Positionen.
             </p>
           </div>
         )}
@@ -2208,7 +2208,7 @@ function SectorsPage({ onBack }) {
   return (
     <div className="font-body">
       <header className="mx-auto flex max-w-4xl items-center gap-3 px-6 py-6 text-sm text-[var(--muted)]">
-        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Amanah</span>
+        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Tazkiyah</span>
         <span>/</span>
         <span className="text-[var(--text)]">Sektoren</span>
       </header>
@@ -2247,7 +2247,7 @@ function ComparePage({ tickers, onBack }) {
   return (
     <div className="font-body">
       <header className="mx-auto flex max-w-5xl items-center gap-3 px-6 py-6 text-sm text-[var(--muted)]">
-        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Amanah</span>
+        <span onClick={onBack} className="cursor-pointer hover:text-[var(--text)]">Tazkiyah</span>
         <span>/</span>
         <span className="text-[var(--text)]">Vergleichen</span>
       </header>
@@ -2352,7 +2352,7 @@ function Sidebar({ page, activeAnchor, activeFilter, onGo, watchlistCount, watch
       <div className={"flex items-center py-6 " + (collapsed ? "justify-center px-0" : "justify-between px-5")}>
         <div className="flex items-center gap-3 overflow-hidden">
           <ComplianceStar score={100} size={30} label="" />
-          {!collapsed && <span className="font-display whitespace-nowrap text-base tracking-wide">Amanah</span>}
+          {!collapsed && <span className="font-display whitespace-nowrap text-base tracking-wide">Tazkiyah</span>}
         </div>
         {!collapsed && (
           <button
@@ -2549,7 +2549,7 @@ function MenuIcon() {
 
 /* ---------- Root ---------- */
 
-export default function AmanahPrototype() {
+export default function TazkiyahPrototype() {
   const [page, setPage] = useState("home"); // home | detail | watchlist | reports | faq | sectors | compare
   const [selectedTicker, setSelectedTicker] = useState("NVDA");
   const [session, setSession] = useState(null);
@@ -2623,7 +2623,7 @@ export default function AmanahPrototype() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-        /* Amanah Dark Theme — einziges Theme */
+        /* Tazkiyah Dark Theme — einziges Theme */
         :root {
           --bg: #0E1613;
           --bg-deep: #0B100E;
