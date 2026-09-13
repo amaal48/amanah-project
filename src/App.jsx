@@ -5,6 +5,7 @@ import { generateICS, downloadICS } from "./utils/icsExport";
 import { supabase } from "./lib/supabaseClient";
 import { AuthPanel } from "./components/AuthPanel";
 import { ResetPasswordPanel } from "./components/ResetPasswordPanel";
+import { ProfilePage } from "./components/ProfilePage";
 import { useWatchlist } from "./hooks/useWatchlist";
 import { Toast } from "./components/Toast";
 import { ShariaDetailWidget } from "./components/ShariaDetailWidget";
@@ -2511,6 +2512,12 @@ function Sidebar({ page, activeAnchor, activeFilter, onGo, watchlistCount, watch
                 {session.user.email}
               </p>
               <button
+                onClick={() => onGo("profile")}
+                className="mt-1 block text-xs text-[var(--faint)] hover:text-[var(--gold-soft)]"
+              >
+                Mein Profil
+              </button>
+              <button
                 onClick={onSignOut}
                 className="mt-1 text-xs text-[var(--faint)] hover:text-[var(--gold-soft)]"
               >
@@ -2702,6 +2709,7 @@ export default function AmanahPrototype() {
         {page === "faq" && <AkademiePage onBack={() => goTo("home")} />}
         {page === "sectors" && <SectorsPage onBack={() => goTo("home")} />}
         {page === "compare" && <ComparePage tickers={compareTickers} onBack={() => goTo("home")} />}
+        {page === "profile" && <ProfilePage session={session} />}
       </div>
 
       <Toast toast={wl.toast} onDismiss={wl.dismissToast} />
