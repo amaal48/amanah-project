@@ -51,14 +51,24 @@ function PersonalInfoCard({ session, onToast }) {
     }
     setSaving(true);
     try {
-      const { error } = await supabase.auth.updateUser({
-        data: {
-          display_name: displayName.trim(),
-          first_name: firstName.trim() || null,
-          last_name: lastName.trim() || null,
-        },
-      });
-      if (error) throw error;
+      const payload = {
+        display_name: displayName.trim(),
+        first_name: firstName.trim() || null,
+        last_name: lastName.trim() || null,
+      };
+
+      // Beide Stellen aktualisieren: user_metadata (für schnellen Zugriff
+      // z.B. direkt aus der Session) und die profiles-Tabelle (für
+      // Abfragen/Filterung, siehe supabase_schema_profiles.sql).
+      const { error: metaError } = await supabase.auth.updateUser({ data: payload });
+      if (metaError) throw metaError;
+
+      const { error: profileError } = await supabase
+        .from("profiles")
+        .update(payload)
+        .eq("id", session.user.id);
+      if (profileError) throw profileError;
+
       onToast("success", "Profil erfolgreich aktualisiert.");
     } catch (err) {
       setError(err.message);
