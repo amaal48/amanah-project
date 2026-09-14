@@ -1,7 +1,8 @@
 // src/components/ProfilePage.jsx
 //
 // "Mein Profil"-Seite. Aktuell umgesetzt:
-//   1) Persönliche Informationen (Anzeigename, Vor-/Nachname, E-Mail-Status)
+//   1) Persönliche Informationen (Anzeigename, Vor-/Nachname, E-Mail-Status,
+//      Newsletter-Opt-in)
 //   2) Passwort ändern
 //
 // Bewusst noch NICHT enthalten (spätere Ausbaustufen, siehe Projektnotizen):
@@ -35,6 +36,7 @@ function PersonalInfoCard({ session, onToast }) {
   const [displayName, setDisplayName] = useState(meta.display_name || "");
   const [firstName, setFirstName] = useState(meta.first_name || "");
   const [lastName, setLastName] = useState(meta.last_name || "");
+  const [newsletterOptIn, setNewsletterOptIn] = useState(!!meta.newsletter_opt_in);
   const [saving, setSaving] = useState(false);
   const [resending, setResending] = useState(false);
   const [error, setError] = useState(null);
@@ -55,6 +57,7 @@ function PersonalInfoCard({ session, onToast }) {
         display_name: displayName.trim(),
         first_name: firstName.trim() || null,
         last_name: lastName.trim() || null,
+        newsletter_opt_in: newsletterOptIn,
       };
 
       // Beide Stellen aktualisieren: user_metadata (für schnellen Zugriff
@@ -157,6 +160,16 @@ function PersonalInfoCard({ session, onToast }) {
             E-Mail-Adresse ändern folgt in einem späteren Ausbauschritt.
           </p>
         </div>
+
+        <label className="flex items-start gap-2 text-xs text-[var(--muted)]">
+          <input
+            type="checkbox"
+            checked={newsletterOptIn}
+            onChange={(e) => setNewsletterOptIn(e.target.checked)}
+            className="mt-0.5"
+          />
+          <span>Newsletter erhalten (jederzeit hier abbestellbar).</span>
+        </label>
 
         {error && <p className="text-xs text-[var(--red-soft)]">{error}</p>}
 
