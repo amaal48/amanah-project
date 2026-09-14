@@ -6,6 +6,8 @@ import { supabase } from "./lib/supabaseClient";
 import { AuthPanel } from "./components/AuthPanel";
 import { ResetPasswordPanel } from "./components/ResetPasswordPanel";
 import { ProfilePage } from "./components/ProfilePage";
+import { SecurityPage } from "./components/SecurityPage";
+import { SettingsPage } from "./components/SettingsPage";
 import { useWatchlist } from "./hooks/useWatchlist";
 import { Toast } from "./components/Toast";
 import { ShariaDetailWidget } from "./components/ShariaDetailWidget";
@@ -2336,6 +2338,7 @@ function NavIcon({ open }) {
 
 function Sidebar({ page, activeAnchor, activeFilter, onGo, watchlistCount, watchlistMax, compareCount, collapsed, onToggleCollapse, session, onOpenAuth, onSignOut }) {
   const [openGroups, setOpenGroups] = useState({ screener: true });
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false);
 
   const toggleGroup = (key) => setOpenGroups((prev) => ({ ...prev, [key]: !prev[key] }));
 
@@ -2507,22 +2510,43 @@ function Sidebar({ page, activeAnchor, activeFilter, onGo, watchlistCount, watch
       {!collapsed && (
         <div className="border-t border-[var(--border)] px-5 py-4">
           {session ? (
-            <div>
-              <p className="truncate text-xs text-[var(--muted)]" title={session.user.email}>
-                {session.user.email}
-              </p>
+            <div className="relative">
               <button
-                onClick={() => onGo("profile")}
-                className="mt-1 block text-xs text-[var(--faint)] hover:text-[var(--gold-soft)]"
+                onClick={() => setAccountMenuOpen((v) => !v)}
+                className="flex w-full items-center justify-between text-xs text-[var(--muted)] hover:text-[var(--text)]"
               >
-                Mein Profil
+                <span className="truncate" title={session.user.email}>{session.user.email}</span>
+                <span>{accountMenuOpen ? "▲" : "▼"}</span>
               </button>
-              <button
-                onClick={onSignOut}
-                className="mt-1 text-xs text-[var(--faint)] hover:text-[var(--gold-soft)]"
-              >
-                Abmelden
-              </button>
+              {accountMenuOpen && (
+                <div className="mt-2 space-y-1 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-2">
+                  <button
+                    onClick={() => { onGo("profile"); setAccountMenuOpen(false); }}
+                    className="block w-full rounded px-2 py-1.5 text-left text-xs text-[var(--faint)] hover:bg-[var(--bg-deep)] hover:text-[var(--gold-soft)]"
+                  >
+                    Profil
+                  </button>
+                  <button
+                    onClick={() => { onGo("security"); setAccountMenuOpen(false); }}
+                    className="block w-full rounded px-2 py-1.5 text-left text-xs text-[var(--faint)] hover:bg-[var(--bg-deep)] hover:text-[var(--gold-soft)]"
+                  >
+                    Sicherheit
+                  </button>
+                  <button
+                    onClick={() => { onGo("settings"); setAccountMenuOpen(false); }}
+                    className="block w-full rounded px-2 py-1.5 text-left text-xs text-[var(--faint)] hover:bg-[var(--bg-deep)] hover:text-[var(--gold-soft)]"
+                  >
+                    Einstellungen
+                  </button>
+                  <div className="my-1 border-t border-[var(--border)]" />
+                  <button
+                    onClick={onSignOut}
+                    className="block w-full rounded px-2 py-1.5 text-left text-xs text-[var(--faint)] hover:bg-[var(--bg-deep)] hover:text-[var(--red-soft)]"
+                  >
+                    Abmelden
+                  </button>
+                </div>
+              )}
             </div>
           ) : (
             <button
@@ -2709,7 +2733,9 @@ export default function TazkiyahPrototype() {
         {page === "faq" && <AkademiePage onBack={() => goTo("home")} />}
         {page === "sectors" && <SectorsPage onBack={() => goTo("home")} />}
         {page === "compare" && <ComparePage tickers={compareTickers} onBack={() => goTo("home")} />}
-        {page === "profile" && <ProfilePage session={session} />}
+        {page === "profile" && <ProfilePage session={session} onGo={goTo} />}
+        {page === "security" && <SecurityPage session={session} onGo={goTo} />}
+        {page === "settings" && <SettingsPage session={session} onGo={goTo} />}
       </div>
 
       <Toast toast={wl.toast} onDismiss={wl.dismissToast} />
